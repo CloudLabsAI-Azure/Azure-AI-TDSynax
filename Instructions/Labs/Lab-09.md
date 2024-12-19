@@ -1,246 +1,138 @@
-# Lab 9: Ensuring Responsible AI with Content Safety Studio 
+# Lab 9: Understand HR Copilot Demo Application 
 
-## Lab scenario
-In this lab, you will learn about the Content Safety Studio is a powerful tool for managing user-generated content. It features Text Moderation to detect and filter harmful text, such as hate speech and violence, and Image Moderation to analyze and block unsafe or offensive images. This comprehensive solution ensures that all user contributions are safe and appropriate across platforms.
+### Estimated Duration: 60 minutes
+
+When the scope of automation spans across multiple functional domains, like humans, an agent may perform better when it can specialize in a single area. So instead of stuffing a single agent with multiple capabilities, we can employ a multiple-agent model, each specializing in a single domain. These agents are managed and coordinated by a manager agent (agent runner). This is called the multi-agent copilot model. The agent runner is responsible for promoting the right agent from the agent pool to be the active agent to interact with the user. It is also responsible for transferring relevant context from agent to agent to ensure continuity. In this model, the agent runner relies on the specialist agent's cue to back off from the conversation to start the transfer. Each specialist agent has to implement a skill to send a notification (back-off method) when it thinks its skillset cannot handle the user's request. On the other hand, the decision on exactly which agent should be selected to take over the conversation is still with the agent runner. When receiving such a request, the agent runner will review the input from the requesting agent to decide which agent to select for the job. This skill also relies on a LLM. The agent runner runs each specialist agent's run method. There can be some persistent context that should be available across agents' sessions. This is implemented as the persistent memory at agent runner. Each specialist agent, depending on the requirement for skill, can be powered by a gpt-35-turbo or gpt-4. The multi-agent solution has the same application platform (streamlit) as the single HR Copilot.
+
+**Bicep**: Bicep is a domain-specific language (DSL) that uses declarative syntax to deploy Azure resources. In a Bicep file, you define the infrastructure you want to deploy to Azure, and then use that file throughout the development lifecycle to repeatedly deploy your infrastructure. Your resources are deployed in a consistent manner.
 
 ## Lab objectives
-In this lab, you will perform the following:
-- Task 1: Implement Content Safety Measures
-- Task 2: Monitor and Analyze Content for Compliance
-  
-## Task 1: Implement Content Safety Measures
 
-Content Safety resource in Azure to detect and manage harmful content. You'll create and configure the resource, assign the necessary roles, and ensure it's integrated with the Content Safety Studio. This setup allows you to use Azure’s AI tools to moderate content effectively.
+You will be able to complete the following tasks:
 
-1.  Open a new tab, and navigate to the [Content Safety Studio](https://contentsafety.cognitive.azure.com/), If the user is not logged in, Click on Sign in from the top right corner and select the user. Then select 
-    the **Settings** icon in the top navigation menu.
+- Task 1: Build your own multi-agent Copilot application locally
+- Task 2: Deploy a multi-agent Copilot application to Azure
 
-     ![](../media/image-51.png)
+## Task 1: Build your own multi-agent Copilot application locally
 
-1. In the All resources section, select **+ Create a new resource**.
+In this task, you will update the `secrets.env` file and run the HR Copilot application locally using `streamlit` to validate its functionality with sample queries. You will then prepare to deploy the multi-agent Copilot application to Azure by accessing the `main.bicep` file.
 
-     ![](../media/image-52.png)
+1. Return to the `secrets.env` file that you previously opened in Visual Studio Code. This file contains environment variables essential for configuring your application.
 
-1. You will be directed to the **Azure portal**, and on the **Create Content Safety** page, specify the following and click on **Review + Create**.
+1. Replace **USE_AZCS**="**False**" in the Visual Studio code, then press **CTRL + S** to save the file.
 
-     - Subscription – select your **Azure subscription**
-  
-     - Resource group – select the Resource Group **ODL-MEMT-<inject key="DeploymentID" enableCopy="false"/>**
-    
-     - Region – **East US**
-  
-     - Name – **Content-Safety-<inject key="DeploymentID" enableCopy="false"/>**
-  
-     - Pricing tier – Free
-  
-       ![](../media/image-53.png)
+   ![](../media/L4-T1-S0.png)
 
-1. Review the settings and click **Create**.
+1. Next, click on the **Eclipse Button** at the top of the screen, then select **Terminal** from the dropdown menu and click on **New Terminal** to open a new terminal window.
 
-     ![](../media/image-54.png)
+    ![](../media/img69.png) 
 
-1. Once deployement is successful click on **Go to resource**.
+1. Run the below command to change the directory.
 
-     ![](../media/image-57.png)
+   ```
+   cd C:\LabFiles\OpenAIWorkshop\scenarios\incubations\copilot\employee_support
+   ```
 
-1. Back on **Content-Safety-<inject key="DeploymentID" enableCopy="false"/>** page,  from the left navigation pane, select  **Overview** and review the settings then click on Content Safety Studio link.
+3. To run the application from the command line, navigate back to Command Prompt and run the below command:
 
-      ![](../media/image-59.png)
+   >**Note**: Here, you can enter your email address below to get notifications. Otherwise, leave this field blank and then click on **Enter**.
+
+   ```
+   streamlit run multi_agent_copilot.py
+   ```
+
+4. Once the execution of `streamlit run multi_agent_copilot.py` is completed, a locally hosted HR Copliot application will be opened in the web browser. 
+
+   ![](../media/img21.png)
+
+   ![](../media/img22.png)
+
+5. Run the following query to validate the identity of the employee:
+
+   ```
+   Sharon 1234
+   ```
+
+   ![](../media/img47.png)
+
+6. Enter an example question such as `How do I reset my password?`. The questions are answered by the Copilot by searching a knowledge base.
+
+   ![](../media/img48.png)
+
+7. Navigate back to **CMD** and stop the terminal by typing **ctrl + C**.
    
-1. Your navigated to the [Content Safety Studio](https://contentsafety.cognitive.azure.com/), select the **Settings** icon in the top navigation menu.
+## Task 2: Deploy a multi-agent Copilot application to Azure
 
-     ![](../media/image-51.png)
+In this task, you will update the `main.bicep` file to reference `multi_agent_copilot.py`, authenticate with Azure, and deploy your multi-agent Copilot application. After setting up the environment and provisioning resources, you will navigate to the Azure portal to verify the deployment and access your web application.
 
-1. Make sure Content Safety resources is created.
+1. Return to the `main.bicep` file that you previously opened.
 
-      ![](../media/image-55.png)
+2. In the `main.bicep` file, replace the file name in **Line 49** with `multi_agent_copilot.py` and press **CTRL + S** to save the file.
 
-1. Select **Content-Safety-<inject key="DeploymentID" enableCopy="false"/> (1)** and click on **Use resource (2)**.
+    ![](../media/img51.png)
 
-     ![](../media/image-(60).png)
+4. Run the below command to change the directory.
+
+   ```bash
+   cd C:\LabFiles\OpenAIWorkshop
+   ```
+
+5. Run the below command to **Authenticate with Azure**. It will redirect you to the Azure Authorize website, where you can select your account.
+
+- **azd** is the Azure Developer CLI, a command-line tool that simplifies the management and deployment of Azure applications. It helps streamline various tasks related to Azure resources, including authentication, configuration, and deployment of resources.
+
+   ```bash
+   azd auth login
+   ```
+
+6. Run the below command to set up the resource group deployment and **Create a new environment**. Make sure to replace `{DeploymentId}` with **<inject key="Deployment ID" enableCopy="true"/>** in the below command.
+
+   ```bash
+   azd config set alpha.resourceGroupDeployments on
+   ```
    
-## Task 2: Monitor and Analyze Content for Compliance
+   ```bash
+   azd env new azure-copilot-{DeploymentId}
+   ```
 
-In this task, you will implement and evaluate content moderation for both images and text using Azure's Content Safety Studio. The goal is to ensure that content uploaded by users complies with safety standards by testing for harmful content and analyzing moderation results.
+7. Run the below command to provision Azure resources and deploy your project with a single command.
 
-## Task 2. 1 : Moderate image content for singular isolated images.
-
-1. On **Azure AI | Content Safety Studio** under **Safeguard your image content with built-in-features**, select **Moderate image content**.
-
-     ![](../media/image-11.png)
-
-1. On **Moderate image content** select **Run a simple test** tab, review the options note we have three set content  **Safe content**, **self- harm content** and **AI-generated sexual content**.
-
-#### Safe content
-
-1. Now lets use our image and test then check the result. **Moderate image content** select **Run a simple test** tab then click on **Browse for a file**
-
-     ![](../media/image-61.png)
-
-1. Within **file explorer** navigate to **C:\LabFiles\Model-Evaluation-and-Model-Tunning\Labs\data\image_sample_dataset** select and open **family-builds-campfire.jpg**
-
-1. Review the image and click on **Run test**.
-
-    ![](../media/image-68.png)
+   ```bash
+   azd up
+   ```
    
-1. Review the result. As expected, this image content is Allowed, and the Severity level is Safe across all categories. 
+8. Please select your Azure subscription to use, enter `1`, and click on the **Enter** button.
 
-    ![](../media/image-69.png)
+   ![](../media/img29.png)
 
-   >**Note**: So far, we’ve tested image content for singular isolated images. However, if we have a bulk dataset of image content, we could test the bulk dataset at once and receive metrics based on the model’s performance.
+9. Please select an Azure location to use, select the location as **<inject key="Region" enableCopy="false"/>** location, and click on the **Enter** button. You can change the location using the up and down arrows.
 
-#### Self harmed content
+   ![](../media/img30.png)
 
-We should also anticipate customers potentially posting harmful image content. To ensure that we account for such a scenario, let’s test the detection of harmful image content.
+10. Next, select the **multiagent-<inject key="Deployment ID" enableCopy="False"/>** resource group and hit **ENTER**.
 
-1. Select Browse for a file and upload the **bear-attack-blood.JPG** file.
+    ![](../media/img50.png)
 
-1. Set all Threshold levels to Medium.
-1. Select Run test.
+11. Once the deployment succeeds, you will see the following message **SUCCESS: Your application was provisioned and deployed to Azure**. The deployment might take 5-10 minutes. It is producing a web package file, then creating the resource and publishing the package to the app service.
 
-    >**Note**: Rightfully so, the content is Blocked, and was rejected by the Violence filter which has a Severity level of High.
 
-### Task 2.2: Run a bulk test
+12. Navigate back to the Azure portal and select **App service** from the **multiagent-<inject key="Deployment ID" enableCopy="False"/>** resource group.
 
-So far, we’ve tested image content for singular isolated images. However, if we have a bulk dataset of image content, we could test the bulk dataset at once and receive metrics based on the model’s performance.
+    ![](../media/img52.png)
 
-1. On **Moderate image content** select **Run a bulk test** tab then click on **Browse for a file**.
+13. Next, click on **Browse** to open your Web application.
 
-     ![](../media/image-12.png)
+    ![](../media/img53.png)
 
-1. Within file explorer navigate to **C:\LabFiles\Model-Evaluation-and-Model-Tunning\Labs\data\image_sample_dataset**  select and open **image_sample_dataset.zip** folder.
+    ![](../media/img46.png)
 
-    ![](../media/image-81.png)
-   
-1. Under Test section review **Dataset preview** then select **Configure filters** tab review **Category** and **Threshold level** then click on **Run test**.
+    > **Note**: If an issue occurs when you try to launch the app service, please restart the app service and wait five minutes before trying to launch the app again.
 
-     ![](../media/image-14.png)
 
-1. Review the result.
+   <validation step="4171f03d-fe94-4da9-a945-da0ee2eb4d8c" />
 
-   ![](../media/image-15.png)
+## Summary
 
-   ![](../media/image-16.png)
+In this lab, you have built your own multi-agent Copilot application locally and deployed a multi-agent Copilot application to Azure.
 
-### Task 2.3 : Text moderation using Moderate text content 
-
-We could leverage an AI model to detect whether the text input from our customers is harmful and later use the detection results to implement the necessary precautions.
-
-#### Safe content
-
-Let’s first test some positive customer feedback.
-
-1. In Content Safety Studio, select **Moderate text content**.
-
-   ![](../media/image-70.png)
-
-1. On the **Moderate text content** page, select **Run a simple test** and choose **Safe content** under **select a sample or type your own** section.
-
-   ![](../media/image-71.png)
-
-1. In the Test box, enter the following:
-
-     - I recently used the PowerBurner Camping Stove on my camping trip, and I must say, it was fantastic! It was easy to use, and the heat control was impressive. Great product!
-
-     - Set all Threshold levels to Medium.
-
-     - Select Run test.
-
-       ![](../media/image-72.png)
-     
-1. Review the result.
-
-    ![](../media/image-73.png)
-
-    >**Note**: The content is allowed, and the severity level is Safe across all categories. This was to be expected given the positive and unharmful sentiment of the customer’s feedback.
-
-
-#### Harmful content
-
-But what would happen if we tested a harmful statement? Let’s test with negative customer feedback. While it's OK to dislike a product, we don't want to condone any name calling or degrading statements.
-
-1. In the Test box, enter the following:
-
-    - I recently bought a tent, and I have to say, I'm really disappointed. The tent poles seem flimsy, and the zippers are constantly getting stuck. It's not what I expected from a 
-       high-end tent. You all suck and are a sorry excuse for a brand.
-
-    - Set all Threshold levels to Medium.
-
-    - Select Run test.
-
-      ![](../media/image-75.png)
- 
-   - Although the content is Allowed, the Severity level for Hate is low. To guide our model to block such content, we’d need to adjust the Threshold level for Hate. A lower Threshold level would block any content 
-     that’s a low, medium, or high severity. There’s no room for exceptions!
-
-   - Set the Threshold level for Hate to Low.
-
-   - Select Run test.
-
-     ![](../media/image-76.png)
-    
-   - The content is now Blocked and was rejected by the filter in the Hate category.
-
-      ![](../media/image-77.png)
-
-#### Violent content with misspelling
-
-We can’t anticipate that all text content from our customers would be free of spelling errors. Fortunately, the Moderate text content tool can detect harmful content even if the content has spelling errors. Let’s test this capability on additional customer feedback about an incident with a racoon.
-
-1. Select Violent content with misspelling
-
-    ![](../media/image-74.png)
-
-1. In the Test box, enter the following:
-
-    - I recently purchased a campin cooker, but we had an acident. A racon got inside, was shocked, and died. Its blood is all over the interior. How do I clean the cooker?
-
-    - Set all Threshold levels to Medium.
-
-    - Select Run test.
-
-    - Although the content is Allowed, the Severity level for Violence is should be Low. You could adjust the Threshold level for Violence to try and block such content, however, should we? Consider a scenario where the customer is asking this question in a conversation with the AI-powered customer support agent in hopes of receiving guidance on how to clean the cooker. There may be no ill-intent in submitting this question and therefore, it may be a better choice not to block such content. As the developer, consider various scenarios where such content may be OK before deciding to adjust the filter and block similar content.
-  
-#### Run a bulk test
-So far, we’ve tested image content for singular isolated images. However, if we have a bulk dataset of image content, we could test the bulk dataset at once and receive metrics 
-based on the model’s performance.
-
-We have a bulk dataset of images provided by customers. The dataset also includes sample harmful images to test the model’s ability to detect harmful content. Each record in the 
-dataset includes a label to indicate whether the content is harmful. Let’s do another test round but this time with the data set!
-
-1. Switch to the Run a bulk test tab.
-
-1. Select **Browse for a file** and within file explorer navigate to **C:\LabFiles\Model-Evaluation-and-Model-Tunning\Labs\data\image_sample_dataset**  select and upload **bulk-image-moderation-dataset.csv** file.
-   
-    > Note: The name of the CSV file may vary.
-   
-     ![](../media/image-82.png)
-     
-1. In the Dataset preview section, browse through the Records and their corresponding Label. A 0 indicates that the content is acceptable (not harmful). A 1 indicates that the content is unacceptable (harmful 
-   content).
-
-1. Set all Threshold levels to Medium.
-
-1. Select Run test.
-   
-    ![](../media/image-78.png)
-
-1. Review the result.
-
-    ![](../media/image-79.png)
-
-    ![](../media/image-80.png)
-
-> **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
-  - If you receive a success message, you can proceed to the next task.
-  - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
-  - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help you out.
-
-<validation step="a76d4e32-03f7-494b-9427-63f1702eff54" />
-
-## Review
-In this lab you have completed the following tasks:
-- Implemented Content Safety Measures
-- Monitor and Analyze Content for Compliance
-
-### You have successfully completed the lab.
+### You have successfully completed the lab

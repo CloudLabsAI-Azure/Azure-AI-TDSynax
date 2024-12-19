@@ -1,258 +1,157 @@
-# Lab 11: Run Miyagi App Locally
+# Lab 11: Explore Microsoft Defender for Cloud
 
-### Estimated Duration: 60 minutes
-
-In this lab, the focus is on configuring the Miyagi App for operational readiness. Subsequently, attention shifts to understanding the nuanced implementation of the Recommendation service. The practical phase involves executing the Recommendation service and deploying the Miyagi frontend locally for testing and development. A crucial step includes optimizing data retrieval efficiency by persisting embeddings in Azure AI Search. The project culminates with a broader exploration of the Miyagi App and Recommendation service, emphasizing a personalized user experience. This task-based approach ensures a systematic progression through the project intricacies, facilitating a comprehensive understanding and effective implementation.
+## Lab scenario
+In this lab, you will explore Microsoft Defender for Cloud and learn how Azure Secure Score can be used to improve your organization's security posture. NOTE: the Azure subscription provided by the Authorized Lab Hoster (ALH) limits access and may experience longer than normal delays.
 
 ## Lab objectives
 
-You will be able to complete the following tasks:
+In this lab, you will complete the following tasks:
 
-- Task 1: Setup configuration for miyagi app
-- Task 2: Understanding the implementation of the Recommendation service
-- Task 3: Run recommendation service locally
-- Task 4: Run miyagi frontend locally
-- Task 5: Persist embeddings in Azure AI Search
-- Task 6: Explore the Miyagi App and Recommendation service by Personalizing
-  
-### Task 1: Setup configuration for miyagi app
++ Task 1: Explore on Microsoft Defender for Cloud
++ Task 2: How to enable/disable the various Microsoft Defender for Cloud plans
 
-In this task, you will configure the Miyagi application by updating specific settings in Visual Studio Code. This involves replacing placeholder values in configuration files with the actual values for various Azure resources to ensure proper connectivity and functionality.
+## Estimated timing: 60 minutes
 
-1. Open **Visual Studio Code** from the Lab VM desktop by double-clicking on it.
+## Architecture diagram
 
-   ![](../media/vs.png)
+![](../media/sc900lab6.png)
 
-   >**Note** If **Join us in making promt-flow extension better!** window prompted please click on **No,thanks**.
+## Task 1: Explore on Microsoft Defender for Cloud
 
-   ![](../media/image-rg-01.png)
-   
-1. In **Visual Studio Code** from menu bar select **File(1)>open folder(2)**.
+1. In the Azure portal, in the **Search resources, services, and docs** search for **Microsoft Defender for Cloud (1)**, then from the results list, select **Microsoft Defender for Cloud (2)**.
 
-   ![](../media/image-rg-02.png)
+    ![Picture 1](../media/sc-62.png)
 
-1. Within **File Explorer**, navigate to **C:\LabFiles\miyagi** select **miyagi**(1) click on **Select folder(2)**
+1. If this is the first time you enter Microsoft Defender for Cloud with your subscription, you may land on the Getting started page and be prompted to upgrade.  Scroll to the bottom of the page and select **Skip**. You'll be taken to the Overview page.
 
-   ![](../media/image-rg(003).png)
-
-1. In **Visual Studio Code**, click on **Yes, I trust the authors** when **Do you trust the authors of the files in this folder?** window prompted.
-
-   ![](../media/image-rg-18.png) 
-   
-1. Expand **miyagi>ui** directory and verify that **.env.** file is present. 
-
-1. Expand **miyagi/services/recommendation-service/dotnet** directory and verify that **appsettings.json** file is present.
-
-   ![](../media/open-appsettings.png)
-  
-1. Open **appsettings.json** file and replace the following values for the variables below.
-
-   | **Variables**                | **Values**                                                    |
-   | ---------------------------- |---------------------------------------------------------------|
-   | deploymentOrModelId          | **<inject key="CompletionModel" enableCopy="true"/>**         |
-   | embeddingDeploymentOrModelId | **<inject key="EmbeddingModel" enableCopy="true"/>**          |
-   | endpoint                     | **<inject key="OpenAIEndpoint" enableCopy="true"/>**          |
-   | apiKey                       | **<inject key="OpenAIKey" enableCopy="true"/>**               |
-   | azureCognitiveSearchEndpoint | **<inject key="SearchServiceuri" enableCopy="true"/>**        |
-   | azureCognitiveSearchApiKey   | **<inject key="SearchAPIkey" enableCopy="true"/>**            |
-   | cosmosDbUri                  | **<inject key="CosmosDBuri" enableCopy="true"/>**             |
-   | blobServiceUri               | **<inject key="StorageAccounturi" enableCopy="true"/>**       |
-   | bingApiKey                   | **<inject key="Bing_API_KEY" enableCopy="true"/>**           |
-   | cosmosDbConnectionString     | **<inject key="CosmosDBconnectinString" enableCopy="true"/>** |
-   
-   > **Note**: FYI, the above values/Keys/Endpoints/ConnectionString of Azure Resources are directly injected to labguide. Leave default settings for "cosmosDbContainerName": "recommendations" and "logLevel": "Trace".
-
-      ![](../media/miyagi-image(17)1.png)
-   
-1. Once after updating the values kindly save the file by pressing **CTRL + S**.
-
-1. Navigate to **miyagi/sandbox/usecases/rag/dotnet** and verify **.env** file is present.
-  
-1. In the **.env** file replace the following values for the variables below.
-
-   | **Variables**                          | **Values**                                            |
-   | ---------------------------------------| ------------------------------------------------------|
-   | AZURE_OPENAI_ENDPOINT                  | **<inject key="OpenAIEndpoint" enableCopy="true"/>**  |
-   | AZURE_OPENAI_CHAT_MODEL                | **<inject key="CompletionModel" enableCopy="true"/>** |
-   | AZURE_OPENAI_EMBEDDING_MODEL           | **<inject key="EmbeddingModel" enableCopy="true"/>**  |
-   | AZURE_OPENAI_API_KEY                   | **<inject key="OpenAIKey" enableCopy="true"/>**       |
-   | AZURE_COGNITIVE_SEARCH_ENDPOINT        | **<inject key="SearchServiceuri" enableCopy="true"/>**|
-   |AZURE_COGNITIVE_SEARCH_API_KEY          | **<inject key="SearchAPIkey" enableCopy="true"/>**    |
-   
-   ![](../media/miyagi-image(18).png)
-   
-1. Once after updating the values kindly save the file by pressing **CTRL + S**.
-
-  >**Congratulations** on completing the Task! Now, it's time to validate it. Here are the steps:
-> - Hit the Validate button for the corresponding task. If you receive a success message, you have successfully validated the lab. 
-> - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
-> - If you need any assistance, please contact us at labs-support@spektrasystems.com.
-
-   <validation step="209e971c-dc3f-486b-b7c7-1096724301f7" />
-
-### Task 2: Understanding the implementation of the Recommendation service
-
-Recommendation service implements RAG pattern using Semantic Kernel SDK. The details of the implementation are captured in the Jupyter notebook in the folder miyagi/sandbox/usecases/rag/dotnet. You can open the notebook in VSCode and run the cells to understand step-by-step details of how the Recommendation Service is implemented. Pay special attention to how the RAG pattern is implemented using Semantic Kernel. Select kernel as .NET Interactive in the top right corner of the notebook.
-
-1. In the Visual Studio Code navigate to **miyagi/sandbox/usecases/rag/dotnet** folder and select **Getting-started.ipynb**
-
-   ![](../media/miyagi-image19.png)
-
-1. **Execute the notebook cell by cell** (using either Ctrl + Enter to stay on the same cell or Shift + Enter to advance to the next cell) and observe the results of each cell execution.
-  
-
-   > **Note**: Make sure **.Net Interactive** is in ready State, if not please wait for 2 to 3 minutes. If it is still not loading, kindly close and reopen Visual Studio. Also, please do not click on **Run All** option to execute all the cells at a time which may lead to exceed in token limit that results Error: 503 – Service unreachable. 
-
-      ![](../media/miyagi-image20.png)
-   
-   > **Note**: Incase any issues or errors occur related to exceeding call rate limit of your current OpenAI S0 pricing tier. , Please wait for 15 to 20 seconds and Re-run the cell
-
- >**Congratulations** on completing the Task! Now, it's time to validate it. Here are the steps:
-> - Hit the Validate button for the corresponding task. If you receive a success message, you have successfully validated the lab. 
-> - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
-> - If you need any assistance, please contact us at labs-support@spektrasystems.com.
-
-<validation step="560130f4-fca1-49e1-98a6-97ec61155364" />
-
-### Task 3: Run recommendation service locally
-In this task, you will run the recommendation service locally by using Visual Studio Code to build and run the service in the terminal and then verify its functionality by accessing the Swagger page in the browser.
-
-1. Open a new terminal: by navigating **miyagi/services/recommendation-service/dotnet** and right-click on **dotnet** in cascading menu select **Open in intergate Terminal**.
-
-    ![](../media/task4-1.png)
-
-1. Run the following command to run the recommendation service locally
+    ![Picture 1](../media/sc-63.png)
     
-   ```
-   dotnet build
-   dotnet run
-   ```
-
-   > **Note**: Let the command run, meanwhile you can proceed with the next step.
-   > **Note** The commands dotnet build and dotnet run are fundamental in .NET Core and .NET 5+ environments for building and running .NET applications locally on your machine.
-
-1. Open another tab in Edge, in the browser window paste the following link
-
-   ```
-   http://localhost:5224/swagger/index.html 
-   ```
-
-   **Note**: Refresh the page continuously until you get the swagger page for the recommendation service as depicted in the image below.
-
-   ![](../media/miyagi-image21.png)
-
-
-### Task 4: Run miyagi frontend locally
-In this task, you will run the miyagi frontend locally by installing dependencies using npm and yarn, and then starting the development server. You will verify its functionality by accessing the local development server in the browser.
-
-1. Open a new terminal: by navigating  **miyagi/ui** and right-click on **ui/typescript** , in cascading menu select **Open in intergate Terminal**.
-
-   ![](../media/image-rg-25.png)
-
-1. Run the following command to install the dependencies
+1. From the **Overview** page of Microsoft Defender for Cloud, notice the information available on the page (if you see 0 assessed resources and active recommendations, refresh the browser page, it may take a few minutes).  Information on the top of the page includes the number of Azure subscriptions, the number of Assessed resources, the number of active recommendations, and any security alerts.  On the main body of the page, there are cards representing Security posture, Regulatory compliance, Insights, and more.  Note: The Microsoft Defender for Cloud default policy initiative, which would normally have to be assigned by the admin, has already been assigned as part of the Azure subscription setup. The secure score, however, will show as 0% because there can be up to a 24 hour delay for Azure to reflect an initial score.
    
-    ```
-    npm install --global yarn
-    yarn install
-    yarn dev
-    ```
+    ![Picture 1](../media/sc-83.png)   
 
-   > **Note**: Please wait till the command gets executed successfully. It will take up to 5 minutes. Once **yarn dev** command start executing wait for 2 mins and proceed with next step.
+1. From the top of the page, select **Assessed resources**.  (Note that this is equivalent to having selected Inventory from the left navigation panel of the Microsoft Defender for Cloud home page).
+
+    ![Picture 1](../media/sc-64.png)
    
-   > **Note**: These commands (npm install --global yarn, yarn install, and yarn dev) are indeed essential in JavaScript and TypeScript projects for managing dependencies and running scripts necessary to set up and run applications. They ensure that all required packages are installed (yarn install), and they execute development scripts (yarn dev) defined in the project's configuration (package.json).
+1. This brings you to the **Inventory** page that lists the current resources. Select the virtual machine resource, **sc900-win2**. This resource is associated with the virtual machine you used in the previous lab.
+       
+    ![Picture 1](../media/sc-65.png)
 
-1. Open a new tab in Edge, and browse the following
+    >**Important**: If you're unable to view any resources, please follow below steps:
 
-   ```
-   http://localhost:4001
-   ```
+   - Navigate to  **Environment settings (1)** under **Management** section. On the **Microsoft Defender for Cloud | Environment settings** page, select **Subscription (2)**
 
-   >**Note:** You can get the port from the logs in the terminal.
-
-      ![](../media/error-pop-up.png)
-
-   >**Note:** If you encounter an **Unhandled Runtime Error** pop-up, close the pop-up and also dismiss the error message at the bottom left corner.
-
-     ![](../media/error-side.png)
-   
-
-### Task 5: Persist embeddings in Azure AI Search
-
-In this task, you will persist embeddings in Azure AI Search by executing a POST request in Swagger UI, verifying the execution, and then confirming the creation of the index in the Azure portal.
-
-1. Navigate back to the **swagger UI** page, scroll to **Memory** session, click on **POST /dataset (1)** for expansion, and click on **Try it out (2)**.
-
-   ![](../media/miyagi-image22.png)
-
-1. Replace the below **code (1)** with the below code, and click on **Execute (2)**.
-
-     ```
-     {
-        "metadata": {
-              "userId": "50",
-              "riskLevel": "aggressive",
-              "favoriteSubReddit": "finance",
-              "favoriteAdvisor": "Jim Cramer"
-            },
-          "dataSetName": "intelligent-investor"
-      }
-      ```
-
-     ![](../media/miyagi-image(23).png) 
+     ![Picture 1](../media/sc-900-lab6-image1.png)
+     
+   - In the settings page, from the left navigation pane, choose **Security policies (1)** and enable the toggle for **Microsoft cloud security benchmark (2)**.
       
-1. In the **swagger UI** page, Scroll down to the **Responses** session review that it has been executed successfully by checking the code status is **200**.
+     ![Picture 1](../media/sc-900-lab6-image(2).png)
 
-    ![](../media/miyagi-image24.png)
+   - Return to the Inventory page and refresh to view the resources.
 
-1. Navigate back to the **Azure portal** tab, in Search resources, services and docs (G+/) box at the top of the portal, enter **AI Search**, and then select **AI Search** under services.
+     >**Note** : It will take around 1-1.5 hr to fetch all the resources inside the Inventory.
 
-    ![](../media/miyagi-image25.png)
-
-1. In **Azure AI services | AI Search** tab, select **acs-<inject key="DeploymentID" enableCopy="false"/>**.
-
-    ![](../media/miyagi-image26.png)
+1. The Resource health page for the VM provides a list of recommendations.  From the available list, select any item from the list that shows an **unhealthy** status.
    
-1. In **acs-<inject key="DeploymentID" enableCopy="false"/>** Search service tab, click on **Indexes** **(1)** under Search management, and review the **miyagi-embeddings** **(2)** has been created.   
+      ![Picture 1](../media/sc-85.png)
 
-   ![](../media/miyagi-image27.png)
+1. Click on **View recommeendation for all resources** from the top menu.
 
-   > **Note**: Please click on the refresh button still you can view the **Document Count**.
+    ![Picture 1](../media/sc-67.png)
+   
+1. Note the detailed description.  Select the drop-down arrow next to the Remediation steps. Note how remediation instructions (or links to instructions) are provided along with the option to take action.  Exit the window without taking any action.
 
->**Congratulations** on completing the Task! Now, it's time to validate it. Here are the steps:
-> - Hit the Validate button for the corresponding task. If you receive a success message, you have successfully validated the lab. 
+    ![Picture 1](../media/sc-84.png)
+  
+1. Return to the Microsoft Defender for Cloud overview page, by selecting **Microsoft Defender for Cloud | Overview** from the top of the page, above where it says Resource health.
+
+1. From the main left navigation panel, select **Regulatory compliance (2)** under **Cloud Security (1)**. 
+
+    ![Picture 1](../media/sc-69.png)
+
+1. The regulatory compliance page provides a list of compliance controls based on the Microsoft Cloud security benchmark (verify that the **Microsoft Cloud security benchmark** tab is selected/underlined). Under each control domain is a subset of controls and for each control, there are one or more assessments. Each assessment provides information including description, remediation, and affected resources.    
+
+    ![Picture 1](../media/sc-70.png)
+
+1. Alternatively perform the below steps. 
+
+1. Navigate to the **Manage Compliance Standards** from the top menu.
+
+    ![Picture 1](../media/sc-77.png)
+
+1. On the **Environment Settings page** open select **Subscription**(decrease the resolution if it isn't visible).
+
+    ![Picture 1](../media/sc-78.png)
+
+1.  On the Defender plans page open then go to **Security policy** from the left navigation pane.
+
+    ![Picture 1](../media/sc-79.png)
+
+1. Against **Microsoft cloud security benchmar** click on the elipsis **(...)(1)** and choose **View in Azure policy (2)**.     
+
+    ![Picture 1](../media/sc-80.png)
+
+1. Click on **Assign**.
+
+    ![Picture 1](../media/sc-81.png)
+
+1. In **Scope** option select Azure subscription **(1)** then **Assignment name** as **Microsoft cloud security benchmark (2)** and leave remaining as default and select **Review + Create (3)**.
+
+    ![Picture 1](../media/sc-82.png)
+
+1. Click on **Create**.    
+
+1. Let's explore one of the control domain areas. Select (expand) **NS. Network Security**. A list of controls related to network security is displayed.
+       
+   ![Picture 1](../media/sc-71.png)
+       
+   >**Note**: If you are not able to see the list of controls as provided in the Screenshot, skip the below steps and start Task 2.
+
+1. It takes 2-3 hrs to fetch this list of controls.
+   
+1. Select any option from the list **(1)** and  note the list of **Automated assessments (2)** and how each assessment line item provides information including the **Resource type **(3)**, failed resources **(4)** and compliance status (5)**. Select the assessments listed.  Here you see information including a description, Remediation steps, and Affected resources.
+
+    ![Picture 1](../media/sc-72.png)
+    
+1. Select the **X** on the top-right corner of the screen to close the page.
+   
+1. Select **Overview** from the left navigation panel to  return to the Microsoft Defender for Cloud Overview page.
+     
+1. Keep the Microsoft Defender for Cloud overview page open, you'll use in the next task.
+
+> - **Congratulations** on completing the task! Now, it's time to validate it. 
+> - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task. 
 > - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
-> - If you need any assistance, please contact us at labs-support@spektrasystems.com.
+> - If you need any assistance, please contact us at labs-support@spektrasystems.com. We are available 24/7 to help you out.
 
-   <validation step="32fe7dd9-0728-4b16-b975-374eb199044d" />
+<validation step="7d126a53-2db7-496f-b825-52a4ed7740ef" />
 
-### Task 6: Explore the Miyagi App and Recommendation service  by Personalizing
-In this task, you'll personalize the Miyagi App's Recommendation service by selecting a financial advisor and reviewing the recommendations. Then, you'll check the logs in Visual Studio Code and stop the services.
+## Task 2: How to enable/disable the various Microsoft Defender for Cloud plans
 
-1. Navigate back to the **recommendation service** ui page, and click on **personalize** button.
+Recall that Microsoft Defender for Cloud is offered in two modes: without enhanced security features (free) and with enhanced security features that are available through the Microsoft Defender for Cloud plans. In this task, you discover how to enable/disable the various Microsoft Defender for Cloud plans.
 
-    ![](../media/miyagi-image28.png)
+1. From the Microsoft Defender for Cloud overview page, select the **Environment settings** from the left navigation panel.
 
-1. In the **Personalize** page, select your **Favorite Financial Advisor (1)** and choose **GPT-4 (2)** for the **Reasoning Engine** from the dropdown menu, then click on **Personalize (3)**.
+    ![Picture 1](../media/sc-74.png)
 
-   ![](../media/miyagi-image126.png)
+1. Expand the **Azure** list **(1)(2)** then select the **Existing Subscription (3)** listed next to the yellow key icon.
 
-1. You should see the recommendations from the recommendation service in the Top Stocks widget.
+   ![Picture 1](../media/sc-75.png)
+      
+1. On the Defender plans page, notice how you can select Enable all or select individual Defender plans. 
 
-   ![](../media/miyagi-image30.png) 
+1. Verify that Foundational CSPM status is set to **On**, if not, set it now.  
 
-1. Navigate to the **Visual Studio Code**, and click on **dotnet** from the terminal, you can go through the logs.
+1. On the Defender plans page, click on **Enable all plans (1)** and then select **Save (2)** from the top of the page.
+   
+   ![Picture 1](../media/sc-76.png)
+      
+1. Close all the open browser tabs.
+      
+## Review
+In this lab, you have completed:
+- Explored on Microsoft Defender for Cloud
+- Enabled/Disabled the various Microsoft Defender for Cloud plans
 
-   ![](../media/terminal-output.png)    
-
-1. Once you view the logs, press **Ctrl + C** to stop the **swagger UI** page.
-
-1.  From the **Terminal** select **Node** terminal, press **Ctrl + C** to stop the **recommendation service** ui page.
-      ![](../media/miyagi-image31.png)
-
-1. Now, click on **Next** from the lower right corner to move to the next page.
-
-## Summary
-
-In this Lab, you began with configuring the Miyagi App for operational readiness, followed by a detailed exploration of the Recommendation service's implementation. Practical execution involves running the Recommendation service and deploying the Miyagi frontend locally for testing. Enhancing data retrieval efficiency is a pivotal step, achieved by persisting embeddings in Azure AI Search. The project concludes with a broad exploration of the Miyagi App and Recommendation service, prioritizing a personalized user experience. This systematic approach ensures a thorough understanding and effective implementation throughout the project.
-
-### You have successfully completed this lab.
+## You have successfully completed the lab

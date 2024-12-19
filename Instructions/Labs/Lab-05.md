@@ -1,186 +1,142 @@
-# Lab 5: Getting Started with Building a Chat Application
+# Lab 5: Conversational AI with Bot Service using Power Virtual Agents
 
-### Estimated Duration: 30 minutes
+### Estimated Duration: 1 Hour 30 Minutes
 
-Building a chat application involves designing the user interface for seamless communication, implementing backend services for real-time message handling, and integrating with databases for storing chat histories, while ensuring robust security and scalability to handle user interactions effectively.In this lab, you will be setting up the Open AI resource and installing the application locally.
+Conversational AI with Bot Service using Power Virtual Agents allows users to create and deploy sophisticated chatbots with no code, enabling automated interactions and enhanced customer engagement through intuitive, customizable conversational flows.
 
-## Lab objectives
-In this lab, you will complete the following tasks:
+## Lab Objectives
 
-- Task 1: Create an OpenAI resource and model **(READ-ONLY)**
-- Task 2: Building a ChatGPT-like application on Streamlit with streaming
+- Task 1 - Explore lab scenario
+- Task 2 - Setting up Microsoft Copilot Studio and Create your first Copilot
+- Task 3 - Create a New Topic
+- Task 4 - Test your Copilot
 
-### Task 1: Create an OpenAI resource and model **(READ-ONLY)**
+## Task 1 - Explore lab scenario
 
-**Azure OpenAI**: Azure OpenAI Service is a cloud-based platform that provides access to OpenAI’s powerful language models, including GPT-4, GPT-3.5, Codex, and DALL-E12. This service allows developers to integrate these models into their applications for tasks such as content generation, summarization, semantic search, and natural language to code translation3.
+The power of Machine Learning also comes into play when dealing with human-to-machine interfaces. While classical interfaces like native or web applications are ubiquitous, the new approaches based on conversational AI are becoming increasingly popular. Having the capability to interact with intelligent services using natural language is quickly becoming the norm rather than the exception. Using Conversational AI, analysts can find the research of interest by using simple natural language phrases.
 
-Refer to the link for more information. [Azure OpenAI](https://learn.microsoft.com/en-us/azure/ai-services/openai/overview)
+With Machine Learning (ML) and Natural Language Processing (NLP), Human Machine Interface (HMI) technologies are enjoying an increased adoption year over year. By 2021, [the growth of chatbots in this space is expected to be 25.07%](https://www.technavio.com/report/chatbot-market-industry-analysis).
 
-In this task, you will learn to create an Azure OpenAI resource in the Azure portal, configure its settings, and deploy the GPT-4 model in Azure AI Studio. This involves setting up the resource, navigating to Azure AI Studio, and specifying model deployment details.
 
- > **Note:** This task is **READ-ONLY**. The OpenAI setup is already configured for your environment.
+The way organizations are building conversational systems is evolving, with bots being built and maintained by a mix of technical and non-technical roles. Power Virtual Agents has the capability to extend its capabilities by allowing pro-code users to create dialogs/topics using the Azure Bot Framework Composer today. This experience allows technical and non-technical teams to build and host their solutions on a single platform.
 
-1. In the Azure portal, search for **OpenAI** **(1)** in the top search box, then select **Azure OpenAI** **(2)** under services.
+![Architecture for Lab 4](../media/ai-workflow.png)
 
-   ![](../media/openai8.png "Azure OpenAI")
+## Task 2 - Setting up Microsoft Copilot Studio and Create your first Copilot
+
+1. Navigate to **[Microsoft Copilot Studio page](https://www.microsoft.com/en-us/copilot/microsoft-copilot-studio)** and select **Try Free**. 
+
+   ![](../media/L4T2S1.png)
+
+1. On the **Let's get you started**, enter your azure username **(1)** and select **Next (2)**. Then click on **Sign in.** 
+
+   ![](../media/L4T2S2.png)
+   ![](../media/L4T2S2.2.png)
+
+1. Once **Signed in**, under Create your account, **choose your respective region (1)** from the drop-down menu and enter phone number and click on **Get Started (2)**.
    
-1. On the Azure AI Services page, select **Azure OpenAI (1)** from the menu on the left, then click **Create (2)**. button to start the process of setting up a new Azure OpenAI resource.
-
-   ![](../media/openai_create1.png "Azure OpenAI")
+   ![](../media/L4T2S3.png)
    
-1. In the **Create Azure OpenAI** pane under the **Basics** tab, Configure the details for your new resource, such as selecting the subscription, resource group, region and other required details.
+1. Under the **Confirmation details (1)**, click on **Get Started (2)**.
 
-   | Setting  | Value |
-   -----------|---------
-   | Subscription | Default (1)|
-   | Resource group | **copilot-openai-<inject key="Deployment ID" enableCopy="false"/>** (2) |
-   | Region | **East US** (3) |
-   | Name   | **copilot-openai-<inject key="Deployment ID" enableCopy="false"/>** (4) |
-   | Pricing Tier | **Standard S0** (5) |
+    ![](../media/upd-l3-t3-s4.png)
 
-   ![](../media/L1-T1-S3.png "Azure OpenAI")
+1. You have now successfully signed up for **Microsoft Copilot Studio**.
+
+1. On the **Welcome to Microsoft Copilot Studio (1)** page, choose your respective region and select **Get Started (2)**.
+
+    ![](../media/L4T2S6.png)
+
+1. On the **Create a Copilot** page enter the following details:
+
+   - **Copilot name (1)**: Enter **AI-Bot-<inject key="DeploymentID" enableCopy="false"/>**.
+
+   Now select **Create (2)**.
+
+   ![](../media/create_bot.jpg)
+
+1. Once the Bot is created you will see the Copilot Studio page.
+
+    ![](../media/test-copilot0.1-1.jpg)
+
+## Task 3 - Create a New Topic
+
+1. One the **Microsoft Copilot Studio** page, select **Topics** **(1)**, **Add a topic** **(2)**, from the drop down menu select **Create from description** **(3)**.
+
+   ![](../media/copilot-1.jpg)
+
+2. In Create it with Copilot pane, Name your topic as **Meal delivery options** **(1)**. In Create a topic to ..., enter the given phrase "**Checking for food options based on the city you are in**" **(2)**, then click on **Create** **(3)**.
+
+   ![](../media/cai-l4-t4-s2.png)
+
+3. Once you are in the topic pane, **close** the edit with copilot pane from right-side.
+
+4. On the **topics** pane, click on **+** at the bottom of the **Question** node to **Add node**.
+
+   ![](../media/L4T3S4.png)
+
+5. Select **Ask a question** from the drop-down while adding a node.
+
+   ![](../media/L4T3S5.png)
+
+6. Enter the question as "**What type of food would you like to order?**" **(1)** and under options for users, click on **New option** **(2)** to add types of food. Add **Chinese** and **Italian** **(3)** as shown in the below screenshot.
+
+    ![](../media/cai-l4-t4-s6.png)
    
-1. Accept the default settings for the Network and Tags tabs without making any changes. Click on **Next** to continue to the next step in the creation process.
+7. Now under Condition of Chinese, click on **+** to Add node.
 
-1. In the **Review + Submit** pane, ensure that all validation checks have passed. After confirming that there are no errors, click on the **Create** button to finalize and start the deployment of your Azure OpenAI resource.
+   ![](../media/cai-l4-t4-s7new.png)
 
-     > **Note:** This task is **READ-ONLY**. The OpenAI setup is already configured for your environment. Please **DO NOT** click on **Create**. 
+8. Select **Send a message** from the drop-down while adding a node.
 
-   ![](../media/L1-T1-S5.png "Azure OpenAI")
-   
-1. The deployment process will take approximately 5 minutes to complete. Once it’s finished, click on **Go to Resource** to access and manage your newly created Azure OpenAI resource.
+   ![](../media/cai-l4-t4-s8.png)
 
-   ![](../media/L1-T1-S6.png "Azure OpenAI")
-   
-1. In the Azure OpenAI resource pane, click on **Go to Azure OpenAI Studio** to navigate to the Azure AI Studio, where you can further configure and use your OpenAI models.
+9. Enter the Chinese food items given here in the message section: **Noodles, Spring Rolls, Fried Chicken**
 
-   ![](../media/L1-T1-S7.png "Azure OpenAI")
-   
-1. In the prompt titled **Discover an even better Azure AI Studio experience**, click **Close**.
+   ![](../media/cai-l4-t4-s9.png)
 
-   ![](../media/pop-upclose.png)
+10. Now under Condition of Italian, click on **+** to Add node.
 
-1. In the left navigation pane, click on **Deployments (1)**, then click on **+ Deploy model** **(2)**. Select **Deploy base Model** from the options presented.
+    ![](../media/cai-l4-t4-s10.png)
 
-   ![](../media/deploy-1.jpg)
+11. Select **Send a message** from the drop-down while adding a node.
 
-1. In the **Select a model** window, choose **gpt-4 (1)** from the available options, and then click on **Confirm (2)** to proceed with the model selection.
+    ![](../media/cai-l4-t4-s11.png)
 
-   ![](../media/new11.png)
-   
-1. On the **Deploy Model** tab, input the required details such as Deployment name, Model version, Deployment type, Tokens per Minute Rate Limit, and enable dynamic quota. Once all fields are filled, Click on **Deploy** (6).
+12. Enter the Italian food items given here in the message section: **Pizza, Pasta, Truffles**
 
-   | Setting  | Value |
-   -----------|---------
-   | Deployment name | **copilot-gpt (1)** |
-   | Model version | **0613 (Default) (2)** |
-   | Deployment type | **Standard (3)** |
-   | Tokens per Minute Rate Limit (thousands) | **15K (4)** |
-   | Enable dynamic quota | **Enabled (5)** |
+    ![](../media/cai-l4-t4-s12.png)
 
-     ![](../media/new9.png)
-   
-### Task 2: Building a ChatGPT-like application on Streamlit with streaming  
+13. Review the topic trigger, and click on **Save** from the right-top corner to save the topic.
 
-In this task, you will set up an Azure OpenAI resource, deploy models like GPT-4, and integrate the required API keys. After configuring the application with these details, you will run and test a ChatGPT-like app to verify its functionality, demonstrating how to use Azure OpenAI models in a practical application.
+    ![](../media/cai-l4-t4-s13new.png)
 
-1. In the Azure portal, search for **OpenAI** **(1)** in the top search box, then select **Azure OpenAI** **(2)** under services.
+    <validation step="1f3092c6-421b-4e88-8fe6-b5cb70ca1396" />
 
-   ![](../media/openai8.png "Azure OpenAI")
+    > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+    > - Hit the Validate button for the corresponding task.
+    > - If you receive a success message, you can proceed to the next task. If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+    > - If you need any assistance, please contact us at labs-support@spektrasystems.com. We are available 24/7 to help you out.
 
-2. From the **Azure AI Services | Azure OpenAI** pane, select **Copilot-OpenAI-<inject key="Deployment ID" enableCopy="false"/>**.
 
-   ![](../media/select-openai.png "Azure OpenAI")
+## Task 4 - Test your Copilot
 
-3. In the Azure OpenAI resource pane, click on **Go to Azure AI Studio**. This action will redirect you to the Azure AI Studio interface, where you can manage and interact with your OpenAI models, explore available features, and perform tasks related to model deployment and configuration.
+1. Once the Topic is saved, click on **Test Copilot** from the right-top corner.
 
-   ![](../media/tel-9u.png)
+   ![](../media/test-0012.jpg)
 
-4. In the **Azure OpenAI Studio**, select **Deployments (1)** under Management and verify that the **gpt-4** and **text-embedding-ada-002** models are present with the deployment names as **copilot-gpt** and **CompletionModel**. Review that the model's capacity is set to **15K TPM**. Note the **Azure OpenAI deployment names and model names**.
-   
-   ![](../media/new10.png)
+1. In the Test copilot pane, enter the given phrase ```What are my meal delivery options?``` and then enter the city name as ```Seattle```, You can select the type of food that you are looking for i.e., Chinese or Italian. 
 
-5. Navigate back to the Azure OpenAI resource on the **Azure portal**, select **Key & Endpoint (1)** from the left menu under **Resource Managemant**, and click on **Show Keys (2)**. Note the **KEY 1 (3)** and **Endpoint (4)**.
-
-   ![](../media/l1-t2-s5.png "Azure OpenAI")
-   
-   > **Note**: Steps 5 through 8 demonstrate where to obtain the values used in the configuration.
-
-6. Navigate back to **Azure OpenAI**, select **AI search (1)** from the left menu, and click on **copilot-openai-<inject key="Deployment ID" enableCopy="false"/> (2)**.
-
-   ![](../media/l1-t2-s6.png "Azure OpenAI")
-
-7. From the Overview tab of Cognitive Search, Note the **URL**.
-
-   ![](../media/img36.png "Azure OpenAI")
-
-8. From the left menu, select **Key (1)** under **Settings**, Note the **Primary admin key (2)**.
-
-   ![](../media/img66.png "Azure OpenAI")
-
-9. In the LabVM, open File Explorer, navigate to the below-mentioned path, right-click on the `secrets.env` file, and select open with  **Visual Studio Code**.
-
-   ```
-   C:\LabFiles\OpenAIWorkshop\scenarios\incubations\copilot\ChatGPT
-   ```
-
-    ![](../media/img67.png)
-
-10. In the `secrets.env` file, replace the following values. Press **CTRL+S** to save the file.
-
-   | **Variables**                     | **Values**                                                    |
-   | --------------------------------- |---------------------------------------------------------------|
-   | **AZURE_OPENAI_API_KEY**          | **<inject key="OpenAIKey" enableCopy="true"/>**               |
-   | **AZURE_OPENAI_CHAT_DEPLOYMENT**        | Replace the value with your **YOUR_GPT_MODEL** name that is  **copilot-gpt**          |
-   | **AZURE_OPENAI_ENDPOINT** | **<inject key="OpenAIEndpoint" enableCopy="true"/>**        |
-
-   ![](../media/img68.png)
-
-  > **Note :** If you're unable to see the full **Values** section in the table, click on the three dots (ellipsis) in the top right corner of your browser and try reducing the zoom level for better visibility.
-   
-  ![](../media/zoom.png)
-
-11. Navigate back to File Explorer and open `chatgpt.py` with **Visual Studio Code** to view the code to build a ChatGPT-like app.
-
-    ![](../media/img70.png) 
+   ![](../media/test-copilot-1.jpg)
  
-12. Next, click on the **Eclipse Button** at the top of the screen, then select **Terminal** from the dropdown menu and click on **New Terminal** to open a new terminal window.
+1. Your chatbot should display the names of the meals as shown below.
 
-    ![](../media/img69.png) 
+   ![](../media/test-324.jpg)
 
+Now you have successfully created and tested the Microsoft Copilot.
 
-13. Run the following command in the terminal to change the directory:
+## Summary 
 
-   ```
-   cd C:\LabFiles\OpenAIWorkshop\scenarios\incubations\copilot\ChatGPT
-   ```
-   
-14. To run the application from the command line, enter the following command in the terminal:
+In this lab, you set up Microsoft Copilot Studio, created your first Copilot, and tested it by developing and validating a new topic.
 
-   > **Note**: You can enter your email address below to get notifications. If not, please leave this field blank and click on **Enter**.
-
-   ```
-   streamlit run chatgpt.py
-   ```
-   
-15. Once the command `streamlit run chatgpt.py` has executed, a demo application will be launched and opened in your web browser, hosted locally on your machine.
-
-   ![](../media/img71.png "Azure OpenAI")
-   
-   ![](../media/img72.png "Azure OpenAI")
-
-16. Explore the app by running a few queries. Congratulations! You've built your own ChatGPT-like application in 50 lines of code.
-
-   ![](../media/img73.png "Azure OpenAI")
-
-   > **Note**: You may get a different response. please note chatgpt uses LLM and responses may vary everytime.
-  
-17. Navigate back to **VS Code** and stop the terminal by typing **ctrl + C**.
-
-18. Click the **Next** button located in the bottom right corner of this lab guide to continue with the next exercise.
-
-## Summary
-
-In this lab, you set up an Azure OpenAI resource and model, and built a ChatGPT-like application using Streamlit. You navigated the Azure portal to create and configure your OpenAI resource, verified model deployments, and gathered the necessary API keys and endpoints. After configuring your application with these details, you ran and tested it locally, successfully creating a functional ChatGPT-like app. This process demonstrated the integration of Azure OpenAI models into a practical application, showcasing the steps to build and deploy AI-driven chat functionalities.
-
-### You have successfully completed the lab
+## You have successfully completed this Lab!

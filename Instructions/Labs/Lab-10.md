@@ -1,157 +1,246 @@
-# Lab 10: Explore Microsoft Defender for Cloud
+# Lab 10: Ensuring Responsible AI with Content Safety Studio 
 
 ## Lab scenario
-In this lab, you will explore Microsoft Defender for Cloud and learn how Azure Secure Score can be used to improve your organization's security posture. NOTE: the Azure subscription provided by the Authorized Lab Hoster (ALH) limits access and may experience longer than normal delays.
+In this lab, you will learn about the Content Safety Studio is a powerful tool for managing user-generated content. It features Text Moderation to detect and filter harmful text, such as hate speech and violence, and Image Moderation to analyze and block unsafe or offensive images. This comprehensive solution ensures that all user contributions are safe and appropriate across platforms.
 
 ## Lab objectives
-
-In this lab, you will complete the following tasks:
-
-+ Task 1: Explore on Microsoft Defender for Cloud
-+ Task 2: How to enable/disable the various Microsoft Defender for Cloud plans
-
-## Estimated timing: 60 minutes
-
-## Architecture diagram
-
-![](../media/sc900lab6.png)
-
-## Task 1: Explore on Microsoft Defender for Cloud
-
-1. In the Azure portal, in the **Search resources, services, and docs** search for **Microsoft Defender for Cloud (1)**, then from the results list, select **Microsoft Defender for Cloud (2)**.
-
-    ![Picture 1](../media/sc-62.png)
-
-1. If this is the first time you enter Microsoft Defender for Cloud with your subscription, you may land on the Getting started page and be prompted to upgrade.  Scroll to the bottom of the page and select **Skip**. You'll be taken to the Overview page.
-
-    ![Picture 1](../media/sc-63.png)
-    
-1. From the **Overview** page of Microsoft Defender for Cloud, notice the information available on the page (if you see 0 assessed resources and active recommendations, refresh the browser page, it may take a few minutes).  Information on the top of the page includes the number of Azure subscriptions, the number of Assessed resources, the number of active recommendations, and any security alerts.  On the main body of the page, there are cards representing Security posture, Regulatory compliance, Insights, and more.  Note: The Microsoft Defender for Cloud default policy initiative, which would normally have to be assigned by the admin, has already been assigned as part of the Azure subscription setup. The secure score, however, will show as 0% because there can be up to a 24 hour delay for Azure to reflect an initial score.
-   
-    ![Picture 1](../media/sc-83.png)   
-
-1. From the top of the page, select **Assessed resources**.  (Note that this is equivalent to having selected Inventory from the left navigation panel of the Microsoft Defender for Cloud home page).
-
-    ![Picture 1](../media/sc-64.png)
-   
-1. This brings you to the **Inventory** page that lists the current resources. Select the virtual machine resource, **sc900-win2**. This resource is associated with the virtual machine you used in the previous lab.
-       
-    ![Picture 1](../media/sc-65.png)
-
-    >**Important**: If you're unable to view any resources, please follow below steps:
-
-   - Navigate to  **Environment settings (1)** under **Management** section. On the **Microsoft Defender for Cloud | Environment settings** page, select **Subscription (2)**
-
-     ![Picture 1](../media/sc-900-lab6-image1.png)
-     
-   - In the settings page, from the left navigation pane, choose **Security policies (1)** and enable the toggle for **Microsoft cloud security benchmark (2)**.
-      
-     ![Picture 1](../media/sc-900-lab6-image(2).png)
-
-   - Return to the Inventory page and refresh to view the resources.
-
-     >**Note** : It will take around 1-1.5 hr to fetch all the resources inside the Inventory.
-
-1. The Resource health page for the VM provides a list of recommendations.  From the available list, select any item from the list that shows an **unhealthy** status.
-   
-      ![Picture 1](../media/sc-85.png)
-
-1. Click on **View recommeendation for all resources** from the top menu.
-
-    ![Picture 1](../media/sc-67.png)
-   
-1. Note the detailed description.  Select the drop-down arrow next to the Remediation steps. Note how remediation instructions (or links to instructions) are provided along with the option to take action.  Exit the window without taking any action.
-
-    ![Picture 1](../media/sc-84.png)
+In this lab, you will perform the following:
+- Task 1: Implement Content Safety Measures
+- Task 2: Monitor and Analyze Content for Compliance
   
-1. Return to the Microsoft Defender for Cloud overview page, by selecting **Microsoft Defender for Cloud | Overview** from the top of the page, above where it says Resource health.
+## Task 1: Implement Content Safety Measures
 
-1. From the main left navigation panel, select **Regulatory compliance (2)** under **Cloud Security (1)**. 
+Content Safety resource in Azure to detect and manage harmful content. You'll create and configure the resource, assign the necessary roles, and ensure it's integrated with the Content Safety Studio. This setup allows you to use Azure’s AI tools to moderate content effectively.
 
-    ![Picture 1](../media/sc-69.png)
+1.  Open a new tab, and navigate to the [Content Safety Studio](https://contentsafety.cognitive.azure.com/), If the user is not logged in, Click on Sign in from the top right corner and select the user. Then select 
+    the **Settings** icon in the top navigation menu.
 
-1. The regulatory compliance page provides a list of compliance controls based on the Microsoft Cloud security benchmark (verify that the **Microsoft Cloud security benchmark** tab is selected/underlined). Under each control domain is a subset of controls and for each control, there are one or more assessments. Each assessment provides information including description, remediation, and affected resources.    
+     ![](../media/image-51.png)
 
-    ![Picture 1](../media/sc-70.png)
+1. In the All resources section, select **+ Create a new resource**.
 
-1. Alternatively perform the below steps. 
+     ![](../media/image-52.png)
 
-1. Navigate to the **Manage Compliance Standards** from the top menu.
+1. You will be directed to the **Azure portal**, and on the **Create Content Safety** page, specify the following and click on **Review + Create**.
 
-    ![Picture 1](../media/sc-77.png)
-
-1. On the **Environment Settings page** open select **Subscription**(decrease the resolution if it isn't visible).
-
-    ![Picture 1](../media/sc-78.png)
-
-1.  On the Defender plans page open then go to **Security policy** from the left navigation pane.
-
-    ![Picture 1](../media/sc-79.png)
-
-1. Against **Microsoft cloud security benchmar** click on the elipsis **(...)(1)** and choose **View in Azure policy (2)**.     
-
-    ![Picture 1](../media/sc-80.png)
-
-1. Click on **Assign**.
-
-    ![Picture 1](../media/sc-81.png)
-
-1. In **Scope** option select Azure subscription **(1)** then **Assignment name** as **Microsoft cloud security benchmark (2)** and leave remaining as default and select **Review + Create (3)**.
-
-    ![Picture 1](../media/sc-82.png)
-
-1. Click on **Create**.    
-
-1. Let's explore one of the control domain areas. Select (expand) **NS. Network Security**. A list of controls related to network security is displayed.
-       
-   ![Picture 1](../media/sc-71.png)
-       
-   >**Note**: If you are not able to see the list of controls as provided in the Screenshot, skip the below steps and start Task 2.
-
-1. It takes 2-3 hrs to fetch this list of controls.
-   
-1. Select any option from the list **(1)** and  note the list of **Automated assessments (2)** and how each assessment line item provides information including the **Resource type **(3)**, failed resources **(4)** and compliance status (5)**. Select the assessments listed.  Here you see information including a description, Remediation steps, and Affected resources.
-
-    ![Picture 1](../media/sc-72.png)
+     - Subscription – select your **Azure subscription**
+  
+     - Resource group – select the Resource Group **ODL-MEMT-<inject key="DeploymentID" enableCopy="false"/>**
     
-1. Select the **X** on the top-right corner of the screen to close the page.
+     - Region – **East US**
+  
+     - Name – **Content-Safety-<inject key="DeploymentID" enableCopy="false"/>**
+  
+     - Pricing tier – Free
+  
+       ![](../media/image-53.png)
+
+1. Review the settings and click **Create**.
+
+     ![](../media/image-54.png)
+
+1. Once deployement is successful click on **Go to resource**.
+
+     ![](../media/image-57.png)
+
+1. Back on **Content-Safety-<inject key="DeploymentID" enableCopy="false"/>** page,  from the left navigation pane, select  **Overview** and review the settings then click on Content Safety Studio link.
+
+      ![](../media/image-59.png)
    
-1. Select **Overview** from the left navigation panel to  return to the Microsoft Defender for Cloud Overview page.
+1. Your navigated to the [Content Safety Studio](https://contentsafety.cognitive.azure.com/), select the **Settings** icon in the top navigation menu.
+
+     ![](../media/image-51.png)
+
+1. Make sure Content Safety resources is created.
+
+      ![](../media/image-55.png)
+
+1. Select **Content-Safety-<inject key="DeploymentID" enableCopy="false"/> (1)** and click on **Use resource (2)**.
+
+     ![](../media/image-(60).png)
+   
+## Task 2: Monitor and Analyze Content for Compliance
+
+In this task, you will implement and evaluate content moderation for both images and text using Azure's Content Safety Studio. The goal is to ensure that content uploaded by users complies with safety standards by testing for harmful content and analyzing moderation results.
+
+## Task 2. 1 : Moderate image content for singular isolated images.
+
+1. On **Azure AI | Content Safety Studio** under **Safeguard your image content with built-in-features**, select **Moderate image content**.
+
+     ![](../media/image-11.png)
+
+1. On **Moderate image content** select **Run a simple test** tab, review the options note we have three set content  **Safe content**, **self- harm content** and **AI-generated sexual content**.
+
+#### Safe content
+
+1. Now lets use our image and test then check the result. **Moderate image content** select **Run a simple test** tab then click on **Browse for a file**
+
+     ![](../media/image-61.png)
+
+1. Within **file explorer** navigate to **C:\LabFiles\Model-Evaluation-and-Model-Tunning\Labs\data\image_sample_dataset** select and open **family-builds-campfire.jpg**
+
+1. Review the image and click on **Run test**.
+
+    ![](../media/image-68.png)
+   
+1. Review the result. As expected, this image content is Allowed, and the Severity level is Safe across all categories. 
+
+    ![](../media/image-69.png)
+
+   >**Note**: So far, we’ve tested image content for singular isolated images. However, if we have a bulk dataset of image content, we could test the bulk dataset at once and receive metrics based on the model’s performance.
+
+#### Self harmed content
+
+We should also anticipate customers potentially posting harmful image content. To ensure that we account for such a scenario, let’s test the detection of harmful image content.
+
+1. Select Browse for a file and upload the **bear-attack-blood.JPG** file.
+
+1. Set all Threshold levels to Medium.
+1. Select Run test.
+
+    >**Note**: Rightfully so, the content is Blocked, and was rejected by the Violence filter which has a Severity level of High.
+
+### Task 2.2: Run a bulk test
+
+So far, we’ve tested image content for singular isolated images. However, if we have a bulk dataset of image content, we could test the bulk dataset at once and receive metrics based on the model’s performance.
+
+1. On **Moderate image content** select **Run a bulk test** tab then click on **Browse for a file**.
+
+     ![](../media/image-12.png)
+
+1. Within file explorer navigate to **C:\LabFiles\Model-Evaluation-and-Model-Tunning\Labs\data\image_sample_dataset**  select and open **image_sample_dataset.zip** folder.
+
+    ![](../media/image-81.png)
+   
+1. Under Test section review **Dataset preview** then select **Configure filters** tab review **Category** and **Threshold level** then click on **Run test**.
+
+     ![](../media/image-14.png)
+
+1. Review the result.
+
+   ![](../media/image-15.png)
+
+   ![](../media/image-16.png)
+
+### Task 2.3 : Text moderation using Moderate text content 
+
+We could leverage an AI model to detect whether the text input from our customers is harmful and later use the detection results to implement the necessary precautions.
+
+#### Safe content
+
+Let’s first test some positive customer feedback.
+
+1. In Content Safety Studio, select **Moderate text content**.
+
+   ![](../media/image-70.png)
+
+1. On the **Moderate text content** page, select **Run a simple test** and choose **Safe content** under **select a sample or type your own** section.
+
+   ![](../media/image-71.png)
+
+1. In the Test box, enter the following:
+
+     - I recently used the PowerBurner Camping Stove on my camping trip, and I must say, it was fantastic! It was easy to use, and the heat control was impressive. Great product!
+
+     - Set all Threshold levels to Medium.
+
+     - Select Run test.
+
+       ![](../media/image-72.png)
      
-1. Keep the Microsoft Defender for Cloud overview page open, you'll use in the next task.
+1. Review the result.
 
-> - **Congratulations** on completing the task! Now, it's time to validate it. 
-> - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task. 
-> - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
-> - If you need any assistance, please contact us at labs-support@spektrasystems.com. We are available 24/7 to help you out.
+    ![](../media/image-73.png)
 
-<validation step="7d126a53-2db7-496f-b825-52a4ed7740ef" />
+    >**Note**: The content is allowed, and the severity level is Safe across all categories. This was to be expected given the positive and unharmful sentiment of the customer’s feedback.
 
-## Task 2: How to enable/disable the various Microsoft Defender for Cloud plans
 
-Recall that Microsoft Defender for Cloud is offered in two modes: without enhanced security features (free) and with enhanced security features that are available through the Microsoft Defender for Cloud plans. In this task, you discover how to enable/disable the various Microsoft Defender for Cloud plans.
+#### Harmful content
 
-1. From the Microsoft Defender for Cloud overview page, select the **Environment settings** from the left navigation panel.
+But what would happen if we tested a harmful statement? Let’s test with negative customer feedback. While it's OK to dislike a product, we don't want to condone any name calling or degrading statements.
 
-    ![Picture 1](../media/sc-74.png)
+1. In the Test box, enter the following:
 
-1. Expand the **Azure** list **(1)(2)** then select the **Existing Subscription (3)** listed next to the yellow key icon.
+    - I recently bought a tent, and I have to say, I'm really disappointed. The tent poles seem flimsy, and the zippers are constantly getting stuck. It's not what I expected from a 
+       high-end tent. You all suck and are a sorry excuse for a brand.
 
-   ![Picture 1](../media/sc-75.png)
-      
-1. On the Defender plans page, notice how you can select Enable all or select individual Defender plans. 
+    - Set all Threshold levels to Medium.
 
-1. Verify that Foundational CSPM status is set to **On**, if not, set it now.  
+    - Select Run test.
 
-1. On the Defender plans page, click on **Enable all plans (1)** and then select **Save (2)** from the top of the page.
+      ![](../media/image-75.png)
+ 
+   - Although the content is Allowed, the Severity level for Hate is low. To guide our model to block such content, we’d need to adjust the Threshold level for Hate. A lower Threshold level would block any content 
+     that’s a low, medium, or high severity. There’s no room for exceptions!
+
+   - Set the Threshold level for Hate to Low.
+
+   - Select Run test.
+
+     ![](../media/image-76.png)
+    
+   - The content is now Blocked and was rejected by the filter in the Hate category.
+
+      ![](../media/image-77.png)
+
+#### Violent content with misspelling
+
+We can’t anticipate that all text content from our customers would be free of spelling errors. Fortunately, the Moderate text content tool can detect harmful content even if the content has spelling errors. Let’s test this capability on additional customer feedback about an incident with a racoon.
+
+1. Select Violent content with misspelling
+
+    ![](../media/image-74.png)
+
+1. In the Test box, enter the following:
+
+    - I recently purchased a campin cooker, but we had an acident. A racon got inside, was shocked, and died. Its blood is all over the interior. How do I clean the cooker?
+
+    - Set all Threshold levels to Medium.
+
+    - Select Run test.
+
+    - Although the content is Allowed, the Severity level for Violence is should be Low. You could adjust the Threshold level for Violence to try and block such content, however, should we? Consider a scenario where the customer is asking this question in a conversation with the AI-powered customer support agent in hopes of receiving guidance on how to clean the cooker. There may be no ill-intent in submitting this question and therefore, it may be a better choice not to block such content. As the developer, consider various scenarios where such content may be OK before deciding to adjust the filter and block similar content.
+  
+#### Run a bulk test
+So far, we’ve tested image content for singular isolated images. However, if we have a bulk dataset of image content, we could test the bulk dataset at once and receive metrics 
+based on the model’s performance.
+
+We have a bulk dataset of images provided by customers. The dataset also includes sample harmful images to test the model’s ability to detect harmful content. Each record in the 
+dataset includes a label to indicate whether the content is harmful. Let’s do another test round but this time with the data set!
+
+1. Switch to the Run a bulk test tab.
+
+1. Select **Browse for a file** and within file explorer navigate to **C:\LabFiles\Model-Evaluation-and-Model-Tunning\Labs\data\image_sample_dataset**  select and upload **bulk-image-moderation-dataset.csv** file.
    
-   ![Picture 1](../media/sc-76.png)
-      
-1. Close all the open browser tabs.
-      
-## Review
-In this lab, you have completed:
-- Explored on Microsoft Defender for Cloud
-- Enabled/Disabled the various Microsoft Defender for Cloud plans
+    > Note: The name of the CSV file may vary.
+   
+     ![](../media/image-82.png)
+     
+1. In the Dataset preview section, browse through the Records and their corresponding Label. A 0 indicates that the content is acceptable (not harmful). A 1 indicates that the content is unacceptable (harmful 
+   content).
 
-## You have successfully completed the lab
+1. Set all Threshold levels to Medium.
+
+1. Select Run test.
+   
+    ![](../media/image-78.png)
+
+1. Review the result.
+
+    ![](../media/image-79.png)
+
+    ![](../media/image-80.png)
+
+> **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+  - If you receive a success message, you can proceed to the next task.
+  - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+  - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help you out.
+
+<validation step="a76d4e32-03f7-494b-9427-63f1702eff54" />
+
+## Review
+In this lab you have completed the following tasks:
+- Implemented Content Safety Measures
+- Monitor and Analyze Content for Compliance
+
+### You have successfully completed the lab.
