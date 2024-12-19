@@ -1,95 +1,138 @@
-# Lab 8: Understand function calling in Open AI GPT
+# Lab 8: Understand HR Copilot Demo Application 
 
-### Estimated Duration: 30 minutes
+### Estimated Duration: 60 minutes
 
-Over the last couple of years, language models like GPT-3 and GPT-4 have demonstrated their immense power and versatility. These models have been successfully applied in various scenarios, showcasing their capabilities. While these models are already valuable on their own, the Azure OpenAI Service now offers an exciting new feature called function calling. With function calling, the latest versions of GPT-3 and GPT-4 can generate structured JSON outputs based on functions specified in the request. This allows developers to integrate the models with other systems and tools, enabling even more possibilities. However, it's important to note that while the models can generate the function calls, the execution of these calls remains under your control, ensuring that you maintain full control over the process. In this overview, we will explore how function calling works, provide examples of its use cases, and guide you through the steps to leverage this powerful feature in Azure OpenAI Service. 
+When the scope of automation spans across multiple functional domains, like humans, an agent may perform better when it can specialize in a single area. So instead of stuffing a single agent with multiple capabilities, we can employ a multiple-agent model, each specializing in a single domain. These agents are managed and coordinated by a manager agent (agent runner). This is called the multi-agent copilot model. The agent runner is responsible for promoting the right agent from the agent pool to be the active agent to interact with the user. It is also responsible for transferring relevant context from agent to agent to ensure continuity. In this model, the agent runner relies on the specialist agent's cue to back off from the conversation to start the transfer. Each specialist agent has to implement a skill to send a notification (back-off method) when it thinks its skillset cannot handle the user's request. On the other hand, the decision on exactly which agent should be selected to take over the conversation is still with the agent runner. When receiving such a request, the agent runner will review the input from the requesting agent to decide which agent to select for the job. This skill also relies on a LLM. The agent runner runs each specialist agent's run method. There can be some persistent context that should be available across agents' sessions. This is implemented as the persistent memory at agent runner. Each specialist agent, depending on the requirement for skill, can be powered by a gpt-35-turbo or gpt-4. The multi-agent solution has the same application platform (streamlit) as the single HR Copilot.
+
+**Bicep**: Bicep is a domain-specific language (DSL) that uses declarative syntax to deploy Azure resources. In a Bicep file, you define the infrastructure you want to deploy to Azure, and then use that file throughout the development lifecycle to repeatedly deploy your infrastructure. Your resources are deployed in a consistent manner.
 
 ## Lab objectives
 
 You will be able to complete the following tasks:
 
-- Task 1: Understand Function calling
-  
-### Task 1: Understand Function calling
+- Task 1: Build your own multi-agent Copilot application locally
+- Task 2: Deploy a multi-agent Copilot application to Azure
 
-In this task, you will configure and test a project in Visual Studio Code by updating necessary settings, installing dependencies, and executing a Jupyter notebook. This ensures that the project is correctly set up and functioning as expected with the integrated APIs and modules.
+## Task 1: Build your own multi-agent Copilot application locally
 
-**Function calling**: Function calling allows you to connect models like gpt-4o to external tools and systems. This is useful for many things such as empowering AI assistants with capabilities, or building deep integrations between your applications and the models.
+In this task, you will update the `secrets.env` file and run the HR Copilot application locally using `streamlit` to validate its functionality with sample queries. You will then prepare to deploy the multi-agent Copilot application to Azure by accessing the `main.bicep` file.
 
- Refer to the link for more information.
- 
- - [Function Calling](https://platform.openai.com/docs/guides/function-calling)
- - [Function Calling with Azure OpenAI Service](https://learn.microsoft.com/en-us/azure/ai-services/openai/how-to/function-calling)
- - [Function calling is now available in Azure OpenAI Service](https://techcommunity.microsoft.com/t5/azure-ai-services-blog/function-calling-is-now-available-in-azure-openai-service/ba-p/3879241)
+1. Return to the `secrets.env` file that you previously opened in Visual Studio Code. This file contains environment variables essential for configuring your application.
 
-1. Open **Visual Studio Code** from the desktop; next, click on **File** and select **Open Folder**.
+1. Replace **USE_AZCS**="**False**" in the Visual Studio code, then press **CTRL + S** to save the file.
 
-    ![](../media/img55.png) 
+   ![](../media/L4-T1-S0.png)
 
-2. Navigate to the below-mentioned path and click on **Select folder**. 
+1. Next, click on the **Eclipse Button** at the top of the screen, then select **Terminal** from the dropdown menu and click on **New Terminal** to open a new terminal window.
 
-    ```
-    C:\LabFiles\openai\Basic_Samples\Functions
-    ```
+    ![](../media/img69.png) 
 
-   ![](../media/l2-t1-s2.png) 
+1. Run the below command to change the directory.
 
-4. On the **Do you trust the authors of the files in this folder?** pop-up check the box next to **Trust the authors of all files in the parent folder 'Basic_Samples'**, and select **Yes, I trust the authors**.
+   ```
+   cd C:\LabFiles\OpenAIWorkshop\scenarios\incubations\copilot\employee_support
+   ```
 
-    ![](../media/img57.png) 
+3. To run the application from the command line, navigate back to Command Prompt and run the below command:
 
-5. In the **Functions** folder, open `config.json` and replace the following values with the ones you copied earlier. Next, press **CTRL + S** to save the file.
+   >**Note**: Here, you can enter your email address below to get notifications. Otherwise, leave this field blank and then click on **Enter**.
 
-   | **Variables**                | **Values**                                                    |
-   | ---------------------------- |---------------------------------------------------------------|
-   | **DEPLOYMENT_NAME**          |  **copilot-gpt**              |
-   | **OPENAI_API_BASE**          | **<inject key="OpenAIEndpoint" enableCopy="true"/>**          |
-   | **OPENAI_API_KEY**           | **<inject key="OpenAIKey" enableCopy="true"/>**               |
-   | **SEARCH_SERVICE_ENDPOINT**  | **<inject key="SearchServiceuri" enableCopy="true"/>**        |
-   | **SEARCH_ADMIN_KEY**         | **<inject key="SearchAPIkey" enableCopy="true"/>**            |
+   ```
+   streamlit run multi_agent_copilot.py
+   ```
+
+4. Once the execution of `streamlit run multi_agent_copilot.py` is completed, a locally hosted HR Copliot application will be opened in the web browser. 
+
+   ![](../media/img21.png)
+
+   ![](../media/img22.png)
+
+5. Run the following query to validate the identity of the employee:
+
+   ```
+   Sharon 1234
+   ```
+
+   ![](../media/img47.png)
+
+6. Enter an example question such as `How do I reset my password?`. The questions are answered by the Copilot by searching a knowledge base.
+
+   ![](../media/img48.png)
+
+7. Navigate back to **CMD** and stop the terminal by typing **ctrl + C**.
    
-   ![](../media/img58.png) 
+## Task 2: Deploy a multi-agent Copilot application to Azure
 
-7. Next, click on the **Eclipse Button (1)** at the top of the screen, then select **Terminal (2)** from the dropdown menu, and click on **New Terminal (3)** to open a new terminal window.
+In this task, you will update the `main.bicep` file to reference `multi_agent_copilot.py`, authenticate with Azure, and deploy your multi-agent Copilot application. After setting up the environment and provisioning resources, you will navigate to the Azure portal to verify the deployment and access your web application.
 
-    ![](../media/img59.png) 
+1. Return to the `main.bicep` file that you previously opened.
 
-8. In the new terminal, run the following command to install the required modules:
+2. In the `main.bicep` file, replace the file name in **Line 49** with `multi_agent_copilot.py` and press **CTRL + S** to save the file.
 
-    ```
-    pip install -r requirements.txt
-    ```
+    ![](../media/img51.png)
 
-9. Once the required modules are installed, close the terminal.
+4. Run the below command to change the directory.
 
-10. Open the `working_with_functions.ipynb` file from the left menu.
+   ```bash
+   cd C:\LabFiles\OpenAIWorkshop
+   ```
 
-    ![](../media/img60.png) 
+5. Run the below command to **Authenticate with Azure**. It will redirect you to the Azure Authorize website, where you can select your account.
 
-11. Click on the **Run (1)** button in the first cell. Once the pop-up `Install/Enable suggested extensions Python + Jupyter` appears, click on it to install the Python and Jupyter extensions. 
+- **azd** is the Azure Developer CLI, a command-line tool that simplifies the management and deployment of Azure applications. It helps streamline various tasks related to Azure resources, including authentication, configuration, and deployment of resources.
 
-    ![](../media/img61.png) 
+   ```bash
+   azd auth login
+   ```
 
-12. Next, on the **Choose a Kernel source** pop-up, select **Python Environments**. This will initiate the installation of the extension.
+6. Run the below command to set up the resource group deployment and **Create a new environment**. Make sure to replace `{DeploymentId}` with **<inject key="Deployment ID" enableCopy="true"/>** in the below command.
 
-       ![](../media/img62.png) 
+   ```bash
+   azd config set alpha.resourceGroupDeployments on
+   ```
+   
+   ```bash
+   azd env new azure-copilot-{DeploymentId}
+   ```
 
-13. Next, on the **Select a Python Environment** pop-up, select **Python 3.12.4**. This will set the Python Environment. 
+7. Run the below command to provision Azure resources and deploy your project with a single command.
 
-       ![](../media/select-python.png) 
+   ```bash
+   azd up
+   ```
+   
+8. Please select your Azure subscription to use, enter `1`, and click on the **Enter** button.
 
-    > **Note**: If prompt **Runnning cells with 'c:\pytjon312\python.exe' requires the ipykernel package.** then click on **Install**.
+   ![](../media/img29.png)
 
-      ![](../media/install.png)
+9. Please select an Azure location to use, select the location as **<inject key="Region" enableCopy="false"/>** location, and click on the **Enter** button. You can change the location using the up and down arrows.
 
-14. Execute the notebook cell by cell (using either `Ctrl + Enter` to stay on the same cell or `Shift + Enter` to advance to the next cell) and observe the results of each cell execution.
+   ![](../media/img30.png)
 
-       ![](../media/openai1.1.png)
+10. Next, select the **multiagent-<inject key="Deployment ID" enableCopy="False"/>** resource group and hit **ENTER**.
 
-       > **Note:** Please ensure to run the notebook end to end and observe the output for each cell. 
+    ![](../media/img50.png)
+
+11. Once the deployment succeeds, you will see the following message **SUCCESS: Your application was provisioned and deployed to Azure**. The deployment might take 5-10 minutes. It is producing a web package file, then creating the resource and publishing the package to the app service.
+
+
+12. Navigate back to the Azure portal and select **App service** from the **multiagent-<inject key="Deployment ID" enableCopy="False"/>** resource group.
+
+    ![](../media/img52.png)
+
+13. Next, click on **Browse** to open your Web application.
+
+    ![](../media/img53.png)
+
+    ![](../media/img46.png)
+
+    > **Note**: If an issue occurs when you try to launch the app service, please restart the app service and wait five minutes before trying to launch the app again.
+
+
+   <validation step="4171f03d-fe94-4da9-a945-da0ee2eb4d8c" />
 
 ## Summary
 
-In this lab, you have understood Function calling and learned how to set up a Visual Studio Code environment, configure the necessary files for your project, install required modules, and execute a Jupyter notebook. You’ve also gained experience with handling Python environments, using terminal commands, and verifying code execution in Jupyter notebooks.
+In this lab, you have built your own multi-agent Copilot application locally and deployed a multi-agent Copilot application to Azure.
 
 ### You have successfully completed the lab

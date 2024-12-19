@@ -1,138 +1,157 @@
-# Lab 10: Understand HR Copilot Demo Application 
+# Lab 10: Explore Microsoft Defender for Cloud
 
-### Estimated Duration: 60 minutes
-
-When the scope of automation spans across multiple functional domains, like humans, an agent may perform better when it can specialize in a single area. So instead of stuffing a single agent with multiple capabilities, we can employ a multiple-agent model, each specializing in a single domain. These agents are managed and coordinated by a manager agent (agent runner). This is called the multi-agent copilot model. The agent runner is responsible for promoting the right agent from the agent pool to be the active agent to interact with the user. It is also responsible for transferring relevant context from agent to agent to ensure continuity. In this model, the agent runner relies on the specialist agent's cue to back off from the conversation to start the transfer. Each specialist agent has to implement a skill to send a notification (back-off method) when it thinks its skillset cannot handle the user's request. On the other hand, the decision on exactly which agent should be selected to take over the conversation is still with the agent runner. When receiving such a request, the agent runner will review the input from the requesting agent to decide which agent to select for the job. This skill also relies on a LLM. The agent runner runs each specialist agent's run method. There can be some persistent context that should be available across agents' sessions. This is implemented as the persistent memory at agent runner. Each specialist agent, depending on the requirement for skill, can be powered by a gpt-35-turbo or gpt-4. The multi-agent solution has the same application platform (streamlit) as the single HR Copilot.
-
-**Bicep**: Bicep is a domain-specific language (DSL) that uses declarative syntax to deploy Azure resources. In a Bicep file, you define the infrastructure you want to deploy to Azure, and then use that file throughout the development lifecycle to repeatedly deploy your infrastructure. Your resources are deployed in a consistent manner.
+## Lab scenario
+In this lab, you will explore Microsoft Defender for Cloud and learn how Azure Secure Score can be used to improve your organization's security posture. NOTE: the Azure subscription provided by the Authorized Lab Hoster (ALH) limits access and may experience longer than normal delays.
 
 ## Lab objectives
 
-You will be able to complete the following tasks:
+In this lab, you will complete the following tasks:
 
-- Task 1: Build your own multi-agent Copilot application locally
-- Task 2: Deploy a multi-agent Copilot application to Azure
++ Task 1: Explore on Microsoft Defender for Cloud
++ Task 2: How to enable/disable the various Microsoft Defender for Cloud plans
 
-## Task 1: Build your own multi-agent Copilot application locally
+## Estimated timing: 60 minutes
 
-In this task, you will update the `secrets.env` file and run the HR Copilot application locally using `streamlit` to validate its functionality with sample queries. You will then prepare to deploy the multi-agent Copilot application to Azure by accessing the `main.bicep` file.
+## Architecture diagram
 
-1. Return to the `secrets.env` file that you previously opened in Visual Studio Code. This file contains environment variables essential for configuring your application.
+![](../media/sc900lab6.png)
 
-1. Replace **USE_AZCS**="**False**" in the Visual Studio code, then press **CTRL + S** to save the file.
+## Task 1: Explore on Microsoft Defender for Cloud
 
-   ![](../media/L4-T1-S0.png)
+1. In the Azure portal, in the **Search resources, services, and docs** search for **Microsoft Defender for Cloud (1)**, then from the results list, select **Microsoft Defender for Cloud (2)**.
 
-1. Next, click on the **Eclipse Button** at the top of the screen, then select **Terminal** from the dropdown menu and click on **New Terminal** to open a new terminal window.
+    ![Picture 1](../media/sc-62.png)
 
-    ![](../media/img69.png) 
+1. If this is the first time you enter Microsoft Defender for Cloud with your subscription, you may land on the Getting started page and be prompted to upgrade.  Scroll to the bottom of the page and select **Skip**. You'll be taken to the Overview page.
 
-1. Run the below command to change the directory.
-
-   ```
-   cd C:\LabFiles\OpenAIWorkshop\scenarios\incubations\copilot\employee_support
-   ```
-
-3. To run the application from the command line, navigate back to Command Prompt and run the below command:
-
-   >**Note**: Here, you can enter your email address below to get notifications. Otherwise, leave this field blank and then click on **Enter**.
-
-   ```
-   streamlit run multi_agent_copilot.py
-   ```
-
-4. Once the execution of `streamlit run multi_agent_copilot.py` is completed, a locally hosted HR Copliot application will be opened in the web browser. 
-
-   ![](../media/img21.png)
-
-   ![](../media/img22.png)
-
-5. Run the following query to validate the identity of the employee:
-
-   ```
-   Sharon 1234
-   ```
-
-   ![](../media/img47.png)
-
-6. Enter an example question such as `How do I reset my password?`. The questions are answered by the Copilot by searching a knowledge base.
-
-   ![](../media/img48.png)
-
-7. Navigate back to **CMD** and stop the terminal by typing **ctrl + C**.
+    ![Picture 1](../media/sc-63.png)
+    
+1. From the **Overview** page of Microsoft Defender for Cloud, notice the information available on the page (if you see 0 assessed resources and active recommendations, refresh the browser page, it may take a few minutes).  Information on the top of the page includes the number of Azure subscriptions, the number of Assessed resources, the number of active recommendations, and any security alerts.  On the main body of the page, there are cards representing Security posture, Regulatory compliance, Insights, and more.  Note: The Microsoft Defender for Cloud default policy initiative, which would normally have to be assigned by the admin, has already been assigned as part of the Azure subscription setup. The secure score, however, will show as 0% because there can be up to a 24 hour delay for Azure to reflect an initial score.
    
-## Task 2: Deploy a multi-agent Copilot application to Azure
+    ![Picture 1](../media/sc-83.png)   
 
-In this task, you will update the `main.bicep` file to reference `multi_agent_copilot.py`, authenticate with Azure, and deploy your multi-agent Copilot application. After setting up the environment and provisioning resources, you will navigate to the Azure portal to verify the deployment and access your web application.
+1. From the top of the page, select **Assessed resources**.  (Note that this is equivalent to having selected Inventory from the left navigation panel of the Microsoft Defender for Cloud home page).
 
-1. Return to the `main.bicep` file that you previously opened.
-
-2. In the `main.bicep` file, replace the file name in **Line 49** with `multi_agent_copilot.py` and press **CTRL + S** to save the file.
-
-    ![](../media/img51.png)
-
-4. Run the below command to change the directory.
-
-   ```bash
-   cd C:\LabFiles\OpenAIWorkshop
-   ```
-
-5. Run the below command to **Authenticate with Azure**. It will redirect you to the Azure Authorize website, where you can select your account.
-
-- **azd** is the Azure Developer CLI, a command-line tool that simplifies the management and deployment of Azure applications. It helps streamline various tasks related to Azure resources, including authentication, configuration, and deployment of resources.
-
-   ```bash
-   azd auth login
-   ```
-
-6. Run the below command to set up the resource group deployment and **Create a new environment**. Make sure to replace `{DeploymentId}` with **<inject key="Deployment ID" enableCopy="true"/>** in the below command.
-
-   ```bash
-   azd config set alpha.resourceGroupDeployments on
-   ```
+    ![Picture 1](../media/sc-64.png)
    
-   ```bash
-   azd env new azure-copilot-{DeploymentId}
-   ```
+1. This brings you to the **Inventory** page that lists the current resources. Select the virtual machine resource, **sc900-win2**. This resource is associated with the virtual machine you used in the previous lab.
+       
+    ![Picture 1](../media/sc-65.png)
 
-7. Run the below command to provision Azure resources and deploy your project with a single command.
+    >**Important**: If you're unable to view any resources, please follow below steps:
 
-   ```bash
-   azd up
-   ```
+   - Navigate to  **Environment settings (1)** under **Management** section. On the **Microsoft Defender for Cloud | Environment settings** page, select **Subscription (2)**
+
+     ![Picture 1](../media/sc-900-lab6-image1.png)
+     
+   - In the settings page, from the left navigation pane, choose **Security policies (1)** and enable the toggle for **Microsoft cloud security benchmark (2)**.
+      
+     ![Picture 1](../media/sc-900-lab6-image(2).png)
+
+   - Return to the Inventory page and refresh to view the resources.
+
+     >**Note** : It will take around 1-1.5 hr to fetch all the resources inside the Inventory.
+
+1. The Resource health page for the VM provides a list of recommendations.  From the available list, select any item from the list that shows an **unhealthy** status.
    
-8. Please select your Azure subscription to use, enter `1`, and click on the **Enter** button.
+      ![Picture 1](../media/sc-85.png)
 
-   ![](../media/img29.png)
+1. Click on **View recommeendation for all resources** from the top menu.
 
-9. Please select an Azure location to use, select the location as **<inject key="Region" enableCopy="false"/>** location, and click on the **Enter** button. You can change the location using the up and down arrows.
+    ![Picture 1](../media/sc-67.png)
+   
+1. Note the detailed description.  Select the drop-down arrow next to the Remediation steps. Note how remediation instructions (or links to instructions) are provided along with the option to take action.  Exit the window without taking any action.
 
-   ![](../media/img30.png)
+    ![Picture 1](../media/sc-84.png)
+  
+1. Return to the Microsoft Defender for Cloud overview page, by selecting **Microsoft Defender for Cloud | Overview** from the top of the page, above where it says Resource health.
 
-10. Next, select the **multiagent-<inject key="Deployment ID" enableCopy="False"/>** resource group and hit **ENTER**.
+1. From the main left navigation panel, select **Regulatory compliance (2)** under **Cloud Security (1)**. 
 
-    ![](../media/img50.png)
+    ![Picture 1](../media/sc-69.png)
 
-11. Once the deployment succeeds, you will see the following message **SUCCESS: Your application was provisioned and deployed to Azure**. The deployment might take 5-10 minutes. It is producing a web package file, then creating the resource and publishing the package to the app service.
+1. The regulatory compliance page provides a list of compliance controls based on the Microsoft Cloud security benchmark (verify that the **Microsoft Cloud security benchmark** tab is selected/underlined). Under each control domain is a subset of controls and for each control, there are one or more assessments. Each assessment provides information including description, remediation, and affected resources.    
 
+    ![Picture 1](../media/sc-70.png)
 
-12. Navigate back to the Azure portal and select **App service** from the **multiagent-<inject key="Deployment ID" enableCopy="False"/>** resource group.
+1. Alternatively perform the below steps. 
 
-    ![](../media/img52.png)
+1. Navigate to the **Manage Compliance Standards** from the top menu.
 
-13. Next, click on **Browse** to open your Web application.
+    ![Picture 1](../media/sc-77.png)
 
-    ![](../media/img53.png)
+1. On the **Environment Settings page** open select **Subscription**(decrease the resolution if it isn't visible).
 
-    ![](../media/img46.png)
+    ![Picture 1](../media/sc-78.png)
 
-    > **Note**: If an issue occurs when you try to launch the app service, please restart the app service and wait five minutes before trying to launch the app again.
+1.  On the Defender plans page open then go to **Security policy** from the left navigation pane.
 
+    ![Picture 1](../media/sc-79.png)
 
-   <validation step="4171f03d-fe94-4da9-a945-da0ee2eb4d8c" />
+1. Against **Microsoft cloud security benchmar** click on the elipsis **(...)(1)** and choose **View in Azure policy (2)**.     
 
-## Summary
+    ![Picture 1](../media/sc-80.png)
 
-In this lab, you have built your own multi-agent Copilot application locally and deployed a multi-agent Copilot application to Azure.
+1. Click on **Assign**.
 
-### You have successfully completed the lab
+    ![Picture 1](../media/sc-81.png)
+
+1. In **Scope** option select Azure subscription **(1)** then **Assignment name** as **Microsoft cloud security benchmark (2)** and leave remaining as default and select **Review + Create (3)**.
+
+    ![Picture 1](../media/sc-82.png)
+
+1. Click on **Create**.    
+
+1. Let's explore one of the control domain areas. Select (expand) **NS. Network Security**. A list of controls related to network security is displayed.
+       
+   ![Picture 1](../media/sc-71.png)
+       
+   >**Note**: If you are not able to see the list of controls as provided in the Screenshot, skip the below steps and start Task 2.
+
+1. It takes 2-3 hrs to fetch this list of controls.
+   
+1. Select any option from the list **(1)** and  note the list of **Automated assessments (2)** and how each assessment line item provides information including the **Resource type **(3)**, failed resources **(4)** and compliance status (5)**. Select the assessments listed.  Here you see information including a description, Remediation steps, and Affected resources.
+
+    ![Picture 1](../media/sc-72.png)
+    
+1. Select the **X** on the top-right corner of the screen to close the page.
+   
+1. Select **Overview** from the left navigation panel to  return to the Microsoft Defender for Cloud Overview page.
+     
+1. Keep the Microsoft Defender for Cloud overview page open, you'll use in the next task.
+
+> - **Congratulations** on completing the task! Now, it's time to validate it. 
+> - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task. 
+> - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+> - If you need any assistance, please contact us at labs-support@spektrasystems.com. We are available 24/7 to help you out.
+
+<validation step="7d126a53-2db7-496f-b825-52a4ed7740ef" />
+
+## Task 2: How to enable/disable the various Microsoft Defender for Cloud plans
+
+Recall that Microsoft Defender for Cloud is offered in two modes: without enhanced security features (free) and with enhanced security features that are available through the Microsoft Defender for Cloud plans. In this task, you discover how to enable/disable the various Microsoft Defender for Cloud plans.
+
+1. From the Microsoft Defender for Cloud overview page, select the **Environment settings** from the left navigation panel.
+
+    ![Picture 1](../media/sc-74.png)
+
+1. Expand the **Azure** list **(1)(2)** then select the **Existing Subscription (3)** listed next to the yellow key icon.
+
+   ![Picture 1](../media/sc-75.png)
+      
+1. On the Defender plans page, notice how you can select Enable all or select individual Defender plans. 
+
+1. Verify that Foundational CSPM status is set to **On**, if not, set it now.  
+
+1. On the Defender plans page, click on **Enable all plans (1)** and then select **Save (2)** from the top of the page.
+   
+   ![Picture 1](../media/sc-76.png)
+      
+1. Close all the open browser tabs.
+      
+## Review
+In this lab, you have completed:
+- Explored on Microsoft Defender for Cloud
+- Enabled/Disabled the various Microsoft Defender for Cloud plans
+
+## You have successfully completed the lab

@@ -1,148 +1,186 @@
-# Lab 5 - Knowledge Mining with Azure AI Search
+# Lab 5: Getting Started with Building a Chat Application
 
-### Estimated Duration: 2 Hours
+### Estimated Duration: 30 minutes
 
-This lab covers Azure AI Search Services, particularly [Semantic ranking](https://docs.microsoft.com/en-us/azure/search/semantic-ranking) using [semantic query](https://docs.microsoft.com/en-us/azure/search/semantic-how-to-query-request?tabs=semanticConfiguration%2Cportal#create-a-semantic-configuration) and [return a semantic answer](https://docs.microsoft.com/en-us/azure/search/semantic-answers?tabs=semanticConfiguration).
+Building a chat application involves designing the user interface for seamless communication, implementing backend services for real-time message handling, and integrating with databases for storing chat histories, while ensuring robust security and scalability to handle user interactions effectively.In this lab, you will be setting up the Open AI resource and installing the application locally.
 
-Semantic search is a premium feature in Azure AI Search that invokes a semantic ranking algorithm over a result set and returns semantic captions (and optionally semantic answers), with highlights over the most relevant terms and phrases. Both captions and answers are returned in query requests formulated using the "semantic" query type.
+## Lab objectives
+In this lab, you will complete the following tasks:
 
-The semantic ranking is an extension of the query execution pipeline that improves precision by reranking the top matches of an initial result set. In order to complete processing within the expected latency of a query operation, inputs to the semantic ranker are consolidated and reduced so that the underlying summarization and reranking steps can be completed as quickly as possible.
+- Task 1: Create an OpenAI resource and model **(READ-ONLY)**
+- Task 2: Building a ChatGPT-like application on Streamlit with streaming
 
->**Note**: Ensure to complete Lab 2 before proceeding with this lab.
+### Task 1: Create an OpenAI resource and model **(READ-ONLY)**
 
-## Lab Objectives
+**Azure OpenAI**: Azure OpenAI Service is a cloud-based platform that provides access to OpenAI’s powerful language models, including GPT-4, GPT-3.5, Codex, and DALL-E12. This service allows developers to integrate these models into their applications for tasks such as content generation, summarization, semantic search, and natural language to code translation3.
 
-- Task 1 - Enabling the Semantic ranker in the AI Search service
-- Task 2 - Creating a Semantic Configuration
-- Task 3 - Semantic search using the semantic configuration in Azure Portal
-- Task 4 - Semantic Query using REST APIs
+Refer to the link for more information. [Azure OpenAI](https://learn.microsoft.com/en-us/azure/ai-services/openai/overview)
 
-## Task 1 - Enabling the Semantic ranker in the AI Search service
+In this task, you will learn to create an Azure OpenAI resource in the Azure portal, configure its settings, and deploy the GPT-4 model in Azure AI Studio. This involves setting up the resource, navigating to Azure AI Studio, and specifying model deployment details.
 
-1. Navigate to **AI-in-a-Day** resource group in the [Azure portal](https://portal.azure.com).
+ > **Note:** This task is **READ-ONLY**. The OpenAI setup is already configured for your environment.
 
-2. Locate **Search service** resource **aiinaday-cog-<inject key="DeploymentID" enableCopy="false"/>** and select it.
+1. In the Azure portal, search for **OpenAI** **(1)** in the top search box, then select **Azure OpenAI** **(2)** under services.
 
-   ![The Search service is highlighted from the list of services in the AI-in-a-Day Resource Group](../media/inn6.png)
+   ![](../media/openai8.png "Azure OpenAI")
    
-3. Select the **Semantic ranker (1)** under settings in the left menu. From the Semantic ranker pane, select the **Free** tier by clicking on **Select Plan (2)**. Once you click on a select plan, a free tier plan will be selected for the Semantic search.
+1. On the Azure AI Services page, select **Azure OpenAI (1)** from the menu on the left, then click **Create (2)**. button to start the process of setting up a new Azure OpenAI resource.
 
-   ![Semantic search service to be selected](../media/inn16.png)
-
+   ![](../media/openai_create1.png "Azure OpenAI")
    
-## Task 2 - Creating a Semantic Configuration
+1. In the **Create Azure OpenAI** pane under the **Basics** tab, Configure the details for your new resource, such as selecting the subscription, resource group, region and other required details.
 
-1. Navigate to the **Search service** resource **aiinaday-cog-<inject key="DeploymentID" enableCopy="false"/>** and then select **Indexes (1)**. You will be able to see the list of indexes, click on the **covid19temp (2)** index for adding semantic configuration.
+   | Setting  | Value |
+   -----------|---------
+   | Subscription | Default (1)|
+   | Resource group | **copilot-openai-<inject key="Deployment ID" enableCopy="false"/>** (2) |
+   | Region | **East US** (3) |
+   | Name   | **copilot-openai-<inject key="Deployment ID" enableCopy="false"/>** (4) |
+   | Pricing Tier | **Standard S0** (5) |
 
-   ![Semantic config](../media/AI4.png)
+   ![](../media/L1-T1-S3.png "Azure OpenAI")
    
-2. In the **covid19temp** index pane, select **Semantic configurations** **(1)** and click on **+ Add semantic configuration** **(2)**.
+1. Accept the default settings for the Network and Tags tabs without making any changes. Click on **Next** to continue to the next step in the creation process.
 
-   ![Semantic config](../media/inn20.png)
+1. In the **Review + Submit** pane, ensure that all validation checks have passed. After confirming that there are no errors, click on the **Create** button to finalize and start the deployment of your Azure OpenAI resource.
 
-3. You will see a tab appear on the right side with **New semantic configuration**. Enter the below values:
+     > **Note:** This task is **READ-ONLY**. The OpenAI setup is already configured for your environment. Please **DO NOT** click on **Create**. 
 
-    | Parameter                   | Value                                        |
-    | --------------------------- | -------------------------------------------- |
-    | Name (1)                    | my-semantic-config                           |
-    | Title field (2)             | Select `metadata/title` from the drop-down   |
-    | Field name under Content fields (3) | Select `bib_entries/BIBREFO/title` from the drop-down |
-    | Field name under Key fields (4)    | Select `bib_entries/BIBREFO/ref_id` from the drop-down |
-  
-   Click on **Save** **(5)**.
-  
-   ![Semantic configuration](../media/lab2b-new-sc.png)
-  
-4. You will be able to see the added semantic configuration **(1)** under the Semantic Configurations tab. Click on **Save** **(2)** to save the changes made.
-
-   ![Semantic configuration](../media/inn21.png)
-
-## Task 3 - Semantic search using the semantic configuration in Azure Portal
-
-1. Navigate to **Overview** **(1)** of **Search service** resource **aiinaday-cog-<inject key="DeploymentID" enableCopy="false"/>** and then click on **Search explorer (2)**.
-
-   ![Semantic search](../media/inn17.png)
+   ![](../media/L1-T1-S5.png "Azure OpenAI")
    
-2. In the **Search explorer** pane, select the Index **covid19temp** **(1)**.Click on the **Query options** **(2)**.
-  ![Semantic search](../media/L3T3S2.png)
+1. The deployment process will take approximately 5 minutes to complete. Once it’s finished, click on **Go to Resource** to access and manage your newly created Azure OpenAI resource.
 
-3. In a popup on the right side, turn **On** **(1)** the Semantic ranker, select **my-semantic-config** **(2)** from the drop-down under Semantic configuration, which you created in the previous task. Click on **Close** **(3)**. 
-
-   ![Semantic search](../media/L3T3S3.png)
+   ![](../media/L1-T1-S6.png "Azure OpenAI")
    
-4. Click on **Search** **(1)**.Wait for a few seconds to complete the search and scroll down to the **Results** **(2)**part on the same page. You will be able to see the output for the semantic search using semantic configuration.
+1. In the Azure OpenAI resource pane, click on **Go to Azure OpenAI Studio** to navigate to the Azure AI Studio, where you can further configure and use your OpenAI models.
 
-   ![Semantic search](../media/L3T3S4.png)
+   ![](../media/L1-T1-S7.png "Azure OpenAI")
    
-## Task 4 - Semantic Query using REST APIs
+1. In the prompt titled **Discover an even better Azure AI Studio experience**, click **Close**.
 
-In this task, you are going to perform the semantic search using a query in [REST APIs](https://docs.microsoft.com/en-us/azure/search/search-get-started-rest). For now, you will perform with [Postman desktop app](https://www.getpostman.com/) to send requests to Azure AI Search.
+   ![](../media/pop-upclose.png)
 
-1. In the **Search service** resource **aiinaday-cog-<inject key="DeploymentID" enableCopy="false"/>** pane, select **Keys** under settings from left menu.
+1. In the left navigation pane, click on **Deployments (1)**, then click on **+ Deploy model** **(2)**. Select **Deploy base Model** from the options presented.
 
-    ![Semantic search](../media/inn18.png)
+   ![](../media/deploy-1.jpg)
+
+1. In the **Select a model** window, choose **gpt-4 (1)** from the available options, and then click on **Confirm (2)** to proceed with the model selection.
+
+   ![](../media/new11.png)
    
-1. Make sure to copy **key**, which you can find below the **Manage query keys**, and save it in the text file for later use.
+1. On the **Deploy Model** tab, input the required details such as Deployment name, Model version, Deployment type, Tokens per Minute Rate Limit, and enable dynamic quota. Once all fields are filled, Click on **Deploy** (6).
 
-    ![Semantic search](../media/inn19.png)
+   | Setting  | Value |
+   -----------|---------
+   | Deployment name | **copilot-gpt (1)** |
+   | Model version | **0613 (Default) (2)** |
+   | Deployment type | **Standard (3)** |
+   | Tokens per Minute Rate Limit (thousands) | **15K (4)** |
+   | Enable dynamic quota | **Enabled (5)** |
+
+     ![](../media/new9.png)
    
-1. Navigate to **LABVM Desktop** and open the **Postman** application by double-clicking on it.
+### Task 2: Building a ChatGPT-like application on Streamlit with streaming  
 
-    ![Semantic search](../media/lab2b-ssp11.png)
+In this task, you will set up an Azure OpenAI resource, deploy models like GPT-4, and integrate the required API keys. After configuring the application with these details, you will run and test a ChatGPT-like app to verify its functionality, demonstrating how to use Azure OpenAI models in a practical application.
+
+1. In the Azure portal, search for **OpenAI** **(1)** in the top search box, then select **Azure OpenAI** **(2)** under services.
+
+   ![](../media/openai8.png "Azure OpenAI")
+
+2. From the **Azure AI Services | Azure OpenAI** pane, select **Copilot-OpenAI-<inject key="Deployment ID" enableCopy="false"/>**.
+
+   ![](../media/select-openai.png "Azure OpenAI")
+
+3. In the Azure OpenAI resource pane, click on **Go to Azure AI Studio**. This action will redirect you to the Azure AI Studio interface, where you can manage and interact with your OpenAI models, explore available features, and perform tasks related to model deployment and configuration.
+
+   ![](../media/tel-9u.png)
+
+4. In the **Azure OpenAI Studio**, select **Deployments (1)** under Management and verify that the **gpt-4** and **text-embedding-ada-002** models are present with the deployment names as **copilot-gpt** and **CompletionModel**. Review that the model's capacity is set to **15K TPM**. Note the **Azure OpenAI deployment names and model names**.
    
-1. In the Overview page of the Postman app, click on **Create a request** under Get Started.
+   ![](../media/new10.png)
 
-    ![Semantic search](../media/lab2b-ssp12.png)
+5. Navigate back to the Azure OpenAI resource on the **Azure portal**, select **Key & Endpoint (1)** from the left menu under **Resource Managemant**, and click on **Show Keys (2)**. Note the **KEY 1 (3)** and **Endpoint (4)**.
+
+   ![](../media/l1-t2-s5.png "Azure OpenAI")
    
-1. Select the **POST (1)** Method from the drop-down. Enter the request URL given below and make sure to replace the search service name as **aiinaday-cog-<inject key="DeploymentID" enableCopy="false"/>** and the index name as **covid19temp**.
+   > **Note**: Steps 5 through 8 demonstrate where to obtain the values used in the configuration.
 
-   `https://[search-service-name].search.windows.net/indexes/[index-name]/docs/search` **(2)**.
+6. Navigate back to **Azure OpenAI**, select **AI search (1)** from the left menu, and click on **copilot-openai-<inject key="Deployment ID" enableCopy="false"/> (2)**.
+
+   ![](../media/l1-t2-s6.png "Azure OpenAI")
+
+7. From the Overview tab of Cognitive Search, Note the **URL**.
+
+   ![](../media/img36.png "Azure OpenAI")
+
+8. From the left menu, select **Key (1)** under **Settings**, Note the **Primary admin key (2)**.
+
+   ![](../media/img66.png "Azure OpenAI")
+
+9. In the LabVM, open File Explorer, navigate to the below-mentioned path, right-click on the `secrets.env` file, and select open with  **Visual Studio Code**.
+
+   ```
+   C:\LabFiles\OpenAIWorkshop\scenarios\incubations\copilot\ChatGPT
+   ```
+
+    ![](../media/img67.png)
+
+10. In the `secrets.env` file, replace the following values. Press **CTRL+S** to save the file.
+
+   | **Variables**                     | **Values**                                                    |
+   | --------------------------------- |---------------------------------------------------------------|
+   | **AZURE_OPENAI_API_KEY**          | **<inject key="OpenAIKey" enableCopy="true"/>**               |
+   | **AZURE_OPENAI_CHAT_DEPLOYMENT**        | Replace the value with your **YOUR_GPT_MODEL** name that is  **copilot-gpt**          |
+   | **AZURE_OPENAI_ENDPOINT** | **<inject key="OpenAIEndpoint" enableCopy="true"/>**        |
+
+   ![](../media/img68.png)
+
+  > **Note :** If you're unable to see the full **Values** section in the table, click on the three dots (ellipsis) in the top right corner of your browser and try reducing the zoom level for better visibility.
    
-   ![Semantic search](../media/lab2b-ssp13.png)
+  ![](../media/zoom.png)
 
-1. In the Parameters section, enter the below values for **api-version** **(1)** and **api-key** **(2)**.
+11. Navigate back to File Explorer and open `chatgpt.py` with **Visual Studio Code** to view the code to build a ChatGPT-like app.
 
-    | Parameter           | Value                                        |
-    | --------------------| -------------------------------------------- |
-    | api-version         | 2021-04-30-Preview                           |
-    | api-key             | Enter the manage query key which you have copied earlier in Step - 2    |
-   
-   After updating the parameters, your **Request URL** **(3)** should be the same as shown in the below screenshot.
-   
-    ![Semantic search](../media/lab2b-ssp14.png)
+    ![](../media/img70.png) 
+ 
+12. Next, click on the **Eclipse Button** at the top of the screen, then select **Terminal** from the dropdown menu and click on **New Terminal** to open a new terminal window.
 
-1. For adding a query, you need to select the **Body** **(1)** section. Then click on **raw** **(2)** as code type and select **JSON** **(3)** as an extension from the drop-down. Copy-paste the query which is given below into the **coding area** **(4)** and click on **Send** **(5)**.
+    ![](../media/img69.png) 
 
-   ```bash
-   {
-       "search": "What is Endoplasmic Reticulum",
-       "queryType": "semantic",
-       "queryLanguage": "en-us",
-       "semanticConfiguration": "my-semantic-config",
-       "answers": "extractive|count-3",
-       "captions": "extractive|highlight-true",
-       "count": "true"
-   }
+
+13. Run the following command in the terminal to change the directory:
+
+   ```
+   cd C:\LabFiles\OpenAIWorkshop\scenarios\incubations\copilot\ChatGPT
    ```
    
-    ![Semantic search](../media/newlatest15.png)
+14. To run the application from the command line, enter the following command in the terminal:
+
+   > **Note**: You can enter your email address below to get notifications. If not, please leave this field blank and click on **Enter**.
+
+   ```
+   streamlit run chatgpt.py
+   ```
    
-1. You will see a **Sending request** in the **Response** section, which will take a few seconds to get the response from the AI search service. Once you get the response check that **Network Status: 200 OK**, review the response and explore with your query requests.
+15. Once the command `streamlit run chatgpt.py` has executed, a demo application will be launched and opened in your web browser, hosted locally on your machine.
 
-    ![Semantic search](../media/lab2b-ssp16.png)
+   ![](../media/img71.png "Azure OpenAI")
+   
+   ![](../media/img72.png "Azure OpenAI")
 
-   <validation step="5f84e298-cac3-40e0-aad7-2eea5eefe286" />
+16. Explore the app by running a few queries. Congratulations! You've built your own ChatGPT-like application in 50 lines of code.
 
-    > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
-    > - Hit the Validate button for the corresponding task.
-    > - If you receive a success message, you can proceed to the next task. If not, carefully read the error message and retry the step, following the instructions in the lab guide.
-    > - If you need any assistance, please contact us at labs-support@spektrasystems.com. We are available 24/7 to help you out.
+   ![](../media/img73.png "Azure OpenAI")
 
+   > **Note**: You may get a different response. please note chatgpt uses LLM and responses may vary everytime.
+  
+17. Navigate back to **VS Code** and stop the terminal by typing **ctrl + C**.
 
-   >**Note**: If you face an issue that the request failed with 401 Forbidden or 403 Forbidden error, this might be caused due to passing invalid authentication credentials or an invalid api-key. For more information, reference this link ```https://docs.microsoft.com/en-us/rest/api/searchservice/http-status-codes#common-http-status-codes```
+18. Click the **Next** button located in the bottom right corner of this lab guide to continue with the next exercise.
 
 ## Summary
 
-In this lab, you worked on indexing and exploring data, extracting insights, and enabling advanced search capabilities across structured and unstructured content.
+In this lab, you set up an Azure OpenAI resource and model, and built a ChatGPT-like application using Streamlit. You navigated the Azure portal to create and configure your OpenAI resource, verified model deployments, and gathered the necessary API keys and endpoints. After configuring your application with these details, you ran and tested it locally, successfully creating a functional ChatGPT-like app. This process demonstrated the integration of Azure OpenAI models into a practical application, showcasing the steps to build and deploy AI-driven chat functionalities.
 
 ### You have successfully completed the lab

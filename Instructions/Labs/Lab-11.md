@@ -1,246 +1,258 @@
-# Lab 11: Ensuring Responsible AI with Content Safety Studio 
+# Lab 11: Run Miyagi App Locally
 
-## Lab scenario
-In this lab, you will learn about the Content Safety Studio is a powerful tool for managing user-generated content. It features Text Moderation to detect and filter harmful text, such as hate speech and violence, and Image Moderation to analyze and block unsafe or offensive images. This comprehensive solution ensures that all user contributions are safe and appropriate across platforms.
+### Estimated Duration: 60 minutes
+
+In this lab, the focus is on configuring the Miyagi App for operational readiness. Subsequently, attention shifts to understanding the nuanced implementation of the Recommendation service. The practical phase involves executing the Recommendation service and deploying the Miyagi frontend locally for testing and development. A crucial step includes optimizing data retrieval efficiency by persisting embeddings in Azure AI Search. The project culminates with a broader exploration of the Miyagi App and Recommendation service, emphasizing a personalized user experience. This task-based approach ensures a systematic progression through the project intricacies, facilitating a comprehensive understanding and effective implementation.
 
 ## Lab objectives
-In this lab, you will perform the following:
-- Task 1: Implement Content Safety Measures
-- Task 2: Monitor and Analyze Content for Compliance
+
+You will be able to complete the following tasks:
+
+- Task 1: Setup configuration for miyagi app
+- Task 2: Understanding the implementation of the Recommendation service
+- Task 3: Run recommendation service locally
+- Task 4: Run miyagi frontend locally
+- Task 5: Persist embeddings in Azure AI Search
+- Task 6: Explore the Miyagi App and Recommendation service by Personalizing
   
-## Task 1: Implement Content Safety Measures
+### Task 1: Setup configuration for miyagi app
 
-Content Safety resource in Azure to detect and manage harmful content. You'll create and configure the resource, assign the necessary roles, and ensure it's integrated with the Content Safety Studio. This setup allows you to use Azure’s AI tools to moderate content effectively.
+In this task, you will configure the Miyagi application by updating specific settings in Visual Studio Code. This involves replacing placeholder values in configuration files with the actual values for various Azure resources to ensure proper connectivity and functionality.
 
-1.  Open a new tab, and navigate to the [Content Safety Studio](https://contentsafety.cognitive.azure.com/), If the user is not logged in, Click on Sign in from the top right corner and select the user. Then select 
-    the **Settings** icon in the top navigation menu.
+1. Open **Visual Studio Code** from the Lab VM desktop by double-clicking on it.
 
-     ![](../media/image-51.png)
+   ![](../media/vs.png)
 
-1. In the All resources section, select **+ Create a new resource**.
+   >**Note** If **Join us in making promt-flow extension better!** window prompted please click on **No,thanks**.
 
-     ![](../media/image-52.png)
+   ![](../media/image-rg-01.png)
+   
+1. In **Visual Studio Code** from menu bar select **File(1)>open folder(2)**.
 
-1. You will be directed to the **Azure portal**, and on the **Create Content Safety** page, specify the following and click on **Review + Create**.
+   ![](../media/image-rg-02.png)
 
-     - Subscription – select your **Azure subscription**
+1. Within **File Explorer**, navigate to **C:\LabFiles\miyagi** select **miyagi**(1) click on **Select folder(2)**
+
+   ![](../media/image-rg(003).png)
+
+1. In **Visual Studio Code**, click on **Yes, I trust the authors** when **Do you trust the authors of the files in this folder?** window prompted.
+
+   ![](../media/image-rg-18.png) 
+   
+1. Expand **miyagi>ui** directory and verify that **.env.** file is present. 
+
+1. Expand **miyagi/services/recommendation-service/dotnet** directory and verify that **appsettings.json** file is present.
+
+   ![](../media/open-appsettings.png)
   
-     - Resource group – select the Resource Group **ODL-MEMT-<inject key="DeploymentID" enableCopy="false"/>**
+1. Open **appsettings.json** file and replace the following values for the variables below.
+
+   | **Variables**                | **Values**                                                    |
+   | ---------------------------- |---------------------------------------------------------------|
+   | deploymentOrModelId          | **<inject key="CompletionModel" enableCopy="true"/>**         |
+   | embeddingDeploymentOrModelId | **<inject key="EmbeddingModel" enableCopy="true"/>**          |
+   | endpoint                     | **<inject key="OpenAIEndpoint" enableCopy="true"/>**          |
+   | apiKey                       | **<inject key="OpenAIKey" enableCopy="true"/>**               |
+   | azureCognitiveSearchEndpoint | **<inject key="SearchServiceuri" enableCopy="true"/>**        |
+   | azureCognitiveSearchApiKey   | **<inject key="SearchAPIkey" enableCopy="true"/>**            |
+   | cosmosDbUri                  | **<inject key="CosmosDBuri" enableCopy="true"/>**             |
+   | blobServiceUri               | **<inject key="StorageAccounturi" enableCopy="true"/>**       |
+   | bingApiKey                   | **<inject key="Bing_API_KEY" enableCopy="true"/>**           |
+   | cosmosDbConnectionString     | **<inject key="CosmosDBconnectinString" enableCopy="true"/>** |
+   
+   > **Note**: FYI, the above values/Keys/Endpoints/ConnectionString of Azure Resources are directly injected to labguide. Leave default settings for "cosmosDbContainerName": "recommendations" and "logLevel": "Trace".
+
+      ![](../media/miyagi-image(17)1.png)
+   
+1. Once after updating the values kindly save the file by pressing **CTRL + S**.
+
+1. Navigate to **miyagi/sandbox/usecases/rag/dotnet** and verify **.env** file is present.
+  
+1. In the **.env** file replace the following values for the variables below.
+
+   | **Variables**                          | **Values**                                            |
+   | ---------------------------------------| ------------------------------------------------------|
+   | AZURE_OPENAI_ENDPOINT                  | **<inject key="OpenAIEndpoint" enableCopy="true"/>**  |
+   | AZURE_OPENAI_CHAT_MODEL                | **<inject key="CompletionModel" enableCopy="true"/>** |
+   | AZURE_OPENAI_EMBEDDING_MODEL           | **<inject key="EmbeddingModel" enableCopy="true"/>**  |
+   | AZURE_OPENAI_API_KEY                   | **<inject key="OpenAIKey" enableCopy="true"/>**       |
+   | AZURE_COGNITIVE_SEARCH_ENDPOINT        | **<inject key="SearchServiceuri" enableCopy="true"/>**|
+   |AZURE_COGNITIVE_SEARCH_API_KEY          | **<inject key="SearchAPIkey" enableCopy="true"/>**    |
+   
+   ![](../media/miyagi-image(18).png)
+   
+1. Once after updating the values kindly save the file by pressing **CTRL + S**.
+
+  >**Congratulations** on completing the Task! Now, it's time to validate it. Here are the steps:
+> - Hit the Validate button for the corresponding task. If you receive a success message, you have successfully validated the lab. 
+> - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+> - If you need any assistance, please contact us at labs-support@spektrasystems.com.
+
+   <validation step="209e971c-dc3f-486b-b7c7-1096724301f7" />
+
+### Task 2: Understanding the implementation of the Recommendation service
+
+Recommendation service implements RAG pattern using Semantic Kernel SDK. The details of the implementation are captured in the Jupyter notebook in the folder miyagi/sandbox/usecases/rag/dotnet. You can open the notebook in VSCode and run the cells to understand step-by-step details of how the Recommendation Service is implemented. Pay special attention to how the RAG pattern is implemented using Semantic Kernel. Select kernel as .NET Interactive in the top right corner of the notebook.
+
+1. In the Visual Studio Code navigate to **miyagi/sandbox/usecases/rag/dotnet** folder and select **Getting-started.ipynb**
+
+   ![](../media/miyagi-image19.png)
+
+1. **Execute the notebook cell by cell** (using either Ctrl + Enter to stay on the same cell or Shift + Enter to advance to the next cell) and observe the results of each cell execution.
+  
+
+   > **Note**: Make sure **.Net Interactive** is in ready State, if not please wait for 2 to 3 minutes. If it is still not loading, kindly close and reopen Visual Studio. Also, please do not click on **Run All** option to execute all the cells at a time which may lead to exceed in token limit that results Error: 503 – Service unreachable. 
+
+      ![](../media/miyagi-image20.png)
+   
+   > **Note**: Incase any issues or errors occur related to exceeding call rate limit of your current OpenAI S0 pricing tier. , Please wait for 15 to 20 seconds and Re-run the cell
+
+ >**Congratulations** on completing the Task! Now, it's time to validate it. Here are the steps:
+> - Hit the Validate button for the corresponding task. If you receive a success message, you have successfully validated the lab. 
+> - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+> - If you need any assistance, please contact us at labs-support@spektrasystems.com.
+
+<validation step="560130f4-fca1-49e1-98a6-97ec61155364" />
+
+### Task 3: Run recommendation service locally
+In this task, you will run the recommendation service locally by using Visual Studio Code to build and run the service in the terminal and then verify its functionality by accessing the Swagger page in the browser.
+
+1. Open a new terminal: by navigating **miyagi/services/recommendation-service/dotnet** and right-click on **dotnet** in cascading menu select **Open in intergate Terminal**.
+
+    ![](../media/task4-1.png)
+
+1. Run the following command to run the recommendation service locally
     
-     - Region – **East US**
-  
-     - Name – **Content-Safety-<inject key="DeploymentID" enableCopy="false"/>**
-  
-     - Pricing tier – Free
-  
-       ![](../media/image-53.png)
+   ```
+   dotnet build
+   dotnet run
+   ```
 
-1. Review the settings and click **Create**.
+   > **Note**: Let the command run, meanwhile you can proceed with the next step.
+   > **Note** The commands dotnet build and dotnet run are fundamental in .NET Core and .NET 5+ environments for building and running .NET applications locally on your machine.
 
-     ![](../media/image-54.png)
+1. Open another tab in Edge, in the browser window paste the following link
 
-1. Once deployement is successful click on **Go to resource**.
+   ```
+   http://localhost:5224/swagger/index.html 
+   ```
 
-     ![](../media/image-57.png)
+   **Note**: Refresh the page continuously until you get the swagger page for the recommendation service as depicted in the image below.
 
-1. Back on **Content-Safety-<inject key="DeploymentID" enableCopy="false"/>** page,  from the left navigation pane, select  **Overview** and review the settings then click on Content Safety Studio link.
+   ![](../media/miyagi-image21.png)
 
-      ![](../media/image-59.png)
+
+### Task 4: Run miyagi frontend locally
+In this task, you will run the miyagi frontend locally by installing dependencies using npm and yarn, and then starting the development server. You will verify its functionality by accessing the local development server in the browser.
+
+1. Open a new terminal: by navigating  **miyagi/ui** and right-click on **ui/typescript** , in cascading menu select **Open in intergate Terminal**.
+
+   ![](../media/image-rg-25.png)
+
+1. Run the following command to install the dependencies
    
-1. Your navigated to the [Content Safety Studio](https://contentsafety.cognitive.azure.com/), select the **Settings** icon in the top navigation menu.
+    ```
+    npm install --global yarn
+    yarn install
+    yarn dev
+    ```
 
-     ![](../media/image-51.png)
-
-1. Make sure Content Safety resources is created.
-
-      ![](../media/image-55.png)
-
-1. Select **Content-Safety-<inject key="DeploymentID" enableCopy="false"/> (1)** and click on **Use resource (2)**.
-
-     ![](../media/image-(60).png)
+   > **Note**: Please wait till the command gets executed successfully. It will take up to 5 minutes. Once **yarn dev** command start executing wait for 2 mins and proceed with next step.
    
-## Task 2: Monitor and Analyze Content for Compliance
+   > **Note**: These commands (npm install --global yarn, yarn install, and yarn dev) are indeed essential in JavaScript and TypeScript projects for managing dependencies and running scripts necessary to set up and run applications. They ensure that all required packages are installed (yarn install), and they execute development scripts (yarn dev) defined in the project's configuration (package.json).
 
-In this task, you will implement and evaluate content moderation for both images and text using Azure's Content Safety Studio. The goal is to ensure that content uploaded by users complies with safety standards by testing for harmful content and analyzing moderation results.
+1. Open a new tab in Edge, and browse the following
 
-## Task 2. 1 : Moderate image content for singular isolated images.
+   ```
+   http://localhost:4001
+   ```
 
-1. On **Azure AI | Content Safety Studio** under **Safeguard your image content with built-in-features**, select **Moderate image content**.
+   >**Note:** You can get the port from the logs in the terminal.
 
-     ![](../media/image-11.png)
+      ![](../media/error-pop-up.png)
 
-1. On **Moderate image content** select **Run a simple test** tab, review the options note we have three set content  **Safe content**, **self- harm content** and **AI-generated sexual content**.
+   >**Note:** If you encounter an **Unhandled Runtime Error** pop-up, close the pop-up and also dismiss the error message at the bottom left corner.
 
-#### Safe content
-
-1. Now lets use our image and test then check the result. **Moderate image content** select **Run a simple test** tab then click on **Browse for a file**
-
-     ![](../media/image-61.png)
-
-1. Within **file explorer** navigate to **C:\LabFiles\Model-Evaluation-and-Model-Tunning\Labs\data\image_sample_dataset** select and open **family-builds-campfire.jpg**
-
-1. Review the image and click on **Run test**.
-
-    ![](../media/image-68.png)
+     ![](../media/error-side.png)
    
-1. Review the result. As expected, this image content is Allowed, and the Severity level is Safe across all categories. 
 
-    ![](../media/image-69.png)
+### Task 5: Persist embeddings in Azure AI Search
 
-   >**Note**: So far, we’ve tested image content for singular isolated images. However, if we have a bulk dataset of image content, we could test the bulk dataset at once and receive metrics based on the model’s performance.
+In this task, you will persist embeddings in Azure AI Search by executing a POST request in Swagger UI, verifying the execution, and then confirming the creation of the index in the Azure portal.
 
-#### Self harmed content
+1. Navigate back to the **swagger UI** page, scroll to **Memory** session, click on **POST /dataset (1)** for expansion, and click on **Try it out (2)**.
 
-We should also anticipate customers potentially posting harmful image content. To ensure that we account for such a scenario, let’s test the detection of harmful image content.
+   ![](../media/miyagi-image22.png)
 
-1. Select Browse for a file and upload the **bear-attack-blood.JPG** file.
+1. Replace the below **code (1)** with the below code, and click on **Execute (2)**.
 
-1. Set all Threshold levels to Medium.
-1. Select Run test.
+     ```
+     {
+        "metadata": {
+              "userId": "50",
+              "riskLevel": "aggressive",
+              "favoriteSubReddit": "finance",
+              "favoriteAdvisor": "Jim Cramer"
+            },
+          "dataSetName": "intelligent-investor"
+      }
+      ```
 
-    >**Note**: Rightfully so, the content is Blocked, and was rejected by the Violence filter which has a Severity level of High.
+     ![](../media/miyagi-image(23).png) 
+      
+1. In the **swagger UI** page, Scroll down to the **Responses** session review that it has been executed successfully by checking the code status is **200**.
 
-### Task 2.2: Run a bulk test
+    ![](../media/miyagi-image24.png)
 
-So far, we’ve tested image content for singular isolated images. However, if we have a bulk dataset of image content, we could test the bulk dataset at once and receive metrics based on the model’s performance.
+1. Navigate back to the **Azure portal** tab, in Search resources, services and docs (G+/) box at the top of the portal, enter **AI Search**, and then select **AI Search** under services.
 
-1. On **Moderate image content** select **Run a bulk test** tab then click on **Browse for a file**.
+    ![](../media/miyagi-image25.png)
 
-     ![](../media/image-12.png)
+1. In **Azure AI services | AI Search** tab, select **acs-<inject key="DeploymentID" enableCopy="false"/>**.
 
-1. Within file explorer navigate to **C:\LabFiles\Model-Evaluation-and-Model-Tunning\Labs\data\image_sample_dataset**  select and open **image_sample_dataset.zip** folder.
-
-    ![](../media/image-81.png)
+    ![](../media/miyagi-image26.png)
    
-1. Under Test section review **Dataset preview** then select **Configure filters** tab review **Category** and **Threshold level** then click on **Run test**.
+1. In **acs-<inject key="DeploymentID" enableCopy="false"/>** Search service tab, click on **Indexes** **(1)** under Search management, and review the **miyagi-embeddings** **(2)** has been created.   
 
-     ![](../media/image-14.png)
+   ![](../media/miyagi-image27.png)
 
-1. Review the result.
+   > **Note**: Please click on the refresh button still you can view the **Document Count**.
 
-   ![](../media/image-15.png)
+>**Congratulations** on completing the Task! Now, it's time to validate it. Here are the steps:
+> - Hit the Validate button for the corresponding task. If you receive a success message, you have successfully validated the lab. 
+> - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+> - If you need any assistance, please contact us at labs-support@spektrasystems.com.
 
-   ![](../media/image-16.png)
+   <validation step="32fe7dd9-0728-4b16-b975-374eb199044d" />
 
-### Task 2.3 : Text moderation using Moderate text content 
+### Task 6: Explore the Miyagi App and Recommendation service  by Personalizing
+In this task, you'll personalize the Miyagi App's Recommendation service by selecting a financial advisor and reviewing the recommendations. Then, you'll check the logs in Visual Studio Code and stop the services.
 
-We could leverage an AI model to detect whether the text input from our customers is harmful and later use the detection results to implement the necessary precautions.
+1. Navigate back to the **recommendation service** ui page, and click on **personalize** button.
 
-#### Safe content
+    ![](../media/miyagi-image28.png)
 
-Let’s first test some positive customer feedback.
+1. In the **Personalize** page, select your **Favorite Financial Advisor (1)** and choose **GPT-4 (2)** for the **Reasoning Engine** from the dropdown menu, then click on **Personalize (3)**.
 
-1. In Content Safety Studio, select **Moderate text content**.
+   ![](../media/miyagi-image126.png)
 
-   ![](../media/image-70.png)
+1. You should see the recommendations from the recommendation service in the Top Stocks widget.
 
-1. On the **Moderate text content** page, select **Run a simple test** and choose **Safe content** under **select a sample or type your own** section.
+   ![](../media/miyagi-image30.png) 
 
-   ![](../media/image-71.png)
+1. Navigate to the **Visual Studio Code**, and click on **dotnet** from the terminal, you can go through the logs.
 
-1. In the Test box, enter the following:
+   ![](../media/terminal-output.png)    
 
-     - I recently used the PowerBurner Camping Stove on my camping trip, and I must say, it was fantastic! It was easy to use, and the heat control was impressive. Great product!
+1. Once you view the logs, press **Ctrl + C** to stop the **swagger UI** page.
 
-     - Set all Threshold levels to Medium.
+1.  From the **Terminal** select **Node** terminal, press **Ctrl + C** to stop the **recommendation service** ui page.
+      ![](../media/miyagi-image31.png)
 
-     - Select Run test.
+1. Now, click on **Next** from the lower right corner to move to the next page.
 
-       ![](../media/image-72.png)
-     
-1. Review the result.
+## Summary
 
-    ![](../media/image-73.png)
+In this Lab, you began with configuring the Miyagi App for operational readiness, followed by a detailed exploration of the Recommendation service's implementation. Practical execution involves running the Recommendation service and deploying the Miyagi frontend locally for testing. Enhancing data retrieval efficiency is a pivotal step, achieved by persisting embeddings in Azure AI Search. The project concludes with a broad exploration of the Miyagi App and Recommendation service, prioritizing a personalized user experience. This systematic approach ensures a thorough understanding and effective implementation throughout the project.
 
-    >**Note**: The content is allowed, and the severity level is Safe across all categories. This was to be expected given the positive and unharmful sentiment of the customer’s feedback.
-
-
-#### Harmful content
-
-But what would happen if we tested a harmful statement? Let’s test with negative customer feedback. While it's OK to dislike a product, we don't want to condone any name calling or degrading statements.
-
-1. In the Test box, enter the following:
-
-    - I recently bought a tent, and I have to say, I'm really disappointed. The tent poles seem flimsy, and the zippers are constantly getting stuck. It's not what I expected from a 
-       high-end tent. You all suck and are a sorry excuse for a brand.
-
-    - Set all Threshold levels to Medium.
-
-    - Select Run test.
-
-      ![](../media/image-75.png)
- 
-   - Although the content is Allowed, the Severity level for Hate is low. To guide our model to block such content, we’d need to adjust the Threshold level for Hate. A lower Threshold level would block any content 
-     that’s a low, medium, or high severity. There’s no room for exceptions!
-
-   - Set the Threshold level for Hate to Low.
-
-   - Select Run test.
-
-     ![](../media/image-76.png)
-    
-   - The content is now Blocked and was rejected by the filter in the Hate category.
-
-      ![](../media/image-77.png)
-
-#### Violent content with misspelling
-
-We can’t anticipate that all text content from our customers would be free of spelling errors. Fortunately, the Moderate text content tool can detect harmful content even if the content has spelling errors. Let’s test this capability on additional customer feedback about an incident with a racoon.
-
-1. Select Violent content with misspelling
-
-    ![](../media/image-74.png)
-
-1. In the Test box, enter the following:
-
-    - I recently purchased a campin cooker, but we had an acident. A racon got inside, was shocked, and died. Its blood is all over the interior. How do I clean the cooker?
-
-    - Set all Threshold levels to Medium.
-
-    - Select Run test.
-
-    - Although the content is Allowed, the Severity level for Violence is should be Low. You could adjust the Threshold level for Violence to try and block such content, however, should we? Consider a scenario where the customer is asking this question in a conversation with the AI-powered customer support agent in hopes of receiving guidance on how to clean the cooker. There may be no ill-intent in submitting this question and therefore, it may be a better choice not to block such content. As the developer, consider various scenarios where such content may be OK before deciding to adjust the filter and block similar content.
-  
-#### Run a bulk test
-So far, we’ve tested image content for singular isolated images. However, if we have a bulk dataset of image content, we could test the bulk dataset at once and receive metrics 
-based on the model’s performance.
-
-We have a bulk dataset of images provided by customers. The dataset also includes sample harmful images to test the model’s ability to detect harmful content. Each record in the 
-dataset includes a label to indicate whether the content is harmful. Let’s do another test round but this time with the data set!
-
-1. Switch to the Run a bulk test tab.
-
-1. Select **Browse for a file** and within file explorer navigate to **C:\LabFiles\Model-Evaluation-and-Model-Tunning\Labs\data\image_sample_dataset**  select and upload **bulk-image-moderation-dataset.csv** file.
-   
-    > Note: The name of the CSV file may vary.
-   
-     ![](../media/image-82.png)
-     
-1. In the Dataset preview section, browse through the Records and their corresponding Label. A 0 indicates that the content is acceptable (not harmful). A 1 indicates that the content is unacceptable (harmful 
-   content).
-
-1. Set all Threshold levels to Medium.
-
-1. Select Run test.
-   
-    ![](../media/image-78.png)
-
-1. Review the result.
-
-    ![](../media/image-79.png)
-
-    ![](../media/image-80.png)
-
-> **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
-  - If you receive a success message, you can proceed to the next task.
-  - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
-  - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help you out.
-
-<validation step="a76d4e32-03f7-494b-9427-63f1702eff54" />
-
-## Review
-In this lab you have completed the following tasks:
-- Implemented Content Safety Measures
-- Monitor and Analyze Content for Compliance
-
-### You have successfully completed the lab.
+### You have successfully completed this lab.

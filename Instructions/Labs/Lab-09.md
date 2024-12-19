@@ -1,389 +1,246 @@
-# Lab 9: Deploy and Run the HR/Payroll Copilot Application
+# Lab 9: Ensuring Responsible AI with Content Safety Studio 
 
-### Estimated Duration: 120 minutes
-
-**Smart Agent: At the heart of the solution is the Python object Smart_Agent. The agent has the following components:**
-
-  - **Goals/Tasks:** Smart_Agent is given a persona and instructions to follow to achieve certain goals; for example, HR Copilot is about helping answer HR/Payroll questions and update employees' personal information. This is done using instructions specified in the system message.
-
-  - **NLP interaction and tool execution:** For the ability to use multiple tools and functions to accomplish business tasks, the function calling capability of the 0613 version is utilized to intelligently select the right function (validate identity, search the knowledge base, update address, create ticket) based on the agent's judgment of what needs to be done. The agent is also able to engage with users by following the instructions and goals defined in the system message.
-
-  - **Memory:** The agent maintains a memory of the conversation history. The memory is backed by Streamlit's session state.
-  - **LLM:** The agent is linked to a 0613 GPT-4 model to power its intelligence.
+## Lab scenario
+In this lab, you will learn about the Content Safety Studio is a powerful tool for managing user-generated content. It features Text Moderation to detect and filter harmful text, such as hate speech and violence, and Image Moderation to analyze and block unsafe or offensive images. This comprehensive solution ensures that all user contributions are safe and appropriate across platforms.
 
 ## Lab objectives
+In this lab, you will perform the following:
+- Task 1: Implement Content Safety Measures
+- Task 2: Monitor and Analyze Content for Compliance
+  
+## Task 1: Implement Content Safety Measures
 
-You will be able to complete the following tasks:
+Content Safety resource in Azure to detect and manage harmful content. You'll create and configure the resource, assign the necessary roles, and ensure it's integrated with the Content Safety Studio. This setup allows you to use Azure’s AI tools to moderate content effectively.
 
-- Task 1: Build your own HR/Payroll copilot locally
-- Task 2: Integrate Azure Cognitive Search with your Application
-- Task 3: Deploy the HR/Payroll Copilot application to Azure
+1.  Open a new tab, and navigate to the [Content Safety Studio](https://contentsafety.cognitive.azure.com/), If the user is not logged in, Click on Sign in from the top right corner and select the user. Then select 
+    the **Settings** icon in the top navigation menu.
+
+     ![](../media/image-51.png)
+
+1. In the All resources section, select **+ Create a new resource**.
+
+     ![](../media/image-52.png)
+
+1. You will be directed to the **Azure portal**, and on the **Create Content Safety** page, specify the following and click on **Review + Create**.
+
+     - Subscription – select your **Azure subscription**
+  
+     - Resource group – select the Resource Group **ODL-MEMT-<inject key="DeploymentID" enableCopy="false"/>**
     
-### Task 1: Build your own HR/Payroll copilot locally
+     - Region – **East US**
+  
+     - Name – **Content-Safety-<inject key="DeploymentID" enableCopy="false"/>**
+  
+     - Pricing tier – Free
+  
+       ![](../media/image-53.png)
 
-**HR/Payroll Copilot**: The HR/Payroll Copilot is a locally hosted application designed to assist with HR and payroll-related tasks. It integrates with Azure OpenAI and Cognitive Search to perform functions such as:
+1. Review the settings and click **Create**.
 
-- **Employee Identity Verification**: Confirming employee identity based on provided credentials.
-- **Information Queries**: Answering questions related to HR policies, payroll schedules, or other employee concerns.
-- **Information Updates**: Allowing employees to submit requests for updates to their personal information, such as address changes, and logging these requests for HR review.
+     ![](../media/image-54.png)
 
-By running this application locally, you can test and interact with its features to ensure it functions as intended before deployment in a production environment.
+1. Once deployement is successful click on **Go to resource**.
 
+     ![](../media/image-57.png)
 
-1. In the LabVM, open File Explorer, navigate to the below-mentioned path, right-click on the `secrets.env` file, and select open with  **Visual Studio Code**.
+1. Back on **Content-Safety-<inject key="DeploymentID" enableCopy="false"/>** page,  from the left navigation pane, select  **Overview** and review the settings then click on Content Safety Studio link.
 
-   ```
-   C:\Labfiles\OpenAIWorkshop\scenarios\incubations\copilot
-   ```
-
-    ![](../media/img38.png)
-
-2. The Visual Studio code is opened on the desktop. Edit the below code and update the **Azure OpenAI Key**, **Embedding Model name and GPT Deployment name**, **Azure OpenAI Endpoint**, **Cognitive Search Endpoint**,and **AZURE_SEARCH_ADMIN_KEY** values that you have copied and stored in the text file earlier.
-
-   | **Variables**                | **Values**                                                    |
-   | ---------------------------- |---------------------------------------------------------------|
-   | **AZURE_OPENAI_CHAT_DEPLOYMENT**          |  Replace the value with your **YOUR_GPT_MODEL** name that is **copilot-gpt**         |      
-   | **AZURE_OPENAI_EMB_DEPLOYMENT**          |  Replace the value with your **YOUR_EMBEDDING_MODEL** name that is **CompletionModel**    |
-   | **AZURE_OPENAI_API_ENDPOINT**          | **<inject key="OpenAIEndpoint" enableCopy="true"/>**          |
-   | **AZURE_OPENAI_API_KEY**           | **<inject key="OpenAIKey" enableCopy="true"/>**               |
-   | **AZURE_SEARCH_SERVICE_ENDPOINT**  | **<inject key="SearchServiceuri" enableCopy="true"/>**        |
-   | **AZURE_SEARCH_ADMIN_KEY**         | **<inject key="SearchAPIkey" enableCopy="true"/>**            |
-
-3. After updating values, the `secrets.env` file should be as shown in the below screenshot. Press **CTRL + S** to save the file.
-
-    ![](../media/img39.png)
-
-4. To run the application from the command line, navigate to Command Prompt and run the below command:
-
-   > **Note**: Here, you can enter your email address below to get notifications. Otherwise, leave this field blank and click on **Enter**.
-
-   ```
-   cd C:\Labfiles\OpenAIWorkshop\scenarios\incubations\copilot\employee_support
-   streamlit run hr_copilot.py
-   ```
-
-5. Once the execution of `streamlit run hr_copilot.py` is completed, a locally hosted HR Copliot application will be opened in the web browser. 
-
-   ![](../media/img17.png)
-
-   ![](../media/img18.png)
-
-6. Run the following query to validate the identity of the employee:
-
-   ```
-   John 1234
-   ```
-
-   ![](../media/img19.png)
-
-7. Enter an example question such as `When will I receive the W2 form?`. The questions are answered by the Copilot by searching a knowledge base.
-
-   ![](../media/L3-T1-S7.png)
-
-8. Copilot can help update employee information, like address updates. For other information update requests, Copilot will log a ticket to the HR team to update the information. Enter `I moved to 123 Main St., San Jose, CA 95112, please update my address` in the HR Copilot app.
-
-    ![](../media/L3-T1-S8.png)
-
-9. Navigate back to **CMD** and stop the terminal by typing **ctrl + C**.
-
-### Task 2: Integrate Azure Cognitive Search with your Application
-
-In this task, you will configure Azure Storage and AI Search services, update credentials in the `secrets.env` file, and run the HR Copilot application locally using Streamlit. You will test the application by querying employee data and verify its integration with Azure services. Troubleshooting steps will include installing required packages to ensure smooth functionality.
-
-1. In the **Azure Portal**, start by searching for **Storage accounts** in the search bar at the top of the page. Click on the **Storage accounts** option from the search results.
-
-    ![](../media/img74.png)
-
-2. From the **Storage accounts** page, locate and select the storage account named **copilotstorage<inject key="Deployment ID" enableCopy="false"/>**. This action will open the details and management options for the selected storage account.
-
-    ![](../media/img75.png)
-
-3. From the left-hand menu of the **copilotstorage** page, choose **Access keys** under the **Security + networking** section. This section will display the connection strings associated with your storage account. Copy the **Connection string** provided and save it in a text file for future reference and use.
-
-    ![](../media/img76.png)
-
-4. Next, in the **Azure AI services** section, choose **AI search** from the left-hand menu. Then, click on the service named **copilot-openai-<inject key="Deployment ID" enableCopy="false"/>** to access its configuration and management options.
-
-   ![](../media/l1-t2-s6.png "Azure OpenAI")
-
-5. On the **Overview** page, locate and click on the **Import data** button. This action will initiate the process for importing data into your Azure AI service.
-
-    ![](../media/img77.png)
-
-6. Choose **Azure Blob storage** as the **Data source**. This option allows you to import data from your Azure Blob storage into the AI service.
-
-    ![](../media/img78.png)
-
-7. On the **Connect to your data** tab, provide the following details and click on **Next: Add cognitive skills (Optional) (7)**.
-
-   | Settings| value|
-   |---|---|
-   |Data source name| **copilotstorage<inject key="Deployment ID" enableCopy="false"/>** **(1)**|
-   |Data to extract| **Content and metadata** **(2)**|
-   |Parsing mode| **JSON array** **(3)**|
-   |Connection string | **YOUR_STORAGE_ACCOUNT_CONNECTIONSTRING (4)**|
-   |Container name| **data (5)**|
-   |Blob folder| **data (6)**|
-
-   ![](../media/img80.png)
-
-8. On the **Add cognitive skills (optional)** tab, accept the default settings and click on **Skip to: Customize target index** to move forward.
-
-9. On the **Customize target index** tab, enter **payroll-hr (1)** as the **Index name**. 
-
-   ![](../media/img81part1.png)
-
-1. Configure the fields as shown in the image:
-
-   - **contentVector**: Set the type to `Collection(Edm.Single)`.
-
-   - **id**: Check the boxes for **Filterable**, **Sortable**, and **Facetable**.
-
-   - **content**: Check the **Searchable** box.
-
-   - Ensure **Retrievable** is selected for all fields.
-
-     ![](../media/img81.png)
-
-10. Next, on the **contentVector** field, click on the **Eclipse** button in the right corner and select **Configure vector field**.
-
-      ![](../media/img82.png)
-
-11. On the **Configure vector field** tab, set the **Dimensions** property to `1536` **(1)** and click on **Create** under **No vector search profiles**.
-
-      ![](../media/l3-t2-s11.png)
-
-12. On the **Vector profile** tab, Click on **Create** under No algorithm configurations.
-
-      ![](../media/l3-t2-s12.png)
-
-13. On the **Vector algorithm** tab, leave the default and click on **Save**.
-
-      ![](../media/l3-t2-s13.png)
-
-14. On the **Vector profile** tab, select the algorithm created in the previous step and Click on **Create** under No vectorizers.
-
-      ![](../media/l3-t2-s14.png)
-
-15. On the **Vector algorithm** tab, leave the default and select the Azure OpenAI service as **Copilot-OpenAI-<inject key="Deployment ID" enableCopy="false"/>** and model deployment as **CompletionModel** . Click on **Save**.
-
-      ![](../media/l3-t2-s15.png)
-
-16. On the **Vector profile** tab, select the Vectorizers created in the previous step and Click on **Save**.
-
-      ![](../media/l3-t2-s16.png)
-
-17. On the **Configure vector field** tab, keep the **Dimensions** property to `1536` and **Vector profile** created in previous step and Click on **Save**. Click on **Next: Create an indexer**.
-
-    ![](../media/l3-t2-s17.png)
-    
-    > **Note**: If you are unable to save the **Configure Vector Field**, try deleting the **ContentVector** field. Then, recreate the field with the name **ContentVector** and select **Collection.single** for the **ContentVector** field and reperform from step 10 to step 17.
-
-18. Enter the **Indexer name** as **payroll-hr**, and click on **Submit**.
-
-      ![](../media/img84.png)
-
-19. From the **Overview (1)** page, click on **Import data (2)** again.
-
-       ![](../media/img77.png)
-
-20. On the **Connect to your data** tab, select the existing data source and select the storage account then, click **Next: Add cognitive skills (optional)**.
-
-      ![](../media/img85.png)
-
-21. On the **Add cognitive skills (optional)** tab leave the default and click on **Skip to: Customize target index**.
-
-22. Next, on the **Customize target index**  tab, enter the **Index name** as **payroll-hr-cache (1)**. 
-
-      ![](../media/img86part1.png)
-
-1. Click on **+ Add field** and create the fields **id**, **search_query**, **search_query_vector**, and **gpt_response** with the following configurations:
-
-   - **id**: Check the boxes for **Filterable**, **Sortable**, and **Facetable**.
-
-   - **search_query** and **gpt_response**: Check the **Searchable** box.
-
-   - **search_query_vector**: Select **Collection(Edm.Single)** as the type.
-
-   - Ensure **Retrievable** is selected for all fields.
-
-      ![](../media/img86.png)
-
-23. In the **search_query_vector** field, click on the **Eclipse** button in the right corner and select **Configure vector field**.
-
-      ![](../media/img87.png)
-
-24. On the **Configure vector field** tab, set the **Dimensions** property to `1536` **(1)** and Click on **Create** **(2)** under No vector search profiles.
-
-      ![](../media/l3-t2-s11.png)
-
-25. On the **Vector profile** tab, Click on **Create** under No algorithm configurations.
-
-      ![](../media/l3-t2-s12.png)
-
-26. On the **Vector algorithm** tab, leave the default and click on **Save**.
-
-      ![](../media/l3-t2-s13.png)
-
-27. On the **Vector profile** tab, select the algorithm created in the previous step and Click on **Create** under No vectorizers.
-
-      ![](../media/l3-t2-s14.png)
-
-28. On the **Vector algorithm** tab, leave the default and select the Azure OpenAI service as **Copilot-OpenAI-<inject key="Deployment ID" enableCopy="false"/>** and model deployment as **CompletionModel** . Click on **Save**.
-
-      ![](../media/l3-t2-s15.png)
-
-29. On the **Vector profile** tab, select the Vectorizers created in the previous step and Click on **Save**.
-
-      ![](../media/l3-t2-s16.png)
-
-30. On the **Configure vector field** tab, keep the **Dimensions** property to `1536` and **Vector profile** created in previous step and Click on **Save**. Click on **Next: Create an indexer**.
-
-      ![](../media/l3-t2-s17.png)
-
-31. Enter the **Indexer name** as **payroll-hr-cache**, and click on **Submit**.
-
-      ![](../media/img89.png)
-
-32. Navigate to the **Indexes** tab under the **Search management** section to view the newly created indexes, copy the index names, and save them in a text editor for later use.
-
-      ![](../media/img90.png)
-
-33. Click on **Keys** from the left menu, copy the **Primary admin keys**, and store them in a text file for later use.
-
-    ![](../media/img63.png)
-
-34. Return to the `secrets.env` file that you previously opened in Visual Studio Code. This file contains environment variables essential for configuring your application. Make sure it is open and ready for editing.
-
-
-35. The Visual Studio code is opened on the desktop. Replace the following values and press **CTRL + S** to save the file.
-
-    | Setting | Action |
-    | -- | -- |
-    | USE_AZCS | **True** |
-    | AZURE_SEARCH_INDEX_NAME | **payroll-hr** |
-    | CACHE_INDEX_NAME | **payroll-hr-cache** |
-
-36. Next, click on the **Eclipse Button** at the top of the screen, then select **Terminal** from the dropdown menu and click on **New Terminal** to open a new terminal window.
-
-    ![](../media/img69.png) 
-
-37. Run the below command to change the directory and run the HR Copilot application using the search service.
-
-      > **Note**: Here, you can enter your email address below to get notifications. Otherwise, leave this field blank and click on **Enter**.
-
-    ```bash
-    cd C:\Labfiles\OpenAIWorkshop\scenarios\incubations\copilot\employee_support
-    streamlit run hr_copilot.py
-    ```
-
-38. Run the following query to validate the identity of the employee:
+      ![](../media/image-59.png)
    
-      ```
-      Nancy 1234
-      ```
+1. Your navigated to the [Content Safety Studio](https://contentsafety.cognitive.azure.com/), select the **Settings** icon in the top navigation menu.
 
-    ![](../media/img91.png)
+     ![](../media/image-51.png)
 
+1. Make sure Content Safety resources is created.
 
-39. Enter an example question such as `When will I receive the W2 form?`. The questions are now answered by the Copilot by searching a knowledge base. You can review this by navigating back to the command prompt and viewing the output.
+      ![](../media/image-55.png)
 
-      ![](../media/img92.png)
+1. Select **Content-Safety-<inject key="DeploymentID" enableCopy="false"/> (1)** and click on **Use resource (2)**.
 
-      ![](../media/img93.png)
-
-    > **Note**: If you faced any issues while providing the above input, please try to run the command **pip install azure-search-documents==11.4.0b9** in the vs code at the file location and again try to perform from the step 37. 
-
-40. Navigate back to **CMD** and stop the terminal by typing **ctrl + C**.
-
-### Task 3: Deploy the HR/Payroll Copilot application to Azure
-
-1. In the LabVM, open File Explorer, navigate to the below-mentioned path, right-click on the `main.bicep` file, and select open with  **Visual Studio Code**.
-
-      ```
-      C:\LabFiles\OpenAIWorkshop\infra
-      ```
-
-    ![](../media/img41.png)
-
-2. In the **appsettings** section of the `main.bicep` file, replace the values below with the ones you copied previously in the text editor. Next, press **CTRL + S** to save the file.
-
-   | **Variables**                     | **Values**                                                    |
-   | --------------------------------- |---------------------------------------------------------------|
-   | **AZURE_OPENAI_API_KEY** | **<inject key="OpenAIKey" enableCopy="true"/>** |
-   | **AZURE_OPENAI_ENDPOINT** | **<inject key="OpenAIEndpoint" enableCopy="true"/>** |
-   | **AZURE_OPENAI_EMB_DEPLOYMENT** |  Replace the value with your **YOUR_EMBEDDING_MODEL** name that is **CompletionModel** |
-   | **AZURE_OPENAI_CHAT_DEPLOYMENT**  |  Replace the value with your **YOUR_GPT_MODEL** name that is **copilot-gpt** |
-   | **AZURE_SEARCH_SERVICE_ENDPOINT** | **<inject key="SearchServiceuri" enableCopy="true"/>** |
-   | **AZURE_SEARCH_ADMIN_KEY** | **<inject key="SearchAPIkey" enableCopy="true"/>** |
-
-   ![](../media/img42.png)
-
-4. In the LabVM, navigate to Desktop and search for `cmd` in the search box, then click on **Command Prompt**.
-
-5. Run the below command to change the directory.
+     ![](../media/image-(60).png)
    
-   ```bash
-   cd C:\LabFiles\OpenAIWorkshop
-   ```
+## Task 2: Monitor and Analyze Content for Compliance
 
-6. Run the below command to **Authenticate with Azure**. It will redirect you to the Azure-authorized website. Next, select your account.
+In this task, you will implement and evaluate content moderation for both images and text using Azure's Content Safety Studio. The goal is to ensure that content uploaded by users complies with safety standards by testing for harmful content and analyzing moderation results.
 
-   - **azd** is the Azure Developer CLI, a command-line tool that simplifies the management and deployment of Azure applications. It helps streamline various tasks related to Azure resources, including authentication, configuration, and deployment of resources.
+## Task 2. 1 : Moderate image content for singular isolated images.
 
-     ```bash
-     azd auth login
-     ```
+1. On **Azure AI | Content Safety Studio** under **Safeguard your image content with built-in-features**, select **Moderate image content**.
 
-7. Run the below command to set up the resource group deployment and **Create a new environment**. Make sure to replace `{DeploymentId}` with **<inject key="Deployment ID" enableCopy="true"/>** in the below command.
+     ![](../media/image-11.png)
 
-   - The command `azd config set alpha.resourceGroupDeployments on` enables the alpha feature for resource group deployments within the Azure Developer CLI (azd). This feature allows the Azure Developer CLI to manage and deploy resources within specific resource groups, providing a more organized and efficient way to handle Azure resources. By enabling this feature, you can deploy your application and its associated resources into a designated resource group, making it easier to manage and maintain those resources over time.
+1. On **Moderate image content** select **Run a simple test** tab, review the options note we have three set content  **Safe content**, **self- harm content** and **AI-generated sexual content**.
 
-     ```bash
-     azd config set alpha.resourceGroupDeployments on
-     ```
+#### Safe content
+
+1. Now lets use our image and test then check the result. **Moderate image content** select **Run a simple test** tab then click on **Browse for a file**
+
+     ![](../media/image-61.png)
+
+1. Within **file explorer** navigate to **C:\LabFiles\Model-Evaluation-and-Model-Tunning\Labs\data\image_sample_dataset** select and open **family-builds-campfire.jpg**
+
+1. Review the image and click on **Run test**.
+
+    ![](../media/image-68.png)
+   
+1. Review the result. As expected, this image content is Allowed, and the Severity level is Safe across all categories. 
+
+    ![](../media/image-69.png)
+
+   >**Note**: So far, we’ve tested image content for singular isolated images. However, if we have a bulk dataset of image content, we could test the bulk dataset at once and receive metrics based on the model’s performance.
+
+#### Self harmed content
+
+We should also anticipate customers potentially posting harmful image content. To ensure that we account for such a scenario, let’s test the detection of harmful image content.
+
+1. Select Browse for a file and upload the **bear-attack-blood.JPG** file.
+
+1. Set all Threshold levels to Medium.
+1. Select Run test.
+
+    >**Note**: Rightfully so, the content is Blocked, and was rejected by the Violence filter which has a Severity level of High.
+
+### Task 2.2: Run a bulk test
+
+So far, we’ve tested image content for singular isolated images. However, if we have a bulk dataset of image content, we could test the bulk dataset at once and receive metrics based on the model’s performance.
+
+1. On **Moderate image content** select **Run a bulk test** tab then click on **Browse for a file**.
+
+     ![](../media/image-12.png)
+
+1. Within file explorer navigate to **C:\LabFiles\Model-Evaluation-and-Model-Tunning\Labs\data\image_sample_dataset**  select and open **image_sample_dataset.zip** folder.
+
+    ![](../media/image-81.png)
+   
+1. Under Test section review **Dataset preview** then select **Configure filters** tab review **Category** and **Threshold level** then click on **Run test**.
+
+     ![](../media/image-14.png)
+
+1. Review the result.
+
+   ![](../media/image-15.png)
+
+   ![](../media/image-16.png)
+
+### Task 2.3 : Text moderation using Moderate text content 
+
+We could leverage an AI model to detect whether the text input from our customers is harmful and later use the detection results to implement the necessary precautions.
+
+#### Safe content
+
+Let’s first test some positive customer feedback.
+
+1. In Content Safety Studio, select **Moderate text content**.
+
+   ![](../media/image-70.png)
+
+1. On the **Moderate text content** page, select **Run a simple test** and choose **Safe content** under **select a sample or type your own** section.
+
+   ![](../media/image-71.png)
+
+1. In the Test box, enter the following:
+
+     - I recently used the PowerBurner Camping Stove on my camping trip, and I must say, it was fantastic! It was easy to use, and the heat control was impressive. Great product!
+
+     - Set all Threshold levels to Medium.
+
+     - Select Run test.
+
+       ![](../media/image-72.png)
      
-     ```bash
-     azd env new copilot-{DeploymentId}
-     ```
+1. Review the result.
 
-8. Run the below command to provision Azure resources and deploy your project with a single command.
+    ![](../media/image-73.png)
 
-   ```bash
-   azd up
-   ```
+    >**Note**: The content is allowed, and the severity level is Safe across all categories. This was to be expected given the positive and unharmful sentiment of the customer’s feedback.
+
+
+#### Harmful content
+
+But what would happen if we tested a harmful statement? Let’s test with negative customer feedback. While it's OK to dislike a product, we don't want to condone any name calling or degrading statements.
+
+1. In the Test box, enter the following:
+
+    - I recently bought a tent, and I have to say, I'm really disappointed. The tent poles seem flimsy, and the zippers are constantly getting stuck. It's not what I expected from a 
+       high-end tent. You all suck and are a sorry excuse for a brand.
+
+    - Set all Threshold levels to Medium.
+
+    - Select Run test.
+
+      ![](../media/image-75.png)
+ 
+   - Although the content is Allowed, the Severity level for Hate is low. To guide our model to block such content, we’d need to adjust the Threshold level for Hate. A lower Threshold level would block any content 
+     that’s a low, medium, or high severity. There’s no room for exceptions!
+
+   - Set the Threshold level for Hate to Low.
+
+   - Select Run test.
+
+     ![](../media/image-76.png)
+    
+   - The content is now Blocked and was rejected by the filter in the Hate category.
+
+      ![](../media/image-77.png)
+
+#### Violent content with misspelling
+
+We can’t anticipate that all text content from our customers would be free of spelling errors. Fortunately, the Moderate text content tool can detect harmful content even if the content has spelling errors. Let’s test this capability on additional customer feedback about an incident with a racoon.
+
+1. Select Violent content with misspelling
+
+    ![](../media/image-74.png)
+
+1. In the Test box, enter the following:
+
+    - I recently purchased a campin cooker, but we had an acident. A racon got inside, was shocked, and died. Its blood is all over the interior. How do I clean the cooker?
+
+    - Set all Threshold levels to Medium.
+
+    - Select Run test.
+
+    - Although the content is Allowed, the Severity level for Violence is should be Low. You could adjust the Threshold level for Violence to try and block such content, however, should we? Consider a scenario where the customer is asking this question in a conversation with the AI-powered customer support agent in hopes of receiving guidance on how to clean the cooker. There may be no ill-intent in submitting this question and therefore, it may be a better choice not to block such content. As the developer, consider various scenarios where such content may be OK before deciding to adjust the filter and block similar content.
+  
+#### Run a bulk test
+So far, we’ve tested image content for singular isolated images. However, if we have a bulk dataset of image content, we could test the bulk dataset at once and receive metrics 
+based on the model’s performance.
+
+We have a bulk dataset of images provided by customers. The dataset also includes sample harmful images to test the model’s ability to detect harmful content. Each record in the 
+dataset includes a label to indicate whether the content is harmful. Let’s do another test round but this time with the data set!
+
+1. Switch to the Run a bulk test tab.
+
+1. Select **Browse for a file** and within file explorer navigate to **C:\LabFiles\Model-Evaluation-and-Model-Tunning\Labs\data\image_sample_dataset**  select and upload **bulk-image-moderation-dataset.csv** file.
    
-9. Please select your Azure subscription to use, enter `1`, and click on the **Enter** button.
+    > Note: The name of the CSV file may vary.
+   
+     ![](../media/image-82.png)
+     
+1. In the Dataset preview section, browse through the Records and their corresponding Label. A 0 indicates that the content is acceptable (not harmful). A 1 indicates that the content is unacceptable (harmful 
+   content).
 
-   ![](../media/img29.png)
+1. Set all Threshold levels to Medium.
 
-10. Please select an Azure location to use, select the location as **<inject key="Region" enableCopy="false"/>** location, and click on the **Enter** button. You can change the location using the up and down arrows.
+1. Select Run test.
+   
+    ![](../media/image-78.png)
 
-    ![](../media/img30.png)
+1. Review the result.
 
-11. Next, select **copilot-openai-<inject key="Deployment ID" enableCopy="False"/>** resource group and hit **ENTER**.
+    ![](../media/image-79.png)
 
-    ![](../media/img43.png)
+    ![](../media/image-80.png)
 
-12. Once the deployment succeeds, you will see the following message **SUCCESS: Your application was provisioned and deployed to Azure**. The deployment might take 5-10 minutes. It is producing a web package file, then creating the resource and publishing the package to the app service.
+> **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+  - If you receive a success message, you can proceed to the next task.
+  - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+  - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help you out.
 
+<validation step="a76d4e32-03f7-494b-9427-63f1702eff54" />
 
-13. Navigate back to the Azure portal, search, and select **App service**. Select the available web app that you have deployed in the previous step.
+## Review
+In this lab you have completed the following tasks:
+- Implemented Content Safety Measures
+- Monitor and Analyze Content for Compliance
 
-    ![](../media/img44.png)
-
-14. Next, click on **Browse** to open your Web application.
-
-    ![](../media/img45.png)
-
-    ![](../media/img46.png)
-
-    > **Note**: If an issue occurs when you try to launch the app service, please restart the app service and wait five minutes before trying to launch the app again.
-
-   <validation step="e563f609-c163-48c7-816f-e11985cba271" />
-
-## Summary
-
-In this lab, you have built and tested an HR/Payroll copilot application locally by configuring and running it with Azure OpenAI and Cognitive Search settings. They then integrated Azure Cognitive Search by setting up data sources, indexes, and vector fields. Finally, they deployed the application to Azure, authenticated with Azure, and used deployment commands to provision resources and launch the app. The lab concluded with the successful deployment and verification of the application on Azure.
-
-### You have successfully completed the lab
+### You have successfully completed the lab.
