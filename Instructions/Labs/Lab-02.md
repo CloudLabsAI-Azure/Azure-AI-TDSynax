@@ -21,43 +21,39 @@ After completing this lab, you will be able to complete the following tasks:
 
 ## Task 01: Create an AI Project and AI Hub Resources
 
-1. Navigate to https://ai.azure.com to create a project in **Azure AI Studio**.
+1. Open a new tab in the broswr. Navigate to https://ai.azure.com to create a project in **Azure AI Foundry**.
 
-   ![](../media/azure-ai-studio.png)
+   ![](../media/openai.png)
 
-1. Sign in to **Azure AI Studio** using the credentials from the **Environment** tab.
+1. Sign in to **Azure AI Foundry** using the credentials from the **Environment** tab.
 
-1. Click on **+ New Project** to create a new project and hub.
+1. Select **Azure AI Foundry** from the top-left corner.
 
-   ![](../media/create-new-project.png)
+   ![](../media/azureai.png)
 
-1. On the **Project details** section, enter a unique **name** for your project and click on **Next**.
+1. Click on **+ Create project** to create a new project and hub.
 
-   ![](../media/n1.png)
+   ![](../media/createproject1.png)
 
-1. On the **Create a Hub** section, configure the below values.
+1. On the **Create a project** page, enter the below details:
 
-   - Hub name: **odl_user_<inject key="Deployment-ID" enableCopy="false"/>_ai**
-   - Subscription: **Select your Default Subscription**
-   - Resource group: **llm-ops-<inject key="Deployment-ID" enableCopy="false"/>**
-   - Location: **EAST US**
-   - Connect Azure AI Service or Azure OpenAI: **(new)ai-odl-user_<inject key="Deployment-ID" enableCopy="false"/>_ai**
+   - **Project name**: openai-<inject key="DeploymentID" enableCopy="false"/>
+   - Select **Customize**
+   - **Hub name (1)**: **odl_user_<inject key="DeploymentID" enableCopy="false"/>_ai**
+   - **Subscription (2)**: **Select your Default Subscription**
+   - **Resource group (3)**: **llm-ops-<inject key="DeploymentID" enableCopy="false"/>**
+   - **Location (4)**: **EAST US**
+   - **Connect Azure AI Service or Azure OpenAI (5)**: **(new)ai-odl-user_<inject key="DeploymentID" enableCopy="false"/>_ai**
 
-      ![](../media/llm1.png)
+      ![](../media/createproject12.png)
 
-1. Click on **Create new AI Search (1)** for the **Connect Azure AI Search** option. Enter the name **ai-search-odl-user-<inject key="Deployment-ID" enableCopy="false"/>-ai (2)** for your **Azure AI Search** and click on **Create**.
+1. Click on **Create new AI Search (1)** for the **Connect Azure AI Search** option. Enter the name **ai-search-odl-user-<inject key="DeploymentID" enableCopy="false"/>-ai (2)** for your **Azure AI Search** and click on **Next (3)**.
 
-   ![](../media/llm31.png)
+   ![](../media/odluser.png)
 
-1. On the **Create a Hub** section, click on **Next**.
+1. Select **Next**. In the **Review and finish** section, review your Azure AI services, click on **Create** and wait for the deployments to succeed.
 
-   ![](../media/llm47.png)
-
-1. In the **Review and finish** section, review your Azure AI services, click on **Create a project,** and wait for the deployments to succeed.
-
-   ![](../media/llm45.png)
-
-1. You can also navigate to your Resource group **llm-ops-<inject key="Deployment-ID" enableCopy="false"/>** section in the Azure portal to verify the resources deployed.
+1. You can also navigate to your Resource group **llm-ops-<inject key="DeploymentID" enableCopy="false"/>** section in the Azure portal to verify the resources deployed.
 
    ![](../media/azure-portal-resources.png)
 
@@ -99,9 +95,15 @@ After completing this lab, you will be able to complete the following tasks:
 
 ## Task 02: Deploy Azure OpenAI Models
 
-1. Navigate to **Components > Deployments (1)** settings. Click on **Deploy a model (2)** and select **Deploy base model (3)** to create an OpenAI model.
+1. On the **Azure Portal**, in the **Search resources, services and docs** search and select **Azure OpenAI**.
+
+1. On the **Azure AI services | Azure OpenAI** page, select **OpenAI-<inject key="DeploymentID" enableCopy="false"/>**.
+
+1. On the **OpenAI-<inject key="DeploymentID" enableCopy="false"/>** select, **Go to Azure AI Foundry Portal**.
+
+1. From the left navigation pane, select **Deployments (1)**. Click on **Deploy a model (2)** and select **Deploy base model (3)** to create an OpenAI model.
    
-   ![](../media/llm3.png)
+   ![](../media/deployments.png)
 
 1. Select **gpt-4 (1)** from the list of models and click on **Confirm (2)**.
 
@@ -111,7 +113,7 @@ After completing this lab, you will be able to complete the following tasks:
 
    ![](../media/llm4.png)
 
-1. Provide the following details and click on **Deploy (5)**:
+1. Provide the following details and click on **Deploy to selected resources**:
 
    - Deployment name: **gpt-4 (1)**
    - Deployment type: **Standard (2)**
@@ -124,23 +126,23 @@ After completing this lab, you will be able to complete the following tasks:
 
    ![](../media/gpt-4-model-deployments-1.png)
 
-1. On the **Components > Deployments** settings. Click on **Deploy a model (2)** and select **Deploy base model (3)** to create an OpenAI model.
+1. On the **Model deployments** page, click on **Deploy a model** and select **Deploy base model** to create an OpenAI model.
    
-1. Select **text-embedding-ada-002** from the list of models and click on **Confirm**.
+1. Select **text-embedding-ada-002 (1)** from the list of models and click on **Confirm (2)**.
 
    ![](../media/text-embedding-model.png)
 
 1. On the **Deploy model text-embedding-ada-002** pane, accept the default settings and click on **Deploy**.
 
-   ![](../media/llm11.png)
+   ![](../media/textadda.png)
 
 1. Verify that the **text-embedding-ada-002** model is present in the **Deployments** section.
 
-   ![](../media/text-embedding-model-deployments.png)
+   ![](../media/textambedding.png)
 
 ## Task 03: Create a Content Safety Service
 
-1. Navigate to the **Azure portal** and search for **content safety**.
+1. Navigate to the **Azure portal** and search and select for **content safety**.
 
    ![](../media/search-content-safety.png)
 
@@ -151,9 +153,9 @@ After completing this lab, you will be able to complete the following tasks:
    >**Note:** Create the Content Safety resource in the same region where you have deployed the Azure AI services.
 
    - Subscription: **Select your Default Subscription (1)**
-   - Resource group: **llm-ops-<inject key="Deployment-ID" enableCopy="false"/> (2)**
-   - Region: **<inject key="location" enableCopy="false"/> (3)**
-   - Name: **content-safety-<inject key="Deployment-ID" enableCopy="false"/>(4)**
+   - Resource group: **llm-ops-<inject key="DeploymentID" enableCopy="false"/> (2)**
+   - Region: **<inject key="Region" enableCopy="false"/> (3)**
+   - Name: **content-safety-<inject key="DeploymentID" enableCopy="false"/>(4)**
    - Pricing tier: **Standard S0 (5)**
 
        ![](../media/create-content-safety.png)
@@ -177,13 +179,13 @@ After completing this lab, you will be able to complete the following tasks:
 
 ## Task 04: Add an Azure Content Safety connection
 
-1. Navigate to your **odl_user_<inject key="Deployment-ID" enableCopy="false"/>-XXXX** project in **Azure AI Studio**.
+1. Navigate to **Azure AI Foundry (1)**, select **openai-<inject key="DeploymentID" enableCopy="false"/> (2)** project. From the left navigation pane, scroll down, and select **Management center (3)**.
 
-   ![](../media/project-select.png)
+   ![](../media/magaementcenter.png)
 
-1. On the **project overview** page, navigate to the **Settings** tab and click on **+ New connection** under **Connected resources**.
+1. Under **Management center**, select **Connected resources (1)**. On the **Manage connected resources in this hub** page, click on **+ New connection (2)**.
 
-   ![](../media/project-new-connection.png)
+   ![](../media/connectedresources.png)
 
 1. On the **Add a connection to external assets** pane, click on **Azure AI Content Safety**.
 
@@ -197,15 +199,17 @@ After completing this lab, you will be able to complete the following tasks:
 
    ![](../media/review-content-safety-connection.png)
 
-1. Navigate back to **Settings > Connected resources** to verify the **Azure Content Safety connection**.
+1. Navigate back to **Connected resources** to verify the **Azure Content Safety connection**.
 
-   ![](../media/confirm-content-safety-connection.png)
+   ![](../media/contentsafty.png)
 
 ## Task 05: Use Azure AI Studio Playground
 
-1. In your **Azure AI Studio**, navigate to the **gpt-4** deployment under the **Deployments** option.
+1. From the left navigation pane, select **Go to project**.
 
-   ![](../media/llm14.png)
+1. Under **My assets** select **Models + endpoints (1)**, navigate to the **gpt-4 (2)** deployment under the **Model deployments** section.
+
+   ![](../media/modelendpoints.png)
 
 1. On the **gpt-4** deployment details, click on **Open in playground**.
 
@@ -213,7 +217,7 @@ After completing this lab, you will be able to complete the following tasks:
 
 1. Let us run an example where the model will help us summarize and extract information from a conversation between a customer and a representative of a telco company.
 
-1. Copy the following prompt into the **Give the model instructions and context** field of the **Chat playground** and click on **Save**.
+1. Copy and paste the following prompt into the **Give the model instructions and context** field of the **Chat playground** and click on **Apply changes**.
 
    ```
    You're an AI assistant that helps telco company to extract valuable information from their conversations by creating JSON files for each conversation transcription you receive. You always try to extract and format it as a JSON:
@@ -228,7 +232,7 @@ After completing this lab, you will be able to complete the following tasks:
    Only extract information that you're sure of. If you're unsure, write "Unknown/Not Found" in the JSON file.
    ```
 
-   ![](../media/n2.png)
+   ![](../media/applychanges.png)
 
    >**Note:** If you receive an **"Update systems message?"** pop-up, enable **Do not show this again,** and click on **Continue**.
 
@@ -280,11 +284,11 @@ After completing this lab, you will be able to complete the following tasks:
    
 ## Task 06: Work with an Open Source LLM Model
 
-1. Now let's test an **open-source Llama2 model** from Meta. Navigate to **Components > Deployments (1)** settings. Click on **Deploy a model (2)** and select **Deploy base model (3)** to create an OpenAI model.
+1. Now let's test an **open-source Llama2 model** from Meta. Navigate to **Models + endpoints (1)**. Go back to the **Manage deployments of your models and services** page. Click on **Deploy model (2)** and select **Deploy base model (3)** to create an OpenAI model.
    
-   ![](../media/llm3.png)
+   ![](../media/modeldeplyments.png)
 
-1. Search for and select **Llama-2-13b-chat** from the list of models, and click on **Confirm**.
+1. Search for and select **Llama-3.2-90B-Vision-Instruct (1)** from the list of models, and click on **Confirm (2)**.
 
    ![](../media/llama-chat-model-confirm.png)
 
