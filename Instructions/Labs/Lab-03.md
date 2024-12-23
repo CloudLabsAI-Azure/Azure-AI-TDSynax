@@ -39,7 +39,7 @@ The corpus may be updated as new research is published in peer-reviewed publicat
 
 Understanding the source datasets is very important in AI and ML. To help you expedite the process, we have created a Power BI dashboard you can use to explore them at the beginning of each lab.
 
-![Azure AI in a Day datasets](../media../media/SHC1.png)
+![Azure AI in a Day datasets](../media/SHC1.png)
 
 To get more details about the source datasets, check out the [Data Overview](https://github.com/CloudLabsAI-Azure/ai-in-a-day/blob/main/data-overview.md) section.
 
@@ -47,7 +47,7 @@ To explore the dashboard of COVID-19 data, open the `Azure-AI-in-a-Day-Data-Over
 
 > **Note:** Please close and reopen the Power BI Desktop document if it throws an error on the first attempt.
 
- ![Azure AI in a Day datasets](../media../media/powerbireportopen.png)
+ ![Azure AI in a Day datasets](../media/powerbireportopen.png)
 
 ## Task 2 - Explore lab scenario
 
@@ -57,7 +57,7 @@ Based on a set of existing research papers, we will use Natural Language Process
 
 The following diagram highlights the portion of the general architecture covered by this lab.
 
-![Azure AI in a Day datasets](../media../media/updated-arch-lab1.png)
+![Azure AI in a Day datasets](../media/updated-arch-lab1.png)
 
 The high-level steps covered in the lab are:
 
@@ -74,11 +74,11 @@ The high-level steps covered in the lab are:
 
 1. In the **Azure portal**, navigate to `All Resources`.
 
-    ![All Resources](../media../media/AllResources.png)
+    ![All Resources](../media/AllResources.png)
         
 1. Locate **Machine Learning** resource named **<inject key="AML Workspace Name " enableCopy="true"/>** and select it.
 
-    ![Navigate to Azure Machine Learning](../media../media/innovate10.png)
+    ![Navigate to Azure Machine Learning](../media/innovate10.png)
     
 1. On the **Overview (1)** page, click on **Launch studio (2)**. If you are prompted to sign in again, use the same lab credentials you used to login to the Azure portal. Close the welcome **pop-up** if any with the cross icon.  
     
@@ -110,9 +110,9 @@ The high-level steps covered in the lab are:
     ipython kernel install --user --name aiw-ai-kernel --display-name "Python (aiw-ai-kernel)"
     ```
    
-   ![](../media../media/setkernel1.png)
+   ![](../media/setkernel1.png)
    
-   ![](../media../media/setkernel2.png)
+   ![](../media/setkernel2.png)
 
 1. From the `Application` section associated with the compute instance, select `Jupyter` **(1)**. 
 
@@ -120,30 +120,30 @@ The high-level steps covered in the lab are:
 
 1. If you see **IMPORTANT NOTE: Always use trusted code**, then check on **Yes, I Understand** and then click on **Continue**.
 
-    ![](../media../media/trustcode01.png)
+    ![](../media/trustcode01.png)
     
    >**Note**: If prompted with Do you wish to trust this compute instance? webpage, click on **Click here to trust this compute instance**.
     
-    ![](../media../media/upd-l1-t3-s14.png)
+    ![](../media/upd-l1-t3-s14.png)
     
 ## Task 4 - Prepare data for the Machine Learning process
 
 1. In the Jupyter application, navigate to the given path **\Users\odl_user_<inject key="DeploymentID" enableCopy="false"/>** and open `1. Data Preparation.ipynb` notebook.
 
-   ![Select Note Book](../media../media/IMG015.png)
+   ![Select Note Book](../media/IMG015.png)
    
 2. On Jupiter page, select **Kernel (1)**, then **Change kernel (2)** and make sure **Python (aiw-ai-kernel) (3)** is selected.
 
-   ![](../media../media/IMG011.png)
+   ![](../media/IMG011.png)
 
 3. Execute the cells inside `1. Data Preparation.ipynb` notebook one by one (Click on the 'Run' button or by using either Ctrl + Enter to stay on the same cell, or Shift + Enter to advance to the next cell) and observe the results of each cell execution.
 
-   ![Run Note Book Cell](../media../media/IMG012.png)
-   ![Note Book Cell Output](../media../media/SHC4.1.png)
+   ![Run Note Book Cell](../media/IMG012.png)
+   ![Note Book Cell Output](../media/SHC4.1.png)
    
  4. Please make sure to read the cells carefully and update the storage account name wherever required with **<inject key="Storage Account Name" enableCopy="false"/>**
 
-     ![Note Book Cell Output](../media../media/aiupdates.png)
+     ![Note Book Cell Output](../media/aiupdates.png)
 
 ## Task 5 - Train a Machine Learning model with Automated ML
 
@@ -187,7 +187,7 @@ In this task, we'll use Azure Automated ML to train a machine learning model cap
     - **Virtual machine type (2)**: CPU
     - **Virtual machine Size (3)**: Standard_DS3_v2
 
-    ![Dedicated virtual machine priority, CPU virtual machine type, and Standard_DS3_v2 virtual machine size are selected. The next button is highlighted.](../media../media/SHC5.4.1.png)
+    ![Dedicated virtual machine priority, CPU virtual machine type, and Standard_DS3_v2 virtual machine size are selected. The next button is highlighted.](../media/SHC5.4.1.png)
 
     Select `Next` **(4)** to continue.
 
@@ -199,7 +199,7 @@ In this task, we'll use Azure Automated ML to train a machine learning model cap
 
     Setting the number of maximum nodes to a higher value will allow Automated ML to run more experiments in parallel but will also increase your costs.
 
-    ![Computer name is set to aml-compute-cpu. The minimum number of nodes is set to zero. The maximum number of nodes is set to four. The create button is highlighted.](../media../media/SHC5.5.1.png)    
+    ![Computer name is set to aml-compute-cpu. The minimum number of nodes is set to zero. The maximum number of nodes is set to four. The create button is highlighted.](../media/SHC5.5.1.png)    
 
 10. On the Review page, select `Submit training job` **(1)**  to kick off the Automated ML experiment run. If this is the first time you are launching an experiment run in the Azure Machine Learning workspace, the total experiment time will be longer than the `training job time` we have set. This is because of the time needed to start the Compute Cluster and deploy the container images required to execute.
 
@@ -251,33 +251,33 @@ Responsible AI is a governance framework that documents how a specific organizat
 
 1. In the Jupyter application, navigate to the given path **\Users\odl_user_<inject key="DeploymentID" enableCopy="false"/>** and open `erroranalysis-dashboard-regression-superconductor.ipynb` notebook.
 
-    ![Select Note Book](../media../media/IMG016.png)
+    ![Select Note Book](../media/IMG016.png)
    
 1. Once the notebook is opened in the Jupyter application, select **Kernel** **(1)**. Then select **Change kernel** **(2)** and make sure to select **Python (aiw-ai-kernel) (3)**.
 
-    ![](../media../media/IMG0011.png)
+    ![](../media/IMG0011.png)
 
 1. Execute the cells inside `erroranalysis-dashboard-regression-superconductor.ipynb` notebook one by one (Click on the **Run** button or by using either Ctrl + Enter to stay on the same cell, or Shift + Enter to advance to the next cell or) and observe the results of each cell execution.
 
-    ![Run Note Book Cell](../media../media/IMG014.png)
+    ![Run Note Book Cell](../media/IMG014.png)
    
 1. Please make sure to read the cells carefully and run them one by one. Click on the **Endpoint** URL at the end of the notebook before moving to the next task.
 
-    ![Note Book Cell Output](../media../media/ai-img3.png)
+    ![Note Book Cell Output](../media/ai-img3.png)
 
 ## Task 8 -  Explore the Responsible AI dashboard
 
 1. Once you click on the endpoint, you will be navigated to the new tab. Select **Tree map (1)** from the drop-down next to **Error Explorer**, the tree visualization uses the mutual information between each feature and the error to best separate error instances from success instances hierarchically in the data. This simplifies the process of discovering and highlighting common failure patterns. Choose the **Mean squared error (2)** for **Select metric** and click on **Explanation** to view the results. 
 
-    ![Run Note Book Cell](../media../media/ai-img4.png)
+    ![Run Note Book Cell](../media/ai-img4.png)
  
 1. On the **Explanation** page, observe the box plot graph representing the data. In addition, you can explore the available options to view different representations of data.
 
-    ![Run Note Book Cell](../media../media/ai-img5.png)
+    ![Run Note Book Cell](../media/ai-img5.png)
 
 1. Navigate back to **Error explorer** page, and choose **Heat map (1)** form the drop-down next to **Error Explorer**. Choose **number_of_elements (2)** for **Rows: Feature 1** , **mean_atomic_mass (3)** for **Columns: Feature 2** and Set **Select mertic** to **Mean absolute error (4)** .
 
-    ![Run Note Book Cell](../media../media/image02.png)
+    ![Run Note Book Cell](../media/image02.png)
 
 ## Summary
 
