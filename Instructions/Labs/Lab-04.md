@@ -114,8 +114,6 @@ The high-level steps covered in the lab are:
 > - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
 > - If you need any assistance, please contact us at **labs-support@spektrasystems.com**. We are available 24/7 to help you out.
 
-#### Validation
-
 <validation step="0d820e9a-19d7-4bf2-a7e8-a279a8291129" />
 
 ## Task 4 - Querying Azure Search Indexes
@@ -216,7 +214,7 @@ The high-level steps covered in the lab are:
 
     ![Open Azure resource group](../media/SHC2a.3.1.png)
 
-9. Select the **AI-in-a-Day** resource group.
+9. Select the **AzureAIrg** resource group.
 
 10. Select the **aiinaday-cog-<inject key="DeploymentID" enableCopy="false"/>** Search service.
 
@@ -248,7 +246,7 @@ The high-level steps covered in the lab are:
 
    ![Open Azure resource group](../media/SHC2a.3.1.png)
 
-1. Select the **AI-in-a-Day** resource group.
+1. Select the **AzureAIrg** resource group.
 
 1. Select the **aiinadaystorage<inject key="DeploymentID" enableCopy="false"/>** Storage account.
 
@@ -271,7 +269,7 @@ The high-level steps covered in the lab are:
   ![The CORS options are set for the storage account](../media/storage-cors-blob.png)
 
 
-1. Return to the Azure Portal page with your storage account. Navigate back to the **AI-in-a-Day** resource group and select the Document Intelligence resource **aiinaday-formrecog<inject key="DeploymentID" enableCopy="false"/>**.
+1. Return to the Azure Portal page with your storage account. Navigate back to the **AzureAIrg** resource group and select the Document Intelligence resource **aiinaday-formrecog<inject key="DeploymentID" enableCopy="false"/>**.
 
    ![The AI Services service is selected](../media/inn11.png)
 
@@ -296,7 +294,7 @@ The high-level steps covered in the lab are:
     | Parameter                   | Value                                |
     | --------------------------- | -------------------------------------|
     | Subscription                | Select the default subscription  **(1)**    |
-    | Resource Group              | Select `AI-in-a-Day` **(2)**                |
+    | Resource Group              | Select `AzureAIrg` **(2)**                |
     | Document Intelligence or AI Service Resource| aiinaday-formrecog<inject key="DeploymentID" enableCopy="false"/> **(3)**|
     
 
@@ -307,7 +305,7 @@ The high-level steps covered in the lab are:
     | Parameter                   | Value                                |
     | --------------------------- | -------------------------------------|
     | Subscription                | Select the default subscription **(1)**     |
-    | Resource Group              | Select `AI-in-a-Day` **(2)**                |
+    | Resource Group              | Select `AzureAIrg` **(2)**                |
     | Storage account             | Select aiinadaystorage<inject key="DeploymentID" enableCopy="false"/> **(3)** |
     | Blob container              | Select `covid19temp` **(4)**                 |
     | Folder path                 | Enter `papers` **(5)**                      |

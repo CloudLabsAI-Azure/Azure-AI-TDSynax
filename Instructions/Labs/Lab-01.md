@@ -44,9 +44,9 @@ In this task , you'll create an Azure resource in the Azure portal, selecting th
 5. Wait for deployment to complete. Then go to the deployed Azure OpenAI resource in the Azure portal.
 
 > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
-> - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task. 
-> - If not, carefully read the error message and retry the step, following the instructions in the lab guide. 
-> - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help you out.
+> - Click on the **Validate** button for the corresponding task. If you receive a success message, you can proceed to the next task. 
+> - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+> - If you need any assistance, please contact us at **labs-support@spektrasystems.com**. We are available 24/7 to help you out.
 
 <validation step="5c3a40bc-ff54-4936-a729-e6248b25a8e1" />
 
@@ -95,12 +95,12 @@ In this task, you'll deploy a specific AI model instance within your Azure OpenA
       > **Note**: Azure OpenAI includes multiple models, each optimized for a different balance of capabilities and performance. In this exercise, you'll use the **GPT-35-Turbo** model, which is a good general model for summarizing and generating natural language and code. For more information about the available models in Azure OpenAI, see [Models](https://learn.microsoft.com/azure/cognitive-services/openai/concepts/models) in the Azure OpenAI documentation.
 
    
-   > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps
-   > - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task. 
-   > - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
-   > - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help you out.
-  
-   <validation step="a9d5d237-cf45-4f57-9738-7c69af5faad5" />
+> **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+> - Click on the **Validate** button for the corresponding task. If you receive a success message, you can proceed to the next task. 
+> - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+> - If you need any assistance, please contact us at **labs-support@spektrasystems.com**. We are available 24/7 to help you out.
+
+<validation step="a9d5d237-cf45-4f57-9738-7c69af5faad5" />
 
 
 ## Task 3: Explore a model in the Completions playground

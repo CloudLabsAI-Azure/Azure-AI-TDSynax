@@ -87,11 +87,8 @@ After completing this lab, you will be able to complete the following tasks:
 > - Click on the **Validate** button for the corresponding task. If you receive a success message, you can proceed to the next task. 
 > - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
 > - If you need any assistance, please contact us at **labs-support@spektrasystems.com**. We are available 24/7 to help you out.
-
-#### Validation
  
 <validation step="10d4fb5c-02d2-4573-a704-3f98f15bcd93" />
-
 
 ## Task 02: Deploy Azure OpenAI Models
 
@@ -101,9 +98,7 @@ After completing this lab, you will be able to complete the following tasks:
 
 1. On the **OpenAI-Lab01-<inject key="DeploymentID" enableCopy="false"/>** select, **Go to Azure AI Foundry Portal**.
 
-1. From the left navigation pane, select **Deployments (1)**. Click on **Deploy a model (2)** and select **Deploy base model (3)** to create an OpenAI model.
-   
-   ![](../media/deploymodel.png)
+1. From the left navigation pane, under **My assets** select **Model + endpoints**. Click on **Deploy a model** and select **Deploy base model** to create an OpenAI model.
 
 1. Select **gpt-4 (1)** from the list of models and click on **Confirm (2)**.
 
@@ -119,11 +114,11 @@ After completing this lab, you will be able to complete the following tasks:
    - Deployment type: **Standard (2)**
    - Model version: **0125-Preview (3)**
    - Tokens per Minute Rate Limit: **10k (4)**
-   - Select **Deploy to selected resources**
+   - Select **Deploy**
 
      ![](../media/new-llm12.png)
    
-1. Verify that the **gpt-4** model is present in the **Deployments** section.
+1. Verify that the **gpt-4** model is present in the **Model deployments** section.
 
    ![](../media/gpt-4-model-deployments-1.png)
 
@@ -137,7 +132,7 @@ After completing this lab, you will be able to complete the following tasks:
 
    ![](../media/textadda.png)
 
-1. Verify that the **text-embedding-ada-002** model is present in the **Deployments** section.
+1. Verify that the **text-embedding-ada-002** model is present in the **Model deployments** section.
 
    ![](../media/textambedding.png)
 
@@ -147,7 +142,7 @@ After completing this lab, you will be able to complete the following tasks:
 
    ![](../media/search-content-safety.png)
 
-1. On the **Azure AI Serices | Content safety** tab, click on **+ Create**.
+1. On the **Azure AI serices | Content safety** tab, click on **+ Create**.
 
 1. On the **Create Content Safety** **Basics** tab, configure the following resources and click on **Next (6)**.
 
@@ -155,7 +150,7 @@ After completing this lab, you will be able to complete the following tasks:
 
    - Subscription: **Select your Default Subscription (1)**
    - Resource group: **AzureAIrg (2)**
-   - Region: **<inject key="Location" enableCopy="false"/> (3)**
+   - Region: **Enter the same RG, where Azure AI services is deployed (3)**
    - Name: **content-safety-<inject key="DeploymentID" enableCopy="false"/>(4)**
    - Pricing tier: **Standard S0 (5)**
 
@@ -173,8 +168,6 @@ After completing this lab, you will be able to complete the following tasks:
 > - Click on the **Validate** button for the corresponding task. If you receive a success message, you can proceed to the next task. 
 > - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
 > - If you need any assistance, please contact us at **labs-support@spektrasystems.com**. We are available 24/7 to help you out.
-
-#### Validation
  
 <validation step="db0a4f63-f0c3-4d03-8575-019a239f7dad" />
 
