@@ -139,9 +139,8 @@ The high-level steps covered in the lab are:
 3. Execute the cells inside `1. Data Preparation.ipynb` notebook one by one (Click on the 'Run' button or by using either Ctrl + Enter to stay on the same cell, or Shift + Enter to advance to the next cell) and observe the results of each cell execution.
 
    ![Run Note Book Cell](../media/IMG012.png)
-   ![Note Book Cell Output](../media/SHC4.1.png)
    
- 4. Please make sure to read the cells carefully and update the storage account name wherever required with **<inject key="Storage Account Name" enableCopy="false"/>**
+4. Please make sure to read the cells carefully and update the storage account name wherever required with **<inject key="Storage Account Name" enableCopy="false"/>**
 
      ![Note Book Cell Output](../media/aiupdates.png)
 

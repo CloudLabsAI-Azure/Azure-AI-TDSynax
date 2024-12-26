@@ -21,7 +21,7 @@ After completing this lab, you will be able to complete the following tasks:
 
 ## Task 01: Create an AI Project and AI Hub Resources
 
-1. Open a new tab in the broswr. Navigate to https://ai.azure.com to create a project in **Azure AI Foundry**.
+1. Open a new tab in the browser. Navigate to https://ai.azure.com to create a project in **Azure AI Foundry**.
 
    ![](../media/openai.png)
 
@@ -41,7 +41,7 @@ After completing this lab, you will be able to complete the following tasks:
    - Select **Customize**
    - **Hub name (1)**: **odl_user_<inject key="DeploymentID" enableCopy="false"/>_ai**
    - **Subscription (2)**: **Select your Default Subscription**
-   - **Resource group (3)**: **llm-ops-<inject key="DeploymentID" enableCopy="false"/>**
+   - **Resource group (3)**: **AzureAIrg**
    - **Location (4)**: **EAST US**
    - **Connect Azure AI Service or Azure OpenAI (5)**: **(new)ai-odl-user_<inject key="DeploymentID" enableCopy="false"/>_ai**
 
@@ -53,7 +53,7 @@ After completing this lab, you will be able to complete the following tasks:
 
 1. Select **Next**. In the **Review and finish** section, review your Azure AI services, click on **Create** and wait for the deployments to succeed.
 
-1. You can also navigate to your Resource group **llm-ops-<inject key="DeploymentID" enableCopy="false"/>** section in the Azure portal to verify the resources deployed.
+1. You can also navigate to your Resource group **AzureAIrg** section in the Azure portal to verify the resources deployed.
 
    ![](../media/azure-portal-resources.png)
 
@@ -90,20 +90,20 @@ After completing this lab, you will be able to complete the following tasks:
 
 #### Validation
  
-<validation step="0aa23322-bb1b-47dd-a826-e29231b15de5" />
+<validation step="10d4fb5c-02d2-4573-a704-3f98f15bcd93" />
 
 
 ## Task 02: Deploy Azure OpenAI Models
 
 1. On the **Azure Portal**, in the **Search resources, services and docs** search and select **Azure OpenAI**.
 
-1. On the **Azure AI services | Azure OpenAI** page, select **OpenAI-<inject key="DeploymentID" enableCopy="false"/>**.
+1. On the **Azure AI services | Azure OpenAI** page, select **OpenAI-Lab01-<inject key="DeploymentID" enableCopy="false"/>**.
 
-1. On the **OpenAI-<inject key="DeploymentID" enableCopy="false"/>** select, **Go to Azure AI Foundry Portal**.
+1. On the **OpenAI-Lab01-<inject key="DeploymentID" enableCopy="false"/>** select, **Go to Azure AI Foundry Portal**.
 
 1. From the left navigation pane, select **Deployments (1)**. Click on **Deploy a model (2)** and select **Deploy base model (3)** to create an OpenAI model.
    
-   ![](../media/deployments.png)
+   ![](../media/deploymodel.png)
 
 1. Select **gpt-4 (1)** from the list of models and click on **Confirm (2)**.
 
@@ -119,6 +119,7 @@ After completing this lab, you will be able to complete the following tasks:
    - Deployment type: **Standard (2)**
    - Model version: **0125-Preview (3)**
    - Tokens per Minute Rate Limit: **10k (4)**
+   - Select **Deploy to selected resources**
 
      ![](../media/new-llm12.png)
    
@@ -153,8 +154,8 @@ After completing this lab, you will be able to complete the following tasks:
    >**Note:** Create the Content Safety resource in the same region where you have deployed the Azure AI services.
 
    - Subscription: **Select your Default Subscription (1)**
-   - Resource group: **llm-ops-<inject key="DeploymentID" enableCopy="false"/> (2)**
-   - Region: **<inject key="Region" enableCopy="false"/> (3)**
+   - Resource group: **AzureAIrg (2)**
+   - Region: **<inject key="Location" enableCopy="false"/> (3)**
    - Name: **content-safety-<inject key="DeploymentID" enableCopy="false"/>(4)**
    - Pricing tier: **Standard S0 (5)**
 
@@ -175,7 +176,7 @@ After completing this lab, you will be able to complete the following tasks:
 
 #### Validation
  
-<validation step="451bc5bf-247e-4f47-90fd-b0fc6593d270" />
+<validation step="db0a4f63-f0c3-4d03-8575-019a239f7dad" />
 
 ## Task 04: Add an Azure Content Safety connection
 
@@ -282,13 +283,13 @@ After completing this lab, you will be able to complete the following tasks:
    
    ![](../media/llm9.png)
    
-## Task 06: Work with an Open Source LLM Model
+## Task 06: Work with an Open Source LLM Model (READ ONLY)
 
 1. Now let's test an **open-source Llama2 model** from Meta. Navigate to **Models + endpoints (1)**. Go back to the **Manage deployments of your models and services** page. Click on **Deploy model (2)** and select **Deploy base model (3)** to create an OpenAI model.
    
    ![](../media/modeldeplyments.png)
 
-1. Search for and select **Llama-3.2-90B-Vision-Instruct (1)** from the list of models, and click on **Confirm (2)**.
+1. Search for and select **Llama-2-13b-chat (1)** from the list of models, and click on **Confirm (2)**.
 
    ![](../media/llama-chat-model-confirm.png)
 
@@ -314,13 +315,13 @@ After completing this lab, you will be able to complete the following tasks:
 
 ## Task 07: Test the prompt in Content Safety
 
-1. On your **Azure AI Studio,** navigate to **AI Services** and click on the **Content Safety** box to get started with **Content Safety Studio**.
+1. On your **Azure AI Studio,** navigate to **AI Services (1)** and click on the **Content Safety (2)** box to get started with **Content Safety Studio**.
 
-   ![](../media/ai-services-content-safety.png)
+   ![](../media/azureaifoundry1.png)
 
 1. On the **Content Safety** studio, click on the **Moderate text content** option to try out the prompt.
 
-   ![](../media/content-safety-studio.png)
+   ![](../media/moderatetextcontent.png)
 
 1. On the **Moderate text content** window, select the **content safety resource** from the **Azure AI services resources** dropdown.
 
@@ -360,6 +361,8 @@ After completing this lab, you will be able to complete the following tasks:
    ![](../media/content-safety-threshold-level.png)
 
 ## Task 08: Create a Prompt Flow
+
+1. From the left navigation menu, select **Models + endpoints**.
 
 1. Navigate to the **gpt-4** deployment under the **Deployments** settings in your **Azure AI Studio**.
 
@@ -434,4 +437,4 @@ In this lab, you have performed  the following tasks:
 - Tested the prompt in content safety.
 - Created a prompt flow.
 
-### You have successfully completed the lab.
+### You have successfully completed the lab. Click Next >> to move on to the next set of exercises.

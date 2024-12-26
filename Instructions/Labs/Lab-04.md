@@ -18,13 +18,13 @@ Azure Document Intelligence and AI Service for Language streamline document proc
 
 Understanding the source datasets is very important in AI and ML. To help you expedite the process, we have created a Power BI dashboard you can use to explore them at the beginning of each lab.
 
-![Azure AI in a Day datasets](../../media/SHC1.png)
+![Azure AI in a Day datasets](../media/SHC1.png)
 
 To get more details about the source datasets, check out the [Data Overview](https://github.com/CloudLabsAI-Azure/ai-in-a-day/blob/main/data-overview.md) section.
 
 To explore the dashboard of COVID-19 data, open the `Azure-AI-in-a-Day-Data-Overview` file located on the desktop (**C:\Users\public\desktop**) 💻 of the virtual machine provided with your environment. If you see the `Introducing the updated mobile layout` pop-up screen, then close it by clicking on `Got it`. Collapse the **Fields** and **Visualizations** tabs to see the clear report.
 
- ![Azure AI in a Day datasets](../../media/powerbireportopen.png)
+ ![Azure AI in a Day datasets](../media/powerbireportopen.png)
 
 > **Note:** Please close and reopen the Power BI Desktop document if it throws an error on the first attempt.
 
@@ -36,7 +36,7 @@ Using the AI Search capabilities, we will create a complex index of documents th
 
 The following diagram highlights the portion of the general architecture covered by this lab.
 
-![Azure AI in a Day datasets](.../../media/updated-arch-lab2.png)
+![Azure AI in a Day datasets](../media/updated-arch-lab2.png)
 
 The high-level steps covered in the lab are:
 
@@ -53,7 +53,7 @@ The high-level steps covered in the lab are:
 
     ![Open Azure resource group](../media/SHC2a.3.1.png)
 
-1. Select the **AI-in-a-Day** resource group.
+1. Select the **AzureAIrg** resource group.
 
 1. Locate **Search service** resource **aiinaday-cog-<inject key="DeploymentID" enableCopy="false"/>** and select it.
 
@@ -98,22 +98,25 @@ The high-level steps covered in the lab are:
      - Azure Search Account Name: **aiinaday-cog-<inject key="DeploymentID" enableCopy="false"/>**
      - Azure Search API key: You saved the Primary admin key in the text editor in step 5, use that
 
-    ```powershell
-    Create-AzureSearchIndex "C:/Temp/AzureSearch/abstracts_datasource.schema" "C:/Temp/AzureSearch/abstracts.schema" "C:/Temp/AzureSearch/abstracts_indexer.schema" "AZURE SEARCH ACCOUNT NAME" "API KEY"
-    ```
+        ```powershell
+        Create-AzureSearchIndex "C:/Temp/AzureSearch/abstracts_datasource.schema" "C:/Temp/AzureSearch/abstracts.schema" "C:/Temp/AzureSearch/abstracts_indexer.schema" "AZURE SEARCH ACCOUNT NAME" "API KEY"
+        ```
     
-    ```powershell
-    Create-AzureSearchIndex "C:/Temp/AzureSearch/covid19temp_datasource.schema" "C:/Temp/AzureSearch/covid19temp.schema" "C:/Temp/AzureSearch/covid19temp_indexer.schema" "AZURE SEARCH ACCOUNT NAME" "API KEY"
-    ```
+        ```powershell
+        Create-AzureSearchIndex "C:/Temp/AzureSearch/covid19temp_datasource.schema" "C:/Temp/AzureSearch/covid19temp.schema" "C:/Temp/AzureSearch/covid19temp_indexer.schema" "AZURE SEARCH ACCOUNT NAME" "API KEY"
+        ```
 
-    ![The Create-AzureSearchIndex function has been run to create a new index.](../media/create-azuresearchindex-use.png)
+        ![The Create-AzureSearchIndex function has been run to create a new index.](../media/create-azuresearchindex-use.png)
 
-   <validation step="6e7f9bb9-9bed-4f51-ac7b-c6aa82222f50" />
 
-   > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
-    > - Hit the Validate button for the corresponding task.
-    > - If you receive a success message, you can proceed to the next task. If not, carefully read the error message and retry the step, following the instructions in the lab guide.
-    > - If you need any assistance, please contact us at labs-support@spektrasystems.com. We are available 24/7 to help you out.
+> **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+> - Click on the **Validate** button for the corresponding task. If you receive a success message, you can proceed to the next task. 
+> - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+> - If you need any assistance, please contact us at **labs-support@spektrasystems.com**. We are available 24/7 to help you out.
+
+#### Validation
+
+<validation step="0d820e9a-19d7-4bf2-a7e8-a279a8291129" />
 
 ## Task 4 - Querying Azure Search Indexes
 
@@ -121,7 +124,7 @@ The high-level steps covered in the lab are:
 
     ![Open Azure resource group](../media/SHC2a.3.1.png)
 
-2. Select the **AI-in-a-Day** resource group.
+2. Select the **AzureAIrg** resource group.
 
 3. Locate **Search service** resource **aiinaday-cog-<inject key="DeploymentID" enableCopy="false"/>** and select it.
 
@@ -130,8 +133,6 @@ The high-level steps covered in the lab are:
 4. Select the **Indexes** tab and ensure that you have two indexes created. If the Document Count is 0 for either, wait a couple of minutes and select **Refresh** until the document count appears.
 
     ![The list of Azure Search indexes.](../media/AI1.png)
-
-
 
 6. Once documents are available, Navigate to Overview **(1)** of Search service and then select **Search Explorer (2)** to open up the Search Explorer.
 
