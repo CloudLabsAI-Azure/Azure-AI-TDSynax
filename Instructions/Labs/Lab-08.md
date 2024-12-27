@@ -94,21 +94,21 @@ In this task, you will configure Azure Storage and AI Search services, update cr
 
     ![](../media/img74.png)
 
-2. From the **Storage accounts** page, locate and select the storage account named **copilotstorage<inject key="Deployment ID" enableCopy="false"/>**. This action will open the details and management options for the selected storage account.
+2. From the **Storage accounts** page, locate and select the storage account named **aiinadaystorage<inject key="DeploymentID" enableCopy="false"/>**. This action will open the details and management options for the selected storage account.
 
-    ![](../media/img75.png)
+    ![](../media/aiinadaystorage.png)
 
-3. From the left-hand menu of the **copilotstorage** page, choose **Access keys** under the **Security + networking** section. This section will display the connection strings associated with your storage account. Copy the **Connection string** provided and save it in a text file for future reference and use.
+3. From the left-hand menu of the **aiinadaystorage<inject key="DeploymentID" enableCopy="false"/>** page, choose **Access keys (1)** under the **Security + networking** section. This section will display the connection strings associated with your storage account. Copy the **Connection string (2)** provided and save it in a text file for future reference and use.
 
-    ![](../media/img76.png)
+    ![](../media/connectionstrg.png)
 
-4. Next, in the **Azure AI services** section, choose **AI search** from the left-hand menu. Then, click on the service named **copilot-openai-<inject key="Deployment ID" enableCopy="false"/>** to access its configuration and management options.
+4. Next, in the **Azure AI services** section, choose **AI search (1)** from the left-hand menu. Then, click on the service named **aiinaday-cog-<inject key="Deployment ID" enableCopy="false"/> (2)** to access its configuration and management options.
 
-   ![](../media/l1-t2-s6.png "Azure OpenAI")
+   ![](../media/aisearch.png "Azure OpenAI")
 
 5. On the **Overview** page, locate and click on the **Import data** button. This action will initiate the process for importing data into your Azure AI service.
 
-    ![](../media/img77.png)
+    ![](../media/importdata.png)
 
 6. Choose **Azure Blob storage** as the **Data source**. This option allows you to import data from your Azure Blob storage into the AI service.
 
@@ -386,4 +386,4 @@ In this task, you will configure Azure Storage and AI Search services, update cr
 
 In this lab, you have built and tested an HR/Payroll copilot application locally by configuring and running it with Azure OpenAI and Cognitive Search settings. They then integrated Azure Cognitive Search by setting up data sources, indexes, and vector fields. Finally, they deployed the application to Azure, authenticated with Azure, and used deployment commands to provision resources and launch the app. The lab concluded with the successful deployment and verification of the application on Azure.
 
-### You have successfully completed the lab
+### You have successfully completed the lab. Click Next >> to move on to the next set of exercises.

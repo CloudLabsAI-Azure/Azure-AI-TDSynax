@@ -51,23 +51,25 @@ The way organizations are building conversational systems is evolving, with bots
 
    - **Copilot name (1)**: Enter **AI-Bot-<inject key="DeploymentID" enableCopy="false"/>**.
 
-   Now select **Create (2)**.
+   - Now select **Create (2)**.
 
-   ![](../media/create_bot.jpg)
+      ![](../media/create_bot.jpg)
 
 1. Once the Bot is created you will see the Copilot Studio page.
 
-    ![](../media/test-copilot0.1-1.jpg)
+    ![](../media/aibot.png)
 
 ## Task 3 - Create a New Topic
 
-1. One the **Microsoft Copilot Studio** page, select **Topics** **(1)**, **Add a topic** **(2)**, from the drop down menu select **Create from description** **(3)**.
+1. One the **Microsoft Copilot Studio** page, select **Topics** **(1)**, **Add a topic** **(2)**, from the drop down menu select **Create from description with Copilot** **(3)**.
 
-   ![](../media/copilot-1.jpg)
+   ![](../media/topics.png)
 
 2. In Create it with Copilot pane, Name your topic as **Meal delivery options** **(1)**. In Create a topic to ..., enter the given phrase "**Checking for food options based on the city you are in**" **(2)**, then click on **Create** **(3)**.
 
-   ![](../media/cai-l4-t4-s2.png)
+   ![](../media/createcopilot.png)
+
+   >**Note:** If you recieve any pop-up which states **See text and images copied to the clipboard**, select **Allow**.
 
 3. Once you are in the topic pane, **close** the edit with copilot pane from right-side.
 
@@ -111,12 +113,13 @@ The way organizations are building conversational systems is evolving, with bots
 
     ![](../media/cai-l4-t4-s13new.png)
 
-    <validation step="1f3092c6-421b-4e88-8fe6-b5cb70ca1396" />
 
-    > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
-    > - Hit the Validate button for the corresponding task.
-    > - If you receive a success message, you can proceed to the next task. If not, carefully read the error message and retry the step, following the instructions in the lab guide.
-    > - If you need any assistance, please contact us at labs-support@spektrasystems.com. We are available 24/7 to help you out.
+> **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+> - Click on the **Validate** button for the corresponding task. If you receive a success message, you can proceed to the next task. 
+> - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+> - If you need any assistance, please contact us at **labs-support@spektrasystems.com**. We are available 24/7 to help you out.
+
+<validation step="298a93c6-d52c-4f6d-97c7-2d27136af729" />
 
 
 ## Task 4 - Test your Copilot
@@ -139,4 +142,4 @@ Now you have successfully created and tested the Microsoft Copilot.
 
 In this lab, you set up Microsoft Copilot Studio, created your first Copilot, and tested it by developing and validating a new topic.
 
-## You have successfully completed this Lab!
+### You have successfully completed the lab. Click Next >> to move on to the next set of exercises.

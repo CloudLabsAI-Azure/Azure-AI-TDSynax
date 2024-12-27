@@ -43,10 +43,10 @@ In this task, you will configure and test a project in Visual Studio Code by upd
    | **Variables**                | **Values**                                                    |
    | ---------------------------- |---------------------------------------------------------------|
    | **DEPLOYMENT_NAME**          |  **copilot-gpt**              |
-   | **OPENAI_API_BASE**          | **<inject key="OpenAIEndpoint" enableCopy="true"/>**          |
-   | **OPENAI_API_KEY**           | **<inject key="OpenAIKey" enableCopy="true"/>**               |
-   | **SEARCH_SERVICE_ENDPOINT**  | **<inject key="SearchServiceuri" enableCopy="true"/>**        |
-   | **SEARCH_ADMIN_KEY**         | **<inject key="SearchAPIkey" enableCopy="true"/>**            |
+   | **OPENAI_API_BASE**          | Paste the OpenAI endpoint          |
+   | **OPENAI_API_KEY**           | Paste the OpenAI key               |
+   | **SEARCH_SERVICE_ENDPOINT**  | Paste the Azure AI search service endpoint |
+   | **SEARCH_ADMIN_KEY**         | Paste the Azure AI search key |
    
    ![](../media/img58.png) 
 
@@ -74,11 +74,9 @@ In this task, you will configure and test a project in Visual Studio Code by upd
 
        ![](../media/img62.png) 
 
-13. Next, on the **Select a Python Environment** pop-up, select **Python 3.12.4**. This will set the Python Environment. 
+13. Next, on the **Select a Python Environment** pop-up, select **Python 3.12.8**. This will set the Python Environment.  
 
-       ![](../media/select-python.png) 
-
-    > **Note**: If prompt **Runnning cells with 'c:\pytjon312\python.exe' requires the ipykernel package.** then click on **Install**.
+    > **Note**: If prompt **Runnning cells with 'c:\python312\python.exe' requires the ipykernel package.** then click on **Install**.
 
       ![](../media/install.png)
 
@@ -92,4 +90,4 @@ In this task, you will configure and test a project in Visual Studio Code by upd
 
 In this lab, you have understood Function calling and learned how to set up a Visual Studio Code environment, configure the necessary files for your project, install required modules, and execute a Jupyter notebook. You’ve also gained experience with handling Python environments, using terminal commands, and verifying code execution in Jupyter notebooks.
 
-### You have successfully completed the lab
+### You have successfully completed the lab. Click Next >> to move on to the next set of exercises.

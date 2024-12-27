@@ -166,13 +166,12 @@ The high-level steps covered in the lab are:
 
     >**Note**: If you face any issues on validation, please perform the next steps till the end of this lab and then click on validate button again.
 
-    <validation step="b927b6a3-f2fd-4047-9a54-233ef39525c5" />
-    
-    > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
-    > - Hit the Validate button for the corresponding task.
-    > - If you receive a success message, you can proceed to the next task. If not, carefully read the error message and retry the step, following the instructions in the lab guide.
-    > - If you need any assistance, please contact us at labs-support@spektrasystems.com. We are available 24/7 to help you out.
+> **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+> - Click on the **Validate** button for the corresponding task. If you receive a success message, you can proceed to the next task. 
+> - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+> - If you need any assistance, please contact us at **labs-support@spektrasystems.com**. We are available 24/7 to help you out.
 
+<validation step="b927b6a3-f2fd-4047-9a54-233ef39525c5" />
 
 ## Task 5 - Updating Azure Search Indexes
 
@@ -374,12 +373,12 @@ The high-level steps covered in the lab are:
     
 1. For now, you have used custom models with Neural build mode. You can use any sample document which contains Tables and Signatures to Test/Analyze using Template build mode. Please find the reference to explore more about Document Intelligence Studio: [Quickstart: Document Intelligence Studio - Azure Applied AI Services | Microsoft Docs](https://learn.microsoft.com/en-us/azure/ai-services/document-intelligence/overview?view=doc-intel-3.1.0)
 
-    <validation step="24474dca-c3ab-413f-ba34-eb278f3c895f" />
+> **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+> - Click on the **Validate** button for the corresponding task. If you receive a success message, you can proceed to the next task. 
+> - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+> - If you need any assistance, please contact us at **labs-support@spektrasystems.com**. We are available 24/7 to help you out.
 
-    > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
-    > - Hit the Validate button for the corresponding task.
-    > - If you receive a success message, you can proceed to the next task. If not, carefully read the error message and retry the step, following the instructions in the lab guide.
-    > - If you need any assistance, please contact us at labs-support@spektrasystems.com. We are available 24/7 to help you out.
+<validation step="24474dca-c3ab-413f-ba34-eb278f3c895f" />
 
 
 ## Task 7 - Document Summarization via AI Service for Language Integration
@@ -427,12 +426,12 @@ In this task, we are creating a text summarization application with the client l
    
    ![summarization](../media/lab2a-t7-summ-results.png)
 
-   <validation step="9783aabe-40ad-4cba-b3b6-6b1a967e27c6" />
+> **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+> - Click on the **Validate** button for the corresponding task. If you receive a success message, you can proceed to the next task. 
+> - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+> - If you need any assistance, please contact us at **labs-support@spektrasystems.com**. We are available 24/7 to help you out.
 
-   > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
-    > - Hit the Validate button for the corresponding task.
-    > - If you receive a success message, you can proceed to the next task. If not, carefully read the error message and retry the step, following the instructions in the lab guide.
-    > - If you need any assistance, please contact us at labs-support@spektrasystems.com. We are available 24/7 to help you out.
+<validation step="9783aabe-40ad-4cba-b3b6-6b1a967e27c6" />
 
 You can find more references about Document Summarization from here: [Quickstart: Get started with Language Studio - Azure AI Services | Microsoft Docs](https://docs.microsoft.com/en-us/azure/AI-services/language-service/language-studio). Use this article to learn about Language Studio, and testing features of Azure AI Service for Language Integration.
 
@@ -440,4 +439,4 @@ You can find more references about Document Summarization from here: [Quickstart
 
 In this lab, you have explored Azure Document Intelligence and AI Services and extracted, analyzed, and summarized key information from documents.
 
-### You have successfully completed the lab
+### You have successfully completed the lab. Click Next >> to move on to the next set of exercises.

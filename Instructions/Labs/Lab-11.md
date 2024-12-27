@@ -34,9 +34,7 @@ In this lab, you will complete the following tasks:
 
     ![Picture 1](../media/sc-64.png)
    
-1. This brings you to the **Inventory** page that lists the current resources. Select the virtual machine resource, **sc900-win2**. This resource is associated with the virtual machine you used in the previous lab.
-       
-    ![Picture 1](../media/sc-65.png)
+1. This brings you to the **Inventory** page that lists the current resources. Select the virtual machine resource, **labvm**. This resource is associated with the virtual machine you used in the previous lab.
 
     >**Important**: If you're unable to view any resources, please follow below steps:
 
@@ -69,10 +67,6 @@ In this lab, you will complete the following tasks:
 1. From the main left navigation panel, select **Regulatory compliance (2)** under **Cloud Security (1)**. 
 
     ![Picture 1](../media/sc-69.png)
-
-1. The regulatory compliance page provides a list of compliance controls based on the Microsoft Cloud security benchmark (verify that the **Microsoft Cloud security benchmark** tab is selected/underlined). Under each control domain is a subset of controls and for each control, there are one or more assessments. Each assessment provides information including description, remediation, and affected resources.    
-
-    ![Picture 1](../media/sc-70.png)
 
 1. Alternatively perform the below steps. 
 
@@ -120,12 +114,12 @@ In this lab, you will complete the following tasks:
      
 1. Keep the Microsoft Defender for Cloud overview page open, you'll use in the next task.
 
-> - **Congratulations** on completing the task! Now, it's time to validate it. 
-> - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task. 
+> **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+> - Click on the **Validate** button for the corresponding task. If you receive a success message, you can proceed to the next task. 
 > - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
-> - If you need any assistance, please contact us at labs-support@spektrasystems.com. We are available 24/7 to help you out.
+> - If you need any assistance, please contact us at **labs-support@spektrasystems.com**. We are available 24/7 to help you out.
 
-<validation step="7d126a53-2db7-496f-b825-52a4ed7740ef" />
+<validation step="5705918e-651e-428a-ac8f-4f4c41b83546" />
 
 ## Task 2: How to enable/disable the various Microsoft Defender for Cloud plans
 
@@ -141,11 +135,13 @@ Recall that Microsoft Defender for Cloud is offered in two modes: without enhanc
       
 1. On the Defender plans page, notice how you can select Enable all or select individual Defender plans. 
 
-1. Verify that Foundational CSPM status is set to **On**, if not, set it now.  
+1. Verify that Foundational CSPM status is set to **On**.  
 
 1. On the Defender plans page, click on **Enable all plans (1)** and then select **Save (2)** from the top of the page.
    
    ![Picture 1](../media/sc-76.png)
+
+   >**Note:** On the **Plan selection** page, select **Microsoft Defender for APIs Plan 1**.
       
 1. Close all the open browser tabs.
       
@@ -154,4 +150,4 @@ In this lab, you have completed:
 - Explored on Microsoft Defender for Cloud
 - Enabled/Disabled the various Microsoft Defender for Cloud plans
 
-## You have successfully completed the lab
+### You have successfully completed the lab. Click Next >> to move on to the next set of exercises.

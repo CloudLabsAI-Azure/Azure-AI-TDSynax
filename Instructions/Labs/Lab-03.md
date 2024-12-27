@@ -271,7 +271,7 @@ Responsible AI is a governance framework that documents how a specific organizat
 
 In this lab, you explore the COVID-19 data dashboard, set up and prepare your Azure Machine Learning workspace, train and evaluate a model using Automated ML, and generate and analyze a Responsible AI dashboard.
 
-### You have successfully completed the lab
+### You have successfully completed the lab. Click Next >> to move on to the next set of exercises.
 
 
 

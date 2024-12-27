@@ -25,11 +25,11 @@ Content Safety resource in Azure to detect and manage harmful content. You'll cr
 
      - Subscription – select your **Azure subscription**
   
-     - Resource group – select the Resource Group **ODL-MEMT-<inject key="DeploymentID" enableCopy="false"/>**
+     - Resource group – select the Resource Group **AzureAIrg**
     
      - Region – **East US**
   
-     - Name – **Content-Safety-<inject key="DeploymentID" enableCopy="false"/>**
+     - Name – **ContentSafety-<inject key="DeploymentID" enableCopy="false"/>**
   
      - Pricing tier – Free
   
@@ -43,7 +43,7 @@ Content Safety resource in Azure to detect and manage harmful content. You'll cr
 
      ![](../media/image-57.png)
 
-1. Back on **Content-Safety-<inject key="DeploymentID" enableCopy="false"/>** page,  from the left navigation pane, select  **Overview** and review the settings then click on Content Safety Studio link.
+1. Back on **ContentSafety-<inject key="DeploymentID" enableCopy="false"/>** page,  from the left navigation pane, select  **Overview** and review the settings then click on **Content Safety Studio** link.
 
       ![](../media/image-59.png)
    
@@ -53,11 +53,11 @@ Content Safety resource in Azure to detect and manage harmful content. You'll cr
 
 1. Make sure Content Safety resources is created.
 
-      ![](../media/image-55.png)
+      ![](../media/contentsafety.png)
 
-1. Select **Content-Safety-<inject key="DeploymentID" enableCopy="false"/> (1)** and click on **Use resource (2)**.
+1. Select **ContentSafety-<inject key="DeploymentID" enableCopy="false"/> (1)** and click on **Use resource (2)**.
 
-     ![](../media/image-(60).png)
+     ![](../media/useresources.png)
    
 ## Task 2: Monitor and Analyze Content for Compliance
 
@@ -232,15 +232,15 @@ dataset includes a label to indicate whether the content is harmful. Let’s do 
     ![](../media/image-80.png)
 
 > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
-  - If you receive a success message, you can proceed to the next task.
-  - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
-  - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help you out.
+> - Click on the **Validate** button for the corresponding task. If you receive a success message, you can proceed to the next task. 
+> - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+> - If you need any assistance, please contact us at **labs-support@spektrasystems.com**. We are available 24/7 to help you out.
 
-<validation step="a76d4e32-03f7-494b-9427-63f1702eff54" />
+<validation step="d3358f7e-65d5-437b-9491-f2d77a8b6950" />
 
 ## Review
 In this lab you have completed the following tasks:
 - Implemented Content Safety Measures
 - Monitor and Analyze Content for Compliance
 
-### You have successfully completed the lab.
+### You have successfully completed the lab. Click Next >> to move on to the next set of exercises.
