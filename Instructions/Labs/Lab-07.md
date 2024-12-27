@@ -26,7 +26,7 @@ In this task, you will configure and test a project in Visual Studio Code by upd
 
     ![](../media/img55.png) 
 
-2. Navigate to the below-mentioned path and click on **Select folder**. 
+1. Navigate to the below-mentioned path and click on **Select folder**. 
 
     ```
     C:\LabFiles\openai\Basic_Samples\Functions
@@ -34,11 +34,11 @@ In this task, you will configure and test a project in Visual Studio Code by upd
 
    ![](../media/l2-t1-s2.png) 
 
-4. On the **Do you trust the authors of the files in this folder?** pop-up check the box next to **Trust the authors of all files in the parent folder 'Basic_Samples'**, and select **Yes, I trust the authors**.
+1. On the **Do you trust the authors of the files in this folder?** pop-up check the box next to **Trust the authors of all files in the parent folder 'Basic_Samples'**, and select **Yes, I trust the authors**.
 
     ![](../media/img57.png) 
 
-5. In the **Functions** folder, open `config.json` and replace the following values with the ones you copied earlier. Next, press **CTRL + S** to save the file.
+1. In the **Functions** folder, open `config.json` and replace the following values with the ones you copied earlier. Next, press **CTRL + S** to save the file.
 
    | **Variables**                | **Values**                                                    |
    | ---------------------------- |---------------------------------------------------------------|
@@ -50,41 +50,55 @@ In this task, you will configure and test a project in Visual Studio Code by upd
    
    ![](../media/img58.png) 
 
-7. Next, click on the **Eclipse Button (1)** at the top of the screen, then select **Terminal (2)** from the dropdown menu, and click on **New Terminal (3)** to open a new terminal window.
+1. Next, click on the **Eclipse Button (1)** at the top of the screen, then select **Terminal (2)** from the dropdown menu, and click on **New Terminal (3)** to open a new terminal window.
 
     ![](../media/img59.png) 
 
-8. In the new terminal, run the following command to install the required modules:
+1. In the new terminal, run the following command to install the required modules:
 
     ```
     pip install -r requirements.txt
     ```
 
-9. Once the required modules are installed, close the terminal.
+1. Once the required modules are installed, close the terminal.
 
-10. Open the `working_with_functions.ipynb` file from the left menu.
+1. Open the `working_with_functions.ipynb` file from the left menu.
 
     ![](../media/img60.png) 
 
-11. Click on the **Run (1)** button in the first cell. Once the pop-up `Install/Enable suggested extensions Python + Jupyter` appears, click on it to install the Python and Jupyter extensions. 
+1. Click on the **Run (1)** button in the first cell. Once the pop-up `Install/Enable suggested extensions Python + Jupyter` appears, click on it to install the Python and Jupyter extensions. 
 
     ![](../media/img61.png) 
 
-12. Next, on the **Choose a Kernel source** pop-up, select **Python Environments**. This will initiate the installation of the extension.
+1. Next, on the **Choose a Kernel source** pop-up, select **Python Environments**. This will initiate the installation of the extension.
 
        ![](../media/img62.png) 
 
-13. Next, on the **Select a Python Environment** pop-up, select **Python 3.12.8**. This will set the Python Environment.  
+1. Next, on the **Select a Python Environment** pop-up, select **Python 3.12.8**. This will set the Python Environment.  
 
     > **Note**: If prompt **Runnning cells with 'c:\python312\python.exe' requires the ipykernel package.** then click on **Install**.
 
       ![](../media/install.png)
 
-14. Execute the notebook cell by cell (using either `Ctrl + Enter` to stay on the same cell or `Shift + Enter` to advance to the next cell) and observe the results of each cell execution.
+1. In the first cell, update the commands as shown below:
 
-       ![](../media/openai1.1.png)
+    ```
+    # if needed, install and/or upgrade to the latest version of the OpenAI Python library
+    %pip install openai==0.28
+    %pip install pytz
+    ```
 
-       > **Note:** Please ensure to run the notebook end to end and observe the output for each cell. 
+1. Execute the notebook cell by cell (using either `Ctrl + Enter` to stay on the same cell or `Shift + Enter` to advance to the next cell) and observe the results of each cell execution.
+
+    ![](../media/python.png)
+
+    > **Note:** Please ensure to run the notebook end to end and observe the output for each cell. 
+
+1. Under **Function #2: Get stock market data**, add a new code cell by selecting **+ Code**, update the command as shown below, and execute the notebook cell:
+
+    ```
+    %pip install pandas
+    ```
 
 ## Summary
 

@@ -44,10 +44,10 @@ By running this application locally, you can test and interact with its features
    | ---------------------------- |---------------------------------------------------------------|
    | **AZURE_OPENAI_CHAT_DEPLOYMENT**          |  Replace the value with your **YOUR_GPT_MODEL** name that is **copilot-gpt**         |      
    | **AZURE_OPENAI_EMB_DEPLOYMENT**          |  Replace the value with your **YOUR_EMBEDDING_MODEL** name that is **CompletionModel**    |
-   | **AZURE_OPENAI_API_ENDPOINT**          | **<inject key="OpenAIEndpoint" enableCopy="true"/>**          |
-   | **AZURE_OPENAI_API_KEY**           | **<inject key="OpenAIKey" enableCopy="true"/>**               |
-   | **AZURE_SEARCH_SERVICE_ENDPOINT**  | **<inject key="SearchServiceuri" enableCopy="true"/>**        |
-   | **AZURE_SEARCH_ADMIN_KEY**         | **<inject key="SearchAPIkey" enableCopy="true"/>**            |
+   | **AZURE_OPENAI_API_ENDPOINT**          | Replace the value with OpenAI endpoint value          |
+   | **AZURE_OPENAI_API_KEY**           | Replace the value with OpenAI key               |
+   | **AZURE_SEARCH_SERVICE_ENDPOINT**  | Replace the value with azure search service endpoint        |
+   | **AZURE_SEARCH_ADMIN_KEY**         | Replace the value with azure search service key           |
 
 3. After updating values, the `secrets.env` file should be as shown in the below screenshot. Press **CTRL + S** to save the file.
 
@@ -74,15 +74,15 @@ By running this application locally, you can test and interact with its features
    John 1234
    ```
 
-   ![](../media/img19.png)
+   ![](../media/john1234.png)
 
 7. Enter an example question such as `When will I receive the W2 form?`. The questions are answered by the Copilot by searching a knowledge base.
 
-   ![](../media/L3-T1-S7.png)
+   ![](../media/w2form.png)
 
 8. Copilot can help update employee information, like address updates. For other information update requests, Copilot will log a ticket to the HR team to update the information. Enter `I moved to 123 Main St., San Jose, CA 95112, please update my address` in the HR Copilot app.
 
-    ![](../media/L3-T1-S8.png)
+    ![](../media/johnca.png)
 
 9. Navigate back to **CMD** and stop the terminal by typing **ctrl + C**.
 
@@ -310,12 +310,12 @@ In this task, you will configure Azure Storage and AI Search services, update cr
 
    | **Variables**                     | **Values**                                                    |
    | --------------------------------- |---------------------------------------------------------------|
-   | **AZURE_OPENAI_API_KEY** | **<inject key="OpenAIKey" enableCopy="true"/>** |
-   | **AZURE_OPENAI_ENDPOINT** | **<inject key="OpenAIEndpoint" enableCopy="true"/>** |
+   | **AZURE_OPENAI_API_KEY** | Replace with OpenAI key value |
+   | **AZURE_OPENAI_ENDPOINT** | Replace with OpenAI endpoint value  |
    | **AZURE_OPENAI_EMB_DEPLOYMENT** |  Replace the value with your **YOUR_EMBEDDING_MODEL** name that is **CompletionModel** |
    | **AZURE_OPENAI_CHAT_DEPLOYMENT**  |  Replace the value with your **YOUR_GPT_MODEL** name that is **copilot-gpt** |
-   | **AZURE_SEARCH_SERVICE_ENDPOINT** | **<inject key="SearchServiceuri" enableCopy="true"/>** |
-   | **AZURE_SEARCH_ADMIN_KEY** | **<inject key="SearchAPIkey" enableCopy="true"/>** |
+   | **AZURE_SEARCH_SERVICE_ENDPOINT** | Replace with Azure Search Service key value |
+   | **AZURE_SEARCH_ADMIN_KEY** | Replace with Azure Search Service key |
 
    ![](../media/img42.png)
 
@@ -361,9 +361,7 @@ In this task, you will configure Azure Storage and AI Search services, update cr
 
     ![](../media/img30.png)
 
-11. Next, select **copilot-openai-<inject key="Deployment ID" enableCopy="False"/>** resource group and hit **ENTER**.
-
-    ![](../media/img43.png)
+11. Next, select **AzureAIrg** resource group and hit **ENTER**.
 
 12. Once the deployment succeeds, you will see the following message **SUCCESS: Your application was provisioned and deployed to Azure**. The deployment might take 5-10 minutes. It is producing a web package file, then creating the resource and publishing the package to the app service.
 
@@ -380,7 +378,12 @@ In this task, you will configure Azure Storage and AI Search services, update cr
 
     > **Note**: If an issue occurs when you try to launch the app service, please restart the app service and wait five minutes before trying to launch the app again.
 
-   <validation step="e563f609-c163-48c7-816f-e11985cba271" />
+> **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+> - Click on the **Validate** button for the corresponding task. If you receive a success message, you can proceed to the next task. 
+> - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+> - If you need any assistance, please contact us at **labs-support@spektrasystems.com**. We are available 24/7 to help you out.
+
+<validation step="12473853-3f61-4a6f-b405-c90920ff2f42" />
 
 ## Summary
 
