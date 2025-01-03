@@ -55,6 +55,8 @@ The way organizations are building conversational systems is evolving, with bots
 
       ![](../media/create_bot.jpg)
 
+      >**Note:** If the name section is not coming, then select **Skip to configure**.
+      
 1. Once the Bot is created you will see the Copilot Studio page.
 
     ![](../media/aibot.png)

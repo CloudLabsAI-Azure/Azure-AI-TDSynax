@@ -92,11 +92,7 @@ After completing this lab, you will be able to complete the following tasks:
 
 ## Task 02: Deploy Azure OpenAI Models
 
-1. On the **Azure Portal**, in the **Search resources, services and docs** search and select **Azure OpenAI**.
-
-1. On the **Azure AI services | Azure OpenAI** page, select **OpenAI-Lab01-<inject key="DeploymentID" enableCopy="false"/>**.
-
-1. On the **OpenAI-Lab01-<inject key="DeploymentID" enableCopy="false"/>** select, **Go to Azure AI Foundry Portal**.
+1. Navigate back to the **Azure AI Foundry** portal, and open the project that you created.
 
 1. From the left navigation pane, under **My assets** select **Model + endpoints**. Click on **Deploy a model** and select **Deploy base model** to create an OpenAI model.
 
@@ -120,7 +116,7 @@ After completing this lab, you will be able to complete the following tasks:
    
 1. Verify that the **gpt-4** model is present in the **Model deployments** section.
 
-   ![](../media/gpt-4-model-deployments-1.png)
+   ![](../media/gpt-04.png)
 
 1. On the **Model deployments** page, click on **Deploy a model** and select **Deploy base model** to create an OpenAI model.
    
@@ -134,7 +130,7 @@ After completing this lab, you will be able to complete the following tasks:
 
 1. Verify that the **text-embedding-ada-002** model is present in the **Model deployments** section.
 
-   ![](../media/textambedding.png)
+   ![](../media/text-embeddings.png)
 
 ## Task 03: Create a Content Safety Service
 
@@ -357,7 +353,7 @@ After completing this lab, you will be able to complete the following tasks:
 
 1. From the left navigation menu, select **Models + endpoints**.
 
-1. Navigate to the **gpt-4** deployment under the **Deployments** settings in your **Azure AI Studio**.
+1. Navigate to the **gpt-4** deployment under the **Model deployments** settings in your **Azure AI Studio**.
 
    ![](../media/llm14.png)
 
