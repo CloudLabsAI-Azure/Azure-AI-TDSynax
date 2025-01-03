@@ -84,7 +84,7 @@ By running this application locally, you can test and interact with its features
 
     ![](../media/johnca.png)
 
-9. Navigate back to **CMD** and stop the terminal by typing **ctrl + C**.
+9. Navigate back to **Terminal** in vs code and stop the terminal by typing **ctrl + C**.
 
 ### Task 2: Integrate Azure Cognitive Search with your Application
 
@@ -247,8 +247,6 @@ In this task, you will configure Azure Storage and AI Search services, update cr
 
 32. Navigate to the **Indexes** tab under the **Search management** section to view the newly created indexes, copy the index names, and save them in a text editor for later use.
 
-      ![](../media/img90.png)
-
 33. Click on **Keys** from the left menu, copy the **Primary admin keys**, and store them in a text file for later use.
 
     ![](../media/img63.png)
@@ -294,7 +292,7 @@ In this task, you will configure Azure Storage and AI Search services, update cr
 
     > **Note**: If you faced any issues while providing the above input, please try to run the command **pip install azure-search-documents==11.4.0b9** in the vs code at the file location and again try to perform from the step 37. 
 
-40. Navigate back to **CMD** and stop the terminal by typing **ctrl + C**.
+40. Navigate back to **Terminal** in vs code and stop the terminal by typing **ctrl + C**.
 
 ### Task 3: Deploy the HR/Payroll Copilot application to Azure
 
@@ -335,7 +333,7 @@ In this task, you will configure Azure Storage and AI Search services, update cr
      azd auth login
      ```
 
-7. Run the below command to set up the resource group deployment and **Create a new environment**. Make sure to replace `{DeploymentId}` with **<inject key="Deployment ID" enableCopy="true"/>** in the below command.
+7. Run the below command to set up the resource group deployment and **Create a new environment**. 
 
    - The command `azd config set alpha.resourceGroupDeployments on` enables the alpha feature for resource group deployments within the Azure Developer CLI (azd). This feature allows the Azure Developer CLI to manage and deploy resources within specific resource groups, providing a more organized and efficient way to handle Azure resources. By enabling this feature, you can deploy your application and its associated resources into a designated resource group, making it easier to manage and maintain those resources over time.
 
@@ -344,7 +342,7 @@ In this task, you will configure Azure Storage and AI Search services, update cr
      ```
      
      ```bash
-     azd env new copilot-{DeploymentId}
+     azd env new copilot-<inject key="DeploymentID" enableCopy="false"/>
      ```
 
 8. Run the below command to provision Azure resources and deploy your project with a single command.
@@ -357,9 +355,7 @@ In this task, you will configure Azure Storage and AI Search services, update cr
 
    ![](../media/img29.png)
 
-10. Please select an Azure location to use, select the location as **<inject key="Region" enableCopy="false"/>** location, and click on the **Enter** button. You can change the location using the up and down arrows.
-
-    ![](../media/img30.png)
+10. Please select an Azure location to use, select the location as **East US 2** location, and click on the **Enter** button. You can change the location using the up and down arrows.
 
 11. Next, select **AzureAIrg** resource group and hit **ENTER**.
 

@@ -159,10 +159,7 @@ Let’s first test some positive customer feedback.
 
 But what would happen if we tested a harmful statement? Let’s test with negative customer feedback. While it's OK to dislike a product, we don't want to condone any name calling or degrading statements.
 
-1. In the Test box, enter the following:
-
-    - I recently bought a tent, and I have to say, I'm really disappointed. The tent poles seem flimsy, and the zippers are constantly getting stuck. It's not what I expected from a 
-       high-end tent. You all suck and are a sorry excuse for a brand.
+1. In the Test box,
 
     - Set all Threshold levels to Medium.
 
@@ -183,7 +180,7 @@ But what would happen if we tested a harmful statement? Let’s test with negati
 
       ![](../media/image-77.png)
 
-#### Violent content with misspelling
+<!-- #### Violent content with misspelling
 
 We can’t anticipate that all text content from our customers would be free of spelling errors. Fortunately, the Moderate text content tool can detect harmful content even if the content has spelling errors. Let’s test this capability on additional customer feedback about an incident with a racoon.
 
@@ -191,17 +188,15 @@ We can’t anticipate that all text content from our customers would be free of 
 
     ![](../media/image-74.png)
 
-1. In the Test box, enter the following:
-
-    - I recently purchased a campin cooker, but we had an acident. A racon got inside, was shocked, and died. Its blood is all over the interior. How do I clean the cooker?
+1. In the Test box, 
 
     - Set all Threshold levels to Medium.
 
     - Select Run test.
 
-    - Although the content is Allowed, the Severity level for Violence is should be Low. You could adjust the Threshold level for Violence to try and block such content, however, should we? Consider a scenario where the customer is asking this question in a conversation with the AI-powered customer support agent in hopes of receiving guidance on how to clean the cooker. There may be no ill-intent in submitting this question and therefore, it may be a better choice not to block such content. As the developer, consider various scenarios where such content may be OK before deciding to adjust the filter and block similar content.
+    - Although the content is Allowed, the Severity level for Violence is should be Low. You could adjust the Threshold level for Violence to try and block such content, however, should we? Consider a scenario where the customer is asking this question in a conversation with the AI-powered customer support agent in hopes of receiving guidance on how to clean the cooker. There may be no ill-intent in submitting this question and therefore, it may be a better choice not to block such content. As the developer, consider various scenarios where such content may be OK before deciding to adjust the filter and block similar content. -->
   
-#### Run a bulk test
+<!-- #### Run a bulk test
 So far, we’ve tested image content for singular isolated images. However, if we have a bulk dataset of image content, we could test the bulk dataset at once and receive metrics 
 based on the model’s performance.
 
@@ -229,7 +224,7 @@ dataset includes a label to indicate whether the content is harmful. Let’s do 
 
     ![](../media/image-79.png)
 
-    ![](../media/image-80.png)
+    ![](../media/image-80.png) -->
 
 > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
 > - Click on the **Validate** button for the corresponding task. If you receive a success message, you can proceed to the next task. 

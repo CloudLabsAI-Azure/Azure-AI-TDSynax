@@ -59,7 +59,7 @@ In this task, you will update the `secrets.env` file and run the HR Copilot appl
 
    ![](../media/howdoI.png)
 
-7. Navigate back to **CMD** and stop the terminal by typing **ctrl + C**.
+7. Navigate back to **Terminal** in vs code and stop the terminal by typing **ctrl + C**.
    
 ## Task 2: Deploy a multi-agent Copilot application to Azure
 
@@ -85,14 +85,14 @@ In this task, you will update the `main.bicep` file to reference `multi_agent_co
    azd auth login
    ```
 
-6. Run the below command to set up the resource group deployment and **Create a new environment**. Make sure to replace `{DeploymentId}` with **<inject key="Deployment ID" enableCopy="true"/>** in the below command.
+6. Run the below command to set up the resource group deployment and **Create a new environment**.
 
    ```bash
    azd config set alpha.resourceGroupDeployments on
    ```
    
    ```bash
-   azd env new azure-copilot-{DeploymentId}
+   azd env new azure-copilot-<inject key="Deployment ID" enableCopy="true"/>
    ```
 
 7. Run the below command to provision Azure resources and deploy your project with a single command.
@@ -105,20 +105,14 @@ In this task, you will update the `main.bicep` file to reference `multi_agent_co
 
    ![](../media/img29.png)
 
-9. Please select an Azure location to use, select the location as **<inject key="Region" enableCopy="false"/>** location, and click on the **Enter** button. You can change the location using the up and down arrows.
+9. Please select an Azure location to use, select the location as **East US 2** location, and click on the **Enter** button. You can change the location using the up and down arrows.
 
-   ![](../media/img30.png)
-
-10. Next, select the **multiagent-<inject key="Deployment ID" enableCopy="False"/>** resource group and hit **ENTER**.
-
-    ![](../media/img50.png)
+10. Next, select the **AzureAIrg** resource group and hit **ENTER**.
 
 11. Once the deployment succeeds, you will see the following message **SUCCESS: Your application was provisioned and deployed to Azure**. The deployment might take 5-10 minutes. It is producing a web package file, then creating the resource and publishing the package to the app service.
 
 
-12. Navigate back to the Azure portal and select **App service** from the **multiagent-<inject key="Deployment ID" enableCopy="False"/>** resource group.
-
-    ![](../media/img52.png)
+12. Navigate back to the Azure portal and select **App service** from the **AzureAIrg** resource group.
 
 13. Next, click on **Browse** to open your Web application.
 
@@ -133,7 +127,7 @@ In this task, you will update the `main.bicep` file to reference `multi_agent_co
 > - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
 > - If you need any assistance, please contact us at **labs-support@spektrasystems.com**. We are available 24/7 to help you out.
 
-<validation step="4171f03d-fe94-4da9-a945-da0ee2eb4d8c" />
+<validation step="7dcc6d1f-1354-4a0c-afb7-a0913215ef29" />
 
 ## Summary
 
