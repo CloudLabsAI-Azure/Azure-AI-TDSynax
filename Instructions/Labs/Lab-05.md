@@ -28,7 +28,7 @@ The way organizations are building conversational systems is evolving, with bots
 
    ![](../media/L4T2S1.png)
 
-1. On the **Let's get you started**, enter your azure username **(1)** and select **Next (2)**. Then click on **Sign in.** 
+1. On the **Let's get you started**, enter the **Email: <inject key="AzureAdUserEmail"></inject> (1)** and select **Next (2)**. Then click on **Sign in.** 
 
    ![](../media/L4T2S2.png)
    ![](../media/L4T2S2.2.png)
@@ -47,6 +47,8 @@ The way organizations are building conversational systems is evolving, with bots
 
     ![](../media/L4T2S6.png)
 
+    >**Note:** If any pop-up appears, then select **Skip**.
+
 1. On the **Create a Copilot** page enter the following details:
 
    - **Copilot name (1)**: Enter **AI-Bot-<inject key="DeploymentID" enableCopy="false"/>**.
@@ -55,7 +57,7 @@ The way organizations are building conversational systems is evolving, with bots
 
       ![](../media/create_bot.jpg)
 
-      >**Note:** If the name section is not coming, then select **Skip to configure**.
+      >**Note:** If the name section does not appear, select **Skip to Configure**.
       
 1. Once the Bot is created you will see the Copilot Studio page.
 

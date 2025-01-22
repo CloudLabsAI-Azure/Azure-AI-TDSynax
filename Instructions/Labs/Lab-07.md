@@ -45,10 +45,12 @@ In this task, you will configure and test a project in Visual Studio Code by upd
    | **DEPLOYMENT_NAME**          |  **copilot-gpt**              |
    | **OPENAI_API_BASE**          | Paste the OpenAI endpoint          |
    | **OPENAI_API_KEY**           | Paste the OpenAI key               |
-   | **SEARCH_SERVICE_ENDPOINT**  | Paste the Azure AI search service endpoint |
+   | **SEARCH_SERVICE_ENDPOINT**  | Paste the Azure AI search service URL |
    | **SEARCH_ADMIN_KEY**         | Paste the Azure AI search key |
    
    ![](../media/img58.png) 
+
+   >**Note:** Please cross-verify the endpoints and key values, ensuring there are no repetitions or redundancies.
 
 1. Next, click on the **Eclipse Button (1)** at the top of the screen, then select **Terminal (2)** from the dropdown menu, and click on **New Terminal (3)** to open a new terminal window.
 
@@ -72,11 +74,11 @@ In this task, you will configure and test a project in Visual Studio Code by upd
 
 1. Next, on the **Choose a Kernel source** pop-up, select **Python Environments**. This will initiate the installation of the extension.
 
-       ![](../media/img62.png) 
+    ![](../media/img62.png) 
 
 1. Next, on the **Select a Python Environment** pop-up, select **Python 3.12.8**. This will set the Python Environment.  
 
-    > **Note**: If prompt **Runnning cells with 'c:\python312\python.exe' requires the ipykernel package.** then click on **Install**.
+    > **Note**: If prompt **Runnning cells with 'c:\python3.12.8\python.exe' requires the ipykernel package.** then click on **Install**.
 
       ![](../media/install.png)
 
@@ -86,6 +88,7 @@ In this task, you will configure and test a project in Visual Studio Code by upd
     # if needed, install and/or upgrade to the latest version of the OpenAI Python library
     %pip install openai==0.28
     %pip install pytz
+    %pip install pandas
     ```
 
 1. Execute the notebook cell by cell (using either `Ctrl + Enter` to stay on the same cell or `Shift + Enter` to advance to the next cell) and observe the results of each cell execution.
@@ -94,11 +97,9 @@ In this task, you will configure and test a project in Visual Studio Code by upd
 
     > **Note:** Please ensure to run the notebook end to end and observe the output for each cell. 
 
-1. Under **Function #2: Get stock market data**, add a new code cell by selecting **+ Code**, update the command as shown below, and execute the notebook cell:
+1. Now Close the section, and proceed to the next exercise.
 
-    ```
-    %pip install pandas
-    ```
+    >**Note:** Select **Save**, on the pop-up.
 
 ## Summary
 

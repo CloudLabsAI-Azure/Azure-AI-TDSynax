@@ -46,7 +46,7 @@ By running this application locally, you can test and interact with its features
    | **AZURE_OPENAI_EMB_DEPLOYMENT**          |  Replace the value with your **YOUR_EMBEDDING_MODEL** name that is **CompletionModel**    |
    | **AZURE_OPENAI_API_ENDPOINT**          | Replace the value with OpenAI endpoint value          |
    | **AZURE_OPENAI_API_KEY**           | Replace the value with OpenAI key               |
-   | **AZURE_SEARCH_SERVICE_ENDPOINT**  | Replace the value with azure search service endpoint        |
+   | **AZURE_SEARCH_SERVICE_ENDPOINT**  | Replace the value with azure search service URL        |
    | **AZURE_SEARCH_ADMIN_KEY**         | Replace the value with azure search service key           |
 
 3. After updating values, the `secrets.env` file should be as shown in the below screenshot. Press **CTRL + S** to save the file.
@@ -61,6 +61,14 @@ By running this application locally, you can test and interact with its features
    cd C:\Labfiles\OpenAIWorkshop\scenarios\incubations\copilot\employee_support
    streamlit run hr_copilot.py
    ```
+
+   >**Note:** If you encounter any errors, press **Ctrl+C** to stop the command, then run the following commands in the terminal:
+
+      ```
+      python -m venv myenv
+      myenv\Scripts\activate
+      pip install -r requirements.txt 
+      ```
 
 5. Once the execution of `streamlit run hr_copilot.py` is completed, a locally hosted HR Copliot application will be opened in the web browser. 
 
@@ -84,7 +92,7 @@ By running this application locally, you can test and interact with its features
 
     ![](../media/johnca.png)
 
-9. Navigate back to **Terminal** in vs code and stop the terminal by typing **ctrl + C**.
+9. Navigate back to the **Terminal** in VS Code and stop the terminal by pressing **Ctrl + C** on the keyboard.
 
 ### Task 2: Integrate Azure Cognitive Search with your Application
 
@@ -133,11 +141,13 @@ In this task, you will configure Azure Storage and AI Search services, update cr
 
    ![](../media/img81part1.png)
 
-1. Configure the fields as shown in the image:
+10. Configure the fields as shown in the image:
 
+   - Select **+ Add field**. Give the name as ****contentVector**.
    - **contentVector**: Set the type to `Collection(Edm.Single)`.
 
-   - **id**: Check the boxes for **Filterable**, **Sortable**, and **Facetable**.
+   - Select **+ Add field**. Give the name as ****id**.
+   - **id**: Check the boxes for **Filterable**, **Sortable** and **Facetable**.
 
    - **content**: Check the **Searchable** box.
 
@@ -165,9 +175,9 @@ In this task, you will configure Azure Storage and AI Search services, update cr
 
       ![](../media/l3-t2-s14.png)
 
-15. On the **Vector algorithm** tab, leave the default and select the Azure OpenAI service as **Copilot-OpenAI-<inject key="Deployment ID" enableCopy="false"/>** and model deployment as **CompletionModel** . Click on **Save**.
+15. On the **Vector algorithm** tab, leave the default and select the Azure OpenAI service as **OpenAI-Lab01-<inject key="Deployment ID" enableCopy="false"/>** and model deployment as **CompletionModel** . Click on **Save**.
 
-      ![](../media/l3-t2-s15.png)
+      ![](../media/open-ai-inject.png)
 
 16. On the **Vector profile** tab, select the Vectorizers created in the previous step and Click on **Save**.
 
@@ -229,9 +239,9 @@ In this task, you will configure Azure Storage and AI Search services, update cr
 
       ![](../media/l3-t2-s14.png)
 
-28. On the **Vector algorithm** tab, leave the default and select the Azure OpenAI service as **Copilot-OpenAI-<inject key="Deployment ID" enableCopy="false"/>** and model deployment as **CompletionModel** . Click on **Save**.
+28. On the **Vector algorithm** tab, leave the default and select the Azure OpenAI service as **OpenAI-Lab01-<inject key="Deployment ID" enableCopy="false"/>** and model deployment as **CompletionModel** . Click on **Save**.
 
-      ![](../media/l3-t2-s15.png)
+      ![](../media/open-ai-inject.png)
 
 29. On the **Vector profile** tab, select the Vectorizers created in the previous step and Click on **Save**.
 
@@ -262,9 +272,7 @@ In this task, you will configure Azure Storage and AI Search services, update cr
     | AZURE_SEARCH_INDEX_NAME | **payroll-hr** |
     | CACHE_INDEX_NAME | **payroll-hr-cache** |
 
-36. Next, click on the **Eclipse Button** at the top of the screen, then select **Terminal** from the dropdown menu and click on **New Terminal** to open a new terminal window.
-
-    ![](../media/img69.png) 
+36. Next, press **CTRL + J** to open the existing terminal.
 
 37. Run the below command to change the directory and run the HR Copilot application using the search service.
 
@@ -278,7 +286,7 @@ In this task, you will configure Azure Storage and AI Search services, update cr
 38. Run the following query to validate the identity of the employee:
    
       ```
-      Nancy 1234
+      john 1234
       ```
 
     ![](../media/img91.png)
@@ -312,7 +320,7 @@ In this task, you will configure Azure Storage and AI Search services, update cr
    | **AZURE_OPENAI_ENDPOINT** | Replace with OpenAI endpoint value  |
    | **AZURE_OPENAI_EMB_DEPLOYMENT** |  Replace the value with your **YOUR_EMBEDDING_MODEL** name that is **CompletionModel** |
    | **AZURE_OPENAI_CHAT_DEPLOYMENT**  |  Replace the value with your **YOUR_GPT_MODEL** name that is **copilot-gpt** |
-   | **AZURE_SEARCH_SERVICE_ENDPOINT** | Replace with Azure Search Service key value |
+   | **AZURE_SEARCH_SERVICE_ENDPOINT** | Replace with Azure Search Service URL |
    | **AZURE_SEARCH_ADMIN_KEY** | Replace with Azure Search Service key |
 
    ![](../media/img42.png)

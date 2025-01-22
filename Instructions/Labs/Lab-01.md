@@ -77,7 +77,7 @@ In this task, you'll deploy a specific AI model instance within your Azure OpenA
       - **Deployment name**: my-gpt-model (1)
       - **Deployment type**: Standard (2)
       - Select **Customize**
-      - **Model version**: 0125 (3)
+      - **Model version**: 0301 (3)
       - **Tokens per Minute Rate Limit (thousands)**: 10K (4)
       - **Enable dynamic quota**: Enabled (5)
       - Click on **Deploy** (6)
@@ -107,13 +107,13 @@ In this task ,You'll Explore a model in the Completions playground involves inte
 
 1. In Azure AI Foundry Studio, in the left pane under **Playground**, select **Completions**.
 
-2. In the **Completions (1)** page, ensure your **my-gpt-model (2)** deployment is selected , Type `Generate a quiz of 5 questions  For each question, provide me the answer options and the correct answer` **(3)** in the prompt.
+1. In the **Completions (1)** page, ensure your **my-gpt-model (2)** deployment is selected , Type `Generate a quiz of 5 questions  For each question, provide me the answer options and the correct answer` **(3)** in the prompt.
 
       >**Note:** The summarize text sample consists of a *prompt* that provides some text to tell the model what kind of response is required and include some contextual information.
 
-4. At the bottom of the page, note the number of *tokens* detected in the text. Tokens are the basic units of a prompt - essentially words or word-parts in the text.
+1. At the bottom of the page, note the number of *tokens* detected in the text. Tokens are the basic units of a prompt - essentially words or word-parts in the text.
 
-5. Use the **Generate (4)** button to submit the prompt to the model and retrieve a response (you may need to scroll down). The response consists of a quiz based on the example in the prompt.
+1. Use the **Generate (4)** button to submit the prompt to the model and retrieve a response (you may need to scroll down). The response consists of a quiz based on the example in the prompt.
 
       ![](../media/prompt.png)
 
@@ -121,13 +121,13 @@ In this task ,You'll Explore a model in the Completions playground involves inte
 
       >**Note**: The output you receive might differ on your system, but it must follow this format for the subsequent steps to proceed.
 
-6. Use the **View Code** button to view the code that a client application would use to submit the prompt. You can select your preferred programming language. The prompt contains the text you submitted to the model. The request is submitted to the *Completions* API for your Azure OpenAI service.
+1. Use the **View Code** button to view the code that a client application would use to submit the prompt. You can select your preferred programming language. The prompt contains the text you submitted to the model. The request is submitted to the *Completions* API for your Azure OpenAI service.
 
       ![](../media/viewcode1.png)
 
       ![](../media/openaicode.png)
     
-7. Close the **Sample Code**.
+1. Close the **Sample Code**.
 
 ## Task 4: Use the Chat playground
 
@@ -217,6 +217,8 @@ In this task, you'll explore code-generation by testing the AI model’s ability
 
 2. In the **Chat session** pane, select **Clear chat** to clear the chat history and start a new session.
 
+      ![](../media/clear-chat.png)
+
 3. Submit the following user message:
 
       ```
@@ -226,6 +228,8 @@ In this task, you'll explore code-generation by testing the AI model’s ability
 4. Review the response, which should include sample Python code that meets the requirement in the prompt.
    
       ![](../media/writeapython.png)
+
+5. Close the **Azure AI Foundry Portal**.
 
 ## Summary
 

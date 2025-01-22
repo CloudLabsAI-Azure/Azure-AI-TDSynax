@@ -29,9 +29,9 @@ In this task, you will learn to create an Azure OpenAI resource in the Azure por
 
    ![](../media/azureaifoundryportal.png "Azure OpenAI")
 
-1. In the left navigation pane, click on **Deployments (1)**, then click on **+ Deploy model** **(2)**. Select **Deploy base Model** from the options presented.
+1. In the left navigation pane, click on **Deployments (1)**, then click on **+ Deploy model** **(2)**. Select **Deploy base Model (3)** from the options presented.
 
-   ![](../media/deploy-1.jpg)
+   ![](../media/deploybasemodel.png)
 
 1. In the **Select a model** window, choose **gpt-4 (1)** from the available options, and then click on **Confirm (2)** to proceed with the model selection.
 
@@ -49,9 +49,9 @@ In this task, you will learn to create an Azure OpenAI resource in the Azure por
 
    ![](../media/new9.png)
 
-1. In the left navigation pane, click on **Deployments (1)**, then click on **+ Deploy model** **(2)**. Select **Deploy base Model** from the options presented.
+1. In the left navigation pane, click on **Deployments (1)**, then click on **+ Deploy model** **(2)**. Select **Deploy base Model (3)** from the options presented.
 
-   ![](../media/deploy-1.jpg)
+   ![](../media/deploybasemodel.png)
 
 1. In the **Select a model** window, choose **text-embedding-ada-002 (1)** from the available options, and then click on **Confirm (2)** to proceed with the model selection.
 

@@ -23,9 +23,7 @@ In this task, you will update the `secrets.env` file and run the HR Copilot appl
 
    ![](../media/L4-T1-S0.png)
 
-1. Next, click on the **Eclipse Button** at the top of the screen, then select **Terminal** from the dropdown menu and click on **New Terminal** to open a new terminal window.
-
-    ![](../media/img69.png) 
+1. Next, press **CTRL + J** to open the existing terminal. 
 
 1. Run the below command to change the directory.
 
@@ -70,6 +68,8 @@ In this task, you will update the `main.bicep` file to reference `multi_agent_co
 2. In the `main.bicep` file, replace the file name in **Line 49** with `multi_agent_copilot.py` and press **CTRL + S** to save the file.
 
     ![](../media/img51.png)
+
+3. In the LabVM, navigate to Desktop and search for `cmd` in the search box, then click on **Command Prompt**. 
 
 4. Run the below command to change the directory.
 
