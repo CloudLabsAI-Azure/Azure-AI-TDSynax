@@ -34,7 +34,7 @@ In this lab, you will complete the following tasks:
 
     ![Picture 1](../media/sc-64.png)
    
-1. This brings you to the **Inventory** page that lists the current resources. Select the virtual machine resource, **labvm**. This resource is associated with the virtual machine you used in the previous lab.
+1. This brings you to the **Inventory** page that lists the current resources. Select the virtual machine resource, **labvm-<inject key="DeploymentID" enableCopy="false"/>**. This resource is associated with the virtual machine you used in the previous lab.
 
     >**Important**: If you're unable to view any resources, please follow below steps:
 

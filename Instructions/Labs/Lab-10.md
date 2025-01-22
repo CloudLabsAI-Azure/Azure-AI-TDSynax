@@ -21,17 +21,17 @@ Content Safety resource in Azure to detect and manage harmful content. You'll cr
 
      ![](../media/image-52.png)
 
-1. You will be directed to the **Azure portal**, and on the **Create Content Safety** page, specify the following and click on **Review + Create**.
+1. You will be directed to the **Azure portal**, and on the **Create Content Safety** page, specify the following and click on **Review + Create (6)**.
 
-     - Subscription – select your **Azure subscription**
+     - Subscription – select your **Azure subscription (1)**
   
-     - Resource group – select the Resource Group **AzureAIrg**
+     - Resource group – select the Resource Group **AzureAIrg (2)**
     
-     - Region – **East US**
+     - Region – **East US (3)**
   
-     - Name – **ContentSafety-<inject key="DeploymentID" enableCopy="false"/>**
+     - Name – **ContentSafety-<inject key="DeploymentID" enableCopy="false"/> (4)**
   
-     - Pricing tier – Free
+     - Pricing tier – **Free F0 (5)**
   
        ![](../media/image-53.png)
 
@@ -159,7 +159,9 @@ Let’s first test some positive customer feedback.
 
 But what would happen if we tested a harmful statement? Let’s test with negative customer feedback. While it's OK to dislike a product, we don't want to condone any name calling or degrading statements.
 
-1. In the Test box,
+1. In the Test box, enter the following:
+
+     - I recently bought a tent, and I have to say, I'm really disappointed. The tent poles seem flimsy, and the zippers are constantly getting stuck. It's not what I expected from a high-end tent. You all suck and are a sorry excuse for a brand.
 
     - Set all Threshold levels to Medium.
 

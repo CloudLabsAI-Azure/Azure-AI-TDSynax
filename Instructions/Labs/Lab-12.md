@@ -21,7 +21,7 @@ In this task, you will configure the Miyagi application by updating specific set
 
 1. Open **Visual Studio Code** from the Lab VM desktop by double-clicking on it.
 
-   ![](../media/vs.png)
+   ![](../media/vs-code.png)
 
    >**Note** If **Join us in making promt-flow extension better!** window prompted please click on **No,thanks**.
 
@@ -83,12 +83,12 @@ In this task, you will configure the Miyagi application by updating specific set
    
 1. Once after updating the values kindly save the file by pressing **CTRL + S**.
 
-  >**Congratulations** on completing the Task! Now, it's time to validate it. Here are the steps:
-> - Hit the Validate button for the corresponding task. If you receive a success message, you have successfully validated the lab. 
+> **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+> - Click on the **Validate** button for the corresponding task. If you receive a success message, you can proceed to the next task. 
 > - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
-> - If you need any assistance, please contact us at labs-support@spektrasystems.com.
+> - If you need any assistance, please contact us at **labs-support@spektrasystems.com**. We are available 24/7 to help you out.
 
-   <validation step="209e971c-dc3f-486b-b7c7-1096724301f7" />
+<validation step="dbc75b3f-72c2-4228-9f4b-d6faf9bf3c14" />
 
 ### Task 2: Understanding the implementation of the Recommendation service
 
@@ -107,12 +107,12 @@ Recommendation service implements RAG pattern using Semantic Kernel SDK. The det
    
    > **Note**: Incase any issues or errors occur related to exceeding call rate limit of your current OpenAI S0 pricing tier. , Please wait for 15 to 20 seconds and Re-run the cell
 
- >**Congratulations** on completing the Task! Now, it's time to validate it. Here are the steps:
-> - Hit the Validate button for the corresponding task. If you receive a success message, you have successfully validated the lab. 
+> **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+> - Click on the **Validate** button for the corresponding task. If you receive a success message, you can proceed to the next task. 
 > - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
-> - If you need any assistance, please contact us at labs-support@spektrasystems.com.
+> - If you need any assistance, please contact us at **labs-support@spektrasystems.com**. We are available 24/7 to help you out.
 
-<validation step="560130f4-fca1-49e1-98a6-97ec61155364" />
+<validation step="3574d7d4-40d1-439b-bba0-7d1cbb1b45df" />
 
 ### Task 3: Run recommendation service locally
 In this task, you will run the recommendation service locally by using Visual Studio Code to build and run the service in the terminal and then verify its functionality by accessing the Swagger page in the browser.
@@ -218,12 +218,12 @@ In this task, you will persist embeddings in Azure AI Search by executing a POST
 
    > **Note**: Please click on the refresh button still you can view the **Document Count**.
 
->**Congratulations** on completing the Task! Now, it's time to validate it. Here are the steps:
-> - Hit the Validate button for the corresponding task. If you receive a success message, you have successfully validated the lab. 
+> **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+> - Click on the **Validate** button for the corresponding task. If you receive a success message, you can proceed to the next task. 
 > - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
-> - If you need any assistance, please contact us at labs-support@spektrasystems.com.
+> - If you need any assistance, please contact us at **labs-support@spektrasystems.com**. We are available 24/7 to help you out.
 
-   <validation step="32fe7dd9-0728-4b16-b975-374eb199044d" />
+<validation step="d0ad746f-4b39-4ee2-9ee0-25f5de89e251" />
 
 ### Task 6: Explore the Miyagi App and Recommendation service  by Personalizing
 In this task, you'll personalize the Miyagi App's Recommendation service by selecting a financial advisor and reviewing the recommendations. Then, you'll check the logs in Visual Studio Code and stop the services.
