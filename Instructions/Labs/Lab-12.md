@@ -49,12 +49,12 @@ In this task, you will configure the Miyagi application by updating specific set
 
    | **Variables**                | **Values**                                                    |
    | ---------------------------- |---------------------------------------------------------------|
-   | deploymentOrModelId          | **<inject key="CompletionModel" enableCopy="true"/>**         |
-   | embeddingDeploymentOrModelId | **<inject key="EmbeddingModel" enableCopy="true"/>**          |
-   | endpoint                     | **<inject key="OpenAIEndpoint" enableCopy="true"/>**          |
-   | apiKey                       | **<inject key="OpenAIKey" enableCopy="true"/>**               |
-   | azureCognitiveSearchEndpoint | **<inject key="SearchServiceuri" enableCopy="true"/>**        |
-   | azureCognitiveSearchApiKey   | **<inject key="SearchAPIkey" enableCopy="true"/>**            |
+   | deploymentOrModelId          | **Copilot-gpt**         |
+   | embeddingDeploymentOrModelId | **CompletionModel**          |
+   | endpoint                     | **Paste the OpenAI endpoint**          |
+   | apiKey                       | **Paste the OpenAI key**               |
+   | azureCognitiveSearchEndpoint | **Paste the azure search URL**        |
+   | azureCognitiveSearchApiKey   | **Paste the azure search key**            |
    | cosmosDbUri                  | **<inject key="CosmosDBuri" enableCopy="true"/>**             |
    | blobServiceUri               | **<inject key="StorageAccounturi" enableCopy="true"/>**       |
    | bingApiKey                   | **<inject key="Bing_API_KEY" enableCopy="true"/>**           |
@@ -72,12 +72,12 @@ In this task, you will configure the Miyagi application by updating specific set
 
    | **Variables**                          | **Values**                                            |
    | ---------------------------------------| ------------------------------------------------------|
-   | AZURE_OPENAI_ENDPOINT                  | **<inject key="OpenAIEndpoint" enableCopy="true"/>**  |
-   | AZURE_OPENAI_CHAT_MODEL                | **<inject key="CompletionModel" enableCopy="true"/>** |
-   | AZURE_OPENAI_EMBEDDING_MODEL           | **<inject key="EmbeddingModel" enableCopy="true"/>**  |
-   | AZURE_OPENAI_API_KEY                   | **<inject key="OpenAIKey" enableCopy="true"/>**       |
-   | AZURE_COGNITIVE_SEARCH_ENDPOINT        | **<inject key="SearchServiceuri" enableCopy="true"/>**|
-   |AZURE_COGNITIVE_SEARCH_API_KEY          | **<inject key="SearchAPIkey" enableCopy="true"/>**    |
+   | AZURE_OPENAI_ENDPOINT                  | **Paste the OpenAI endpoint**  |
+   | AZURE_OPENAI_CHAT_MODEL                | **copilot-gpt** |
+   | AZURE_OPENAI_EMBEDDING_MODEL           | **CompletionModel**  |
+   | AZURE_OPENAI_API_KEY                   | **Paste the OpenAI key**       |
+   | AZURE_COGNITIVE_SEARCH_ENDPOINT        | **Paste the azure search URL**|
+   |AZURE_COGNITIVE_SEARCH_API_KEY          | **Paste the azure search key**    |
    
    ![](../media/miyagi-image(18).png)
    
