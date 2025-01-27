@@ -39,7 +39,7 @@ In this task , you'll create an Azure resource in the Azure portal, selecting th
 
 4. Click on **Next (6)** by keeping others default and click on **Create**.
 
-5. Wait for deployment to complete. Then go to the deployed Azure OpenAI resource in the Azure portal.
+      >**Note:** Wait for the deployment to complete. 
 
 > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
 > - Click on the **Validate** button for the corresponding task. If you receive a success message, you can proceed to the next task. 
@@ -69,7 +69,7 @@ In this task, you'll deploy a specific AI model instance within your Azure OpenA
 
       ![](../media/ui1.png "Create a new deployment")
 
-6. Search for **GPT-35-TURBO**, click on **Confirm**
+6. Search for **gpt-35-turbo**, click on **Confirm**
 
    ![](../media/pg-09.jpg)
    
