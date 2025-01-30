@@ -1,34 +1,61 @@
-# Use your own data and explore content filter with Azure OpenAI services
+# Azure AI | TDSynaxx
 
-### Overall Estimated Duration: 4 Hours
+### Overall Estimated Duration: 8 Hours
 
 ## Overview
-
+Azure AI offers a comprehensive suite of tools and services that empower developers and data scientists to build, deploy, and manage AI solutions efficiently. From natural language processing and computer vision to conversational agents and machine learning model training, Azure AI provides the necessary resources to tackle a wide range of AI challenges. With integrated services like Azure OpenAI, Power Virtual Agents, and Microsoft Defender for Cloud, users can ensure their AI applications are robust, secure, and responsible. Whether you're just starting or looking to enhance your AI capabilities, Azure AI is a powerful platform to help you achieve your goals.
 
 ## Objective
 
-By the end of this lab, you will be able to:
+This session provides hands-on experience with Azure AI services, guiding participants through the process of building, deploying, and managing AI solutions. By engaging with various labs, users will gain practical knowledge in areas such as natural language processing, machine learning model training, document processing, conversational AI, and ensuring responsible AI practices.
 
+- **Get started with Azure OpenAI Service** - Introduction to Azure OpenAI Service, setting up the environment, and basic usage.
+
+- **Introduction to LLMs and Azure AI Services** - Overview of Large Language Models (LLMs) and how to leverage Azure AI Services.
+
+- **Azure Machine Learning Model Training** - Training machine learning models using Azure Machine Learning, including data preparation and model evaluation.
+
+- **Document Processing and Summarization with Azure Document Intelligence and AI Service for Language** - Using Azure Document Intelligence for document processing and summarization tasks.
+
+- **Conversational AI with Bot Service using Power Virtual Agents** - Building conversational AI solutions with Power Virtual Agents and integrating them with other services.
+
+- **Getting Started with Building a Chat Application** - Basics of building a chat application, including setup and initial development.
+
+- **Understand function calling in OpenAI GPT** - Understanding and implementing function calling capabilities in OpenAI GPT models.
+
+- **Deploy and Run the HR/Payroll Copilot Application** - Deploying and running an HR/Payroll Copilot application using Azure services.
+
+- **Understand HR Copilot Demo Application** - Exploring the HR Copilot demo application, its features, and functionalities.
+
+- **Ensuring Responsible AI with Content Safety Studio** - Ensuring responsible AI practices using Content Safety Studio to monitor and manage AI content.
+
+- **Explore Microsoft Defender for Cloud** - Exploring Microsoft Defender for Cloud for securing cloud environments.
+
+- **Run Miyagi App Locally** - Setting up and running the Miyagi application locally for development and testing.
 
   
 ## Pre-requisites
 
 - Familiarity with Azure OpenAI Service.
+- Familiarity with Azure Portal.
 - Basic understanding of large language models and their applications.
 
 ## Architecture
+The architecture for this lab series involves several key Azure services working together to provide a comprehensive AI and machine learning environment. The core components include Azure OpenAI Service for leveraging advanced language models, Azure Machine Learning for training and deploying machine learning models, and Azure Cognitive Services for adding capabilities like vision, speech, and language understanding. Additionally, Power Virtual Agents is used for building conversational AI, while Microsoft Defender for Cloud ensures security and compliance. The architecture also integrates Azure Storage for data management and Azure Functions for serverless computing, creating a robust and scalable AI solution.
 
+## Architecture Diagram:
 
-## Architecture Diagram
-
+![](../media/Azure-AI-arch.png)
 
 ## Explanation of Components
 
-1. **Azure OpenAI**: Azure OpenAI Service provides REST API access to OpenAI's powerful language models and these models integrates with your data, enabling customized and secure interactions.
-1. **Azure OpenAI Models**: Offers pre-trained and customizable large language models for various AI applications. These models allow for powerful AI-driven solutions by generating tailored and contextually relevant content based on well-crafted prompts.
-1. **Azure CloudShell**: Azure CloudShell offers an integrated, browser-based shell experience for managing Azure resources. It provides a ready-to-use environment with pre-installed tools and access to both Bash and PowerShell.
-1. **Storage Account**: Manages and stores data, providing scalable and secure cloud storage solutions.
-1. **Content Filter**: Detects and removes harmful content to ensure safe and responsible AI interactions.
+1. **Azure OpenAI Service**: Utilized for advanced language models and natural language processing tasks.
+2. **Azure Machine Learning**: Used for training, deploying, and managing machine learning models.
+3. **Azure AI Services**: Provides capabilities like vision, speech, and language understanding.
+4. **Power Virtual Agents**: Enables the creation of conversational AI and chatbots.
+5. **Microsoft Defender for Cloud**: Ensures security and compliance across the cloud environment.
+6. **Azure Storage**: Manages data storage needs.
+7. **Azure Functions**: Facilitates serverless computing for scalable and efficient processing.
 
 ## Getting Started with the Lab
  
