@@ -67,17 +67,17 @@ The high-level steps covered in the lab are:
 
     ![The Search service's API key is copied to the clipboard.](../media/inn7.png)
 
-1. Navigate to Storage account named **aiinadaystorage<inject key="DeploymentID" enableCopy="false"/>** **(1)**, select **Access keys** **(2)** under Security + networking from left-menu. Click on **Show** of the connection string under Key1 **(3)** to see the connection string and **copy the connection string** **(4)** under Key1. Paste this into a text file.
+1. Navigate to Storage account named **aiinaday5677** **(1)**, select **Access keys** **(2)** under Security + networking from left-menu. Click on **Show** of the connection string under Key1 **(3)** to see the connection string and **copy the connection string** **(4)** under Key1. Paste this into a text file.
 
    ![](../media/ai-sa-cs.png)
 
 1. Open **File Explorer** from the task bar and navigate to the path `C:\Temp\AzureSearch\`. There are six files, three prefixed with `abstracts` and three with `covid19temp`.
 
-1. Open the `abstracts_datasource.schema` file with a text editor and replace the segment starting `<< TODO:` with your Storage account connection string **<inject key="storageAccountConnectionString" enableCopy="true"/>** and then save the file.
+1. Open the `abstracts_datasource.schema` file with a text editor and replace the segment starting `<< TODO:` with your Storage account connection string and then save the file.
 
     ![The abstract data source is ready to be updated.](../media/edit-abstracts-datasource.png)
 
-1. Open the `covid19temp_datasource.schema` file with a text editor and replace the segment starting `<< TODO:` with your Storage account connection string **<inject key="storageAccountConnectionString" enableCopy="true"/>** and then save the file.
+1. Open the `covid19temp_datasource.schema` file with a text editor and replace the segment starting `<< TODO:` with your Storage account connection string and then save the file.
 
 1. Now, open the `AzureSearchIndex.ps1` file with a text editor and copy the code present in it.
 
@@ -158,8 +158,6 @@ The high-level steps covered in the lab are:
 
 12. On the first tab, select `metadata.title` **(1)** for the Title and `abstract.text` **(2)** for the Description. Then select **Next** twice and click on **Create Demo App (3)**. After the prompt, select **Download** to download an HTML file named `AzSearch.html`.
 
-    ![Create a demo app.](../media/create-demo-app-1.1.png)
-
 13. Open the demo app HTML file. In the search box, enter the phrase **RNA interference (1)** and select the **Search icon (2)**. This will return 497 papers relating to RNA interference.
 
     ![Use the demo app.](../media/L2T4S12.png)
@@ -171,7 +169,7 @@ The high-level steps covered in the lab are:
 > - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
 > - If you need any assistance, please contact us at **labs-support@spektrasystems.com**. We are available 24/7 to help you out.
 
-<validation step="b927b6a3-f2fd-4047-9a54-233ef39525c5" />
+<validation step="d7963eb3-7409-470c-909c-5ad9c0517a36" />
 
 ## Task 5 - Updating Azure Search Indexes
 
@@ -189,13 +187,13 @@ The high-level steps covered in the lab are:
 
 4. Paste in your storage account **Connection string (1)** **<inject key="storageAccountConnectionString" enableCopy="true"/>**. Then, select **Next (2)** to continue and **Connect (3)** to complete the operation.
 
-    ![The connection string is filled in.](../media/new-lab2a-1.1.png)
+    ![The connection string is filled in.](../media/new-lab2a-1.11.png)
 
-    ![Connect is selected on the storage explorer page](../media/new-lab2a-2.1.png)
+    ![Connect is selected on the storage explorer page](../media/new-lab2a-2.11.png)
 
-5. In Azure Storage Explorer, navigate down the **aiinadaystorage<inject key="DeploymentID" enableCopy="false"/> (1)** attached storage and expand **Blob containers (2)** expand the **blob container (3)** and select `covid19temp` **(4)**.  Double-click the **comm_use_subset (5)** to enter that folder.
+5. In Azure Storage Explorer, navigate down the **aiinaday5677 (1)** attached storage and expand **Blob containers (2)** expand the **blob container (3)** and select `covid19temp` **(4)**.  Double-click the **comm_use_subset (5)** to enter that folder.
 
-    ![The comm_use_subset folder is selected.](../media/new-lab2a-3.png)
+    ![The comm_use_subset folder is selected.](../media/new-lab2a-33.png)
 
 6. Enter the **pdf_json_refresh** folder. Then, in the **Select All (1)** menu, choose **Select All Cached (2)**. This will highlight all 100 records in the folder.  Select **Copy (3)** to copy these documents.
 
@@ -247,13 +245,13 @@ The high-level steps covered in the lab are:
 
 1. Select the **AzureAIrg** resource group.
 
-1. Select the **aiinadaystorage<inject key="DeploymentID" enableCopy="false"/>** Storage account.
+1. Select the **aiinaday5677** Storage account.
 
-   ![The Storage account is highlighted from the list of services in the AI-in-a-Day Resource Group](../media/inn15.png)
+   ![The Storage account is highlighted from the list of services in the AI-in-a-Day Resource Group](../media/azureairgaiinaday.png)
 
 1. Under **Settings**, navigate to the **Resource sharing (CORS)** page. 
 
-   ![The CORS is highlighted from the list of services in the AI-in-a-Day Resource Group](../media/storaheaccount-CORS.png)
+   ![The CORS is highlighted from the list of services in the AI-in-a-Day Resource Group](../media/storaheaccount-CORSs.png)
     
 1. On the Resource Sharing (CORS) page, ensure that you are on the **Blob service** **(1)** tab, and enter the following values into the table **(2)** and then select **Save** **(3)** to save the CORS settings.  
 
@@ -265,18 +263,18 @@ The high-level steps covered in the lab are:
    | Exposed headers             | Enter `*`                                          |
    | Max age                     | Enter `200`                                        |
 
-  ![The CORS options are set for the storage account](../media/storage-cors-blob.png)
+    ![The CORS options are set for the storage account](../media/storage-cors-blob-1.png)
 
 
 1. Return to the Azure Portal page with your storage account. Navigate back to the **AzureAIrg** resource group and select the Document Intelligence resource **aiinaday-formrecog<inject key="DeploymentID" enableCopy="false"/>**.
 
-   ![The AI Services service is selected](../media/inn11.png)
+   ![The AI Services service is selected](../media/inn11-1.png)
 
 1. Select the **Keys and Endpoint** **(1)** option under Resource Management and click on **Show Keys** **(2)**. Then, copy the value for **KEY 1** **(3)** and the **Endpoint** **(4)**. Paste these into a text file for later use.
 
    ![The AI Services key and endpoint are selected](../media/inn12.png)
 
-1. Navigate to the [Document Intelligence Studio](https://formrecognizer.appliedai.azure.com/), scroll-down to **Custom models** and select **Get Started** under **Custom model**. Use the credentials provided in the Environment Details to Sign-in.
+1. Open a new tab, and navigate to the [Document Intelligence Studio](https://formrecognizer.appliedai.azure.com/), scroll-down to **Custom models** and select **Get Started** under **Custom model**. Use the credentials provided in the Environment Details to Sign-in.
 
    ![Create new custom model](../media/updated-document-ai.png)
 
@@ -305,17 +303,19 @@ The high-level steps covered in the lab are:
     | --------------------------- | -------------------------------------|
     | Subscription                | Select the default subscription **(1)**     |
     | Resource Group              | Select `AzureAIrg` **(2)**                |
-    | Storage account             | Select aiinadaystorage<inject key="DeploymentID" enableCopy="false"/> **(3)** |
+    | Storage account             | Select aiinaday5677 **(3)** |
     | Blob container              | Select `covid19temp` **(4)**                 |
     | Folder path                 | Enter `papers` **(5)**                      |
 
-    ![Project](../media/form-training.png)
+    ![Project](../media/form-training-1.png)
     
     > **Note**: If you are unable to select the Storage Account in the Connect training data source page, signout and signin from the Document Intelligence Studio with the given credentials. Re-perform the task from Step-8.
 
 1. Review the details and click on **Create project**.
 
-   ![Project](../media/SHC2a.6.13.png)
+   ![Project](../media/SHC2a.6.13.1.png)
+
+   >**Note:** Select **Skip** on the **Start labeling now** pop-up.
   
 1. After creating a new project, you will be sent to the project for tagging in Label data. Select **+Add a Field** **(1)** to create a new field click on **Field** **(2)**, type `Abstract` in the Field, and hit enter. By this, you have created a new Abstract Field.
 
@@ -343,7 +343,7 @@ The high-level steps covered in the lab are:
 
 1. In a pop-up to Train a new model, enter **Abstracts (1)** as the ModelID, and select the **Neural (Recommended) (2)** from the drop-down as Build Mode. Then click on **Train (3)**.
 
-   ![The option to train a model has been selected](../media/form-model.png)
+   ![The option to train a model has been selected](../media/abstracts.png)
 
 1. Training a model may take up to 45-60 minutes to succeed. Click on **Go to models**. 
 
@@ -378,7 +378,7 @@ The high-level steps covered in the lab are:
 > - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
 > - If you need any assistance, please contact us at **labs-support@spektrasystems.com**. We are available 24/7 to help you out.
 
-<validation step="24474dca-c3ab-413f-ba34-eb278f3c895f" />
+<validation step="f96b181e-8f1b-421d-bc0d-8a6c3fed3246" />
 
 
 ## Task 7 - Document Summarization via AI Service for Language Integration
@@ -389,9 +389,9 @@ In general, there are two approaches for automatic document summarization: extra
 
 In this task, we are creating a text summarization application with the client library for Python. You will create a Python application that can summarize documents or text-based customer service conversations.
 
-1. Return to the Azure Portal page and navigate to the **AI-in-a-Day** resource group and select the Azure AI services multi-service account **aiinaday-cogsv<inject key="DeploymentID" enableCopy="false"/>**.
+1. Return to the Azure Portal page and navigate to the **AzureAIrg** resource group and select the Azure AI services multi-service account **aiinaday-cogsv<inject key="DeploymentID" enableCopy="false"/>**.
 
-    ![The AI Services service is selected](../media/inn13.png)
+    ![The AI Services service is selected](../media/inn13.1.png)
 
 2. Select the **Keys and Endpoint (1)** option under Resource Management.  Then, copy the value for **KEY 1 (2)** and the **Endpoint (3)**.  Paste these into a text file for later use.
 
@@ -411,9 +411,9 @@ In this task, we are creating a text summarization application with the client l
 
 5. Open **File Explorer** and navigate to the path `C:\Temp\AzureSearch\`. Select the file named **summarization.py** and open it in **Notepad or IDLE**. 
 
-6. Replace the **key** and **endpoint** in the file with AI services multi-service account named **aiinaday-cogsv<inject key="DeploymentID" enableCopy="false"/>** which you have already copied in step-2 of the same task and finally save the file.
+6. Replace the **key** and **endpoint** in the file with the AI services multi-service account named **aiinaday-cogsv<inject key="DeploymentID" enableCopy="false"/>**, which you copied in Step 2 of the same task. Also, replace **ExtractSummaryAction** with **ExtractiveSummaryAction**, and then save the file.
     
-   ![summarization](../media/lab2a-t7-summarization.png) 
+   ![summarization](../media/extractivesumm.png) 
 
 7. Navigate to the command prompt and run the following commands.
 
@@ -431,7 +431,7 @@ In this task, we are creating a text summarization application with the client l
 > - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
 > - If you need any assistance, please contact us at **labs-support@spektrasystems.com**. We are available 24/7 to help you out.
 
-<validation step="9783aabe-40ad-4cba-b3b6-6b1a967e27c6" />
+<validation step="fc47683a-ad10-4e59-b6bb-db3503bc9690" />
 
 You can find more references about Document Summarization from here: [Quickstart: Get started with Language Studio - Azure AI Services | Microsoft Docs](https://docs.microsoft.com/en-us/azure/AI-services/language-service/language-studio). Use this article to learn about Language Studio, and testing features of Azure AI Service for Language Integration.
 

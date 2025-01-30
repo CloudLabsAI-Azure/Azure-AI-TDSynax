@@ -140,7 +140,7 @@ The high-level steps covered in the lab are:
 
    ![Run Note Book Cell](../media/IMG012.png)
    
-4. Please make sure to read the cells carefully and update the storage account name wherever required with **<inject key="Storage Account Name" enableCopy="false"/>**
+4. Please make sure to read the cells carefully and update the storage account name wherever required with **aiinaday5677**
 
      ![Note Book Cell Output](../media/aiupdates.png)
 
@@ -262,10 +262,6 @@ Responsible AI is a governance framework that documents how a specific organizat
 1. On the **Explanation** page, observe the box plot graph representing the data. In addition, you can explore the available options to view different representations of data.
 
     ![Run Note Book Cell](../media/ai-img5.png)
-
-1. Navigate back to **Error explorer** page, and choose **Heat map (1)** form the drop-down next to **Error Explorer**. Choose **number_of_elements (2)** for **Rows: Feature 1** , **mean_atomic_mass (3)** for **Columns: Feature 2** and Set **Select mertic** to **Mean absolute error (4)** .
-
-    ![Run Note Book Cell](../media/image02.png)
 
 ## Summary
 
