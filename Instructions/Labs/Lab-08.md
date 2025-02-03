@@ -38,6 +38,8 @@ By running this application locally, you can test and interact with its features
 
     ![](../media/img38.png)
 
+    >**Note:** If you recieve **Do you want to allow untrusted files in this workspace?** pop-up, select **Open**.
+
 2. The Visual Studio code is opened on the desktop. Edit the below code and update the **Azure OpenAI Key**, **Embedding Model name and GPT Deployment name**, **Azure OpenAI Endpoint**, **Cognitive Search Endpoint**,and **AZURE_SEARCH_ADMIN_KEY** values that you have copied and stored in the text file earlier.
 
    | **Variables**                | **Values**                                                    |
@@ -53,7 +55,7 @@ By running this application locally, you can test and interact with its features
 
     ![](../media/img39.png)
 
-4. To run the application from the command line, navigate to Command Prompt and run the below command:
+4. To run the application from the command line, press **CTRL + J** to open the terminal:
 
    > **Note**: Here, you can enter your email address below to get notifications. Otherwise, leave this field blank and click on **Enter**.
 
@@ -62,7 +64,7 @@ By running this application locally, you can test and interact with its features
    streamlit run hr_copilot.py
    ```
 
-   >**Note:** If you encounter any errors, press **Ctrl+C** to stop the command, then run the following commands in the terminal:
+   >**Note:** If you encounter any errors, press **Ctrl+C** to stop the command. Then, run the following commands in the terminal. After running these commands, re-run **step 04**.
 
       ```
       python -m venv myenv
@@ -84,13 +86,19 @@ By running this application locally, you can test and interact with its features
 
    ![](../media/john1234.png)
 
+   >**Note**: The output you receive might differ on your system, but it must follow this format for the subsequent steps to proceed.
+
 7. Enter an example question such as `When will I receive the W2 form?`. The questions are answered by the Copilot by searching a knowledge base.
 
    ![](../media/w2form.png)
 
+   >**Note**: The output you receive might differ on your system, but it must follow this format for the subsequent steps to proceed.
+
 8. Copilot can help update employee information, like address updates. For other information update requests, Copilot will log a ticket to the HR team to update the information. Enter `I moved to 123 Main St., San Jose, CA 95112, please update my address` in the HR Copilot app.
 
     ![](../media/johnca.png)
+
+    >**Note**: The output you receive might differ on your system, but it must follow this format for the subsequent steps to proceed.
 
 9. Navigate back to the **Terminal** in VS Code and stop the terminal by pressing **Ctrl + C** on the keyboard.
 
@@ -98,31 +106,31 @@ By running this application locally, you can test and interact with its features
 
 In this task, you will configure Azure Storage and AI Search services, update credentials in the `secrets.env` file, and run the HR Copilot application locally using Streamlit. You will test the application by querying employee data and verify its integration with Azure services. Troubleshooting steps will include installing required packages to ensure smooth functionality.
 
-1. In the **Azure Portal**, start by searching for **Storage accounts** in the search bar at the top of the page. Click on the **Storage accounts** option from the search results.
+1. Navigate back to the **Azure Portal**, start by searching for **Storage accounts** in the search bar at the top of the page. Click on the **Storage accounts** option from the search results.
 
     ![](../media/img74.png)
 
-2. From the **Storage accounts** page, locate and select the storage account named **aiinadaystorage<inject key="DeploymentID" enableCopy="false"/>**. This action will open the details and management options for the selected storage account.
+1. From the **Storage accounts** page, locate and select the storage account named **aiinadaystorage<inject key="DeploymentID" enableCopy="false"/>**. This action will open the details and management options for the selected storage account.
 
     ![](../media/aiinadaystorage.png)
 
-3. From the left-hand menu of the **aiinadaystorage<inject key="DeploymentID" enableCopy="false"/>** page, choose **Access keys (1)** under the **Security + networking** section. This section will display the connection strings associated with your storage account. Copy the **Connection string (2)** provided and save it in a text file for future reference and use.
+1. From the left-hand menu of the **aiinadaystorage<inject key="DeploymentID" enableCopy="false"/>** page, choose **Access keys (1)** under the **Security + networking** section. This section will display the connection strings associated with your storage account. Copy the **Connection string (2)** provided and save it in a text file for future reference and use.
 
     ![](../media/connectionstrg.png)
 
-4. Next, in the **Azure AI services** section, choose **AI search (1)** from the left-hand menu. Then, click on the service named **aiinaday-cog-<inject key="Deployment ID" enableCopy="false"/> (2)** to access its configuration and management options.
+1. Next, open **Azure Open AI**, choose **AI search (1)** from the left-hand menu. Then, click on the service named **aiinaday-cog-<inject key="Deployment ID" enableCopy="false"/> (2)** to access its configuration and management options.
 
    ![](../media/aisearch.png "Azure OpenAI")
 
-5. On the **Overview** page, locate and click on the **Import data** button. This action will initiate the process for importing data into your Azure AI service.
+1. On the **Overview** page, locate and click on the **Import data** button. This action will initiate the process for importing data into your Azure AI service.
 
     ![](../media/importdata.png)
 
-6. Choose **Azure Blob storage** as the **Data source**. This option allows you to import data from your Azure Blob storage into the AI service.
+1. Choose **Azure Blob storage** as the **Data source**. This option allows you to import data from your Azure Blob storage into the AI service.
 
     ![](../media/img78.png)
 
-7. On the **Connect to your data** tab, provide the following details and click on **Next: Add cognitive skills (Optional) (7)**.
+1. On the **Connect to your data** tab, provide the following details and click on **Next: Add cognitive skills (Optional) (7)**.
 
    | Settings| value|
    |---|---|
@@ -135,18 +143,18 @@ In this task, you will configure Azure Storage and AI Search services, update cr
 
    ![](../media/img80.png)
 
-8. On the **Add cognitive skills (optional)** tab, accept the default settings and click on **Skip to: Customize target index** to move forward.
+1. On the **Add cognitive skills (optional)** tab, accept the default settings and click on **Skip to: Customize target index** to move forward.
 
-9. On the **Customize target index** tab, enter **payroll-hr (1)** as the **Index name**. 
+1. On the **Customize target index** tab, enter **payroll-hr (1)** as the **Index name**. 
 
    ![](../media/img81part1.png)
 
-10. Configure the fields as shown in the image:
+1. Configure the fields as shown in the image:
 
-   - Select **+ Add field**. Give the name as ****contentVector**.
+   - Select **+ Add field**. Give the name as **contentVector**.
    - **contentVector**: Set the type to `Collection(Edm.Single)`.
 
-   - Select **+ Add field**. Give the name as ****id**.
+   - Select **+ Add field**. Give the name as **id**.
    - **id**: Check the boxes for **Filterable**, **Sortable** and **Facetable**.
 
    - **content**: Check the **Searchable** box.
@@ -155,55 +163,57 @@ In this task, you will configure Azure Storage and AI Search services, update cr
 
      ![](../media/img81.png)
 
-10. Next, on the **contentVector** field, click on the **Eclipse** button in the right corner and select **Configure vector field**.
+     >**Note:** While adding the id field, if the sortable checkbox is missing, skip it for now and proceed with the next steps.
+
+1. Next, on the **contentVector** field, click on the **Eclipse** button in the right corner and select **Configure vector field**.
 
       ![](../media/img82.png)
 
-11. On the **Configure vector field** tab, set the **Dimensions** property to `1536` **(1)** and click on **Create** under **No vector search profiles**.
+1. On the **Configure vector field** tab, set the **Dimensions** property to `1536` **(1)** and click on **Create** under **No vector search profiles**.
 
       ![](../media/l3-t2-s11.png)
 
-12. On the **Vector profile** tab, Click on **Create** under No algorithm configurations.
+1. On the **Vector profile** tab, Click on **Create** under No algorithm configurations.
 
       ![](../media/l3-t2-s12.png)
 
-13. On the **Vector algorithm** tab, leave the default and click on **Save**.
+1. On the **Vector algorithm** tab, leave the default and click on **Save**.
 
       ![](../media/l3-t2-s13.png)
 
-14. On the **Vector profile** tab, select the algorithm created in the previous step and Click on **Create** under No vectorizers.
+1. On the **Vector profile** tab, select the algorithm created in the previous step and Click on **Create** under No vectorizers.
 
       ![](../media/l3-t2-s14.png)
 
-15. On the **Vector algorithm** tab, leave the default and select the Azure OpenAI service as **OpenAI-Lab01-<inject key="Deployment ID" enableCopy="false"/>** and model deployment as **CompletionModel** . Click on **Save**.
+1. On the **Vector algorithm** tab, leave the default and select the Azure OpenAI service as **OpenAI-Lab01-<inject key="Deployment ID" enableCopy="false"/>** and model deployment as **CompletionModel** . Click on **Save**.
 
       ![](../media/open-ai-inject.png)
 
-16. On the **Vector profile** tab, select the Vectorizers created in the previous step and Click on **Save**.
+1. On the **Vector profile** tab, select the Vectorizers created in the previous step and Click on **Save**.
 
       ![](../media/l3-t2-s16.png)
 
-17. On the **Configure vector field** tab, keep the **Dimensions** property to `1536` and **Vector profile** created in previous step and Click on **Save**. Click on **Next: Create an indexer**.
+1. On the **Configure vector field** tab, keep the **Dimensions** property to `1536` and **Vector profile** created in previous step and Click on **Save**. Click on **Next: Create an indexer**.
 
     ![](../media/l3-t2-s17.png)
     
     > **Note**: If you are unable to save the **Configure Vector Field**, try deleting the **ContentVector** field. Then, recreate the field with the name **ContentVector** and select **Collection.single** for the **ContentVector** field and reperform from step 10 to step 17.
 
-18. Enter the **Indexer name** as **payroll-hr**, and click on **Submit**.
+1. Enter the **Indexer name** as **payroll-hr**, and click on **Submit**.
 
       ![](../media/img84.png)
 
-19. From the **Overview (1)** page, click on **Import data (2)** again.
+1. From the **Overview (1)** page, click on **Import data (2)** again.
 
        ![](../media/img77.png)
 
-20. On the **Connect to your data** tab, select the existing data source and select the storage account then, click **Next: Add cognitive skills (optional)**.
+1. On the **Connect to your data** tab, select the existing data source and select the storage account then, click **Next: Add cognitive skills (optional)**.
 
       ![](../media/img85.png)
 
-21. On the **Add cognitive skills (optional)** tab leave the default and click on **Skip to: Customize target index**.
+1. On the **Add cognitive skills (optional)** tab leave the default and click on **Skip to: Customize target index**.
 
-22. Next, on the **Customize target index**  tab, enter the **Index name** as **payroll-hr-cache (1)**. 
+1. Next, on the **Customize target index**  tab, enter the **Index name** as **payroll-hr-cache (1)**. 
 
       ![](../media/img86part1.png)
 
@@ -219,52 +229,60 @@ In this task, you will configure Azure Storage and AI Search services, update cr
 
       ![](../media/img86.png)
 
-23. In the **search_query_vector** field, click on the **Eclipse** button in the right corner and select **Configure vector field**.
+1. In the **search_query_vector** field, click on the **Eclipse** button in the right corner and select **Configure vector field**.
 
       ![](../media/img87.png)
 
-24. On the **Configure vector field** tab, set the **Dimensions** property to `1536` **(1)** and Click on **Create** **(2)** under No vector search profiles.
+1. On the **Configure vector field** tab, set the **Dimensions** property to `1536` **(1)** and Click on **Create** **(2)** under No vector search profiles.
 
       ![](../media/l3-t2-s11.png)
 
-25. On the **Vector profile** tab, Click on **Create** under No algorithm configurations.
+1. On the **Vector profile** tab, Click on **Create** under No algorithm configurations.
 
       ![](../media/l3-t2-s12.png)
 
-26. On the **Vector algorithm** tab, leave the default and click on **Save**.
+1. On the **Vector algorithm** tab, leave the default and click on **Save**.
 
       ![](../media/l3-t2-s13.png)
 
-27. On the **Vector profile** tab, select the algorithm created in the previous step and Click on **Create** under No vectorizers.
+1. On the **Vector profile** tab, select the algorithm created in the previous step and Click on **Create** under No vectorizers.
 
       ![](../media/l3-t2-s14.png)
 
-28. On the **Vector algorithm** tab, leave the default and select the Azure OpenAI service as **OpenAI-Lab01-<inject key="Deployment ID" enableCopy="false"/>** and model deployment as **CompletionModel** . Click on **Save**.
+1. On the **Vector algorithm** tab, leave the default and select the Azure OpenAI service as **OpenAI-Lab01-<inject key="Deployment ID" enableCopy="false"/>** and model deployment as **CompletionModel** . Click on **Save**.
 
       ![](../media/open-ai-inject.png)
 
-29. On the **Vector profile** tab, select the Vectorizers created in the previous step and Click on **Save**.
+1. On the **Vector profile** tab, select the Vectorizers created in the previous step and Click on **Save**.
 
       ![](../media/l3-t2-s16.png)
 
-30. On the **Configure vector field** tab, keep the **Dimensions** property to `1536` and **Vector profile** created in previous step and Click on **Save**. Click on **Next: Create an indexer**.
+1. On the **Configure vector field** tab, keep the **Dimensions** property to `1536` and **Vector profile** created in previous step and Click on **Save**. Click on **Next: Create an indexer**.
 
       ![](../media/l3-t2-s17.png)
 
-31. Enter the **Indexer name** as **payroll-hr-cache**, and click on **Submit**.
+1. Enter the **Indexer name** as **payroll-hr-cache**, and click on **Submit**.
 
       ![](../media/img89.png)
 
-32. Navigate to the **Indexes** tab under the **Search management** section to view the newly created indexes, copy the index names, and save them in a text editor for later use.
+      >**Note:** If you were unable to select the **Sortable** checkbox in the **id** field while creating **payroll-hr**, follow these steps:
+      
+      >- In **aiinaday-cog-<inject key="DeploymentID" enableCopy="false"/>**, go to **Search management** from the left navigation pane, select the **Indexes** tab and delete **payroll-hr**.
 
-33. Click on **Keys** from the left menu, copy the **Primary admin keys**, and store them in a text file for later use.
+      >- From the left navigation pane, select **Indexers** and delete **payroll-hr**.
 
-    ![](../media/img63.png)
+      >- Repeat steps **5-18**. On the **Connect to your data** tab, select the existing data source, choose the storage account, and click **Next: Add cognitive skills (optional)**.
 
-34. Return to the `secrets.env` file that you previously opened in Visual Studio Code. This file contains environment variables essential for configuring your application. Make sure it is open and ready for editing.
+      ![](../media/img85.png)
+
+1. Navigate to the **Indexes** tab under the **Search management** section to view the newly created indexes, copy the index names, and save them in a text editor for later use.
+
+1. Click on **Keys** from the left menu, copy the **Primary admin keys**, and store them in a text file for later use.
+
+1. Return to the `secrets.env` file that you previously opened in Visual Studio Code. This file contains environment variables essential for configuring your application. Make sure it is open and ready for editing.
 
 
-35. The Visual Studio code is opened on the desktop. Replace the following values and press **CTRL + S** to save the file.
+1. The Visual Studio code is opened on the desktop. Replace the following values and press **CTRL + S** to save the file.
 
     | Setting | Action |
     | -- | -- |
@@ -272,9 +290,9 @@ In this task, you will configure Azure Storage and AI Search services, update cr
     | AZURE_SEARCH_INDEX_NAME | **payroll-hr** |
     | CACHE_INDEX_NAME | **payroll-hr-cache** |
 
-36. Next, press **CTRL + J** to open the existing terminal.
+1. Next, press **CTRL + J** to open the existing terminal.
 
-37. Run the below command to change the directory and run the HR Copilot application using the search service.
+1. Run the below command to change the directory and run the HR Copilot application using the search service.
 
       > **Note**: Here, you can enter your email address below to get notifications. Otherwise, leave this field blank and click on **Enter**.
 
@@ -283,7 +301,7 @@ In this task, you will configure Azure Storage and AI Search services, update cr
     streamlit run hr_copilot.py
     ```
 
-38. Run the following query to validate the identity of the employee:
+1. Run the following query to validate the identity of the employee:
    
       ```
       john 1234
@@ -291,16 +309,20 @@ In this task, you will configure Azure Storage and AI Search services, update cr
 
     ![](../media/img91.png)
 
+    >**Note**: The output you receive might differ on your system, but it must follow this format for the subsequent steps to proceed.
 
-39. Enter an example question such as `When will I receive the W2 form?`. The questions are now answered by the Copilot by searching a knowledge base. You can review this by navigating back to the command prompt and viewing the output.
+
+1. Enter an example question such as `When will I receive the W2 form?`. The questions are now answered by the Copilot by searching a knowledge base. You can review this by navigating back to the command prompt and viewing the output.
 
       ![](../media/img92.png)
 
       ![](../media/img93.png)
 
-    > **Note**: If you faced any issues while providing the above input, please try to run the command **pip install azure-search-documents==11.4.0b9** in the vs code at the file location and again try to perform from the step 37. 
+    > **Note**: If you faced any issues while providing the above input, please try to run the command **pip install azure-search-documents==11.4.0b9** in the vs code at the file location and again try to perform from the step 37.
 
-40. Navigate back to **Terminal** in vs code and stop the terminal by typing **ctrl + C**.
+    >**Note**: The output you receive might differ on your system, but it must follow this format for the subsequent steps to proceed. 
+
+1. Navigate back to **Terminal** in vs code and stop the terminal by typing **ctrl + C**.
 
 ### Task 3: Deploy the HR/Payroll Copilot application to Azure
 

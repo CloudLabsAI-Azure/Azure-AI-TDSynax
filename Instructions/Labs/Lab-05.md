@@ -24,7 +24,7 @@ The way organizations are building conversational systems is evolving, with bots
 
 ## Task 2 - Setting up Microsoft Copilot Studio and Create your first Copilot
 
-1. Navigate to **[Microsoft Copilot Studio page](https://www.microsoft.com/en-us/copilot/microsoft-copilot-studio)** and select **Try Free**. 
+1. Open a new tab in the browser. Navigate to **[Microsoft Copilot Studio page](https://www.microsoft.com/en-us/copilot/microsoft-copilot-studio)** and select **Try Free**. 
 
    ![](../media/L4T2S1.png)
 
@@ -139,6 +139,8 @@ The way organizations are building conversational systems is evolving, with bots
 1. Your chatbot should display the names of the meals as shown below.
 
    ![](../media/test-324.jpg)
+
+1. Close the tab.
 
 Now you have successfully created and tested the Microsoft Copilot.
 

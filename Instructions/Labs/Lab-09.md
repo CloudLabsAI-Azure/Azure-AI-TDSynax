@@ -107,12 +107,12 @@ In this task, you will update the `main.bicep` file to reference `multi_agent_co
 
 9. Please select an Azure location to use, select the location as **East US 2** location, and click on the **Enter** button. You can change the location using the up and down arrows.
 
-10. Next, select the **AzureAIrg** resource group and hit **ENTER**.
+10. Next, select the **AzureAIrg-02** resource group and hit **ENTER**.
 
 11. Once the deployment succeeds, you will see the following message **SUCCESS: Your application was provisioned and deployed to Azure**. The deployment might take 5-10 minutes. It is producing a web package file, then creating the resource and publishing the package to the app service.
 
 
-12. Navigate back to the Azure portal and select **App service** from the **AzureAIrg** resource group.
+12. Navigate back to the Azure portal and select **App service** from the **AzureAIrg-02** resource group.
 
 13. Next, click on **Browse** to open your Web application.
 

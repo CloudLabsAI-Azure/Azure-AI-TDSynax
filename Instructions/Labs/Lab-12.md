@@ -49,7 +49,7 @@ In this task, you will configure the Miyagi application by updating specific set
 
    | **Variables**                | **Values**                                                    |
    | ---------------------------- |---------------------------------------------------------------|
-   | deploymentOrModelId          | **Copilot-gpt**         |
+   | deploymentOrModelId          | **copilot-gpt**         |
    | embeddingDeploymentOrModelId | **CompletionModel**          |
    | endpoint                     | **Paste the OpenAI endpoint**          |
    | apiKey                       | **Paste the OpenAI key**               |
@@ -208,13 +208,11 @@ In this task, you will persist embeddings in Azure AI Search by executing a POST
 
     ![](../media/miyagi-image25.png)
 
-1. In **Azure AI services | AI Search** tab, select **acs-<inject key="DeploymentID" enableCopy="false"/>**.
-
-    ![](../media/miyagi-image26.png)
+1. In **Azure AI services | AI Search** tab, select **aiinaday-cog-<inject key="DeploymentID" enableCopy="false"/>**.
    
-1. In **acs-<inject key="DeploymentID" enableCopy="false"/>** Search service tab, click on **Indexes** **(1)** under Search management, and review the **miyagi-embeddings** **(2)** has been created.   
+1. In **aiinaday-cog-<inject key="DeploymentID" enableCopy="false"/>** Search service tab, click on **Indexes** **(1)** under Search management, and review the **miyagi-embeddings** **(2)** has been created.   
 
-   ![](../media/miyagi-image27.png)
+   ![](../media/miyagi-embeddings.png)
 
    > **Note**: Please click on the refresh button still you can view the **Document Count**.
 

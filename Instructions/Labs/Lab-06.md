@@ -42,12 +42,12 @@ In this task, you will learn to create an Azure OpenAI resource in the Azure por
    | Setting  | Value |
    -----------|---------
    | Deployment name | **copilot-gpt (1)** |
-   | Model version | **0613 (Default) (2)** |
+   | Model version | **turbo-2024-04-09 (2)** |
    | Deployment type | **Standard (3)** |
    | Tokens per Minute Rate Limit (thousands) | **15K (4)** |
    | Enable dynamic quota | **Enabled (5)** |
 
-   ![](../media/new9.png)
+   ![](../media/new99.png)
 
 1. In the left navigation pane, click on **Deployments (1)**, then click on **+ Deploy model** **(2)**. Select **Deploy base Model (3)** from the options presented.
 
