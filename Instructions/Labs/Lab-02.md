@@ -4,7 +4,7 @@
 
 ## Overview
 
-Participants will set up an AI project and hub, deploy Azure OpenAI models, and integrate content safety services. They will use the Azure AI Studio Playground to test models, work with open-source LLMs, and create and manage prompt flows, ensuring safe and effective AI interactions.
+Participants will set up an AI project and hub, deploy Azure OpenAI models, and integrate content safety services. They will use the Azure AI Foundry Playground to test models, work with open-source LLMs, and create and manage prompt flows, ensuring safe and effective AI interactions.
 
 ## Lab Objectives
 
@@ -14,7 +14,7 @@ After completing this lab, you will be able to complete the following tasks:
 - Task 02: Deploy Azure OpenAI Models
 - Task 03: Create a Content Safety Service
 - Task 04: Add an Azure Content Safety connection
-- Task 05: Use Azure AI Studio Playground
+- Task 05: Use Azure AI Foundry Playground
 - Task 06: Work with an Open Source LLM Model
 - Task 07: Test the prompt in Content Safety
 - Task 08: Create a Prompt Flow
@@ -25,7 +25,8 @@ After completing this lab, you will be able to complete the following tasks:
 
    ![](../media/openai.png)
 
-1. Sign in to **Azure AI Foundry** using the credentials from the **Environment** tab.
+   >**Note:** If prompted to sign in, use the below credentials:
+   >- **Email/Username:** <inject key="AzureAdUserEmail"></inject> and **Password:** <inject key="AzureAdUserPassword"></inject> 
 
 1. Select **Azure AI Foundry** from the top-left corner.
 
@@ -49,9 +50,13 @@ After completing this lab, you will be able to complete the following tasks:
 
 1. Click on **Create new AI Search (1)** for the **Connect Azure AI Search** option. Enter the name **ai-search-odl-user-<inject key="DeploymentID" enableCopy="false"/>-ai (2)** for your **Azure AI Search** and click on **Next (3)**.
 
-   ![](../media/odluser.png)
+   ![](../media/createanewsearch.png)
+
+   ![](../media/aisearchodluser.png)
 
 1. Select **Next**. In the **Review and finish** section, review your Azure AI services, click on **Create** and wait for the deployments to succeed.
+
+   ![](../media/createanewsearchs.png)
 
 1. You can also navigate to your Resource group **AzureAIrg** section in the Azure portal to verify the resources deployed.
 
@@ -83,6 +88,8 @@ After completing this lab, you will be able to complete the following tasks:
 
 1. A notification will appear confirming that the role assignment has been successfully added.
 
+   ![](../media/addedaroleassignmet.png)
+
 > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
 > - Click on the **Validate** button for the corresponding task. If you receive a success message, you can proceed to the next task. 
 > - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
@@ -94,7 +101,9 @@ After completing this lab, you will be able to complete the following tasks:
 
 1. Navigate back to the **Azure AI Foundry** portal, and open the project that you created.
 
-1. From the left navigation pane, under **My assets** select **Model + endpoints**. Click on **Deploy a model** and select **Deploy base model** to create an OpenAI model.
+1. From the left navigation pane, under **My assets** select **Model + endpoints (1)**. Click on **Deploy a model (2)** and select **Deploy base model (3)** to create an OpenAI model.
+
+   ![](../media/aimodelendpoints.png)
 
 1. Select **gpt-4 (1)** from the list of models and click on **Confirm (2)**.
 
@@ -150,7 +159,7 @@ After completing this lab, you will be able to complete the following tasks:
    - Name: **content-safety-<inject key="DeploymentID" enableCopy="false"/>(4)**
    - Pricing tier: **Standard S0 (5)**
 
-       ![](../media/create-content-safety.png)
+       ![](../media/create-content-safety(1).png)
 
 1. In the Network tab, leave the type settings as default, allowing access from all networks, including the Internet. Then, click **Next**.
 
@@ -193,9 +202,11 @@ After completing this lab, you will be able to complete the following tasks:
 
    ![](../media/contentsafty.png)
 
-## Task 05: Use Azure AI Studio Playground
+## Task 05: Use Azure AI Foundry Playground
 
 1. From the left navigation pane, select **Go to project**.
+
+   ![](../media/gotoproject(1).png)
 
 1. Under **My assets** select **Models + endpoints (1)**, navigate to the **gpt-4 (2)** deployment under the **Model deployments** section.
 
@@ -296,15 +307,15 @@ After completing this lab, you will be able to complete the following tasks:
 
 1. Wait for the chat model provisioning state to appear as **Succeeded** before using the deployment.
 
-   ![](../media/llama-provisioning-state.png)
+   ![](../media/llama-provisioning-state(1).png)
 
 1. On the **Llama-2-13b-chat** deployment details, click on **Open in playground** to start using the **Open Source LLM Model**.
 
-   ![](../media/llama-open-in-playground.png)
+   ![](../media/llama-open-in-playground(1).png)
 
 ## Task 07: Test the prompt in Content Safety
 
-1. On your **Azure AI Studio,** navigate to **AI Services (1)** and click on the **Content Safety (2)** box to get started with **Content Safety Studio**.
+1. On your **Azure AI Foundry,** navigate to **AI Services (1)** and click on the **Content Safety (2)** box to get started with **Content Safety Studio**.
 
    ![](../media/azureaifoundry1.png)
 
@@ -314,7 +325,7 @@ After completing this lab, you will be able to complete the following tasks:
 
 1. On the **Moderate text content** window, select the **content safety resource** from the **Azure AI services resources** dropdown.
 
-   ![](../media/content-safety-resource-select.png)
+   ![](../media/content-safety-resource-select(1).png)
 
 1. In the **Test** section, copy and paste the below text in the text box and click on **Run test**.
 
@@ -339,21 +350,21 @@ After completing this lab, you will be able to complete the following tasks:
    Client: I hate this company I will kill everyone with a bomb.
    ```
 
-   ![](../media/content-safety-run-test.png)
+   ![](../media/content-safety-run-test(1).png)
 
 1. In the **View Results** section, notice how the content safety resource blocks the content because the **Violence** filter is triggered with the provided content.
 
-   ![](../media/content-safety-view-results.png)
+   ![](../media/content-safety-view-results(1).png)
 
 1. You can configure the **Threshold level** for the four categories and test out different prompts.
 
-   ![](../media/content-safety-threshold-level.png)
+   ![](../media/content-safety-threshold-level(1).png)
 
 ## Task 08: Create a Prompt Flow
 
 1. From the left navigation menu, select **Models + endpoints**.
 
-1. Navigate to the **gpt-4** deployment under the **Model deployments** settings in your **Azure AI Studio**.
+1. Navigate to the **gpt-4** deployment under the **Model deployments** settings in your **Azure AI Foundry** portal.
 
    ![](../media/llm14.png)
 
@@ -361,9 +372,9 @@ After completing this lab, you will be able to complete the following tasks:
 
    ![](../media/llm6.png)
 
-1. Perform the same steps that you performed in **Task 05** by adding the same system message, saving the changes, and fetching the response. Once the response is generated, click on **Prompt flow**.
+1. Verify that the same steps performed in **Task 05** are added as a system message, and ensure you have saved the changes. Once the response is fetched and generated, click on **Prompt Flow**.
 
-   ![](../media/chat-playground-prompt-flow.png)
+   ![](../media/chat-playground-prompt-flow(1).png)
 
 1. On **"Orchestrate and customize this setup with prompt flow,"** click on **Open**. This will create a new prompt flow.
 
@@ -373,7 +384,7 @@ After completing this lab, you will be able to complete the following tasks:
 
 1. Notice how the prompt flow is created with a single node, which represents the step in the flow where the LLM model is configured.
 
-   ![](../media/prompt-flow-graph.png)
+   ![](../media/prompt-flow-graph(1).png)
 
 1. Once the new prompt flow opens, click on **Start compute session** before you start using the chat session.
 
@@ -381,7 +392,7 @@ After completing this lab, you will be able to complete the following tasks:
 
 1. Configure the connection settings with the AI service and the GPT-4 deployment for the **chat** node, and then click on the **Chat** button to test your flow in the **chat window**.
 
-   ![](../media/prompt-flow-connection-chat.png)
+   ![](../media/prompt-flow-connection-chat(1).png)
 
 1. In the **chat window**, copy and paste the below conversation and click on **send** to view the expected response.
 
@@ -409,9 +420,11 @@ After completing this lab, you will be able to complete the following tasks:
    Agent: Thank you, Mr. Pérez. Have a good day. Goodbye.
    ```
 
-   ![](../media/prompt-flow-chat-response.png)
+   ![](../media/prompt-flow-chat-response(1).png)
 
    >**Note:** Please press Enter if the send icon is not visible.
+
+   >**Note:** This result validates the **Prompt Flow** by testing its ability to handle real customer interactions, generate expected outputs, summarize key details, and replicate, ensuring the AI performs effectively for customer service use cases.
 
 ## Summary
 
@@ -421,9 +434,9 @@ In this lab, you have performed  the following tasks:
 - Deployed Azure OpenAI models.
 - Created a content safety service.
 - Added an Azure content safety connection.
-- Used Azure AI studio playground.
+- Used Azure AI Foundry playground.
 - Worked with an open-source LLM model.
 - Tested the prompt in content safety.
 - Created a prompt flow.
 
-### You have successfully completed the lab. Click Next >> to move on to the next set of exercises.
+#### You have successfully completed the lab. Click Next >> to move on to the next set of exercises.
