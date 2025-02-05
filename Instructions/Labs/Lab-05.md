@@ -148,4 +148,4 @@ Now you have successfully created and tested the Microsoft Copilot.
 
 In this lab, you set up Microsoft Copilot Studio, created your first Copilot, and tested it by developing and validating a new topic.
 
-### You have successfully completed the lab. Click Next >> to move on to the next set of exercises.
+#### You have successfully completed the lab. Click Next >> to move on to the next set of exercises.

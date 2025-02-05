@@ -127,7 +127,9 @@ After completing this lab, you will be able to complete the following tasks:
 
    ![](../media/gpt-04.png)
 
-1. On the **Model deployments** page, click on **Deploy a model** and select **Deploy base model** to create an OpenAI model.
+1. On the **Models + endpoints (1)** page, click on **Deploy a model (2)** and select **Deploy base model (3)** to create an OpenAI model.
+
+   ![](../media/aimodelendpoints.png)
    
 1. Select **text-embedding-ada-002 (1)** from the list of models and click on **Confirm (2)**.
 

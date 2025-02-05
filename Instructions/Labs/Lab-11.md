@@ -150,4 +150,4 @@ In this lab, you have completed:
 - Explored on Microsoft Defender for Cloud
 - Enabled/Disabled the various Microsoft Defender for Cloud plans
 
-### You have successfully completed the lab. Click Next >> to move on to the next set of exercises.
+#### You have successfully completed the lab. Click Next >> to move on to the next set of exercises.

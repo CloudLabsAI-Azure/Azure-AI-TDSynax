@@ -49,11 +49,9 @@ The high-level steps covered in the lab are:
 
 ## Task 3 - Creating Azure Search Indexes
 
-1. Navigate to [the Azure portal](https://portal.azure.com) and log in with your credentials. Then, select **Resource groups**.
+1. Navigate to the [Azure portal](https://portal.azure.com) and log in with your credentials. Then, select **Resource groups**. Select the **AzureAIrg** resource group.
 
     ![Open Azure resource group](../media/SHC2a.3.1.png)
-
-1. Select the **AzureAIrg** resource group.
 
 1. Locate **Search service** resource **aiinaday-cog-<inject key="DeploymentID" enableCopy="false"/>** and select it.
 
@@ -67,17 +65,17 @@ The high-level steps covered in the lab are:
 
     ![The Search service's API key is copied to the clipboard.](../media/inn7.png)
 
-1. Navigate to Storage account named **aiinaday5677** **(1)**, select **Access keys** **(2)** under Security + networking from left-menu. Click on **Show** of the connection string under Key1 **(3)** to see the connection string and **copy the connection string** **(4)** under Key1. Paste this into a text file.
+1. Navigate to Storage account named **aiinadaystorage<inject key="DeploymentID" enableCopy="false"/>** **(1)**, select **Access keys** **(2)** under Security + networking from left-menu. Click on **Show** of the connection string under Key1 **(3)** to see the connection string and **copy the connection string** **(4)** under Key1. Paste this into a text file.
 
    ![](../media/ai-sa-cs.png)
 
 1. Open **File Explorer** from the task bar and navigate to the path `C:\Temp\AzureSearch\`. There are six files, three prefixed with `abstracts` and three with `covid19temp`.
 
-1. Open the `abstracts_datasource.schema` file with a text editor and replace the segment starting `<< TODO:` with your Storage account connection string and then save the file.
+1. Open the `abstracts_datasource.schema` file with a text editor and replace the segment starting `<< TODO:` with your Storage account connection string and then save the file, by pressing **CTRL + S**.
 
     ![The abstract data source is ready to be updated.](../media/edit-abstracts-datasource.png)
 
-1. Open the `covid19temp_datasource.schema` file with a text editor and replace the segment starting `<< TODO:` with your Storage account connection string and then save the file.
+1. Open the `covid19temp_datasource.schema` file with a text editor and replace the segment starting `<< TODO:` with your Storage account connection string and then save the file, by pressing **CTRL + S**.
 
 1. Now, open the `AzureSearchIndex.ps1` file with a text editor and copy the code present in it.
 
@@ -118,51 +116,53 @@ The high-level steps covered in the lab are:
 
 ## Task 4 - Querying Azure Search Indexes
 
-1. Navigate to [the Azure portal](https://portal.azure.com) and log in with your credentials. Then, select **Resource groups**.
+1. Navigate to the [Azure portal](https://portal.azure.com) and log in with your credentials. Then, select **Resource groups**. Select the **AzureAIrg** resource group.
 
     ![Open Azure resource group](../media/SHC2a.3.1.png)
 
-2. Select the **AzureAIrg** resource group.
-
-3. Locate **Search service** resource **aiinaday-cog-<inject key="DeploymentID" enableCopy="false"/>** and select it.
+1. Locate **Search service** resource **aiinaday-cog-<inject key="DeploymentID" enableCopy="false"/>** and select it.
 
     ![The Search service is highlighted from the list of services in the AI-in-a-Day Resource Group](../media/inn6.png)
 
-4. Select the **Indexes** tab and ensure that you have two indexes created. If the Document Count is 0 for either, wait a couple of minutes and select **Refresh** until the document count appears.
+1. Select the **Indexes** tab and ensure that you have two indexes created. If the Document Count is 0 for either, wait a couple of minutes and select **Refresh** until the document count appears.
 
     ![The list of Azure Search indexes.](../media/AI1.png)
 
-6. Once documents are available, Navigate to Overview **(1)** of Search service and then select **Search Explorer (2)** to open up the Search Explorer.
+1. Once documents are available, Navigate to Overview **(1)** of Search service and then select **Search Explorer (2)** to open up the Search Explorer.
 
     ![The Search Explorer option is selected.](../media/innovate4.png)
 
-7. Choose the **covid19temp (1)** index and enter `RNA interference`**(2)** into the Query string input box, and then select **Search (3)**. This will return the documents which include the phrase "RNA interference."
+1. Choose the **covid19temp (1)** index and enter `RNA interference`**(2)** into the Query string input box, and then select **Search (3)**. This will return the documents which include the phrase "RNA interference."
 
     ![Articles with the phrase RNA interference.](../media/L2T4S6.png)
 
-8. We can also see how many articles match a certain search string. In the Query string input box, enter the phrase `Brazil&$count=true` **(1)** and then select **Search (2)**.  This will return 53 documents.
+1. We can also see how many articles match a certain search string. In the Query string input box, enter the phrase `Brazil&$count=true` **(1)** and then select **Search (2)**.  This will return 53 documents.
 
     ![53 articles reference Brazil.](../media/image03.png)
 
-9. Each document returns a large number of fields, but we can specify the fields we would like to see. In the Query string input box, enter the phrase `UNC Chapel Hill&$select=metadata/authors, metadata/title` **(1)** and then select **Search (2)**. This will return the title as well as detailed information on each author.
+1. Each document returns a large number of fields, but we can specify the fields we would like to see. In the Query string input box, enter the phrase `UNC Chapel Hill&$select=metadata/authors, metadata/title` **(1)** and then select **Search (2)**. This will return the title as well as detailed information on each author.
 
     ![Paper titles and authors referencing UNC Chapel Hill.](../media/image04.png)
 
-10. The Azure Search service can also generate a demo application. Return to the search service and select the **covid19temp** index.
+1. The Azure Search service can also generate a demo application. Return to the search service and select the **covid19temp** index.
 
     ![The covid19temp index is selected.](../media/inn8.png)
 
-11. Select the **Create Demo App** option.
+1. Select the **Create Demo App** option.
 
     ![The Create Demo App option is selected.](../media/lab2a-task4-step10.png)
 
-12. On the first tab, select `metadata.title` **(1)** for the Title and `abstract.text` **(2)** for the Description. Then select **Next** twice and click on **Create Demo App (3)**. After the prompt, select **Download** to download an HTML file named `AzSearch.html`.
+1. On the first tab, select `metadata.title` **(1)** for the Title and `abstract.text` **(2)** for the Description. Then select **Next** twice and click on **Create demo App**. After the prompt, select **Download** to download an HTML file named `AzSearch.html`.
 
-13. Open the demo app HTML file. In the search box, enter the phrase **RNA interference (1)** and select the **Search icon (2)**. This will return 497 papers relating to RNA interference.
+    ![Use the demo app.](../media/createademo.png)
+
+    ![Use the demo app.](../media/createdemoapp-01.png)
+
+1. Open the demo app HTML file. In the search box, enter the phrase **RNA interference (1)** and select the **Search icon (2)**. This will return 497 papers relating to RNA interference.
 
     ![Use the demo app.](../media/L2T4S12.png)
 
-    >**Note**: If you face any issues on validation, please perform the next steps till the end of this lab and then click on validate button again.
+    >**Note**: The output you receive might differ on your system, but it must follow this format for the subsequent steps to proceed.
 
 > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
 > - Click on the **Validate** button for the corresponding task. If you receive a success message, you can proceed to the next task. 
@@ -171,87 +171,85 @@ The high-level steps covered in the lab are:
 
 <validation step="d7963eb3-7409-470c-909c-5ad9c0517a36" />
 
+>**Note**: If you face any issues on validation, please perform the next steps till the end of this lab and then click on validate button again.
+
 ## Task 5 - Updating Azure Search Indexes
 
 1. On the desktop, select the Azure Storage Explorer.  
 
     ![Storage explorer is selected on the desktop.](../media/storage-exp-desktop.png)
 
-2. Select the **Connect (1)** option and then click on **Storage account or service (2)**.
+1. Select the **Connect (1)** option and then click on **Storage account or service (2)**.
 
     ![storageaccount](../media/storage-account.1.png)
 
-3. Select **Connection String (Key or SAS) (1)** under the Select Connection Method Window and then select **Next (2)**.
+1. Select **Connection String (Key or SAS) (1)** under the Select Connection Method Window and then select **Next (2)**.
 
     ![The Use a connection string option is selected.](../media/connectionstring.1.png)
 
-4. Paste in your storage account **Connection string (1)** **<inject key="storageAccountConnectionString" enableCopy="true"/>**. Then, select **Next (2)** to continue and **Connect (3)** to complete the operation.
+1. Paste in your storage account **Connection string (1)** **<inject key="storageAccountConnectionString" enableCopy="true"/>**. Then, select **Next (2)** to continue and **Connect (3)** to complete the operation.
 
     ![The connection string is filled in.](../media/new-lab2a-1.11.png)
 
     ![Connect is selected on the storage explorer page](../media/new-lab2a-2.11.png)
 
-5. In Azure Storage Explorer, navigate down the **aiinaday5677 (1)** attached storage and expand **Blob containers (2)** expand the **blob container (3)** and select `covid19temp` **(4)**.  Double-click the **comm_use_subset (5)** to enter that folder.
+1. In Azure Storage Explorer, navigate down the **aiinadaystorage<inject key="DeploymentID" enableCopy="false"/> (1)** attached storage and expand **Blob containers (2)** expand the **blob container (3)** and select `covid19temp` **(4)**.  Double-click the **comm_use_subset (5)** to enter that folder.
 
-    ![The comm_use_subset folder is selected.](../media/new-lab2a-33.png)
+    ![The comm_use_subset folder is selected.](../media/covid19temp-01.png)
 
-6. Enter the **pdf_json_refresh** folder. Then, in the **Select All (1)** menu, choose **Select All Cached (2)**. This will highlight all 100 records in the folder.  Select **Copy (3)** to copy these documents.
+1. Enter the **pdf_json_refresh** folder. Then, in the **Select All (1)** menu, choose **Select All Cached (2)**. This will highlight all 100 records in the folder.  Select **Copy (3)** to copy these documents.
 
-    ![Select the PDF refresh folder.](../media/select-pdf-refresh-folder01.png)
+    ![Select the PDF refresh folder.](../media/select-pdf-refresh-folder-01.png)
     
-    ![Select all cached items and copy them.](../media/azure-storage-explorer-201.png)
+    ![Select all cached items and copy them.](../media/azure-storage-explorer-01.png)
 
-7. Navigate up to **comm_use_subset** by selecting the upward arrow and then double-click **pdf_json (1)**. Inside this folder, select **Paste (2)** to paste the 100 documents into the **pdf_json** folder. When it finishes, you should have **965 total documents (3)**.
+1. Navigate up to **comm_use_subset** by selecting the upward arrow and then double-click **pdf_json (1)**. Inside this folder, select **Paste (2)** to paste the 100 documents into the **pdf_json** folder. When it finishes, you should have **965 total documents (3)**.
 
     ![Navigate into the pdf_json folder.](../media/upward-arrow01.png)
 
     ![Paste all cached items into the pdf_json folder.](../media/azure-storage-explorer-301.png)
 
-8. Navigate to [the Azure portal](https://portal.azure.com) and log in with your credentials if not logged in already. Then, select **Resource groups**.
+1. Navigate to the [Azure portal](https://portal.azure.com) and log in with your credentials if not logged in already. Then, select **Resource groups**. Select the **AzureAIrg** resource group.
 
     ![Open Azure resource group](../media/SHC2a.3.1.png)
 
-9. Select the **AzureAIrg** resource group.
-
-10. Select the **aiinaday-cog-<inject key="DeploymentID" enableCopy="false"/>** Search service.
+1. Select the **aiinaday-cog-<inject key="DeploymentID" enableCopy="false"/>** Search service.
 
     ![The Search service is highlighted from the list of services in the AI-in-a-Day Resource Group](../media/inn6.png)
 
-11. Navigate to the **Indexers (1)** section and select the **covid19temp (2)** indexer.
+1. Navigate to the **Indexers (1)** section and select the **covid19temp (2)** indexer.
 
     ![The covid19temp indexer is selected.](../media/AI2.png)
 
-12. Select the **Run (1)** option to process the 100 documents. Although we can configure an indexer to run periodically, this indexer will only run when manually engaged.  Select **Yes (2)** to run the indexer.
+1. Select the **Run (1)** option to process the 100 documents. Although we can configure an indexer to run periodically, this indexer will only run when manually engaged.  Select **Yes (2)** to run the indexer.
 
     ![The covid19temp indexer is set to run.](../media/azure-search-indexers-run.1.png)
 
-13. The indexer will run. It should be completed within 15-30 seconds to process the 100 new documents. You may need to select **Refresh** to see the indexer's progress.
+1. The indexer will run. It should be completed within 15-30 seconds to process the 100 new documents. You may need to select **Refresh** to see the indexer's progress.
 
     ![The covid19temp indexer has finished running.](../media/azure-search-indexers-refresh.png)
 
-14. Return to the **Indexes** tab for the Search service and ensure that the **covid19temp** index has 965 documents. If it still reads 865, wait 30 seconds and select **Refresh** to check again.
+1. Return to the **Indexes** tab for the Search service and ensure that the **covid19temp** index has 965 documents. If it still reads 865, wait 30 seconds and select **Refresh** to check again.
 
     ![The covid19temp index has finished updating.](../media/inn10.png)
 
-15. Select the **covid19temp** index to return to the Search Explorer. When we had 865 documents, 53 of them pertained to Brazil. We can confirm that this update was successful by entering `Brazil&$count=true` **(1)** and selecting **Search (2)**. This will now return 57 results **(3)** instead of the prior 53.
+1. Select the **covid19temp** index to return to the Search Explorer. When we had 865 documents, 53 of them pertained to Brazil. We can confirm that this update was successful by entering `Brazil&$count=true` **(1)** and selecting **Search (2)**. This will now return 57 results **(3)** instead of the prior 53.
 
-    ![57 documents pertaining to Brazil.](../media/L2T5S15.png)
+    ![57 documents pertaining to Brazil.](../media/truebrazilian.png)
 
 ## Task 6 - Using the Document Intelligence Studio
 
-1. Navigate to [the Azure portal](https://portal.azure.com) and log in with your credentials. Then, select **Resource groups**.
+1. Navigate to the [Azure portal](https://portal.azure.com) and log in with your credentials. Then, select **Resource groups**. Select the **AzureAIrg** resource group.
 
    ![Open Azure resource group](../media/SHC2a.3.1.png)
 
-1. Select the **AzureAIrg** resource group.
+1. Select the **aiinadaystorage<inject key="DeploymentID" enableCopy="false"/>** Storage account.
 
-1. Select the **aiinaday5677** Storage account.
+   ![The Storage account is highlighted from the list of services in the AI-in-a-Day Resource Group](../media/aiinadaystoragedid.png)
 
-   ![The Storage account is highlighted from the list of services in the AI-in-a-Day Resource Group](../media/azureairgaiinaday.png)
+1. Under **Settings (1)**, navigate to the **Resource sharing (CORS) (2)** page. 
 
-1. Under **Settings**, navigate to the **Resource sharing (CORS)** page. 
-
-   ![The CORS is highlighted from the list of services in the AI-in-a-Day Resource Group](../media/storaheaccount-CORSs.png)
+   ![The CORS is highlighted from the list of services in the AI-in-a-Day Resource Group](../media/aiinadaystorage-03.png)
     
 1. On the Resource Sharing (CORS) page, ensure that you are on the **Blob service** **(1)** tab, and enter the following values into the table **(2)** and then select **Save** **(3)** to save the CORS settings.  
 
@@ -274,9 +272,11 @@ The high-level steps covered in the lab are:
 
    ![The AI Services key and endpoint are selected](../media/inn12.png)
 
-1. Open a new tab, and navigate to the [Document Intelligence Studio](https://formrecognizer.appliedai.azure.com/), scroll-down to **Custom models** and select **Get Started** under **Custom model**. Use the credentials provided in the Environment Details to Sign-in.
+1. Open a new tab, and navigate to the [Document Intelligence Studio](https://formrecognizer.appliedai.azure.com/), scroll-down to **Custom models** and select **Get Started** under **Custom model**.
 
    ![Create new custom model](../media/updated-document-ai.png)
+
+   >**Note:** If a "**Pick an account**" pop-up appears, select your account, and re-perform step-07.
 
 1. In the Custom models page, under **My Project** click on **+ Create a project**.
   
@@ -303,7 +303,7 @@ The high-level steps covered in the lab are:
     | --------------------------- | -------------------------------------|
     | Subscription                | Select the default subscription **(1)**     |
     | Resource Group              | Select `AzureAIrg` **(2)**                |
-    | Storage account             | Select aiinaday5677 **(3)** |
+    | Storage account             | Select aiinadaystorage<inject key="DeploymentID" enableCopy="false"/> **(3)** |
     | Blob container              | Select `covid19temp` **(4)**                 |
     | Folder path                 | Enter `papers` **(5)**                      |
 
@@ -411,9 +411,9 @@ In this task, we are creating a text summarization application with the client l
 
 5. Open **File Explorer** and navigate to the path `C:\Temp\AzureSearch\`. Select the file named **summarization.py** and open it in **Notepad or IDLE**. 
 
-6. Replace the **key** and **endpoint** in the file with the AI services multi-service account named **aiinaday-cogsv<inject key="DeploymentID" enableCopy="false"/>**, which you copied in Step 2 of the same task. Also, replace **ExtractSummaryAction** with **ExtractiveSummaryAction**, and then save the file.
+6. Replace the **key** and **endpoint** in the file with the AI services multi-service account named **aiinaday-cogsv<inject key="DeploymentID" enableCopy="false"/>**, which you copied in Step 2 of the same task and then save the file.
     
-   ![summarization](../media/extractivesumm.png) 
+   ![summarization](../media/keysendpoints.png) 
 
 7. Navigate to the command prompt and run the following commands.
 
@@ -439,4 +439,4 @@ You can find more references about Document Summarization from here: [Quickstart
 
 In this lab, you have explored Azure Document Intelligence and AI Services and extracted, analyzed, and summarized key information from documents.
 
-### You have successfully completed the lab. Click Next >> to move on to the next set of exercises.
+#### You have successfully completed the lab. Click Next >> to move on to the next set of exercises.

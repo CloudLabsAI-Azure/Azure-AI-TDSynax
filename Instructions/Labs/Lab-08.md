@@ -151,19 +151,15 @@ In this task, you will configure Azure Storage and AI Search services, update cr
 
 1. Configure the fields as shown in the image:
 
-   - Select **+ Add field**. Give the name as **contentVector**.
+   - Ensure **Retrievable** is selected for all fields.
+
    - **contentVector**: Set the type to `Collection(Edm.Single)`.
 
-   - Select **+ Add field**. Give the name as **id**.
    - **id**: Check the boxes for **Filterable**, **Sortable** and **Facetable**.
 
    - **content**: Check the **Searchable** box.
 
-   - Ensure **Retrievable** is selected for all fields.
-
      ![](../media/img81.png)
-
-     >**Note:** While adding the id field, if the sortable checkbox is missing, skip it for now and proceed with the next steps.
 
 1. Next, on the **contentVector** field, click on the **Eclipse** button in the right corner and select **Configure vector field**.
 
@@ -203,11 +199,11 @@ In this task, you will configure Azure Storage and AI Search services, update cr
 
       ![](../media/img84.png)
 
-1. From the **Overview (1)** page, click on **Import data (2)** again.
+1. From the **Overview** page, click on **Import data** again.
 
-       ![](../media/img77.png)
+      ![](../media/importdata.png)
 
-1. On the **Connect to your data** tab, select the existing data source and select the storage account then, click **Next: Add cognitive skills (optional)**.
+1. On the **Connect to your data** tab, select the existing data source and select the storage account **copilotstorage<inject key="DeploymentID" enableCopy="false"/>** then, click **Next: Add cognitive skills (optional)**.
 
       ![](../media/img85.png)
 
@@ -265,17 +261,9 @@ In this task, you will configure Azure Storage and AI Search services, update cr
 
       ![](../media/img89.png)
 
-      >**Note:** If you were unable to select the **Sortable** checkbox in the **id** field while creating **payroll-hr**, follow these steps:
-      
-      >- In **aiinaday-cog-<inject key="DeploymentID" enableCopy="false"/>**, go to **Search management** from the left navigation pane, select the **Indexes** tab and delete **payroll-hr**.
+1. Navigate to the **Indexes (1)** tab under the **Search management** section to view the newly created indexes, copy the index names, and save them in a text editor for later use.
 
-      >- From the left navigation pane, select **Indexers** and delete **payroll-hr**.
-
-      >- Repeat steps **5-18**. On the **Connect to your data** tab, select the existing data source, choose the storage account, and click **Next: Add cognitive skills (optional)**.
-
-      ![](../media/img85.png)
-
-1. Navigate to the **Indexes** tab under the **Search management** section to view the newly created indexes, copy the index names, and save them in a text editor for later use.
+      ![](../media/indexex-01.png)
 
 1. Click on **Keys** from the left menu, copy the **Primary admin keys**, and store them in a text file for later use.
 
@@ -322,7 +310,7 @@ In this task, you will configure Azure Storage and AI Search services, update cr
 
     >**Note**: The output you receive might differ on your system, but it must follow this format for the subsequent steps to proceed. 
 
-1. Navigate back to **Terminal** in vs code and stop the terminal by typing **ctrl + C**.
+1. Navigate back to **Terminal** in vs code and stop the terminal by typing **ctrl + C**, and also close the terminal.
 
 ### Task 3: Deploy the HR/Payroll Copilot application to Azure
 
@@ -391,6 +379,7 @@ In this task, you will configure Azure Storage and AI Search services, update cr
 
 12. Once the deployment succeeds, you will see the following message **SUCCESS: Your application was provisioned and deployed to Azure**. The deployment might take 5-10 minutes. It is producing a web package file, then creating the resource and publishing the package to the app service.
 
+      ![](../media/success-gpt.png)
 
 13. Navigate back to the Azure portal, search, and select **App service**. Select the available web app that you have deployed in the previous step.
 
@@ -415,4 +404,4 @@ In this task, you will configure Azure Storage and AI Search services, update cr
 
 In this lab, you have built and tested an HR/Payroll copilot application locally by configuring and running it with Azure OpenAI and Cognitive Search settings. They then integrated Azure Cognitive Search by setting up data sources, indexes, and vector fields. Finally, they deployed the application to Azure, authenticated with Azure, and used deployment commands to provision resources and launch the app. The lab concluded with the successful deployment and verification of the application on Azure.
 
-### You have successfully completed the lab. Click Next >> to move on to the next set of exercises.
+#### You have successfully completed the lab. Click Next >> to move on to the next set of exercises.

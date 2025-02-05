@@ -140,7 +140,7 @@ The high-level steps covered in the lab are:
 
    ![Run Note Book Cell](../media/IMG012.png)
    
-4. Please make sure to read the cells carefully and update the storage account name wherever required with **aiinaday5677**
+4. Please make sure to read the cells carefully and update the storage account name wherever required with **aiinadaystorage<inject key="DeploymentID" enableCopy="false"/>**
 
      ![Note Book Cell Output](../media/aiupdates.png)
 
@@ -159,6 +159,8 @@ In this task, we'll use Azure Automated ML to train a machine learning model cap
 3. On the `Task type and data` page, make sure `Classification` **(1)** is selected. Select `COVID19Articles_Train`**(2)** as your dataset and click `Next` **(3)** to proceed.
 
     ![Classification is selected as the machine learning task type for the experiment. The View additional configuration settings link is highlighted. ](../media/innovate1.png) 
+
+    ![COVID19Articles_Train_Vectors dataset is selected. Next button is highlighted.](../media/covid19articlestrain.png)
 
 5. On `Task settings` page, select the Target column to `cluster (Integer)` **(1)**. The values we're trying to predict are in the `cluster` column.
 
@@ -184,9 +186,9 @@ In this task, we'll use Azure Automated ML to train a machine learning model cap
     - **Virtual machine type (2)**: CPU
     - **Virtual machine Size (3)**: Standard_DS3_v2
 
-    ![Dedicated virtual machine priority, CPU virtual machine type, and Standard_DS3_v2 virtual machine size are selected. The next button is highlighted.](../media/SHC5.4.1.png)
+        ![Dedicated virtual machine priority, CPU virtual machine type, and Standard_DS3_v2 virtual machine size are selected. The next button is highlighted.](../media/SHC5.4.1.png)
 
-    Select `Next` **(4)** to continue.
+    - Select `Next` **(4)** to continue.
 
 9. To configure cluster settings set the values given below:
 
@@ -200,13 +202,15 @@ In this task, we'll use Azure Automated ML to train a machine learning model cap
 
 10. On the Review page, select `Submit training job` **(1)**  to kick off the Automated ML experiment run. If this is the first time you are launching an experiment run in the Azure Machine Learning workspace, the total experiment time will be longer than the `training job time` we have set. This is because of the time needed to start the Compute Cluster and deploy the container images required to execute.
 
-    ![Validation is selected as the machine learning task type for the experiment. The View additional configuration settings link is highlighted. ](../media/inn4.png)
+    ![Validation is selected as the machine learning task type for the experiment. The View additional configuration settings link is highlighted. ](../media/submittrainingjob-1.png)
 
 12. On the following screen, you will see the progress of your experiment run.
 
+    ![Validation is selected as the machine learning task type for the experiment. The View additional configuration settings link is highlighted. ](../media/jobrunning-1.png)
+
 13. Now that you understand the process of launching an AutoML run, let's explore in the next task the results of an already completed AutoML run.
 
->**Note**: We have already executed in this environment an AutoML run that is very similar to the one you've just launched. This allows you to explore AutoML results without having to wait for the completion of the run.
+    >**Note**: We have already executed in this environment an AutoML run that is very similar to the one you've just launched. This allows you to explore AutoML results without having to wait for the completion of the run.
 
 ## Task 6 - Explore AutoML results
 
@@ -267,7 +271,7 @@ Responsible AI is a governance framework that documents how a specific organizat
 
 In this lab, you explore the COVID-19 data dashboard, set up and prepare your Azure Machine Learning workspace, train and evaluate a model using Automated ML, and generate and analyze a Responsible AI dashboard.
 
-### You have successfully completed the lab. Click Next >> to move on to the next set of exercises.
+#### You have successfully completed the lab. Click Next >> to move on to the next set of exercises.
 
 
 

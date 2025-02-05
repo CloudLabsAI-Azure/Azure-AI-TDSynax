@@ -19,6 +19,30 @@ You will be able to complete the following tasks:
 
 In this task, you will configure the Miyagi application by updating specific settings in Visual Studio Code. This involves replacing placeholder values in configuration files with the actual values for various Azure resources to ensure proper connectivity and functionality.
 
+1. Navigate to the [Azure portal](https://portal.azure.com) and log in with your credentials. Then, select **Resource groups**. Select the **AzureAIrg** resource group.
+
+   ![Open Azure resource group](../media/SHC2a.3.1.png)
+
+1. Select the **aiinadaystorage<inject key="DeploymentID" enableCopy="false"/>** Storage account.
+
+   ![The Storage account is highlighted from the list of services in the AI-in-a-Day Resource Group](../media/aiinadaystoragedid.png)
+
+1. Under **Settings (1)**, navigate to the **Resource sharing (CORS) (2)** page. 
+
+   ![The CORS is highlighted from the list of services in the AI-in-a-Day Resource Group](../media/aiinadaystorage-03.png)
+    
+1. On the Resource Sharing (CORS) page, ensure that you are on the **Blob service** **(1)** tab, and enter the following values into the table **(2)** and then select **Save** **(3)** to save the CORS settings.  
+
+   | Parameter                   | Value                                              |
+   | --------------------------- | -------------------------------------------------- |
+   | Allowed origins             | Enter `*` |
+   | Allowed methods             | Select all of the available methods.               |
+   | Allowed headers             | Enter `*`                                          |
+   | Exposed headers             | Enter `*`                                          |
+   | Max age                     | Enter `200`                                        |
+
+    ![](../media/blobservice-01.png)
+   
 1. Open **Visual Studio Code** from the Lab VM desktop by double-clicking on it.
 
    ![](../media/vs-code.png)
@@ -94,11 +118,29 @@ In this task, you will configure the Miyagi application by updating specific set
 
 Recommendation service implements RAG pattern using Semantic Kernel SDK. The details of the implementation are captured in the Jupyter notebook in the folder miyagi/sandbox/usecases/rag/dotnet. You can open the notebook in VSCode and run the cells to understand step-by-step details of how the Recommendation Service is implemented. Pay special attention to how the RAG pattern is implemented using Semantic Kernel. Select kernel as .NET Interactive in the top right corner of the notebook.
 
+1. Click on the **Eclipse Button (1)** at the top of the screen, then select **Terminal (2)** from the dropdown menu, and click on **New Terminal (3)** to open a new terminal window.
+
+   ![](../media/img59.png)
+
+1. Now, run the below commands, for activating the polyglot:
+
+   ```
+   conda create -n polyglot_env python=3.9 -y
+   
+   conda activate polyglot_env
+   
+   conda install -c conda-forge polyglot
+   
+   curl -o node-setup.msi https://nodejs.org/dist/v18.17.1/node-v18.17.1-x64.msi
+   
+   Start-Process -FilePath node-setup.msi -ArgumentList '/quiet' -Wait
+   ```
+
 1. In the Visual Studio Code navigate to **miyagi/sandbox/usecases/rag/dotnet** folder and select **Getting-started.ipynb**
 
    ![](../media/miyagi-image19.png)
 
-1. **Execute the notebook cell by cell** (using either Ctrl + Enter to stay on the same cell or Shift + Enter to advance to the next cell) and observe the results of each cell execution.
+1. **Execute the notebook cell by cell** (using either Ctrl + Enter to stay on the same cell or Shift + Enter to move to the next cell), select the kernel as **.NET Interactive**, and observe the results of each cell execution.
   
 
    > **Note**: Make sure **.Net Interactive** is in ready State, if not please wait for 2 to 3 minutes. If it is still not loading, kindly close and reopen Visual Studio. Also, please do not click on **Run All** option to execute all the cells at a time which may lead to exceed in token limit that results Error: 503 – Service unreachable. 
@@ -247,10 +289,10 @@ In this task, you'll personalize the Miyagi App's Recommendation service by sele
 1.  From the **Terminal** select **Node** terminal, press **Ctrl + C** to stop the **recommendation service** ui page.
       ![](../media/miyagi-image31.png)
 
-1. Now, click on **Next** from the lower right corner to move to the next page.
+1. Close the terminal.
 
 ## Summary
 
 In this Lab, you began with configuring the Miyagi App for operational readiness, followed by a detailed exploration of the Recommendation service's implementation. Practical execution involves running the Recommendation service and deploying the Miyagi frontend locally for testing. Enhancing data retrieval efficiency is a pivotal step, achieved by persisting embeddings in Azure AI Search. The project concludes with a broad exploration of the Miyagi App and Recommendation service, prioritizing a personalized user experience. This systematic approach ensures a thorough understanding and effective implementation throughout the project.
 
-### You have successfully completed this lab.
+#### You have successfully completed this lab.

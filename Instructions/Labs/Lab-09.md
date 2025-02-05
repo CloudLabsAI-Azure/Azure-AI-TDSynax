@@ -111,6 +111,7 @@ In this task, you will update the `main.bicep` file to reference `multi_agent_co
 
 11. Once the deployment succeeds, you will see the following message **SUCCESS: Your application was provisioned and deployed to Azure**. The deployment might take 5-10 minutes. It is producing a web package file, then creating the resource and publishing the package to the app service.
 
+      ![](../media/azurecopilot-02.png)
 
 12. Navigate back to the Azure portal and select **App service** from the **AzureAIrg-02** resource group.
 
@@ -133,4 +134,4 @@ In this task, you will update the `main.bicep` file to reference `multi_agent_co
 
 In this lab, you have built your own multi-agent Copilot application locally and deployed a multi-agent Copilot application to Azure.
 
-### You have successfully completed the lab. Click Next >> to move on to the next set of exercises.
+#### You have successfully completed the lab. Click Next >> to move on to the next set of exercises.
