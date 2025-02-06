@@ -1,13 +1,10 @@
-# Lab 02: Introduction to LLMs and Azure AI Services
+# Lab 2: Introduction to LLMs and Azure AI Services
 
-### Estimated Duration: 60 minutes
-
-## Overview
+## Lab scenario
 
 Participants will set up an AI project and hub, deploy Azure OpenAI models, and integrate content safety services. They will use the Azure AI Foundry Playground to test models, work with open-source LLMs, and create and manage prompt flows, ensuring safe and effective AI interactions.
 
-## Lab Objectives
-
+## Lab objectives
 After completing this lab, you will be able to complete the following tasks:
 
 - Task 01: Create an AI Project and AI Hub Resources
@@ -18,6 +15,8 @@ After completing this lab, you will be able to complete the following tasks:
 - Task 06: Work with an Open Source LLM Model
 - Task 07: Test the prompt in Content Safety
 - Task 08: Create a Prompt Flow
+
+### Estimated Duration: 60 minutes
 
 ## Task 01: Create an AI Project and AI Hub Resources
 

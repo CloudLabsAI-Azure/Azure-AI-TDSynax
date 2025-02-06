@@ -1,6 +1,6 @@
 # Lab 3 - Azure Machine Learning Model Training
 
-### Estimated Duration: 2 Hours
+## Lab scenario
 
 Azure Machine Learning model training involves using Azure’s cloud-based platform to build, train, and tune machine learning models with scalable compute resources, automated workflows, and integrated tools, streamlining the process from data preparation to model deployment.
 
@@ -24,7 +24,7 @@ This dataset is intended to mobilize researchers to apply recent advances in nat
 
 The corpus may be updated as new research is published in peer-reviewed publications and archival services like [bioRxiv](https://www.biorxiv.org/), [medRxiv](https://www.medrxiv.org/), and others.
 
-## Lab Objectives
+## Lab objectives
 
 - Task 1 - Explore dashboard of COVID-19 data
 - Task 2 - Explore lab scenario
@@ -34,6 +34,8 @@ The corpus may be updated as new research is published in peer-reviewed publicat
 - Task 6 - Explore AutoML results
 - Task 7 - Generate a Responsible AI dashboard
 - Task 8 - Explore the Responsible AI dashboard
+
+### Estimated Duration: 60 minutes
 
 ## Task 1 - Explore dashboard of COVID-19 data
 

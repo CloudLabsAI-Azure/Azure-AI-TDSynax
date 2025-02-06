@@ -1,4 +1,4 @@
-# Lab 8: Deploy and Run the HR/Payroll Copilot Application
+# Lab 4: Deploy and Run the HR/Payroll Copilot Application
 
 ## Lab scenario
 

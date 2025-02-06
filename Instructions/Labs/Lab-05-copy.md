@@ -1,4 +1,4 @@
-# Lab 5: Conversational AI with Bot Service using Power Virtual Agents
+# Lab 1: Conversational AI with Bot Service using Power Virtual Agents
 
 ## Lab scenario
 Conversational AI with Bot Service using Power Virtual Agents allows users to create and deploy sophisticated chatbots with no code, enabling automated interactions and enhanced customer engagement through intuitive, customizable conversational flows.
@@ -10,7 +10,7 @@ Conversational AI with Bot Service using Power Virtual Agents allows users to cr
 - Task 3 - Create a New Topic
 - Task 4 - Test your Copilot
 
-### Estimated Duration: 1 Hour 30 Minutes
+### Estimated Duration: 60 minutes
 
 ## Task 1 - Explore lab scenario
 
@@ -124,7 +124,7 @@ The way organizations are building conversational systems is evolving, with bots
 > - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
 > - If you need any assistance, please contact us at **labs-support@spektrasystems.com**. We are available 24/7 to help you out.
 
-<validation step="298a93c6-d52c-4f6d-97c7-2d27136af729" />
+<validation step="8ffa240d-ed92-4bcf-92b2-95315339a0c9" />
 
 
 ## Task 4 - Test your Copilot

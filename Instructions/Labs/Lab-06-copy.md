@@ -1,4 +1,4 @@
-# Lab 6: Getting Started with Building a Chat Application
+# Lab 2: Getting Started with Building a Chat Application
 
 ## Lab scenario
 Building a chat application involves designing the user interface for seamless communication, implementing backend services for real-time message handling, and integrating with databases for storing chat histories, while ensuring robust security and scalability to handle user interactions effectively.In this lab, you will be setting up the Open AI resource and installing the application locally.

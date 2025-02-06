@@ -1,4 +1,4 @@
-# Lab 9: Understand HR Copilot Demo Application 
+# Lab 5: Understand HR Copilot Demo Application 
 
 ## Lab scenario
 

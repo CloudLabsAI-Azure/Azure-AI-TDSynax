@@ -1,4 +1,4 @@
-# Lab 7: Understand function calling in Open AI GPT
+# Lab 3: Understand function calling in Open AI GPT
 
 ## Lab scenario
 

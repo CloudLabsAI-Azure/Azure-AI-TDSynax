@@ -1,4 +1,4 @@
-# Lab 12: Run Miyagi App Locally
+# Lab 6: Run Miyagi App Locally
 
 ## Lab scenario
 

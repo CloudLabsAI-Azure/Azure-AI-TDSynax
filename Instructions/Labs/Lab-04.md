@@ -1,7 +1,6 @@
 # Lab 4 - Document Processing and Summarization with Azure Document Intelligence and AI Service for Language
 
-### Estimated Duration: 2 Hours 30 Minutes
-
+## Lab scenario
 Azure Document Intelligence and AI Service for Language streamline document processing by extracting key information and automating summaries, leveraging AI to enhance data extraction accuracy and deliver actionable insights efficiently.
 
 ## Lab Objectives
@@ -13,6 +12,8 @@ Azure Document Intelligence and AI Service for Language streamline document proc
 - Task 5 - Updating Azure Search Indexes
 - Task 6 - Using the Document Intelligence Studio
 - Task 7 - Document Summarization via AI Service for Language Integration
+
+### Estimated Duration: 60 minutes
 
 ## Task 1 - Explore the dashboard of COVID-19 data
 
@@ -439,4 +440,4 @@ You can find more references about Document Summarization from here: [Quickstart
 
 In this lab, you have explored Azure Document Intelligence and AI Services and extracted, analyzed, and summarized key information from documents.
 
-#### You have successfully completed the lab. Click Next >> to move on to the next set of exercises.
+#### You have successfully completed the lab.
