@@ -118,7 +118,7 @@ In this task, you will configure the Miyagi application by updating specific set
 
 Recommendation service implements RAG pattern using Semantic Kernel SDK. The details of the implementation are captured in the Jupyter notebook in the folder miyagi/sandbox/usecases/rag/dotnet. You can open the notebook in VSCode and run the cells to understand step-by-step details of how the Recommendation Service is implemented. Pay special attention to how the RAG pattern is implemented using Semantic Kernel. Select kernel as .NET Interactive in the top right corner of the notebook.
 
-1. Click on the **Eclipse Button (1)** at the top of the screen, then select **Terminal (2)** from the dropdown menu, and click on **New Terminal (3)** to open a new terminal window.
+<!-- 1. Click on the **Eclipse Button (1)** at the top of the screen, then select **Terminal (2)** from the dropdown menu, and click on **New Terminal (3)** to open a new terminal window.
 
    ![](../media/img59.png)
 
@@ -134,7 +134,7 @@ Recommendation service implements RAG pattern using Semantic Kernel SDK. The det
    curl -o node-setup.msi https://nodejs.org/dist/v18.17.1/node-v18.17.1-x64.msi
    
    Start-Process -FilePath node-setup.msi -ArgumentList '/quiet' -Wait
-   ```
+   ``` -->
 
 1. In the Visual Studio Code navigate to **miyagi/sandbox/usecases/rag/dotnet** folder and select **Getting-started.ipynb**
 
