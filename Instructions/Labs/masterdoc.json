@@ -29,33 +29,33 @@
           "Order": 6
         },
         {
-            "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/Azure-AI-TDSynax/main/Instructions/Labs/Lab-06.md",
-            "Order": 7
+          "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/Azure-AI-TDSynax/main/Instructions/Labs/Lab-06.md",
+          "Order": 7
         },
         {
-            "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/Azure-AI-TDSynax/main/Instructions/Labs/Lab-07.md",
-            "Order": 8
+          "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/Azure-AI-TDSynax/main/Instructions/Labs/Lab-07.md",
+          "Order": 8
         },
         {
-            "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/Azure-AI-TDSynax/main/Instructions/Labs/Lab-08.md",
-            "Order": 9
+          "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/Azure-AI-TDSynax/main/Instructions/Labs/Lab-08.md",
+          "Order": 9
         },
         {
-            "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/Azure-AI-TDSynax/main/Instructions/Labs/Lab-09.md",
-            "Order": 10
+          "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/Azure-AI-TDSynax/main/Instructions/Labs/Lab-09.md",
+          "Order": 10
         },
         {
-            "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/Azure-AI-TDSynax/main/Instructions/Labs/Lab-10.md",
-            "Order": 11
+          "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/Azure-AI-TDSynax/main/Instructions/Labs/Lab-10.md",
+          "Order": 11
         },
         {
-            "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/Azure-AI-TDSynax/main/Instructions/Labs/Lab-11.md",
-            "Order": 12
+          "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/Azure-AI-TDSynax/main/Instructions/Labs/Lab-11.md",
+          "Order": 12
         },
         {
           "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/Azure-AI-TDSynax/main/Instructions/Labs/Lab-12.md",
           "Order": 13
-      }
+        }
       ]
     }
   ]

@@ -1,0 +1,37 @@
+[
+    {
+      "Name": "Azure-AI-TDSynax",
+      "Language": "English",
+      "BaseURL": "https://github.com/CloudLabsAI-Azure/Azure-AI-TDSynax",
+      "Files": [
+        {
+          "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/Azure-AI-TDSynax/main/Instructions/Labs/getting-started.md",
+          "Order": 1
+        },
+        {
+          "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/Azure-AI-TDSynax/main/Instructions/Labs/Lab-01.md",
+          "Order": 2
+        },
+        {
+            "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/Azure-AI-TDSynax/main/Instructions/Labs/Lab-06.md",
+            "Order": 3
+        },
+        {
+            "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/Azure-AI-TDSynax/main/Instructions/Labs/Lab-07.md",
+            "Order": 4
+        },
+        {
+          "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/Azure-AI-TDSynax/main/Instructions/Labs/Lab-08.md",
+          "Order": 9
+      },
+      {
+          "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/Azure-AI-TDSynax/main/Instructions/Labs/Lab-09.md",
+          "Order": 10
+      },
+      {
+        "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/Azure-AI-TDSynax/main/Instructions/Labs/Lab-12.md",
+        "Order": 13
+      }
+      ]
+    }
+  ]
