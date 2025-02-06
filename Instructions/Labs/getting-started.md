@@ -1,4 +1,4 @@
-# Azure AI | TDSynaxx
+# Azure AI | TDsynnex
 
 ### Overall Estimated Duration: 8 Hours
 
