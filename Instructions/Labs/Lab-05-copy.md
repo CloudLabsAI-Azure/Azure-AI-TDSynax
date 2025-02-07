@@ -1,9 +1,9 @@
 # Lab 1: Conversational AI with Bot Service using Power Virtual Agents
 
-## Lab scenario
+## Lab Scenario
 Conversational AI with Bot Service using Power Virtual Agents allows users to create and deploy sophisticated chatbots with no code, enabling automated interactions and enhanced customer engagement through intuitive, customizable conversational flows.
 
-## Lab objectives
+## Lab Objectives
 
 - Task 1 - Explore lab scenario
 - Task 2 - Setting up Microsoft Copilot Studio and Create your first Copilot
@@ -122,7 +122,7 @@ The way organizations are building conversational systems is evolving, with bots
 > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
 > - Click on the **Validate** button for the corresponding task. If you receive a success message, you can proceed to the next task. 
 > - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
-> - If you need any assistance, please contact us at **labs-support@spektrasystems.com**. We are available 24/7 to help you out.
+> - If you need any assistance, please contact us at **cloudlabs-support@spektrasystems.com**. We are available 24/7 to help you out.
 
 <validation step="8ffa240d-ed92-4bcf-92b2-95315339a0c9" />
 

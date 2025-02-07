@@ -1,20 +1,20 @@
 # Lab 2: Introduction to LLMs and Azure AI Services
 
-## Lab scenario
+## Lab Scenario
 
 Participants will set up an AI project and hub, deploy Azure OpenAI models, and integrate content safety services. They will use the Azure AI Foundry Playground to test models, work with open-source LLMs, and create and manage prompt flows, ensuring safe and effective AI interactions.
 
-## Lab objectives
+## Lab Objectives
 After completing this lab, you will be able to complete the following tasks:
 
-- Task 01: Create an AI Project and AI Hub Resources
-- Task 02: Deploy Azure OpenAI Models
-- Task 03: Create a Content Safety Service
-- Task 04: Add an Azure Content Safety connection
-- Task 05: Use Azure AI Foundry Playground
-- Task 06: Work with an Open Source LLM Model
-- Task 07: Test the prompt in Content Safety
-- Task 08: Create a Prompt Flow
+- Task 1: Create an AI Project and AI Hub Resources
+- Task 2: Deploy Azure OpenAI Models
+- Task 3: Create a Content Safety Service
+- Task 4: Add an Azure Content Safety connection
+- Task 5: Use Azure AI Foundry Playground
+- Task 6: Work with an Open Source LLM Model
+- Task 7: Test the prompt in Content Safety
+- Task 8: Create a Prompt Flow
 
 ### Estimated Duration: 60 minutes
 
@@ -92,7 +92,7 @@ After completing this lab, you will be able to complete the following tasks:
 > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
 > - Click on the **Validate** button for the corresponding task. If you receive a success message, you can proceed to the next task. 
 > - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
-> - If you need any assistance, please contact us at **labs-support@spektrasystems.com**. We are available 24/7 to help you out.
+> - If you need any assistance, please contact us at **cloudlabs-support@spektrasystems.com**. We are available 24/7 to help you out.
  
 <validation step="10d4fb5c-02d2-4573-a704-3f98f15bcd93" />
 
@@ -173,7 +173,7 @@ After completing this lab, you will be able to complete the following tasks:
 > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
 > - Click on the **Validate** button for the corresponding task. If you receive a success message, you can proceed to the next task. 
 > - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
-> - If you need any assistance, please contact us at **labs-support@spektrasystems.com**. We are available 24/7 to help you out.
+> - If you need any assistance, please contact us at **cloudlabs-support@spektrasystems.com**. We are available 24/7 to help you out.
  
 <validation step="db0a4f63-f0c3-4d03-8575-019a239f7dad" />
 

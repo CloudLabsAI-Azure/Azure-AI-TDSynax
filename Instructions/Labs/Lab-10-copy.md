@@ -1,9 +1,9 @@
 # Lab 1: Ensuring Responsible AI with Content Safety Studio 
 
-## Lab scenario
+## Lab Scenario
 In this lab, you will learn about the Content Safety Studio is a powerful tool for managing user-generated content. It features Text Moderation to detect and filter harmful text, such as hate speech and violence, and Image Moderation to analyze and block unsafe or offensive images. This comprehensive solution ensures that all user contributions are safe and appropriate across platforms.
 
-## Lab objectives
+## Lab Objectives
 In this lab, you will perform the following:
 - Task 1: Implement Content Safety Measures
 - Task 2: Monitor and Analyze Content for Compliance
@@ -233,7 +233,7 @@ dataset includes a label to indicate whether the content is harmful. Let’s do 
 > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
 > - Click on the **Validate** button for the corresponding task. If you receive a success message, you can proceed to the next task. 
 > - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
-> - If you need any assistance, please contact us at **labs-support@spektrasystems.com**. We are available 24/7 to help you out.
+> - If you need any assistance, please contact us at **cloudlabs-support@spektrasystems.com**. We are available 24/7 to help you out.
 
 <validation step="a45e4b62-690f-41ec-8bb4-5b08173c6611" />
 

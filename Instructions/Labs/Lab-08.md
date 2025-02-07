@@ -1,6 +1,6 @@
 # Lab 8: Deploy and Run the HR/Payroll Copilot Application
 
-## Lab scenario
+## Lab Scenario
 
 **Smart Agent: At the heart of the solution is the Python object Smart_Agent. The agent has the following components:**
 
@@ -11,7 +11,7 @@
   - **Memory:** The agent maintains a memory of the conversation history. The memory is backed by Streamlit's session state.
   - **LLM:** The agent is linked to a 0613 GPT-4 model to power its intelligence.
 
-## Lab objectives
+## Lab Objectives
 
 You will be able to complete the following tasks:
 
@@ -398,7 +398,7 @@ In this task, you will configure Azure Storage and AI Search services, update cr
 > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
 > - Click on the **Validate** button for the corresponding task. If you receive a success message, you can proceed to the next task. 
 > - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
-> - If you need any assistance, please contact us at **labs-support@spektrasystems.com**. We are available 24/7 to help you out.
+> - If you need any assistance, please contact us at **cloudlabs-support@spektrasystems.com**. We are available 24/7 to help you out.
 
 <validation step="12473853-3f61-4a6f-b405-c90920ff2f42" />
 

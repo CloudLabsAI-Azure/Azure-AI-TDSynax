@@ -1,6 +1,6 @@
 # Lab 4 - Document Processing and Summarization with Azure Document Intelligence and AI Service for Language
 
-## Lab scenario
+## Lab Scenario
 Azure Document Intelligence and AI Service for Language streamline document processing by extracting key information and automating summaries, leveraging AI to enhance data extraction accuracy and deliver actionable insights efficiently.
 
 ## Lab Objectives
@@ -111,7 +111,7 @@ The high-level steps covered in the lab are:
 > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
 > - Click on the **Validate** button for the corresponding task. If you receive a success message, you can proceed to the next task. 
 > - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
-> - If you need any assistance, please contact us at **labs-support@spektrasystems.com**. We are available 24/7 to help you out.
+> - If you need any assistance, please contact us at **cloudlabs-support@spektrasystems.com**. We are available 24/7 to help you out.
 
 <validation step="0d820e9a-19d7-4bf2-a7e8-a279a8291129" />
 
@@ -168,7 +168,7 @@ The high-level steps covered in the lab are:
 > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
 > - Click on the **Validate** button for the corresponding task. If you receive a success message, you can proceed to the next task. 
 > - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
-> - If you need any assistance, please contact us at **labs-support@spektrasystems.com**. We are available 24/7 to help you out.
+> - If you need any assistance, please contact us at **cloudlabs-support@spektrasystems.com**. We are available 24/7 to help you out.
 
 <validation step="d7963eb3-7409-470c-909c-5ad9c0517a36" />
 
@@ -377,7 +377,7 @@ The high-level steps covered in the lab are:
 > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
 > - Click on the **Validate** button for the corresponding task. If you receive a success message, you can proceed to the next task. 
 > - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
-> - If you need any assistance, please contact us at **labs-support@spektrasystems.com**. We are available 24/7 to help you out.
+> - If you need any assistance, please contact us at **cloudlabs-support@spektrasystems.com**. We are available 24/7 to help you out.
 
 <validation step="f96b181e-8f1b-421d-bc0d-8a6c3fed3246" />
 
@@ -430,7 +430,7 @@ In this task, we are creating a text summarization application with the client l
 > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
 > - Click on the **Validate** button for the corresponding task. If you receive a success message, you can proceed to the next task. 
 > - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
-> - If you need any assistance, please contact us at **labs-support@spektrasystems.com**. We are available 24/7 to help you out.
+> - If you need any assistance, please contact us at **cloudlabs-support@spektrasystems.com**. We are available 24/7 to help you out.
 
 <validation step="fc47683a-ad10-4e59-b6bb-db3503bc9690" />
 

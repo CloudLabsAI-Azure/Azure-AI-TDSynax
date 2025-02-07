@@ -1,9 +1,9 @@
 # Lab 2: Getting Started with Building a Chat Application
 
-## Lab scenario
+## Lab Scenario
 Building a chat application involves designing the user interface for seamless communication, implementing backend services for real-time message handling, and integrating with databases for storing chat histories, while ensuring robust security and scalability to handle user interactions effectively.In this lab, you will be setting up the Open AI resource and installing the application locally.
 
-## Lab objectives
+## Lab Objectives
 In this lab, you will complete the following tasks:
 
 - Task 1: Building a ChatGPT-like application on Streamlit with streaming

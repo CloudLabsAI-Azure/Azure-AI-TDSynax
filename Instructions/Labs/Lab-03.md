@@ -1,6 +1,6 @@
 # Lab 3 - Azure Machine Learning Model Training
 
-## Lab scenario
+## Lab Scenario
 
 Azure Machine Learning model training involves using Azure’s cloud-based platform to build, train, and tune machine learning models with scalable compute resources, automated workflows, and integrated tools, streamlining the process from data preparation to model deployment.
 
@@ -24,7 +24,7 @@ This dataset is intended to mobilize researchers to apply recent advances in nat
 
 The corpus may be updated as new research is published in peer-reviewed publications and archival services like [bioRxiv](https://www.biorxiv.org/), [medRxiv](https://www.medrxiv.org/), and others.
 
-## Lab objectives
+## Lab Objectives
 
 - Task 1 - Explore dashboard of COVID-19 data
 - Task 2 - Explore lab scenario

@@ -1,6 +1,6 @@
 # Lab 4: Deploy and Run the HR/Payroll Copilot Application
 
-## Lab scenario
+## Lab Scenario
 
 **Smart Agent: At the heart of the solution is the Python object Smart_Agent. The agent has the following components:**
 
@@ -11,12 +11,12 @@
   - **Memory:** The agent maintains a memory of the conversation history. The memory is backed by Streamlit's session state.
   - **LLM:** The agent is linked to a 0613 GPT-4 model to power its intelligence.
 
-## Lab objectives
+## Lab Objectives
 
 You will be able to complete the following tasks:
 
 - Task 1: Build your own HR/Payroll copilot locally
-- Task 2: Integrate Azure Cognitive Search with your Application
+- Task 2: Integrate Azure AI Search with your Application
 - Task 3: Deploy the HR/Payroll Copilot application to Azure
 
 ### Estimated Duration: 120 minutes
@@ -104,7 +104,7 @@ By running this application locally, you can test and interact with its features
 
 9. Navigate back to the **Terminal** in VS Code and stop the terminal by pressing **Ctrl + C** on the keyboard.
 
-### Task 2: Integrate Azure Cognitive Search with your Application
+### Task 2: Integrate Azure AI Search with your Application
 
 In this task, you will configure Azure Storage and AI Search services, update credentials in the `secrets.env` file, and run the HR Copilot application locally using Streamlit. You will test the application by querying employee data and verify its integration with Azure services. Troubleshooting steps will include installing required packages to ensure smooth functionality.
 
@@ -398,12 +398,12 @@ In this task, you will configure Azure Storage and AI Search services, update cr
 > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
 > - Click on the **Validate** button for the corresponding task. If you receive a success message, you can proceed to the next task. 
 > - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
-> - If you need any assistance, please contact us at **labs-support@spektrasystems.com**. We are available 24/7 to help you out.
+> - If you need any assistance, please contact us at **cloudlabs-support@spektrasystems.com**. We are available 24/7 to help you out.
 
 <validation step="12473853-3f61-4a6f-b405-c90920ff2f42" />
 
 ## Summary
 
-In this lab, you have built and tested an HR/Payroll copilot application locally by configuring and running it with Azure OpenAI and Cognitive Search settings. They then integrated Azure Cognitive Search by setting up data sources, indexes, and vector fields. Finally, they deployed the application to Azure, authenticated with Azure, and used deployment commands to provision resources and launch the app. The lab concluded with the successful deployment and verification of the application on Azure.
+In this lab, you have built and tested an HR/Payroll copilot application locally by configuring and running it with Azure OpenAI and Cognitive Search settings. They then integrated Azure AI Search by setting up data sources, indexes, and vector fields. Finally, they deployed the application to Azure, authenticated with Azure, and used deployment commands to provision resources and launch the app. The lab concluded with the successful deployment and verification of the application on Azure.
 
 #### You have successfully completed the lab. Click Next >> to move on to the next set of exercises.
