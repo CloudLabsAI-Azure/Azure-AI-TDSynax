@@ -8,7 +8,7 @@ In this lab, you will complete the following tasks:
 
 - Task 1: Building a ChatGPT-like application on Streamlit with streaming
 
-### Estimated Duration: 30 minutes
+### Estimated Duration: 40 minutes
 
 ### Task 1: Create an OpenAI resource and model
 

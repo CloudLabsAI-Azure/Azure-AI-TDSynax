@@ -13,7 +13,7 @@ You will be able to complete the following tasks:
 - Task 1: Build your own multi-agent Copilot application locally
 - Task 2: Deploy a multi-agent Copilot application to Azure
 
-### Estimated Duration: 60 minutes
+### Estimated Duration: 40 minutes
 
 ## Task 1: Build your own multi-agent Copilot application locally
 

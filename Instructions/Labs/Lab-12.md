@@ -15,7 +15,7 @@ You will be able to complete the following tasks:
 - Task 5: Persist embeddings in Azure AI Search
 - Task 6: Explore the Miyagi App and Recommendation service by Personalizing
 
-### Estimated Duration: 60 minutes
+### Estimated Duration: 40 minutes
   
 ### Task 1: Setup configuration for miyagi app
 

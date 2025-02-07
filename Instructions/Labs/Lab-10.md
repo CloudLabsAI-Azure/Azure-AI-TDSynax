@@ -8,7 +8,7 @@ In this lab, you will perform the following:
 - Task 1: Implement Content Safety Measures
 - Task 2: Monitor and Analyze Content for Compliance
 
-### Estimated Duration: 60 minutes
+### Estimated Duration: 40 minutes
   
 ## Task 1: Implement Content Safety Measures
 

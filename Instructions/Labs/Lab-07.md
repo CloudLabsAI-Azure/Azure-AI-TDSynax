@@ -10,7 +10,7 @@ You will be able to complete the following tasks:
 
 - Task 1: Understand Function calling
 
-### Estimated Duration: 30 minutes
+### Estimated Duration: 40 minutes
   
 ### Task 1: Understand Function calling
 

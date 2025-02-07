@@ -10,7 +10,7 @@ Conversational AI with Bot Service using Power Virtual Agents allows users to cr
 - Task 3 - Create a New Topic
 - Task 4 - Test your Copilot
 
-### Estimated Duration: 1 Hour 30 Minutes
+### Estimated Duration: 40 minutes
 
 ## Task 1 - Explore lab scenario
 

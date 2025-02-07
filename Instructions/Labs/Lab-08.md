@@ -19,7 +19,7 @@ You will be able to complete the following tasks:
 - Task 2: Integrate Azure Cognitive Search with your Application
 - Task 3: Deploy the HR/Payroll Copilot application to Azure
 
-### Estimated Duration: 120 minutes
+### Estimated Duration: 40 minutes
     
 ### Task 1: Build your own HR/Payroll copilot locally
 

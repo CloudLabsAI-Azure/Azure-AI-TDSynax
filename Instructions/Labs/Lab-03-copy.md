@@ -35,7 +35,7 @@ The corpus may be updated as new research is published in peer-reviewed publicat
 - Task 7 - Generate a Responsible AI dashboard
 - Task 8 - Explore the Responsible AI dashboard
 
-### Estimated Duration: 40 minutes
+### Estimated Duration: 60 minutes
 
 ## Task 1 - Explore dashboard of COVID-19 data
 

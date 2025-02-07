@@ -13,7 +13,7 @@ Azure Document Intelligence and AI Service for Language streamline document proc
 - Task 6 - Using the Document Intelligence Studio
 - Task 7 - Document Summarization via AI Service for Language Integration
 
-### Estimated Duration: 40 minutes
+### Estimated Duration: 60 minutes
 
 ## Task 1 - Explore the dashboard of COVID-19 data
 

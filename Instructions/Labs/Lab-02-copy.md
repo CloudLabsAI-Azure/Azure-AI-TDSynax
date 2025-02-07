@@ -16,7 +16,7 @@ After completing this lab, you will be able to complete the following tasks:
 - Task 7: Test the prompt in Content Safety
 - Task 8: Create a Prompt Flow
 
-### Estimated Duration: 40 minutes
+### Estimated Duration: 60 minutes
 
 ## Task 01: Create an AI Project and AI Hub Resources
 

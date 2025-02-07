@@ -29,23 +29,6 @@ This session provides hands-on experience in building a GPT-powered chat applica
 - OpenAI API Key: Access to the OpenAI API with an active API key.
 - Basic Front-End and Back-End Knowledge: Understanding of how to build simple front-end interfaces and set up a back-end server.
 
-## Architecture
-The architecture for this lab series involves several key Azure services working together to provide a comprehensive AI and machine learning environment. The core components include Azure OpenAI Service for leveraging advanced language models, Azure Machine Learning for training and deploying machine learning models, and Azure Cognitive Services for adding capabilities like vision, speech, and language understanding. Additionally, Power Virtual Agents is used for building conversational AI, while Microsoft Defender for Cloud ensures security and compliance. The architecture also integrates Azure Storage for data management and Azure Functions for serverless computing, creating a robust and scalable AI solution.
-
-## Architecture Diagram:
-
-![](../media/Azure-AI-arch.png)
-
-## Explanation of Components
-
-1. **Azure OpenAI Service**: Utilized for advanced language models and natural language processing tasks.
-2. **Azure Machine Learning**: Used for training, deploying, and managing machine learning models.
-3. **Azure AI Services**: Provides capabilities like vision, speech, and language understanding.
-4. **Power Virtual Agents**: Enables the creation of conversational AI and chatbots.
-5. **Microsoft Defender for Cloud**: Ensures security and compliance across the cloud environment.
-6. **Azure Storage**: Manages data storage needs.
-7. **Azure Functions**: Facilitates serverless computing for scalable and efficient processing.
-
 ## Getting Started with the Lab
  
 ## Accessing Your Lab Environment
