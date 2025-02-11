@@ -6,31 +6,31 @@ Azure Document Intelligence and AI Service for Language streamline document proc
 
 ## Lab Objectives
 
-- Task 1 - Explore the dashboard of COVID-19 data
-- Task 2 - Explore lab scenario
+- Task 1 - Explore the Dashboard of COVID-19 Data
+- Task 2 - Explore the Lab Scenario
 - Task 3 - Creating Azure Search Indexes
 - Task 4 - Querying Azure Search Indexes
 - Task 5 - Updating Azure Search Indexes
 - Task 6 - Using the Document Intelligence Studio
 - Task 7 - Document Summarization via AI Service for Language Integration
 
-## Task 1 - Explore the dashboard of COVID-19 data
+## Task 1 - Explore the Dashboard of COVID-19 Data
 
-Understanding the source datasets is very important in AI and ML. To help you expedite the process, we have created a Power BI dashboard you can use to explore them at the beginning of each lab.
+Understanding the source datasets is significant in AI and ML. To help you expedite the process, we have created a Power BI dashboard you can use to explore them at the beginning of each lab.
 
 ![Azure AI in a Day datasets](../media/SHC1.png)
 
 To get more details about the source datasets, check out the [Data Overview](https://github.com/CloudLabsAI-Azure/ai-in-a-day/blob/main/data-overview.md) section.
 
-To explore the dashboard of COVID-19 data, open the `Azure-AI-in-a-Day-Data-Overview` file located on the desktop (**C:\Users\public\desktop**) 💻 of the virtual machine provided with your environment. If you see the `Introducing the updated mobile layout` pop-up screen, then close it by clicking on `Got it`. Collapse the **Fields** and **Visualizations** tabs to see the clear report.
+To explore the dashboard of COVID-19 data, open the `Azure-AI-in-a-Day-Data-Overview` file located on the desktop (**C:\Users\public\desktop**) 💻 of the virtual machine provided with your environment. If you see the `Introducing the updated mobile layout` pop-up screen, close it by clicking on `Got it`. Collapse the **Fields** and **Visualizations** tabs to see the precise report.
 
  ![Azure AI in a Day datasets](../media/powerbireportopen.png)
 
 > **Note:** Please close and reopen the Power BI Desktop document if it throws an error on the first attempt.
 
-## Task 2 - Explore lab scenario
+## Task 2 - Explore Lab Scenario
 
-Another critical problem to deal with when it comes to the volumes of research documents covering COVID-19 is the problem of advanced indexing and searching their content. The specific internal structure of research papers (including citations, contributors, and various entities like diagnosis, forms of examination, family relations, genes, medication, symptoms or signs, and treatments) form a reach semantic graph that goes way beyond simple document categorization. An analyst would benefit significantly from exploring the corpus of documents in a way that considers all these complex relationships.
+Another critical problem regarding the volumes of research documents covering COVID-19 is the problem of advanced indexing and searching their content. The specific internal structure of research papers (including citations, contributors, and various entities like diagnosis, forms of examination, family relations, genes, medication, symptoms or signs, and treatments) form a reach semantic graph that goes way beyond simple document categorization. An analyst would benefit significantly from exploring the corpus of documents in a way that considers all these complex relationships.
 
 Using the AI Search capabilities, we will create a complex index of documents that allows an analyst to perform an advanced search and explore the inter-document graph relationships.
 
@@ -40,7 +40,7 @@ The following diagram highlights the portion of the general architecture covered
 
 The high-level steps covered in the lab are:
 
-- Explore dashboard of COVID-19 data
+- Explore the dashboard of COVID-19 data
 - Explore lab scenario
 - Explore the document search process
 - Explore the graph search process
@@ -59,7 +59,7 @@ The high-level steps covered in the lab are:
 
     ![The Search service is highlighted from the list of services in the AI-in-a-Day Resource Group](../media/inn6.png)
 
-1. Copy the search service URL and paste this into a text file. Also make a note of the service account name, which comes before `.search.windows.net`.
+1. Copy the search service URL and paste this into a text file. Also, note the service account name, which comes before `.search.windows.net`.
 
     ![The Search service's URL is copied to the clipboard.](../media/copy-azure-search-url.png)
 
@@ -67,11 +67,11 @@ The high-level steps covered in the lab are:
 
     ![The Search service's API key is copied to the clipboard.](../media/inn7.png)
 
-1. Navigate to Storage account named **aiinaday5677** **(1)**, select **Access keys** **(2)** under Security + networking from left-menu. Click on **Show** of the connection string under Key1 **(3)** to see the connection string and **copy the connection string** **(4)** under Key1. Paste this into a text file.
+1. Navigate to the Storage account named **aiinaday5677** **(1)**, and select **Access keys** **(2)** under Security + networking from the left menu. Click on **Show** of the connection string under Key1 **(3)** to see the connection string and **copy the connection string** **(4)** under Key1. Paste this into a text file.
 
    ![](../media/ai-sa-cs.png)
 
-1. Open **File Explorer** from the task bar and navigate to the path `C:\Temp\AzureSearch\`. There are six files, three prefixed with `abstracts` and three with `covid19temp`.
+1. Open **File Explorer** from the taskbar and navigate to the path `C:\Temp\AzureSearch\`. There are six files, three prefixed with `abstracts` and three with `covid19temp`.
 
 1. Open the `abstracts_datasource.schema` file with a text editor and replace the segment starting `<< TODO:` with your Storage account connection string and then save the file.
 
@@ -96,7 +96,7 @@ The high-level steps covered in the lab are:
     Make sure to update the Azure Search account name and Azure Search API key in the below commands and then run.
    
      - Azure Search Account Name: **aiinaday-cog-<inject key="DeploymentID" enableCopy="false"/>**
-     - Azure Search API key: You saved the Primary admin key in the text editor in step 5, use that
+     - Azure Search API key: You saved the Primary admin key in the text editor in step 5. Use that.
 
         ```powershell
         Create-AzureSearchIndex "C:/Temp/AzureSearch/abstracts_datasource.schema" "C:/Temp/AzureSearch/abstracts.schema" "C:/Temp/AzureSearch/abstracts_indexer.schema" "AZURE SEARCH ACCOUNT NAME" "API KEY"
@@ -132,11 +132,11 @@ The high-level steps covered in the lab are:
 
     ![The list of Azure Search indexes.](../media/AI1.png)
 
-6. Once documents are available, Navigate to Overview **(1)** of Search service and then select **Search Explorer (2)** to open up the Search Explorer.
+6. Once documents are available, Navigate to Overview **(1)** of the Search service and then select **Search Explorer (2)** to open up the Search Explorer.
 
     ![The Search Explorer option is selected.](../media/innovate4.png)
 
-7. Choose the **covid19temp (1)** index and enter `RNA interference`**(2)** into the Query string input box, and then select **Search (3)**. This will return the documents which include the phrase "RNA interference."
+7. Choose the **covid19temp (1)** index, enter `RNA interference`**(2)** into the Query string input box, and then select **Search (3)**. This will return the documents, which include the phrase "RNA interference."
 
     ![Articles with the phrase RNA interference.](../media/L2T4S6.png)
 
@@ -162,7 +162,7 @@ The high-level steps covered in the lab are:
 
     ![Use the demo app.](../media/L2T4S12.png)
 
-    >**Note**: If you face any issues on validation, please perform the next steps till the end of this lab and then click on validate button again.
+    >**Note**: If you face any issues with validation, please perform the next steps till the end of this lab and then click on the validate button again.
 
 > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
 > - Click on the **Validate** button for the corresponding task. If you receive a success message, you can proceed to the next task. 
@@ -185,7 +185,7 @@ The high-level steps covered in the lab are:
 
     ![The Use a connection string option is selected.](../media/connectionstring.1.png)
 
-4. Paste in your storage account **Connection string (1)** **<inject key="storageAccountConnectionString" enableCopy="true"/>**. Then, select **Next (2)** to continue and **Connect (3)** to complete the operation.
+4. Paste the **Connection string (1)** **<inject key="storageAccountConnectionString" enableCopy="true"/>** in your storage account. Then, select **Next (2)** to continue and **Connect (3)** to complete the operation.
 
     ![The connection string is filled in.](../media/new-lab2a-1.11.png)
 
@@ -253,7 +253,7 @@ The high-level steps covered in the lab are:
 
    ![The CORS is highlighted from the list of services in the AI-in-a-Day Resource Group](../media/storaheaccount-CORSs.png)
     
-1. On the Resource Sharing (CORS) page, ensure that you are on the **Blob service** **(1)** tab, and enter the following values into the table **(2)** and then select **Save** **(3)** to save the CORS settings.  
+1. On the Resource Sharing (CORS) page, ensure that you are on the **Blob service** **(1)** tab, enter the following values into the table **(2),** and then select **Save** **(3)** to save the CORS settings.  
 
    | Parameter                   | Value                                              |
    | --------------------------- | -------------------------------------------------- |
@@ -274,11 +274,11 @@ The high-level steps covered in the lab are:
 
    ![The AI Services key and endpoint are selected](../media/inn12.png)
 
-1. Open a new tab, and navigate to the [Document Intelligence Studio](https://formrecognizer.appliedai.azure.com/), scroll-down to **Custom models** and select **Get Started** under **Custom model**. Use the credentials provided in the Environment Details to Sign-in.
+1. Open a new tab, navigate to the [Document Intelligence Studio](https://formrecognizer.appliedai.azure.com/), scroll down to **Custom models,** and select **Get Started** under **Custom model**. Use the credentials provided in the Environment Details to sign in.
 
    ![Create new custom model](../media/updated-document-ai.png)
 
-1. In the Custom models page, under **My Project** click on **+ Create a project**.
+1. On the Custom models page, under **My Project,** click on **+ Create a project**.
   
     ![Project](../media/updated-doc-ai-2.png)
 
@@ -297,7 +297,7 @@ The high-level steps covered in the lab are:
 
     ![Project](../media/form-service.png)
     
-1. Next in the connect training data source, select the below values from the drop-down and click on **Continue (6)**.
+1. Next in the connect training data source, select the values below from the drop-down and click on **Continue (6)**.
 
     | Parameter                   | Value                                |
     | --------------------------- | -------------------------------------|
@@ -309,7 +309,7 @@ The high-level steps covered in the lab are:
 
     ![Project](../media/form-training-1.png)
     
-    > **Note**: If you are unable to select the Storage Account in the Connect training data source page, signout and signin from the Document Intelligence Studio with the given credentials. Re-perform the task from Step-8.
+    > **Note**: If you are unable to select the Storage Account in the Connect training data source page, sign out and sign in from the Document Intelligence Studio with the given credentials. Re-perform the task from Step 8.
 
 1. Review the details and click on **Create project**.
 
@@ -317,23 +317,23 @@ The high-level steps covered in the lab are:
 
    >**Note:** Select **Skip** on the **Start labeling now** pop-up.
   
-1. After creating a new project, you will be sent to the project for tagging in Label data. Select **+Add a Field** **(1)** to create a new field click on **Field** **(2)**, type `Abstract` in the Field, and hit enter. By this, you have created a new Abstract Field.
+1. After creating a new project, you will be sent to the project for tagging in Label data. Select **+Add a Field** **(1)** to create a new field, click on **Field** **(2)**, type `Abstract` in the Field, and hit enter. By this, you have created a new Abstract Field.
 
    ![The Abstract tag has been created](../media/innovate5.png)
     
    ![The Abstract tag has been created](../media/lab2a-t6-frs9.png)
 
-1. Click on **Run layout**.Wait for the layout to be run for the first document and locate the document's abstract. Note that for some documents, the abstract is on the second page. Then, move on to the next document. We will tag each of the five papers, so navigate to each in turn, allowing the layout to be run. In order for tagging to be successful, we must first run the layout of a document, navigate to another document, and return to this first document before we begin tagging. Layout generation happens once per document, after which we can return to it and tag our abstract.
+1. Click on **Run layout**. Wait for the layout to be run for the first document and locate the document's abstract. Note that for some documents, the abstract is on the second page. Then, move on to the next document. We will tag each of the five papers, so navigate to each in turn, allowing the layout to be run. In order for tagging to be successful, we must first run the layout of a document, navigate to another document, and return to this first document before we begin tagging. Layout generation happens once per document, after which we can return to it and tag our abstract.
 
    ![Running layout for a document](../media/L2-T6-S15.png)
 
    ![Running layout for a document](../media/lab2a-t6-frs7.png)
 
-1. Return to the second PDF and select each word in the **Abstract** section. After highlighting this, select the **Abstract** tag to tag this section. Note that you will need to select each word individually rather than selecting a box. After selecting the **Abstract** tag, you should see a tag logo next to the PDF. If you see the tag logo, this means that tagging was successful for this document.
+1. Return to the second PDF and select each word in the **Abstract** section. After highlighting this, select the **Abstract** tag to tag this section. Note that you will need to select each word individually rather than selecting a box. After selecting the **Abstract** tag, you should see a tag logo next to the PDF. If you can see the tag logo, this means that tagging was successful for this document.
 
    ![The first PDF has been viewed, and the second PDF has been tagged](../media/L2-T6-S16.1.png)
 
-1. Return to the first PDF and highlight the word **ABSTRACT** and the abstract. If the abstract is lengthy, as in this example, it is okay to include just the first paragraph. Then, select the **Abstract** tag to tag this document. Ensure that the viewed icon (an eye) changes to a tag icon. If it does not change to a tag but instead changes to a blank spot without any icons, tagging was unsuccessful. In the event that tagging is unsuccessful, select another document, wait for it to have its layout run, and then return to the prior document and try tagging again.
+1. Return to the first PDF and highlight the word **ABSTRACT** and the abstract. If the abstract is lengthy, as in this example, it is okay to include just the first paragraph. Then, select the **Abstract** tag to tag this document. Ensure that the viewed icon (an eye) changes to a tag icon. If it does not change to a tag but instead changes to a blank spot without any icons, tagging is unsuccessful. In the event that tagging is unsuccessful, select another document, wait for it to have its layout run, and then return to the prior document and try tagging again.
 
    ![The first PDF has been tagged](../media/L2-T6-S17.png)
 
