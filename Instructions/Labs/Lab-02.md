@@ -1,6 +1,6 @@
 # Lab 02: Introduction to LLMs and Azure AI Services
 
-### Estimated Duration: 60 minutes
+### Estimated Duration: 60 Minutes
 
 ## Overview
 
@@ -65,7 +65,7 @@ After completing this lab, you will be able to complete the following tasks:
 
 1. Select **Add role assignment** from the drop-down.
 
-1. In the **Add role assignment** pane, under **Role** tab, select **Reader** and click on **Next**. This role allows the user or entity to view all resources in the **resource group** but won't make any changes.
+1. In the **Add role assignment** pane, under the **Role** tab, select **Reader** and click on **Next**. This role allows the user or entity to view all resources in the **resource group** but won't make any changes.
 
 1. Under the **Assign access to** section, select **Managed identity (2)**.
 
@@ -77,7 +77,7 @@ After completing this lab, you will be able to complete the following tasks:
 
 1. Once selected, click on **Select (7)** to confirm your choice.
 
-1. Click on **Review + assign (8)** within the **Members** tab, and then click **Review + assign** again to complete the process.
+1. Click on **Review + assign (8)** within the **Members (1)** tab, and then click **Review + assign** again to complete the process.
 
    ![](../media/IAM.png)
 
@@ -92,9 +92,9 @@ After completing this lab, you will be able to complete the following tasks:
 
 ## Task 02: Deploy Azure OpenAI Models
 
-1. Navigate back to the **Azure AI Foundry** portal, and open the project that you created.
+1. Navigate back to the **Azure AI Foundry** portal and open the project that you created.
 
-1. From the left navigation pane, under **My assets** select **Model + endpoints**. Click on **Deploy a model** and select **Deploy base model** to create an OpenAI model.
+1. From the left navigation pane, under **My assets**, select **Model + endpoints**. Click on **Deploy a model** and select **Deploy base model** to create an OpenAI model.
 
 1. Select **gpt-4 (1)** from the list of models and click on **Confirm (2)**.
 
@@ -134,7 +134,7 @@ After completing this lab, you will be able to complete the following tasks:
 
 ## Task 03: Create a Content Safety Service
 
-1. Navigate to the **Azure portal** and search and select for **content safety**.
+1. Navigate to the **Azure portal** and search and select **content safety**.
 
    ![](../media/search-content-safety.png)
 
@@ -146,13 +146,13 @@ After completing this lab, you will be able to complete the following tasks:
 
    - Subscription: **Select your Default Subscription (1)**
    - Resource group: **AzureAIrg (2)**
-   - Region: **Enter the same RG, where Azure AI services is deployed (3)**
+   - Region: **Enter the same RG where Azure AI services are deployed (3)**
    - Name: **content-safety-<inject key="DeploymentID" enableCopy="false"/>(4)**
    - Pricing tier: **Standard S0 (5)**
 
        ![](../media/create-content-safety.png)
 
-1. In the Network tab, leave the type settings as default, allowing access from all networks, including the Internet. Then, click **Next**.
+1. In the Network tab, leave the type settings as default, allowing access from all networks, including the internet. Then, click **Next**.
 
       ![](../media/llm36.png)
    
@@ -169,7 +169,7 @@ After completing this lab, you will be able to complete the following tasks:
 
 ## Task 04: Add an Azure Content Safety connection
 
-1. Navigate to **Azure AI Foundry (1)**, select **openai-<inject key="DeploymentID" enableCopy="false"/> (2)** project. From the left navigation pane, scroll down, and select **Management center (3)**.
+1. Navigate to **Azure AI Foundry (1)** select **openai-<inject key="DeploymentID" enableCopy="false"/> (2)** project. From the left navigation pane, scroll down and select **Management center (3)**.
 
    ![](../media/magaementcenter.png)
 
@@ -197,7 +197,7 @@ After completing this lab, you will be able to complete the following tasks:
 
 1. From the left navigation pane, select **Go to project**.
 
-1. Under **My assets** select **Models + endpoints (1)**, navigate to the **gpt-4 (2)** deployment under the **Model deployments** section.
+1. Under **My assets** select **Models + endpoints (1)**, and navigate to the **gpt-4 (2)** deployment under the **Model deployments** section.
 
    ![](../media/modelendpoints.png)
 
@@ -249,7 +249,7 @@ After completing this lab, you will be able to complete the following tasks:
    Client: Mmm, I don't know. Isn't there another option? Can't you give me more speed without charging me more?
    Agent: I'm sorry, Mr. Pérez. That's the only option we have available. If you don't change your plan, you'll have to wait until next month to recover your normal speed. Or you can buy an additional data package, but it would be more expensive than changing plans.
    Client: Well, let me think about it. Can I call later to confirm?
-   Agent: Of course, Mr. Pérez. You can call whenever you want. The number is the same one you dialled now. Is there anything else I can help you with?
+   Agent: Of course, Mr. Pérez. You can call whenever you want. The number is the same one you dialed now. Is there anything else I can help you with?
    Client: No, that's all. Thank you for your attention.
    Agent: Thank you, Mr. Pérez. Have a good day. Goodbye.
    ```
@@ -274,7 +274,7 @@ After completing this lab, you will be able to complete the following tasks:
    
 ## Task 06: Work with an Open Source LLM Model (READ ONLY)
 
-1. Now let's test an **open-source Llama2 model** from Meta. Navigate to **Models + endpoints (1)**. Go back to the **Manage deployments of your models and services** page. Click on **Deploy model (2)** and select **Deploy base model (3)** to create an OpenAI model.
+1. Now, let's test an **open-source Llama2 model** from Meta. Navigate to **Models + endpoints (1)**. Go back to the **Manage deployments of your models and services** page. Click on **+ Deploy model (2)** and select **Deploy base model (3)** to create an OpenAI model.
    
    ![](../media/modeldeplyments.png)
 
@@ -302,7 +302,7 @@ After completing this lab, you will be able to complete the following tasks:
 
    ![](../media/llama-open-in-playground.png)
 
-## Task 07: Test the prompt in Content Safety
+## Task 07: Test the Prompt in Content Safety
 
 1. On your **Azure AI Studio,** navigate to **AI Services (1)** and click on the **Content Safety (2)** box to get started with **Content Safety Studio**.
 
@@ -369,7 +369,7 @@ After completing this lab, you will be able to complete the following tasks:
 
    ![](../media/prompt-flow-open.png)
 
-   >**Note:** If it takes too long, refresh the page and re-enter the details and click on **prompt flow**; the prompt flow should appear right away.
+   >**Note:** If it takes too long, refresh the page, re-enter the details, and click on **prompt flow**. The prompt flow should appear right away.
 
 1. Notice how the prompt flow is created with a single node, which represents the step in the flow where the LLM model is configured.
 
@@ -404,7 +404,7 @@ After completing this lab, you will be able to complete the following tasks:
    Client: Mmm, I don't know. Isn't there another option? Can't you give me more speed without charging me more?
    Agent: I'm sorry, Mr. Pérez. That's the only option we have available. If you don't change your plan, you'll have to wait until next month to recover your normal speed. Or you can buy an additional data package, but it would be more expensive than changing plans.
    Client: Well, let me think about it. Can I call later to confirm?
-   Agent: Of course, Mr. Pérez. You can call whenever you want. The number is the same one you dialled now. Is there anything else I can help you with?
+   Agent: Of course, Mr. Pérez. You can call whenever you want. The number is the same one you dialed now. Is there anything else I can help you with?
    Client: No, that's all. Thank you for your attention.
    Agent: Thank you, Mr. Pérez. Have a good day. Goodbye.
    ```
