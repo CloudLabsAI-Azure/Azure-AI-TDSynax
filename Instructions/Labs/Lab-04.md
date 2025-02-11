@@ -67,7 +67,7 @@ The high-level steps covered in the lab are:
 
     ![The Search service's API key is copied to the clipboard.](../media/inn7.png)
 
-1. Navigate to the Storage account named **aiinaday5677** **(1)**, and select **Access keys** **(2)** under Security + networking from the left menu. Click on **Show** of the connection string under Key1 **(3)** to see the connection string and **copy the connection string** **(4)** under Key1. Paste this into a text file.
+1. Navigate to the Storage account named **aiinaday5677** **(1)**, and select **Access keys** **(2)** under Security + networking from the left menu. Click on **Show** **(3)** to see the connection string and **copy the connection string** **(4)** under Key1. Paste this into a text file.
 
    ![](../media/ai-sa-cs.png)
 
@@ -297,7 +297,7 @@ The high-level steps covered in the lab are:
 
     ![Project](../media/form-service.png)
     
-1. Next in the connect training data source, select the values below from the drop-down and click on **Continue (6)**.
+1. Next, in the connect training data source, select the values below from the drop down and click on **Continue (6)**.
 
     | Parameter                   | Value                                |
     | --------------------------- | -------------------------------------|
@@ -341,7 +341,7 @@ The high-level steps covered in the lab are:
     
    ![The first five PDFs have been tagged](../media/L2-T6-S18.png)
 
-1. In a pop-up to Train a new model, enter **Abstracts (1)** as the ModelID, and select the **Neural (Recommended) (2)** from the drop-down as Build Mode. Then click on **Train (3)**.
+1. In a pop-up to Train a new model, enter **Abstracts (1)** as the ModelID, and select the **Neural (Recommended) (2)** from the drop down as Build Mode. Then click on **Train (3)**.
 
    ![The option to train a model has been selected](../media/abstracts.png)
 
@@ -349,7 +349,7 @@ The high-level steps covered in the lab are:
 
    ![The option to train a model has been selected](../media/lab2a-t6-frs14.png)
 
-    >**Note**: As Training a model will take up to 45-60 minutes to succeed. No need to wait for it, you can continue with next Lab. Come back later and review it after an hour.
+    >**Note**: Training a model will take up to 45-60 minutes to succeed. No need to wait for it, you can continue with next Lab. Come back later and review it after an hour.
 
 1. After the model has finished training, you will see that the Status has succeeded.  Although the estimated accuracy is not great, we will use this model.
 
@@ -359,19 +359,19 @@ The high-level steps covered in the lab are:
 
    ![An analyzed document](../media/innovate6.png)
     
-1. In the Upload Files pop-up, Navigate to `C:\Temp\AzureSearch\`, select `2020.09.25.20201616v1.pdf` file **(2)** and then click on **Open** **(3)**.
+1. In the Upload Files pop-up, Navigate to `C:\Temp\AzureSearch\`, select `2020.09.25.20201616v1.pdf` file **(2),** and then click on **Open** **(3)**.
     
    ![An analyzed document](../media/innovate7.png)
    
-1. Choose `2020.09.25.20201616v1.pdf` file, select **Run Analysis (1)**. Note that the abstract is on **page 2 (2)** of the PDF. View the **Results (3)** on the right side of the page.
+1. Choose the `2020.09.25.20201616v1.pdf` file, and select **Run Analysis (1)**. Note that the abstract is on **page 2 (2)** of the PDF. View the **Results (3)** on the right side of the page.
     
    ![An analyzed document](../media/innovate8.png)
 
-1. Select **Result (1)** and click on **download icon (2)** to download JSON file. Find the location where the script was downloaded and observe the result code.
+1. Select **Result (1)** and click the **download icon (2)** to download the JSON file. Find the location where the script was downloaded and observe the result code.
 
    ![An analyzed document](../media/lab2a-t6-frs19.1.png)
     
-1. For now, you have used custom models with Neural build mode. You can use any sample document which contains Tables and Signatures to Test/Analyze using Template build mode. Please find the reference to explore more about Document Intelligence Studio: [Quickstart: Document Intelligence Studio - Azure Applied AI Services | Microsoft Docs](https://learn.microsoft.com/en-us/azure/ai-services/document-intelligence/overview?view=doc-intel-3.1.0)
+1. For now, you have used custom models with Neural build mode. You can use any sample document that contains tables and signatures to test/analyze using Template build mode. Please find the reference to explore more about Document Intelligence Studio: [Quickstart: Document Intelligence Studio - Azure Applied AI Services | Microsoft Docs](https://learn.microsoft.com/en-us/azure/ai-services/document-intelligence/overview?view=doc-intel-3.1.0)
 
 > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
 > - Click on the **Validate** button for the corresponding task. If you receive a success message, you can proceed to the next task. 
@@ -383,13 +383,13 @@ The high-level steps covered in the lab are:
 
 ## Task 7 - Document Summarization via AI Service for Language Integration
 
-Summarization is one of the features offered by [Azure AI Service for Language](https://docs.microsoft.com/en-us/azure/AI-services/language-service/overview), a collection of machine learning and AI algorithms in the cloud for developing intelligent applications that involve written language. Use this article to learn more about this feature, and how to use it in your applications.
+Summarization is one of the features offered by [Azure AI Service for Language](https://docs.microsoft.com/en-us/azure/AI-services/language-service/overview), a collection of machine learning and AI algorithms in the cloud for developing intelligent applications that involve written language. Use this article to learn more about this feature and how to use it in your applications.
 
-In general, there are two approaches for automatic document summarization: extractive and abstractive. This API provides extractive summarization. Extractive summarization is a feature that produces a summary by extracting sentences that collectively represent the most important or relevant information within the original content. This feature is designed to shorten content that users consider too long to read. Extractive summarization condenses articles, papers, or documents to key sentences. The AI models used by the API are provided by the service, you just have to send content for analysis.
+In general, there are two approaches for automatic document summarization: extractive and abstractive. This API provides extractive summarization. Extractive summarization is a feature that produces a summary by extracting sentences that collectively represent the most important or relevant information within the original content. This feature is designed to shorten content users consider too long to read. Extractive summarization condenses articles, papers, or documents into key sentences. The AI models used by the API are provided by the service. You just have to send content for analysis.
 
 In this task, we are creating a text summarization application with the client library for Python. You will create a Python application that can summarize documents or text-based customer service conversations.
 
-1. Return to the Azure Portal page and navigate to the **AzureAIrg** resource group and select the Azure AI services multi-service account **aiinaday-cogsv<inject key="DeploymentID" enableCopy="false"/>**.
+1. Return to the Azure Portal page, navigate to the **AzureAIrg** resource group, and select the Azure AI services multi-service account **aiinaday-cogsv<inject key="DeploymentID" enableCopy="false"/>**.
 
     ![The AI Services service is selected](../media/inn13.1.png)
 
@@ -433,7 +433,7 @@ In this task, we are creating a text summarization application with the client l
 
 <validation step="fc47683a-ad10-4e59-b6bb-db3503bc9690" />
 
-You can find more references about Document Summarization from here: [Quickstart: Get started with Language Studio - Azure AI Services | Microsoft Docs](https://docs.microsoft.com/en-us/azure/AI-services/language-service/language-studio). Use this article to learn about Language Studio, and testing features of Azure AI Service for Language Integration.
+You can find more references about Document Summarization here: [Quickstart: Get started with Language Studio - Azure AI Services | Microsoft Docs](https://docs.microsoft.com/en-us/azure/AI-services/language-service/language-studio). Use this article to learn about Language Studio, and test the features of Azure AI Service for Language Integration.
 
 ## Summary 
 
