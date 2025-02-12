@@ -1,25 +1,25 @@
 # Lab 8: Deploy and Run the HR/Payroll Copilot Application
 
-### Estimated Duration: 120 minutes
+### Estimated Duration: 120 Minutes
 
 **Smart Agent: At the heart of the solution is the Python object Smart_Agent. The agent has the following components:**
 
-  - **Goals/Tasks:** Smart_Agent is given a persona and instructions to follow to achieve certain goals; for example, HR Copilot is about helping answer HR/Payroll questions and update employees' personal information. This is done using instructions specified in the system message.
+  - **Goals/Tasks:** Smart_Agent is given a persona and instructions to follow to achieve certain goals; for example, HR Copilot is about helping answer HR/Payroll questions and updating employees' personal information. This is done using instructions specified in the system message.
 
   - **NLP interaction and tool execution:** For the ability to use multiple tools and functions to accomplish business tasks, the function calling capability of the 0613 version is utilized to intelligently select the right function (validate identity, search the knowledge base, update address, create ticket) based on the agent's judgment of what needs to be done. The agent is also able to engage with users by following the instructions and goals defined in the system message.
 
   - **Memory:** The agent maintains a memory of the conversation history. The memory is backed by Streamlit's session state.
   - **LLM:** The agent is linked to a 0613 GPT-4 model to power its intelligence.
 
-## Lab objectives
+## Lab Objectives
 
 You will be able to complete the following tasks:
 
 - Task 1: Build your own HR/Payroll copilot locally
-- Task 2: Integrate Azure Cognitive Search with your Application
+- Task 2: Integrate Azure Cognitive Search with your application
 - Task 3: Deploy the HR/Payroll Copilot application to Azure
     
-### Task 1: Build your own HR/Payroll copilot locally
+### Task 1: Build Your Own HR/Payroll Copilot Locally
 
 **HR/Payroll Copilot**: The HR/Payroll Copilot is a locally hosted application designed to assist with HR and payroll-related tasks. It integrates with Azure OpenAI and Cognitive Search to perform functions such as:
 
@@ -40,7 +40,7 @@ By running this application locally, you can test and interact with its features
 
     >**Note:** If you recieve **Do you want to allow untrusted files in this workspace?** pop-up, select **Open**.
 
-2. The Visual Studio code is opened on the desktop. Edit the below code and update the **Azure OpenAI Key**, **Embedding Model name and GPT Deployment name**, **Azure OpenAI Endpoint**, **Cognitive Search Endpoint**,and **AZURE_SEARCH_ADMIN_KEY** values that you have copied and stored in the text file earlier.
+2. The Visual Studio code is opened on the desktop. Edit the below code and update the **Azure OpenAI Key**, **Embedding Model name, GPT Deployment name**, **Azure OpenAI Endpoint**, **Cognitive Search Endpoint**, and **AZURE_SEARCH_ADMIN_KEY** values that you have copied and stored in the text file earlier.
 
    | **Variables**                | **Values**                                                    |
    | ---------------------------- |---------------------------------------------------------------|
@@ -72,7 +72,7 @@ By running this application locally, you can test and interact with its features
       pip install -r requirements.txt 
       ```
 
-5. Once the execution of `streamlit run hr_copilot.py` is completed, a locally hosted HR Copliot application will be opened in the web browser. 
+5. Once the execution of `streamlit run hr_copilot.py` is completed, a locally hosted HR Copilot application will be opened in the web browser. 
 
    ![](../media/img17.png)
 
@@ -100,13 +100,13 @@ By running this application locally, you can test and interact with its features
 
     >**Note**: The output you receive might differ on your system, but it must follow this format for the subsequent steps to proceed.
 
-9. Navigate back to the **Terminal** in VS Code and stop the terminal by pressing **Ctrl + C** on the keyboard.
+9. Navigate back to the **terminal** in VS Code and stop the terminal by pressing **Ctrl + C** on the keyboard.
 
 ### Task 2: Integrate Azure Cognitive Search with your Application
 
-In this task, you will configure Azure Storage and AI Search services, update credentials in the `secrets.env` file, and run the HR Copilot application locally using Streamlit. You will test the application by querying employee data and verify its integration with Azure services. Troubleshooting steps will include installing required packages to ensure smooth functionality.
+In this task, you will configure Azure Storage and AI Search services, update credentials in the `secrets.env` file, and run the HR Copilot application locally using Streamlit. You will test the application by querying employee data and verifying its integration with Azure services. Troubleshooting steps will include installing the required packages to ensure smooth functionality.
 
-1. Navigate back to the **Azure Portal**, start by searching for **Storage accounts** in the search bar at the top of the page. Click on the **Storage accounts** option from the search results.
+1. Navigate back to the **Azure Portal.** Start by searching for **Storage accounts** in the search bar at the top of the page. Click on the **Storage accounts** option from the search results.
 
     ![](../media/img74.png)
 
@@ -118,11 +118,11 @@ In this task, you will configure Azure Storage and AI Search services, update cr
 
     ![](../media/connectionstrg.png)
 
-1. Next, open **Azure Open AI**, choose **AI search (1)** from the left-hand menu. Then, click on the service named **aiinaday-cog-<inject key="Deployment ID" enableCopy="false"/> (2)** to access its configuration and management options.
+1. Next, open **Azure OpenAI**, and choose **AI search (1)** from the left-hand menu. Then, click on the service named **aiinaday-cog-<inject key="Deployment ID" enableCopy="false"/> (2)** to access its configuration and management options.
 
    ![](../media/aisearch.png "Azure OpenAI")
 
-1. On the **Overview** page, locate and click on the **Import data** button. This action will initiate the process for importing data into your Azure AI service.
+1. On the **Overview** page, locate and click on the **Import data** button. This action will initiate the process of importing data into your Azure AI service.
 
     ![](../media/importdata.png)
 
@@ -130,7 +130,7 @@ In this task, you will configure Azure Storage and AI Search services, update cr
 
     ![](../media/img78.png)
 
-1. On the **Connect to your data** tab, provide the following details and click on **Next: Add cognitive skills (Optional) (7)**.
+1. On the **Connect to your data** tab, provide the following details and click on **Next: Add cognitive skills (optional) (7)**.
 
    | Settings| value|
    |---|---|
@@ -155,7 +155,7 @@ In this task, you will configure Azure Storage and AI Search services, update cr
    - **contentVector**: Set the type to `Collection(Edm.Single)`.
 
    - Select **+ Add field**. Give the name as **id**.
-   - **id**: Check the boxes for **Filterable**, **Sortable** and **Facetable**.
+   - **id**: Check the boxes for **Filterable**, **Sortable,** and **Facetable**.
 
    - **content**: Check the **Searchable** box.
 
@@ -169,11 +169,11 @@ In this task, you will configure Azure Storage and AI Search services, update cr
 
       ![](../media/img82.png)
 
-1. On the **Configure vector field** tab, set the **Dimensions** property to `1536` **(1)** and click on **Create** under **No vector search profiles**.
+1. On the **Configure vector field** tab, set the **Dimensions** property to `1536` **(1)** and click on **Create** under **No Vector search profiles**.
 
       ![](../media/l3-t2-s11.png)
 
-1. On the **Vector profile** tab, Click on **Create** under No algorithm configurations.
+1. On the **Vector profile** tab, click on **Create** under No algorithm configurations.
 
       ![](../media/l3-t2-s12.png)
 
@@ -181,19 +181,19 @@ In this task, you will configure Azure Storage and AI Search services, update cr
 
       ![](../media/l3-t2-s13.png)
 
-1. On the **Vector profile** tab, select the algorithm created in the previous step and Click on **Create** under No vectorizers.
+1. On the **Vector profile** tab, select the algorithm created in the previous step and click on **Create** under **No Vectorizers**.
 
       ![](../media/l3-t2-s14.png)
 
-1. On the **Vector algorithm** tab, leave the default and select the Azure OpenAI service as **OpenAI-Lab01-<inject key="Deployment ID" enableCopy="false"/>** and model deployment as **CompletionModel** . Click on **Save**.
+1. On the **Vector algorithm** tab, leave the default and select the Azure OpenAI service as **OpenAI-Lab01-<inject key="Deployment ID" enableCopy="false"/>** and model deployment as **CompletionModel.** Click on **Save**.
 
       ![](../media/open-ai-inject.png)
 
-1. On the **Vector profile** tab, select the Vectorizers created in the previous step and Click on **Save**.
+1. On the **Vector profile** tab, select the Vectorizers created in the previous step and click on **Save**.
 
       ![](../media/l3-t2-s16.png)
 
-1. On the **Configure vector field** tab, keep the **Dimensions** property to `1536` and **Vector profile** created in previous step and Click on **Save**. Click on **Next: Create an indexer**.
+1. On the **Configure vector field** tab, keep the **Dimensions** property to `1536` and **Vector profile** created in the previous step and click on **Save**. Click on **Next: Create an indexer**.
 
     ![](../media/l3-t2-s17.png)
     
@@ -207,11 +207,11 @@ In this task, you will configure Azure Storage and AI Search services, update cr
 
        ![](../media/img77.png)
 
-1. On the **Connect to your data** tab, select the existing data source and select the storage account then, click **Next: Add cognitive skills (optional)**.
+1. On the **Connect to your data** tab, select the existing data source and select the storage account, then click **Next: Add cognitive skills (optional)**.
 
       ![](../media/img85.png)
 
-1. On the **Add cognitive skills (optional)** tab leave the default and click on **Skip to: Customize target index**.
+1. On the **Add cognitive skills (optional)** tab, leave the default and click on **Skip to: Customize target index**.
 
 1. Next, on the **Customize target index**  tab, enter the **Index name** as **payroll-hr-cache (1)**. 
 
@@ -223,7 +223,7 @@ In this task, you will configure Azure Storage and AI Search services, update cr
 
    - **search_query** and **gpt_response**: Check the **Searchable** box.
 
-   - **search_query_vector**: Select **Collection(Edm.Single)** as the type.
+   - **search_query_vector**: Select **Collection (Edm.Single)** as the type.
 
    - Ensure **Retrievable** is selected for all fields.
 
@@ -233,11 +233,11 @@ In this task, you will configure Azure Storage and AI Search services, update cr
 
       ![](../media/img87.png)
 
-1. On the **Configure vector field** tab, set the **Dimensions** property to `1536` **(1)** and Click on **Create** **(2)** under No vector search profiles.
+1. On the **Configure vector field** tab, set the **Dimensions** property to `1536` **(1)** and click on **Create** **(2)** under No Vector search profiles.
 
       ![](../media/l3-t2-s11.png)
 
-1. On the **Vector profile** tab, Click on **Create** under No algorithm configurations.
+1. On the **Vector profile** tab, click on **Create** under No algorithm configurations.
 
       ![](../media/l3-t2-s12.png)
 
@@ -245,19 +245,19 @@ In this task, you will configure Azure Storage and AI Search services, update cr
 
       ![](../media/l3-t2-s13.png)
 
-1. On the **Vector profile** tab, select the algorithm created in the previous step and Click on **Create** under No vectorizers.
+1. On the **Vector profile** tab, select the algorithm created in the previous step and click on **Create** under No vectorizers.
 
       ![](../media/l3-t2-s14.png)
 
-1. On the **Vector algorithm** tab, leave the default and select the Azure OpenAI service as **OpenAI-Lab01-<inject key="Deployment ID" enableCopy="false"/>** and model deployment as **CompletionModel** . Click on **Save**.
+1. On the **Vector algorithm** tab, leave the default and select the Azure OpenAI service as **OpenAI-Lab01-<inject key="Deployment ID" enableCopy="false"/>** and model deployment as **CompletionModel.** Click on **Save**.
 
       ![](../media/open-ai-inject.png)
 
-1. On the **Vector profile** tab, select the Vectorizers created in the previous step and Click on **Save**.
+1. On the **Vector profile** tab, select the Vectorizers created in the previous step and click on **Save**.
 
       ![](../media/l3-t2-s16.png)
 
-1. On the **Configure vector field** tab, keep the **Dimensions** property to `1536` and **Vector profile** created in previous step and Click on **Save**. Click on **Next: Create an indexer**.
+1. On the **Configure vector field** tab, keep the **Dimensions** property to `1536` and **Vector profile** created in previous step and click on **Save**. Click on **Next: Create an indexer**.
 
       ![](../media/l3-t2-s17.png)
 
@@ -324,7 +324,7 @@ In this task, you will configure Azure Storage and AI Search services, update cr
 
 1. Navigate back to **Terminal** in vs code and stop the terminal by typing **ctrl + C**.
 
-### Task 3: Deploy the HR/Payroll Copilot application to Azure
+### Task 3: Deploy the HR/Payroll Copilot Application to Azure
 
 1. In the LabVM, open File Explorer, navigate to the below-mentioned path, right-click on the `main.bicep` file, and select open with  **Visual Studio Code**.
 
@@ -385,18 +385,18 @@ In this task, you will configure Azure Storage and AI Search services, update cr
 
    ![](../media/img29.png)
 
-10. Please select an Azure location to use, select the location as **East US 2** location, and click on the **Enter** button. You can change the location using the up and down arrows.
+10. Please select an Azure location to use, select the location as **East US 2,** and click on the **Enter** button. You can change the location using the up and down arrows.
 
-11. Next, select **AzureAIrg** resource group and hit **ENTER**.
+11. Next, select the **AzureAIrg** resource group and hit **ENTER**.
 
-12. Once the deployment succeeds, you will see the following message **SUCCESS: Your application was provisioned and deployed to Azure**. The deployment might take 5-10 minutes. It is producing a web package file, then creating the resource and publishing the package to the app service.
+12. Once the deployment succeeds, you will see the following message: **SUCCESS: Your application was provisioned and deployed to Azure**. The deployment might take 5-10 minutes. It is producing a web package file, then creating the resource and publishing the package to the app service.
 
 
 13. Navigate back to the Azure portal, search, and select **App service**. Select the available web app that you have deployed in the previous step.
 
     ![](../media/img44.png)
 
-14. Next, click on **Browse** to open your Web application.
+14. Next, click on **Browse** to open your web application.
 
     ![](../media/img45.png)
 
