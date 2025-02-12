@@ -13,35 +13,35 @@ This session provides hands-on experience with Azure AI services, guiding partic
 
 - **Introduction to LLMs and Azure AI Services** - Overview of Large Language Models (LLMs) and how to leverage Azure AI Services.
 
-- **Azure Machine Learning Model Training** - Training machine learning models using Azure Machine Learning, including data preparation and model evaluation.
+- **Azure Machine Learning Model Training** - Train machine learning models using Azure Machine Learning, including data preparation and model evaluation.
 
-- **Document Processing and Summarization with Azure Document Intelligence and AI Service for Language** - Using Azure Document Intelligence for document processing and summarization tasks.
+- **Document Processing and Summarization with Azure Document Intelligence and AI Service for Language** - Use Azure Document Intelligence for document processing and summarization tasks.
 
-- **Conversational AI with Bot Service using Power Virtual Agents** - Building conversational AI solutions with Power Virtual Agents and integrating them with other services.
+- **Conversational AI with Bot Service using Power Virtual Agents** - Build conversational AI solutions with Power Virtual Agents and integrate them with other services.
 
 - **Getting Started with Building a Chat Application** - Basics of building a chat application, including setup and initial development.
 
-- **Understand function calling in OpenAI GPT** - Understanding and implementing function calling capabilities in OpenAI GPT models.
+- **Understand function calling in OpenAI GPT** - Understand and implement function calling capabilities in OpenAI GPT models.
 
-- **Deploy and Run the HR/Payroll Copilot Application** - Deploying and running an HR/Payroll Copilot application using Azure services.
+- **Deploy and Run the HR/Payroll Copilot Application** - Deploy and run an HR/Payroll Copilot application using Azure services.
 
-- **Understand HR Copilot Demo Application** - Exploring the HR Copilot demo application, its features, and functionalities.
+- **Understand HR Copilot Demo Application** - Explore the HR Copilot demo application, its features, and its functionalities.
 
 - **Ensuring Responsible AI with Content Safety Studio** - Ensuring responsible AI practices using Content Safety Studio to monitor and manage AI content.
 
-- **Explore Microsoft Defender for Cloud** - Exploring Microsoft Defender for Cloud for securing cloud environments.
+- **Explore Microsoft Defender for Cloud** - Explore Microsoft Defender for Cloud for secure cloud environments.
 
-- **Run Miyagi App Locally** - Setting up and running the Miyagi application locally for development and testing.
+- **Run Miyagi App Locally** - Set up and run the Miyagi application locally for development and testing.
 
   
-## Pre-requisites
+## Prerequisites
 
 - Familiarity with Azure OpenAI Service.
 - Familiarity with Azure Portal.
 - Basic understanding of large language models and their applications.
 
 ## Architecture
-The architecture for this lab series involves several key Azure services working together to provide a comprehensive AI and machine learning environment. The core components include Azure OpenAI Service for leveraging advanced language models, Azure Machine Learning for training and deploying machine learning models, and Azure Cognitive Services for adding capabilities like vision, speech, and language understanding. Additionally, Power Virtual Agents is used for building conversational AI, while Microsoft Defender for Cloud ensures security and compliance. The architecture also integrates Azure Storage for data management and Azure Functions for serverless computing, creating a robust and scalable AI solution.
+The architecture for this lab series involves several key Azure services working together to provide a comprehensive AI and machine learning environment. The core components include Azure OpenAI Service for leveraging advanced language models, Azure Machine Learning for training and deploying machine learning models, and Azure Cognitive Services for adding capabilities like vision, speech, and language understanding. Additionally, Power Virtual Agents is used to build conversational AI, while Microsoft Defender for Cloud ensures security and compliance. The architecture also integrates Azure Storage for data management and Azure Functions for serverless computing, creating a robust and scalable AI solution.
 
 ## Architecture Diagram:
 
@@ -77,23 +77,23 @@ To get a better understanding of your lab resources and credentials, navigate to
  
 ## Utilizing the Split Window Feature
  
-For convenience, you can open the lab guide in a separate window by selecting the **Split Window** button from the Top right corner.
+For convenience, you can open the lab guide in a separate window by selecting the **Split Window** button from the top right corner.
  
  ![Use the Split Window Feature](../media/envdetails-1.png)
  
 ## Managing Your Virtual Machine
  
-Feel free to start, stop, or restart your virtual machine as needed from the **Resources** tab. Your experience is in your hands!
+Feel free to **start, stop, or restart (2)** your virtual machine as needed from the **Resources (1)** tab. Your experience is in your hands!
  
 ![Manage Your Virtual Machine](../media/res.png)
 
 ## Lab Duration Extension
 
-1. To extend the duration of the lab, kindly click the **Hourglass** icon in the top right corner of the lab environment. 
+1. To extend the duration of the lab, kindly click the **hourglass** icon in the top right corner of the lab environment. 
 
     ![Manage Your Virtual Machine](../media/gext.png)
 
-    >**Note:** You will get the **Hourglass** icon when 10 minutes are remaining in the lab.
+    >**Note:** You will get the **hourglass** icon when 10 minutes are remaining in the lab.
 
 2. Click **OK** to extend your lab duration.
  
@@ -103,7 +103,7 @@ Feel free to start, stop, or restart your virtual machine as needed from the **R
 
 ## Lab Guide Zoom In/Zoom Out
 
-1. To adjust the zoom level for the environment page, click the **A↕ : 100%** icon located next to the timer in the lab environment.
+1. To adjust the zoom level for the environment page, click the **A↕: 100%** icon located next to the timer in the lab environment.
 
    ![Manage Your Virtual Machine](../media/labzoom-1.png)
 
@@ -114,7 +114,7 @@ Feel free to start, stop, or restart your virtual machine as needed from the **R
 
    ![Launch Azure Portal](../media/azureportal.png)
    
-1. You'll see the **Sign into Microsoft Azure** tab. Here, enter your credentials:
+1. You'll see the **Sign in to Microsoft Azure** tab. Here, enter your credentials:
  
    - **Email/Username:** <inject key="AzureAdUserEmail"></inject>
  
@@ -126,19 +126,19 @@ Feel free to start, stop, or restart your virtual machine as needed from the **R
  
        ![Enter Your Password](../media/sc900-image-2.png)
 
-1. If **Action required** pop-up window appears, click on **Ask later**.
+1. If an **Action required** pop-up window appears, click on **Ask later**.
 
    ![Ask Later](../media/ask-later-01.png)
     
-1. If prompted to stay signed in, you can click **"No"**.
+1. If prompted to stay signed in, you can click **"No."**
  
 1. If a **Welcome to Microsoft Azure** pop-up window appears, simply click **"Cancel"** to skip the tour.
 
-1. Click **"Next"** from the bottom right corner to embark on your Lab journey!
+1. Click **"Next"** from the bottom right corner to embark on your lab journey!
 
    ![Launch Azure Portal](../media/sc900-image(3).png)
 
-This hands-on-lab will help you to gain insights on how Azure OpenAI’s content filtering mechanisms contribute to responsible AI deployment, and how you can leverage these filters to ensure that your AI models adhere to appropriate content standards.
+This hands-on lab will help you gain insights into how Azure OpenAI’s content filtering mechanisms contribute to responsible AI deployment and how you can leverage these filters to ensure that your AI models adhere to appropriate content standards.
 
 ## Support Contact
 
