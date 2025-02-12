@@ -1,19 +1,19 @@
-# Lab 9: Understand HR Copilot Demo Application 
+# Lab 9: Understand the HR Copilot Demo Application 
 
-### Estimated Duration: 60 minutes
+### Estimated Duration: 60 Minutes
 
-When the scope of automation spans across multiple functional domains, like humans, an agent may perform better when it can specialize in a single area. So instead of stuffing a single agent with multiple capabilities, we can employ a multiple-agent model, each specializing in a single domain. These agents are managed and coordinated by a manager agent (agent runner). This is called the multi-agent copilot model. The agent runner is responsible for promoting the right agent from the agent pool to be the active agent to interact with the user. It is also responsible for transferring relevant context from agent to agent to ensure continuity. In this model, the agent runner relies on the specialist agent's cue to back off from the conversation to start the transfer. Each specialist agent has to implement a skill to send a notification (back-off method) when it thinks its skillset cannot handle the user's request. On the other hand, the decision on exactly which agent should be selected to take over the conversation is still with the agent runner. When receiving such a request, the agent runner will review the input from the requesting agent to decide which agent to select for the job. This skill also relies on a LLM. The agent runner runs each specialist agent's run method. There can be some persistent context that should be available across agents' sessions. This is implemented as the persistent memory at agent runner. Each specialist agent, depending on the requirement for skill, can be powered by a gpt-35-turbo or gpt-4. The multi-agent solution has the same application platform (streamlit) as the single HR Copilot.
+When the scope of automation spans across multiple functional domains, like humans, an agent may perform better when it can specialize in a single area. So instead of stuffing a single agent with multiple capabilities, we can employ a multiple-agent model, each specializing in a single domain. These agents are managed and coordinated by a manager agent (agent runner). This is called the multi-agent copilot model. The agent runner is responsible for promoting the right agent from the agent pool to be the active agent to interact with the user. It is also responsible for transferring relevant context from agent to agent to ensure continuity. In this model, the agent runner relies on the specialist agent's cue to back off from the conversation to start the transfer. Each specialist agent has to implement a skill to send a notification (back-off method) when it thinks its skill set cannot handle the user's request. On the other hand, the decision on exactly which agent should be selected to take over the conversation is still with the agent runner. When receiving such a request, the agent runner will review the input from the requesting agent to decide which agent to select for the job. This skill also relies on an LLM. The agent runner runs each specialist agent's run method. There can be some persistent context that should be available across agents' sessions. This is implemented as the persistent memory at the agent runner. Each specialist agent, depending on the requirement for skill, can be powered by a GPT-3.5-turbo or GPT-4. The multi-agent solution has the same application platform (Streamlit) as the single HR Copilot.
 
-**Bicep**: Bicep is a domain-specific language (DSL) that uses declarative syntax to deploy Azure resources. In a Bicep file, you define the infrastructure you want to deploy to Azure, and then use that file throughout the development lifecycle to repeatedly deploy your infrastructure. Your resources are deployed in a consistent manner.
+**Bicep**: Bicep is a domain-specific language (DSL) that uses declarative syntax to deploy Azure resources. In a Bicep file, you define the infrastructure you want to deploy to Azure and then use that file throughout the development lifecycle to repeatedly deploy your infrastructure. Your resources are deployed in a consistent manner.
 
-## Lab objectives
+## Lab Objectives
 
 You will be able to complete the following tasks:
 
 - Task 1: Build your own multi-agent Copilot application locally
 - Task 2: Deploy a multi-agent Copilot application to Azure
 
-## Task 1: Build your own multi-agent Copilot application locally
+## Task 1: Build your own Multi-Agent Copilot Application Locally
 
 In this task, you will update the `secrets.env` file and run the HR Copilot application locally using `streamlit` to validate its functionality with sample queries. You will then prepare to deploy the multi-agent Copilot application to Azure by accessing the `main.bicep` file.
 
@@ -39,7 +39,7 @@ In this task, you will update the `secrets.env` file and run the HR Copilot appl
    streamlit run multi_agent_copilot.py
    ```
 
-4. Once the execution of `streamlit run multi_agent_copilot.py` is completed, a locally hosted HR Copliot application will be opened in the web browser. 
+4. Once the execution of `streamlit run multi_agent_copilot.py` is completed, a locally hosted HR Copilot application will be opened in the web browser. 
 
    ![](../media/img21.png)
 
@@ -57,11 +57,11 @@ In this task, you will update the `secrets.env` file and run the HR Copilot appl
 
    ![](../media/howdoI.png)
 
-7. Navigate back to **Terminal** in vs code and stop the terminal by typing **ctrl + C**.
+7. Navigate back to **Terminal** in VS Code and stop the terminal by typing **Ctrl + C**.
    
-## Task 2: Deploy a multi-agent Copilot application to Azure
+## Task 2: Deploy a Multi-Agent Copilot Application to Azure
 
-In this task, you will update the `main.bicep` file to reference `multi_agent_copilot.py`, authenticate with Azure, and deploy your multi-agent Copilot application. After setting up the environment and provisioning resources, you will navigate to the Azure portal to verify the deployment and access your web application.
+In this task, you will update the `main.bicep` file to reference, `multi_agent_copilot.py` authenticate with Azure, and deploy your multi-agent Copilot application. After setting up the environment and provisioning resources, you will navigate to the Azure portal to verify the deployment and access your web application.
 
 1. Return to the `main.bicep` file that you previously opened.
 
@@ -101,20 +101,20 @@ In this task, you will update the `main.bicep` file to reference `multi_agent_co
    azd up
    ```
    
-8. Please select your Azure subscription to use, enter `1`, and click on the **Enter** button.
+8. Please select your Azure subscription to use, insert,`1` and click on the **Enter** button.
 
    ![](../media/img29.png)
 
-9. Please select an Azure location to use, select the location as **East US 2** location, and click on the **Enter** button. You can change the location using the up and down arrows.
+9. Please select an Azure location to use, select the location as **East US 2,** and click on the **Enter** button. You can change the location using the up and down arrows.
 
 10. Next, select the **AzureAIrg-02** resource group and hit **ENTER**.
 
-11. Once the deployment succeeds, you will see the following message **SUCCESS: Your application was provisioned and deployed to Azure**. The deployment might take 5-10 minutes. It is producing a web package file, then creating the resource and publishing the package to the app service.
+11. Once the deployment succeeds, you will see the following message: **SUCCESS: Your application was provisioned and deployed to Azure**. The deployment might take 5-10 minutes. It is producing a web package file, then creating the resource and publishing the package to the app service.
 
 
 12. Navigate back to the Azure portal and select **App service** from the **AzureAIrg-02** resource group.
 
-13. Next, click on **Browse** to open your Web application.
+13. Next, click on **Browse** to open your web application.
 
     ![](../media/img53.png)
 
