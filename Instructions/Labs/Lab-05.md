@@ -6,14 +6,14 @@ Conversational AI with Bot Service using Power Virtual Agents allows users to cr
 
 ## Lab Objectives
 
-- Task 1 - Explore lab scenario
-- Task 2 - Setting up Microsoft Copilot Studio and Create your first Copilot
+- Task 1 - Explore the lab scenario
+- Task 2 - Setting up Microsoft Copilot Studio and creating your first Copilot
 - Task 3 - Create a New Topic
 - Task 4 - Test your Copilot
 
-## Task 1 - Explore lab scenario
+## Task 1 - Explore the Lab Scenario
 
-The power of Machine Learning also comes into play when dealing with human-to-machine interfaces. While classical interfaces like native or web applications are ubiquitous, the new approaches based on conversational AI are becoming increasingly popular. Having the capability to interact with intelligent services using natural language is quickly becoming the norm rather than the exception. Using Conversational AI, analysts can find the research of interest by using simple natural language phrases.
+The power of Machine Learning also comes into play when dealing with human-to-machine interfaces. While classical interfaces like native or web applications are ubiquitous, new approaches based on conversational AI are becoming increasingly popular. Having the capability to interact with intelligent services using natural language is quickly becoming the norm rather than the exception. Using Conversational AI, analysts can find the research of interest by using simple natural language phrases.
 
 With Machine Learning (ML) and Natural Language Processing (NLP), Human Machine Interface (HMI) technologies are enjoying an increased adoption year over year. By 2021, [the growth of chatbots in this space is expected to be 25.07%](https://www.technavio.com/report/chatbot-market-industry-analysis).
 
@@ -22,9 +22,9 @@ The way organizations are building conversational systems is evolving, with bots
 
 ![Architecture for Lab 4](../media/ai-workflow.png)
 
-## Task 2 - Setting up Microsoft Copilot Studio and Create your first Copilot
+## Task 2 - Setting Up Microsoft Copilot Studio and Creating Your First Copilot
 
-1. Open a new tab in the browser. Navigate to **[Microsoft Copilot Studio page](https://www.microsoft.com/en-us/copilot/microsoft-copilot-studio)** and select **Try Free**. 
+1. Open a new tab in the browser. Navigate to the **[Microsoft Copilot Studio page](https://www.microsoft.com/en-us/copilot/microsoft-copilot-studio)** and select **Try Free**. 
 
    ![](../media/L4T2S1.png)
 
@@ -33,7 +33,7 @@ The way organizations are building conversational systems is evolving, with bots
    ![](../media/L4T2S2.png)
    ![](../media/L4T2S2.2.png)
 
-1. Once **Signed in**, under Create your account, **choose your respective region (1)** from the drop-down menu and enter phone number and click on **Get Started (2)**.
+1. Once **signed in**, under Create your account, **choose your respective region (1)** from the drop down menu, enter your **phone number (2)**, and click on **Get Started (3)**.
    
    ![](../media/L4T2S3.png)
    
@@ -43,13 +43,13 @@ The way organizations are building conversational systems is evolving, with bots
 
 1. You have now successfully signed up for **Microsoft Copilot Studio**.
 
-1. On the **Welcome to Microsoft Copilot Studio (1)** page, choose your respective region and select **Get Started (2)**.
+1. On the **Welcome to Microsoft Copilot Studio** page, choose your **respective region (1)** and select **Get Started (2)**.
 
     ![](../media/L4T2S6.png)
 
     >**Note:** If any pop-up appears, then select **Skip**.
 
-1. On the **Create a Copilot** page enter the following details:
+1. On the **Create a Copilot** page, enter the following details:
 
    - **Copilot name (1)**: Enter **AI-Bot-<inject key="DeploymentID" enableCopy="false"/>**.
 
@@ -59,61 +59,61 @@ The way organizations are building conversational systems is evolving, with bots
 
       >**Note:** If the name section does not appear, select **Skip to Configure**.
       
-1. Once the Bot is created you will see the Copilot Studio page.
+1. Once the Bot is created, you will see the Copilot Studio page.
 
     ![](../media/aibot.png)
 
 ## Task 3 - Create a New Topic
 
-1. One the **Microsoft Copilot Studio** page, select **Topics** **(1)**, **Add a topic** **(2)**, from the drop down menu select **Create from description with Copilot** **(3)**.
+1. On the **Microsoft Copilot Studio** page, select **Topics** **(1)**, **+ Add a topic** **(2)**, and from the drop down menu, select **Create from description with Copilot** **(3)**.
 
    ![](../media/topics.png)
 
-2. In Create it with Copilot pane, Name your topic as **Meal delivery options** **(1)**. In Create a topic to ..., enter the given phrase "**Checking for food options based on the city you are in**" **(2)**, then click on **Create** **(3)**.
+2. In **Create it with Copilot** pane, name your topic **Meal delivery options** **(1)**. In Create a topic to ..., enter the particular phrase "**Checking for food options based on the city you are in**" **(2)**, then click on **Create** **(3)**.
 
    ![](../media/createcopilot.png)
 
-   >**Note:** If you recieve any pop-up which states **See text and images copied to the clipboard**, select **Allow**.
+   >**Note:** If you receive any pop up which states **See text and images copied to the clipboard**, select **Allow**.
 
-3. Once you are in the topic pane, **close** the edit with copilot pane from right-side.
+3. Once you are in the topic pane, **close** the edit with the Copilot pane from the right side.
 
 4. On the **topics** pane, click on **+** at the bottom of the **Question** node to **Add node**.
 
    ![](../media/L4T3S4.png)
 
-5. Select **Ask a question** from the drop-down while adding a node.
+5. Select **Ask a question** from the drop down while adding a node.
 
    ![](../media/L4T3S5.png)
 
-6. Enter the question as "**What type of food would you like to order?**" **(1)** and under options for users, click on **New option** **(2)** to add types of food. Add **Chinese** and **Italian** **(3)** as shown in the below screenshot.
+6. Enter the question "**What type of food would you like to order?**" **(1),** and under options for users, click on **New option** **(2)** to add types of food. Add **Chinese** and **Italian** **(3),** as shown in the below screenshot.
 
     ![](../media/cai-l4-t4-s6.png)
    
-7. Now under Condition of Chinese, click on **+** to Add node.
+7. Now, under Chinese conditions, click on **+** to add a node.
 
    ![](../media/cai-l4-t4-s7new.png)
 
-8. Select **Send a message** from the drop-down while adding a node.
+8. Select **Send a message** from the drop down while adding a node.
 
    ![](../media/cai-l4-t4-s8.png)
 
-9. Enter the Chinese food items given here in the message section: **Noodles, Spring Rolls, Fried Chicken**
+9. Enter the Chinese food items given here in the message section: **Noodles, Spring Rolls, and Fried Chicken.**
 
    ![](../media/cai-l4-t4-s9.png)
 
-10. Now under Condition of Italian, click on **+** to Add node.
+10. Now under Italian condition, click on **+** to Add a node.
 
     ![](../media/cai-l4-t4-s10.png)
 
-11. Select **Send a message** from the drop-down while adding a node.
+11. Select **Send a message** from the drop down menu when adding a node.
 
     ![](../media/cai-l4-t4-s11.png)
 
-12. Enter the Italian food items given here in the message section: **Pizza, Pasta, Truffles**
+12. Enter the Italian food items given here in the message section: **Pizza, Pasta, Truffles.**
 
     ![](../media/cai-l4-t4-s12.png)
 
-13. Review the topic trigger, and click on **Save** from the right-top corner to save the topic.
+13. Review the topic trigger and click on **Save** from the top right corner to save the topic.
 
     ![](../media/cai-l4-t4-s13new.png)
 
@@ -128,11 +128,11 @@ The way organizations are building conversational systems is evolving, with bots
 
 ## Task 4 - Test your Copilot
 
-1. Once the Topic is saved, click on **Test Copilot** from the right-top corner.
+1. Once the topic is saved, click on **Test Copilot (1)** from the top right corner.
 
    ![](../media/test-0012.jpg)
 
-1. In the Test copilot pane, enter the given phrase ```What are my meal delivery options?``` and then enter the city name as ```Seattle```, You can select the type of food that you are looking for i.e., Chinese or Italian. 
+1. In the Test Copilot pane, enter the given phrase ```"What are my meal delivery options?"``` and then enter the city name as ```Seattle```. You can select the type of food that you are looking for, i.e., Chinese or Italian. 
 
    ![](../media/test-copilot-1.jpg)
  
@@ -142,7 +142,7 @@ The way organizations are building conversational systems is evolving, with bots
 
 1. Close the tab.
 
-Now you have successfully created and tested the Microsoft Copilot.
+Now, you have successfully created and tested the Microsoft Copilot.
 
 ## Summary 
 
