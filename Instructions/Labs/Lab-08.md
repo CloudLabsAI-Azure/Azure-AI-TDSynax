@@ -48,8 +48,8 @@ By running this application locally, you can test and interact with its features
    | **AZURE_OPENAI_EMB_DEPLOYMENT**          |  Replace the value with your **YOUR_EMBEDDING_MODEL** name that is **CompletionModel**    |
    | **AZURE_OPENAI_API_ENDPOINT**          | Replace the value with OpenAI endpoint value          |
    | **AZURE_OPENAI_API_KEY**           | Replace the value with OpenAI key               |
-   | **AZURE_SEARCH_SERVICE_ENDPOINT**  | Replace the value with azure search service URL        |
-   | **AZURE_SEARCH_ADMIN_KEY**         | Replace the value with azure search service key           |
+   | **AZURE_SEARCH_SERVICE_ENDPOINT**  | Replace the value with Azure search service URL        |
+   | **AZURE_SEARCH_ADMIN_KEY**         | Replace the value with Azure search service key           |
 
 3. After updating values, the `secrets.env` file should be as shown in the below screenshot. Press **CTRL + S** to save the file.
 
@@ -94,7 +94,7 @@ By running this application locally, you can test and interact with its features
 
    >**Note**: The output you receive might differ on your system, but it must follow this format for the subsequent steps to proceed.
 
-8. Copilot can help update employee information, like address updates. For other information update requests, Copilot will log a ticket to the HR team to update the information. Enter `I moved to 123 Main St., San Jose, CA 95112, please update my address` in the HR Copilot app.
+8. Copilot can help update employee information, such as address updates. For other information update requests, Copilot will log a ticket to the HR team to update the information. Enter `I moved to 123 Main St., San Jose, CA 95112, please update my address` in the HR Copilot app.
 
     ![](../media/johnca.png)
 
@@ -257,7 +257,7 @@ In this task, you will configure Azure Storage and AI Search services, update cr
 
       ![](../media/l3-t2-s16.png)
 
-1. On the **Configure vector field** tab, keep the **Dimensions** property to `1536` and **Vector profile** created in previous step and click on **Save**. Click on **Next: Create an indexer**.
+1. On the **Configure vector field** tab, keep the **Dimensions** property to `1536` and **Vector profile** created in the previous step and click on **Save**. Click on **Next: Create an indexer**.
 
       ![](../media/l3-t2-s17.png)
 
@@ -292,7 +292,7 @@ In this task, you will configure Azure Storage and AI Search services, update cr
 
 1. Next, press **CTRL + J** to open the existing terminal.
 
-1. Run the below command to change the directory and run the HR Copilot application using the search service.
+1. Run the command below to change the directory and run the HR Copilot application using the search service.
 
       > **Note**: Here, you can enter your email address below to get notifications. Otherwise, leave this field blank and click on **Enter**.
 
@@ -389,7 +389,7 @@ In this task, you will configure Azure Storage and AI Search services, update cr
 
 11. Next, select the **AzureAIrg** resource group and hit **ENTER**.
 
-12. Once the deployment succeeds, you will see the following message: **SUCCESS: Your application was provisioned and deployed to Azure**. The deployment might take 5-10 minutes. It is producing a web package file, then creating the resource and publishing the package to the app service.
+12. Once the deployment succeeds, you will see the following message: **SUCCESS: Your application was provisioned and deployed to Azure**. The deployment might take 5-10 minutes. It produces a web package file, then creates the resource and publishes the package for the app service.
 
 
 13. Navigate back to the Azure portal, search, and select **App service**. Select the available web app that you have deployed in the previous step.
