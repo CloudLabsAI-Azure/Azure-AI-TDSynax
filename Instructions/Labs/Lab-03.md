@@ -122,7 +122,7 @@ The high-level steps covered in the lab are:
 
     ![](../media/trustcode01.png)
     
-   >**Note**: If prompted with Do you wish to trust this compute instance? webpage, click on **Click here to trust this compute instance**.
+   >**Note**: If prompted with the "Do you wish to trust this compute instance?" webpage, click on **Click here to trust this compute instance**.
     
     ![](../media/upd-l1-t3-s14.png)
     
@@ -156,7 +156,7 @@ In this task, we will use Azure Automated ML to train a machine learning model c
 
     ![COVID19Articles_Train_Vectors dataset is selected. Next button is highlighted.](../media/inn5.png)
    
-3. On the `Task type and data` page, make sure `Classification` **(1)** is selected. Choose `COVID19Articles_Train`**(2)** as your dataset and click `Next` **(3)** to proceed.
+3. On the `Task type and data` page, make sure `Classification` **(1)** is selected. Choose `COVID19Articles_Train` **(2)** as your dataset and click `Next` **(3)** to proceed.
 
     ![Classification is selected as the machine learning task type for the experiment. The View additional configuration settings link is highlighted. ](../media/innovate1.png) 
 
@@ -172,7 +172,7 @@ In this task, we will use Azure Automated ML to train a machine learning model c
 
       ![COVID19Articles_Train_Vectors dataset is selected. Next button is highlighted.](../media/inn2.png)
       
-7. In order to be able to launch an Automated ML run, we need to provision an Azure ML compute cluster. On the `Compute` page, select compute type as `Compute Cluster` **(1)** and select Azure AML to compute cluster as `aml-compute-cpu` **(2)** from the list of clusters, then click on **Next.** If the list is empty, select the `+ New` **(3)** link.
+7. In order to launch an Automated ML run, we need to provision an Azure ML compute cluster. On the `Compute` page, select compute type as `Compute Cluster` **(1)** and select Azure AML to compute cluster as `aml-compute-cpu` **(2)** from the list of clusters, then click on **Next.** If the list is empty, select the `+ New` **(3)** link.
 
     ![Select compute cluster dropdown list and create a new compute link are highlighted.](../media/inn3.png)
 
@@ -204,9 +204,9 @@ In this task, we will use Azure Automated ML to train a machine learning model c
 
 12. On the following screen, you will see the progress of your experiment run.
 
-13. Now that you understand the process of launching an AutoML run, let's explore in the next task the results of an already completed AutoML run.
+13. Now that you understand the process of launching an AutoML run, let's explore the results of an already completed AutoML run in the next task.
 
->**Note**: We have already executed in this environment an AutoML run that is very similar to the one you've just launched. This allows you to explore AutoML results without having to wait for the completion of the run.
+>**Note**: We have already executed an AutoML run in this environment that is very similar to the one you've just launched. This allows you to explore AutoML results without having to wait for the completion of the run.
 
 ## Task 6 - Explore AutoML Results
 
@@ -245,7 +245,7 @@ Responsible AI is a governance framework that documents how a specific organizat
 
     ![](../media/IMG0011.png)
 
-1. Execute the cells inside the `erroranalysis-dashboard-regression-superconductor.ipynb` notebook, one by one (Click on the **Run** button or by using either Ctrl + Enter to stay on the same cell or Shift + Enter to advance to the next cell or) and observe the results of each cell execution.
+1. Execute the cells inside the `erroranalysis-dashboard-regression-superconductor.ipynb` notebook, one by one (Click on the **Run** button or use either Ctrl + Enter to stay on the same cell or Shift + Enter to advance to the next cell) and observe the results of each cell execution.
 
     ![Run Note Book Cell](../media/IMG014.png)
    
@@ -265,7 +265,7 @@ Responsible AI is a governance framework that documents how a specific organizat
 
 ## Summary
 
-In this lab, you explored the COVID-19 data dashboard, set up and prepared your Azure Machine Learning workspace, trained and evaluated a model using Automated ML, and generated and analyzed a Responsible AI dashboard.
+In this lab, you explored the COVID-19 data dashboard, set up and prepared your Azure Machine Learning workspace, trained and evaluated a model using Automated ML and generated and analyzed a Responsible AI dashboard.
 
 ### You have successfully completed the lab. Click Next >> to move on to the next set of exercises.
 
