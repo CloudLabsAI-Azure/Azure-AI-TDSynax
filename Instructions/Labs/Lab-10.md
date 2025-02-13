@@ -12,7 +12,7 @@ In this lab, you will perform the following:
 
 Content Safety resource in Azure to detect and manage harmful content. You'll create and configure the resource, assign the necessary roles, and ensure it's integrated with the Content Safety Studio. This setup allows you to use Azure’s AI tools to moderate content effectively.
 
-1.  Open a new tab and navigate to the [Content Safety Studio](https://contentsafety.cognitive.azure.com/), if the user is not logged in. Click on Sign in from the top right corner and select the user. Then select 
+1.  Open a new tab and navigate to the [Content Safety Studio](https://contentsafety.cognitive.azure.com/) if the user is not logged in. Click on Sign in from the top right corner and select the user. Then select 
     the **Settings** icon in the top navigation menu.
 
      ![](../media/image-51.png)
@@ -98,7 +98,7 @@ We should also anticipate customers potentially posting harmful image content. T
 1. Set all Threshold levels to Medium.
 1. Select Run test.
 
-    >**Note**: Rightfully so, the content is blocked, and was rejected by the Violence filter which has a high severity level.
+    >**Note**: Rightfully so, the content is blocked, and rejected by the Violence filter, which has a high severity level.
 
 ### Task 2.2: Run a bulk test
 
@@ -112,7 +112,7 @@ So far, we’ve tested image content for singular, isolated images. However, if 
 
     ![](../media/image-81.png)
    
-1. Under the test section review **Dataset preview (1),** select the **Configure filters** tab, review the **Category** and **Threshold level, (2)** and click on **Run test (3)**.
+1. Under the test section review, **Dataset preview (1),** select the **Configure filters** tab, review the **Category** and **Threshold level (2),** and click on **Run test (3)**.
 
      ![](../media/image-14.png)
 
@@ -134,7 +134,7 @@ Let’s first test some positive customer feedback.
 
    ![](../media/image-70.png)
 
-1. On the **Moderate text content** page, select **Run a simple test (1)** and choose **Safe content (2)** under **select a sample or type your own** section.
+1. On the **Moderate text content** page, select **Run a simple test (1)** and choose **Safe content (2)** under **Select a sample or type your own** section.
 
    ![](../media/image-71.png)
 
@@ -169,7 +169,7 @@ But what would happen if we tested a harmful statement? Let’s test with negati
 
       ![](../media/image-75.png)
  
-   - Although the content is allowed, the severity level of hate is low. To guide our model to block such content, we’d need to adjust the Threshold level for Hate. A lower threshold level would block any content 
+   - Although the content is allowed, the severity level of hate is low. To guide our model in blocking such content, we’d need to adjust the threshold level for hate. A lower threshold level would block any content 
      with a low, medium, or high severity. There’s no room for exceptions! **(1)**
 
    - Set the Threshold level for Hate to Low. **(2)**
