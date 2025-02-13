@@ -22,7 +22,7 @@ Understanding the source datasets is significant in AI and ML. To help you exped
 
 To get more details about the source datasets, check out the [Data Overview](https://github.com/CloudLabsAI-Azure/ai-in-a-day/blob/main/data-overview.md) section.
 
-To explore the dashboard of COVID-19 data, open the `Azure-AI-in-a-Day-Data-Overview` file located on the desktop (**C:\Users\public\desktop**) 💻 of the virtual machine provided with your environment. If you see the `Introducing the updated mobile layout` pop-up screen, close it by clicking on `Got it`. Collapse the **Fields** and **Visualizations** tabs to see the precise report.
+To explore the dashboard of COVID-19 data, open the `Azure-AI-in-a-Day-Data-Overview` file located on the desktop (**C:\Users\public\desktop**) 💻 of the virtual machine provided with your environment. If you see the `Introducing the updated mobile layout` pop-up screen, close it by ing on `Got it`. Collapse the **Fields** and **Visualizations** tabs to see the precise report.
 
  ![Azure AI in a Day datasets](../media/powerbireportopen.png)
 
@@ -132,7 +132,7 @@ The high-level steps covered in the lab are:
 
     ![The list of Azure Search indexes.](../media/AI1.png)
 
-6. Once documents are available, Navigate to Overview **(1)** of the Search service and then select **Search Explorer (2)** to open up the Search Explorer.
+6. Once documents are available, navigate to Overview **(1)** of the Search service and then select **Search Explorer (2)** to open up the Search Explorer.
 
     ![The Search Explorer option is selected.](../media/innovate4.png)
 
@@ -359,7 +359,7 @@ The high-level steps covered in the lab are:
 
    ![An analyzed document](../media/innovate6.png)
     
-1. In the Upload Files pop-up, Navigate to `C:\Temp\AzureSearch\`, select `2020.09.25.20201616v1.pdf` file **(2),** and then click on **Open** **(3)**.
+1. In the Upload Files pop-up, navigate to `C:\Temp\AzureSearch\`, select `2020.09.25.20201616v1.pdf` file **(2),** and then click on **Open** **(3)**.
     
    ![An analyzed document](../media/innovate7.png)
    
@@ -397,7 +397,7 @@ In this task, we are creating a text summarization application with the client l
 
     ![The AI Services key and endpoint are selected](../media/inn14.png)
 
-3. In the labvm, open a command prompt (`cmd.exe`). To do this, open the Windows menu, type in `cmd`, and select the **Command Prompt** application.
+3. In the LabVM, open a command prompt (`cmd.exe`). To do this, open the Windows menu, type in `cmd`, and select the **Command Prompt** application.
 
     ![The Command Prompt application is selected](../media/open-cmd.png)
 
@@ -439,4 +439,4 @@ You can find more references about Document Summarization here: [Quickstart: Get
 
 In this lab, you have explored Azure Document Intelligence and AI Services and extracted, analyzed, and summarized key information from documents.
 
-### You have successfully completed the lab. Click Next >> to move on to the next set of exercises.
+### You have successfully completed the lab.  Next >> to move on to the next set of exercises.
