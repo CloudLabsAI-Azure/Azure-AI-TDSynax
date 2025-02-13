@@ -25,13 +25,13 @@ In this task, you will update the `secrets.env` file and run the HR Copilot appl
 
 1. Next, press **CTRL + J** to open the existing terminal. 
 
-1. Run the below command to change the directory.
+1. Run the command below to change the directory.
 
    ```
    cd C:\LabFiles\OpenAIWorkshop\scenarios\incubations\copilot\employee_support
    ```
 
-3. To run the application from the command line, navigate back to Command Prompt and run the below command:
+3. To run the application from the command line, navigate back to Command Prompt and run the command below:
 
    >**Note**: Here, you can enter your email address below to get notifications. Otherwise, leave this field blank and then click on **Enter**.
 
@@ -71,13 +71,13 @@ In this task, you will update the `main.bicep` file to reference, `multi_agent_c
 
 3. In the LabVM, navigate to Desktop and search for `cmd` in the search box, then click on **Command Prompt**. 
 
-4. Run the below command to change the directory.
+4. Run the command below to change the directory.
 
    ```bash
    cd C:\LabFiles\OpenAIWorkshop
    ```
 
-5. Run the below command to **Authenticate with Azure**. It will redirect you to the Azure Authorize website, where you can select your account.
+5. Run the command below to **Authenticate with Azure**. It will redirect you to the Azure Authorize website, where you can select your account.
 
 - **azd** is the Azure Developer CLI, a command-line tool that simplifies the management and deployment of Azure applications. It helps streamline various tasks related to Azure resources, including authentication, configuration, and deployment of resources.
 
@@ -85,7 +85,7 @@ In this task, you will update the `main.bicep` file to reference, `multi_agent_c
    azd auth login
    ```
 
-6. Run the below command to set up the resource group deployment and **Create a new environment**.
+6. Run the command below to set up the resource group deployment and **Create a new environment**.
 
    ```bash
    azd config set alpha.resourceGroupDeployments on
@@ -95,13 +95,13 @@ In this task, you will update the `main.bicep` file to reference, `multi_agent_c
    azd env new azure-copilot-<inject key="Deployment ID" enableCopy="true"/>
    ```
 
-7. Run the below command to provision Azure resources and deploy your project with a single command.
+7. Run the command below to provision Azure resources and deploy your project with a single command.
 
    ```bash
    azd up
    ```
    
-8. Please select your Azure subscription to use, insert,`1` and click on the **Enter** button.
+8. Please select your Azure subscription, insert `1` and click on the **Enter** button.
 
    ![](../media/img29.png)
 
@@ -109,7 +109,7 @@ In this task, you will update the `main.bicep` file to reference, `multi_agent_c
 
 10. Next, select the **AzureAIrg-02** resource group and hit **ENTER**.
 
-11. Once the deployment succeeds, you will see the following message: **SUCCESS: Your application was provisioned and deployed to Azure**. The deployment might take 5-10 minutes. It is producing a web package file, then creating the resource and publishing the package to the app service.
+11. Once the deployment succeeds, you will see the following message: **SUCCESS: Your application was provisioned and deployed to Azure**. The deployment might take 5-10 minutes. It produces a web package file, then creates the resource and publishes the package for the app service.
 
 
 12. Navigate back to the Azure portal and select **App service** from the **AzureAIrg-02** resource group.
