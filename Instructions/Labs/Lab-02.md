@@ -51,7 +51,7 @@ After completing this lab, you will be able to complete the following tasks:
 
    ![](../media/odluser.png)
 
-1. Select **Next**. In the **Review and finish** section, review your Azure AI services, click on **Create** and wait for the deployments to succeed.
+1. Select **Next**. In the **Review and finish** section, review your Azure AI services, click on **Create,** and wait for the deployments to succeed.
 
 1. You can also navigate to your Resource group **AzureAIrg** section in the Azure portal to verify the resources deployed.
 
@@ -63,7 +63,7 @@ After completing this lab, you will be able to complete the following tasks:
 
 1. In the **Access Control (IAM)** pane, click on the **+ Add** button at the top.
 
-1. Select **Add role assignment** from the drop-down.
+1. Select **Add role assignment** from the drop down.
 
 1. In the **Add role assignment** pane, under the **Role** tab, select **Reader** and click on **Next**. This role allows the user or entity to view all resources in the **resource group** but won't make any changes.
 
@@ -138,7 +138,7 @@ After completing this lab, you will be able to complete the following tasks:
 
    ![](../media/search-content-safety.png)
 
-1. On the **Azure AI serices | Content safety** tab, click on **+ Create**.
+1. On the **Azure AI services | Content safety** tab, click on **+ Create**.
 
 1. On the **Create Content Safety** **Basics** tab, configure the following resources and click on **Next (6)**.
 
@@ -312,7 +312,7 @@ After completing this lab, you will be able to complete the following tasks:
 
    ![](../media/moderatetextcontent.png)
 
-1. On the **Moderate text content** window, select the **content safety resource** from the **Azure AI services resources** dropdown.
+1. On the **Moderate text content** window, select the **content safety resource** from the **Azure AI services resources** drop down.
 
    ![](../media/content-safety-resource-select.png)
 
@@ -421,7 +421,7 @@ In this lab, you have performed  the following tasks:
 - Deployed Azure OpenAI models.
 - Created a content safety service.
 - Added an Azure content safety connection.
-- Used Azure AI studio playground.
+- Used Azure AI Studio playground.
 - Worked with an open-source LLM model.
 - Tested the prompt in content safety.
 - Created a prompt flow.
