@@ -101,7 +101,7 @@ The way organizations are building conversational systems is evolving, with bots
 
    ![](../media/cai-l4-t4-s9.png)
 
-10. Now under Italian condition, click on **+** to Add a node.
+10. Now, under Italian condition, click on **+** to Add a node.
 
     ![](../media/cai-l4-t4-s10.png)
 
