@@ -116,11 +116,11 @@ After completing this lab, you will be able to complete the following tasks:
 
    - Deployment name: **gpt-4 (1)**
    - Deployment type: **Standard (2)**
-   - Model version: **0125-Preview (3)**
+   - Model version: **turbo-2024-04-09 (3)**
    - Tokens per Minute Rate Limit: **10k (4)**
    - Select **Deploy**
 
-     ![](../media/new-llm12.png)
+     ![](../media/new-llm12-(1).png)
    
 1. Verify that the **gpt-4** model is present in the **Model deployments** section.
 
