@@ -1,4 +1,4 @@
-# Lab 01: Get started with Azure OpenAI Service
+# Lab 01: Get Started with Azure OpenAI Service
 
 ## Lab Scenario
 Azure OpenAI Service brings the generative AI models developed by OpenAI to the Azure platform, enabling you to develop powerful AI solutions that benefit from the security, scalability, and integration of services provided by the Azure cloud platform. In this exercise, you will learn how to get started with Azure OpenAI by provisioning the service as an Azure resource and using Azure OpenAI Studio to deploy and explore OpenAI models.
@@ -107,7 +107,7 @@ In this task, you will explore a model in the Completions playground that involv
 
 1. In Azure AI Foundry Studio, in the left pane under **Playground**, select **Completions**.
 
-1. In the **Completions (1)** page, ensure your **my-gpt-model (2)** deployment is selected. Type `Generate a quiz of 5 questions  For each question, provide me the answer options and the correct answer` **(3)** in the prompt.
+1. In the **Completions (1)** page, ensure your **my-gpt-model (2)** deployment is selected. Type `Generate a quiz of 5 questions. For each question, provide me the answer options and the correct answer` **(3)** in the prompt.
 
       >**Note:** The summarized text sample consists of a *prompt* that provides some text to tell the model what kind of response is required and includes some contextual information.
 
@@ -133,7 +133,7 @@ In this task, you will explore a model in the Completions playground that involv
 
 In this task, you will use the Chat playground to interact with and test the AI model's conversational abilities through a simulated chat interface.
 
-1. In the **Playgrounds** section, select the **Chat** page, and ensure that the **my-gpt-model (1)** model is selected in the configuration pane.
+1. In the **Playgrounds** section, select the **Chat** page and ensure that the **my-gpt-model (1)** model is selected in the configuration pane.
 
 2. In the **Setup** section, in the **Give the model instructions and context** box, replace the current text with the following statement: `The system is an AI teacher that helps people learn about AI` **(2)**.
 
@@ -174,7 +174,7 @@ In this task, you will use the Chat playground to interact with and test the AI 
 
 In this task, you will explore prompts and parameters by experimenting with different inputs and settings to fine-tune the AI model's responses and behavior.
 
-1. In the **Chat Configuration** pane, expand **Parameters (1)**, and set the following parameter values:
+1. In the **Chat Configuration** pane, expand **Parameters (1)** and set the following parameter values:
       
       - **Max response (2)**: 500
 
@@ -235,7 +235,7 @@ In this task, you will explore code generation by testing the AI model’s abili
 
 In this lab, you have accomplished the following:
 -   Provisioned an Azure OpenAI resource.
--   Deployed an Azure OpenAI model within the Azure OpenAI studio
+-   Deployed an Azure OpenAI model within the Azure OpenAI Studio.
 -   Used the chat playground to utilize the functionalities of prompts, parameters, and code generation
 
 ### You have successfully completed the lab. Click Next >> to move on to the next set of exercises.
