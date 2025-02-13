@@ -1,9 +1,9 @@
 # Lab 10: Ensuring Responsible AI with Content Safety Studio 
 
-## Lab scenario
-In this lab, you will learn about the Content Safety Studio is a powerful tool for managing user-generated content. It features Text Moderation to detect and filter harmful text, such as hate speech and violence, and Image Moderation to analyze and block unsafe or offensive images. This comprehensive solution ensures that all user contributions are safe and appropriate across platforms.
+## Lab Scenario
+In this lab, you will learn about the Content Safety Studio, a powerful tool for managing user-generated content. It features Text Moderation to detect and filter harmful text, such as hate speech and violence, and Image Moderation to analyze and block unsafe or offensive images. This comprehensive solution ensures that all user contributions are safe and appropriate across platforms.
 
-## Lab objectives
+## Lab Objectives
 In this lab, you will perform the following:
 - Task 1: Implement Content Safety Measures
 - Task 2: Monitor and Analyze Content for Compliance
@@ -12,7 +12,7 @@ In this lab, you will perform the following:
 
 Content Safety resource in Azure to detect and manage harmful content. You'll create and configure the resource, assign the necessary roles, and ensure it's integrated with the Content Safety Studio. This setup allows you to use Azure’s AI tools to moderate content effectively.
 
-1.  Open a new tab, and navigate to the [Content Safety Studio](https://contentsafety.cognitive.azure.com/), If the user is not logged in, Click on Sign in from the top right corner and select the user. Then select 
+1.  Open a new tab and navigate to the [Content Safety Studio](https://contentsafety.cognitive.azure.com/), if the user is not logged in. Click on Sign in from the top right corner and select the user. Then select 
     the **Settings** icon in the top navigation menu.
 
      ![](../media/image-51.png)
@@ -39,23 +39,23 @@ Content Safety resource in Azure to detect and manage harmful content. You'll cr
 
      ![](../media/image-54.png)
 
-1. Once deployement is successful click on **Go to resource**.
+1. Once deployment is successful, click on **Go to resource**.
 
      ![](../media/image-57.png)
 
-1. Back on **ContentSafety-<inject key="DeploymentID" enableCopy="false"/>** page,  from the left navigation pane, select  **Overview** and review the settings then click on **Content Safety Studio** link.
+1. Back on **ContentSafety-<inject key="DeploymentID" enableCopy="false"/>** page,  from the left navigation pane, select  **Overview (1)** and review the settings, then click on the **Content Safety Studio (2)** link.
 
       ![](../media/image-59.png)
    
-1. Your navigated to the [Content Safety Studio](https://contentsafety.cognitive.azure.com/), select the **Settings** icon in the top navigation menu.
+1. Once navigated to the [Content Safety Studio](https://contentsafety.cognitive.azure.com/), select the **Settings** icon in the top navigation menu.
 
      ![](../media/image-51.png)
 
-1. Make sure Content Safety resources is created.
+1. Make sure Content Safety resources are created.
 
       ![](../media/contentsafety.png)
 
-1. Select **ContentSafety-<inject key="DeploymentID" enableCopy="false"/> (1)** and click on **Use resource (2)**.
+1. Select **ContentSafety-<inject key="DeploymentID" enableCopy="false"/> (1)** and click **Use resource (2)**.
 
      ![](../media/useresources.png)
    
@@ -63,21 +63,21 @@ Content Safety resource in Azure to detect and manage harmful content. You'll cr
 
 In this task, you will implement and evaluate content moderation for both images and text using Azure's Content Safety Studio. The goal is to ensure that content uploaded by users complies with safety standards by testing for harmful content and analyzing moderation results.
 
-## Task 2. 1 : Moderate image content for singular isolated images.
+## Task 2. 1: Moderate image content for singular isolated images.
 
-1. On **Azure AI | Content Safety Studio** under **Safeguard your image content with built-in-features**, select **Moderate image content**.
+1. On **Azure AI | Content Safety Studio,** under **Safeguard your image content with built-in features**, select **Moderate image content**.
 
      ![](../media/image-11.png)
 
-1. On **Moderate image content** select **Run a simple test** tab, review the options note we have three set content  **Safe content**, **self- harm content** and **AI-generated sexual content**.
+1. On **Moderate image content,** select **Run a simple test** tab and review the options. Note that we have three sets of content: **safe content**, **self-harm content** and **AI-generated sexual content**.
 
 #### Safe content
 
-1. Now lets use our image and test then check the result. **Moderate image content** select **Run a simple test** tab then click on **Browse for a file**
+1. Now, let's use our image and test it, then check the result. Under **Moderate image content,** select **Run a simple test** tab, then click on **Browse for a file.**
 
      ![](../media/image-61.png)
 
-1. Within **file explorer** navigate to **C:\LabFiles\Model-Evaluation-and-Model-Tunning\Labs\data\image_sample_dataset** select and open **family-builds-campfire.jpg**
+1. Within **file explorer,** navigate to **C:\LabFiles\Model-Evaluation-and-Model-Tunning\Labs\data\image_sample_dataset,** select and open **family-builds-campfire.jpg**
 
 1. Review the image and click on **Run test**.
 
@@ -87,9 +87,9 @@ In this task, you will implement and evaluate content moderation for both images
 
     ![](../media/image-69.png)
 
-   >**Note**: So far, we’ve tested image content for singular isolated images. However, if we have a bulk dataset of image content, we could test the bulk dataset at once and receive metrics based on the model’s performance.
+   >**Note**: So far, we’ve tested image content for singular, isolated images. However, if we have a bulk dataset of image content, we could test the bulk dataset at once and receive metrics based on the model’s performance.
 
-#### Self harmed content
+#### Self-harmed content
 
 We should also anticipate customers potentially posting harmful image content. To ensure that we account for such a scenario, let’s test the detection of harmful image content.
 
@@ -98,21 +98,21 @@ We should also anticipate customers potentially posting harmful image content. T
 1. Set all Threshold levels to Medium.
 1. Select Run test.
 
-    >**Note**: Rightfully so, the content is Blocked, and was rejected by the Violence filter which has a Severity level of High.
+    >**Note**: Rightfully so, the content is blocked, and was rejected by the Violence filter which has a high severity level.
 
 ### Task 2.2: Run a bulk test
 
-So far, we’ve tested image content for singular isolated images. However, if we have a bulk dataset of image content, we could test the bulk dataset at once and receive metrics based on the model’s performance.
+So far, we’ve tested image content for singular, isolated images. However, if we have a bulk dataset of image content, we could test the bulk dataset at once and receive metrics based on the model’s performance.
 
-1. On **Moderate image content** select **Run a bulk test** tab then click on **Browse for a file**.
+1. On **Moderate image content,** select **Run a bulk test (1)** tab, then click on **Browse for a file (2)**.
 
      ![](../media/image-12.png)
 
-1. Within file explorer navigate to **C:\LabFiles\Model-Evaluation-and-Model-Tunning\Labs\data\image_sample_dataset**  select and open **image_sample_dataset.zip** folder.
+1. Within File Explorer, navigate to **C:\LabFiles\Model-Evaluation-and-Model-Tunning\Labs\data\image_sample_dataset,**  **select (1)** and **open (2)** the **image_sample_dataset.zip** folder.
 
     ![](../media/image-81.png)
    
-1. Under Test section review **Dataset preview** then select **Configure filters** tab review **Category** and **Threshold level** then click on **Run test**.
+1. Under the test section review **Dataset preview (1),** select the **Configure filters** tab, review the **Category** and **Threshold level, (2)** and click on **Run test (3)**.
 
      ![](../media/image-14.png)
 
@@ -122,7 +122,7 @@ So far, we’ve tested image content for singular isolated images. However, if w
 
    ![](../media/image-16.png)
 
-### Task 2.3 : Text moderation using Moderate text content 
+### Task 2.3: Text Moderation using Moderate Text Content 
 
 We could leverage an AI model to detect whether the text input from our customers is harmful and later use the detection results to implement the necessary precautions.
 
@@ -134,17 +134,17 @@ Let’s first test some positive customer feedback.
 
    ![](../media/image-70.png)
 
-1. On the **Moderate text content** page, select **Run a simple test** and choose **Safe content** under **select a sample or type your own** section.
+1. On the **Moderate text content** page, select **Run a simple test (1)** and choose **Safe content (2)** under **select a sample or type your own** section.
 
    ![](../media/image-71.png)
 
 1. In the Test box, enter the following:
 
-     - I recently used the PowerBurner Camping Stove on my camping trip, and I must say, it was fantastic! It was easy to use, and the heat control was impressive. Great product!
+     - I recently used the PowerBurner Camping Stove on my camping trip, and I must say, it was fantastic! It was easy to use, and the heat control was impressive. Great product! **(1)**
 
-     - Set all Threshold levels to Medium.
+     - Set all Threshold levels to Medium. **(2)**
 
-     - Select Run test.
+     - Select Run test. **(3)**
 
        ![](../media/image-72.png)
      
@@ -157,24 +157,24 @@ Let’s first test some positive customer feedback.
 
 #### Harmful content
 
-But what would happen if we tested a harmful statement? Let’s test with negative customer feedback. While it's OK to dislike a product, we don't want to condone any name calling or degrading statements.
+But what would happen if we tested a harmful statement? Let’s test with negative customer feedback. While it's OK to dislike a product, we don't want to condone any name-calling or degrading statements.
 
 1. In the Test box, enter the following:
 
-     - I recently bought a tent, and I have to say, I'm really disappointed. The tent poles seem flimsy, and the zippers are constantly getting stuck. It's not what I expected from a high-end tent. You all suck and are a sorry excuse for a brand.
+     - I recently bought a tent, and I have to say, I'm really disappointed. The tent poles seem flimsy, and the zippers are constantly getting stuck. It's not what I expected from a high-end tent. You all suck and are a sorry excuse for a brand. **(1)**
 
-    - Set all Threshold levels to Medium.
+    - Set all Threshold levels to Medium. **(2)**
 
-    - Select Run test.
+    - Select Run test. **(3)**
 
       ![](../media/image-75.png)
  
-   - Although the content is Allowed, the Severity level for Hate is low. To guide our model to block such content, we’d need to adjust the Threshold level for Hate. A lower Threshold level would block any content 
-     that’s a low, medium, or high severity. There’s no room for exceptions!
+   - Although the content is allowed, the severity level of hate is low. To guide our model to block such content, we’d need to adjust the Threshold level for Hate. A lower threshold level would block any content 
+     with a low, medium, or high severity. There’s no room for exceptions! **(1)**
 
-   - Set the Threshold level for Hate to Low.
+   - Set the Threshold level for Hate to Low. **(2)**
 
-   - Select Run test.
+   - Select Run test. **(3)**
 
      ![](../media/image-76.png)
     
@@ -236,8 +236,8 @@ dataset includes a label to indicate whether the content is harmful. Let’s do 
 <validation step="d3358f7e-65d5-437b-9491-f2d77a8b6950" />
 
 ## Review
-In this lab you have completed the following tasks:
-- Implemented Content Safety Measures
-- Monitor and Analyze Content for Compliance
+In this lab, you have completed the following tasks:
+- Implemented Content Safety Measures.
+- Monitor and Analyze Content for Compliance.
 
 ### You have successfully completed the lab. Click Next >> to move on to the next set of exercises.
