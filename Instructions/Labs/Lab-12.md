@@ -1,21 +1,21 @@
 # Lab 12: Run Miyagi App Locally
 
-### Estimated Duration: 60 minutes
+### Estimated Duration: 60 Minutes
 
 In this lab, the focus is on configuring the Miyagi App for operational readiness. Subsequently, attention shifts to understanding the nuanced implementation of the Recommendation service. The practical phase involves executing the Recommendation service and deploying the Miyagi frontend locally for testing and development. A crucial step includes optimizing data retrieval efficiency by persisting embeddings in Azure AI Search. The project culminates with a broader exploration of the Miyagi App and Recommendation service, emphasizing a personalized user experience. This task-based approach ensures a systematic progression through the project intricacies, facilitating a comprehensive understanding and effective implementation.
 
-## Lab objectives
+## Lab Objectives
 
 You will be able to complete the following tasks:
 
-- Task 1: Setup configuration for miyagi app
+- Task 1: Setup configuration for Miyagi app
 - Task 2: Understanding the implementation of the Recommendation service
 - Task 3: Run recommendation service locally
 - Task 4: Run miyagi frontend locally
 - Task 5: Persist embeddings in Azure AI Search
 - Task 6: Explore the Miyagi App and Recommendation service by Personalizing
   
-### Task 1: Setup configuration for miyagi app
+### Task 1: Setup Configuration for Miyagi App
 
 In this task, you will configure the Miyagi application by updating specific settings in Visual Studio Code. This involves replacing placeholder values in configuration files with the actual values for various Azure resources to ensure proper connectivity and functionality.
 
@@ -23,11 +23,11 @@ In this task, you will configure the Miyagi application by updating specific set
 
    ![](../media/vs-code.png)
 
-   >**Note** If **Join us in making promt-flow extension better!** window prompted please click on **No,thanks**.
+   >**Note**: If prompted with, **Join us in making promt-flow extension better!** window, please click on **No,thanks**.
 
    ![](../media/image-rg-01.png)
    
-1. In **Visual Studio Code** from menu bar select **File(1)>open folder(2)**.
+1. In **Visual Studio Code,** from the menu bar, select **File(1)>open folder(2)**.
 
    ![](../media/image-rg-02.png)
 
@@ -35,17 +35,17 @@ In this task, you will configure the Miyagi application by updating specific set
 
    ![](../media/image-rg(003).png)
 
-1. In **Visual Studio Code**, click on **Yes, I trust the authors** when **Do you trust the authors of the files in this folder?** window prompted.
+1. In **Visual Studio Code**, click on **Yes, I trust the authors** when the **"Do you trust the authors of the files in this folder?"** window is prompted.
 
    ![](../media/image-rg-18.png) 
    
 1. Expand **miyagi>ui** directory and verify that **.env.** file is present. 
 
-1. Expand **miyagi/services/recommendation-service/dotnet** directory and verify that **appsettings.json** file is present.
+1. Expand the **miyagi/services/recommendation-service/dotnet** directory and verify that **appsettings.json** file is present.
 
    ![](../media/open-appsettings.png)
   
-1. Open **appsettings.json** file and replace the following values for the variables below.
+1. Open the **appsettings.json** file and replace the following values for the variables below.
 
    | **Variables**                | **Values**                                                    |
    | ---------------------------- |---------------------------------------------------------------|
@@ -60,15 +60,15 @@ In this task, you will configure the Miyagi application by updating specific set
    | bingApiKey                   | **<inject key="Bing_API_KEY" enableCopy="true"/>**           |
    | cosmosDbConnectionString     | **<inject key="CosmosDBconnectinString" enableCopy="true"/>** |
    
-   > **Note**: FYI, the above values/Keys/Endpoints/ConnectionString of Azure Resources are directly injected to labguide. Leave default settings for "cosmosDbContainerName": "recommendations" and "logLevel": "Trace".
+   > **Note**: FYI, the above values/Keys/Endpoints/ConnectionString of Azure Resources are directly injected into the lab guide. Leave default settings for "cosmosDbContainerName": "recommendations" and "logLevel": "Trace."
 
       ![](../media/miyagi-image(17)1.png)
    
-1. Once after updating the values kindly save the file by pressing **CTRL + S**.
+1. After updating the values, kindly save the file by pressing **CTRL + S**.
 
 1. Navigate to **miyagi/sandbox/usecases/rag/dotnet** and verify **.env** file is present.
   
-1. In the **.env** file replace the following values for the variables below.
+1. In the **.env** file, replace the following values for the variables below.
 
    | **Variables**                          | **Values**                                            |
    | ---------------------------------------| ------------------------------------------------------|
@@ -81,7 +81,7 @@ In this task, you will configure the Miyagi application by updating specific set
    
    ![](../media/miyagi-image(18).png)
    
-1. Once after updating the values kindly save the file by pressing **CTRL + S**.
+1. After updating the values, kindly save the file by pressing **CTRL + S**.
 
 > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
 > - Click on the **Validate** button for the corresponding task. If you receive a success message, you can proceed to the next task. 
@@ -94,14 +94,14 @@ In this task, you will configure the Miyagi application by updating specific set
 
 Recommendation service implements RAG pattern using Semantic Kernel SDK. The details of the implementation are captured in the Jupyter notebook in the folder miyagi/sandbox/usecases/rag/dotnet. You can open the notebook in VSCode and run the cells to understand step-by-step details of how the Recommendation Service is implemented. Pay special attention to how the RAG pattern is implemented using Semantic Kernel. Select kernel as .NET Interactive in the top right corner of the notebook.
 
-1. In the Visual Studio Code navigate to **miyagi/sandbox/usecases/rag/dotnet** folder and select **Getting-started.ipynb**
+1. In the Visual Studio Code, navigate to **miyagi/sandbox/usecases/rag/dotnet** folder and select **Getting-started.ipynb**
 
    ![](../media/miyagi-image19.png)
 
 1. **Execute the notebook cell by cell** (using either Ctrl + Enter to stay on the same cell or Shift + Enter to advance to the next cell) and observe the results of each cell execution.
   
 
-   > **Note**: Make sure **.Net Interactive** is in ready State, if not please wait for 2 to 3 minutes. If it is still not loading, kindly close and reopen Visual Studio. Also, please do not click on **Run All** option to execute all the cells at a time which may lead to exceed in token limit that results Error: 503 – Service unreachable. 
+   > **Note**: Make sure **.Net Interactive** is in a ready state. If not, please wait for 2 to 3 minutes. If it is still not loading, kindly close and reopen Visual Studio. Also, please do not click on the **Run All** option to execute all the cells at a time which may lead to exceed in token limit that results Error: 503 – Service unreachable. 
 
       ![](../media/miyagi-image20.png)
    
