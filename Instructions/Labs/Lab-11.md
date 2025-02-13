@@ -26,7 +26,7 @@ In this lab, you will complete the following tasks:
 
     ![Picture 1](../media/sc-63.png)
     
-1. From the **Overview** page of Microsoft Defender for Cloud, notice the information available on the page (if you see 0 assessed resources and active recommendations, refresh the browser page. It may take a few minutes).  Information on the top of the page includes the number of Azure subscriptions, the number of Assessed resources, the number of active recommendations, and any security alerts.  On the main body of the page, there are cards representing Security posture, Regulatory compliance, Insights, and more.  Note: The Microsoft Defender for Cloud default policy initiative, which would normally have to be assigned by the admin, has already been assigned as part of the Azure subscription setup. The secure score, however, will show as 0% because Azure can have up to a 24-hour delay to reflect an initial score.
+1. From the **Overview** page of Microsoft Defender for Cloud, notice the information available on the page (if you see 0 assessed resources and active recommendations, refresh the browser page. It may take a few minutes). Information on the top of the page includes the number of Azure subscriptions, the number of Assessed resources, the number of active recommendations, and any security alerts.  On the main body of the page, there are cards representing Security posture, Regulatory compliance, Insights, and more.  Note: The Microsoft Defender for Cloud default policy initiative, which would normally have to be assigned by the admin, has already been assigned as part of the Azure subscription setup. The secure score, however, will show as 0% because Azure can have up to a 24-hour delay to reflect an initial score.
    
     ![Picture 1](../media/sc-83.png)   
 
@@ -38,7 +38,7 @@ In this lab, you will complete the following tasks:
 
     >**Important**: If you're unable to view any resources, please follow the steps below:
 
-   - Navigate to  **Environment settings (1)** under the **Management** section. On the **Microsoft Defender for Cloud | Environment settings** page, select **Subscription (2)**
+   - Navigate to  **Environment settings (1)** under the **Management** section. On the **Microsoft Defender for Cloud | Environment settings** page, select **Subscription (2).**
 
      ![Picture 1](../media/sc-900-lab6-image1.png)
      
@@ -112,7 +112,7 @@ In this lab, you will complete the following tasks:
    
 1. Select **Overview** from the left navigation panel to  return to the Microsoft Defender for Cloud Overview page.
      
-1. Keep the Microsoft Defender for Cloud overview page open. You will use in the next task.
+1. Keep the Microsoft Defender for Cloud overview page open. You will use it in the next task.
 
 > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
 > - Click on the **Validate** button for the corresponding task. If you receive a success message, you can proceed to the next task. 
@@ -121,7 +121,7 @@ In this lab, you will complete the following tasks:
 
 <validation step="5705918e-651e-428a-ac8f-4f4c41b83546" />
 
-## Task 2: How to enable/disable the various Microsoft Defender for Cloud plans
+## Task 2: How to Enable/Disable Various Microsoft Defender for Cloud Plans
 
 Recall that Microsoft Defender for Cloud is offered in two modes: without enhanced security features (free) and with enhanced security features that are available through the Microsoft Defender for Cloud plans. In this task, you discover how to enable/disable the various Microsoft Defender for Cloud plans.
 
