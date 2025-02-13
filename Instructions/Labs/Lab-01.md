@@ -154,9 +154,9 @@ In this task, you will use the Chat playground to interact with and test the AI 
 
    ![](../media/applychanges1.png)
 
-   >**Note:** On the **Update system message?**, select **Continue**.
+   >**Note:** On the **Update system message?** prompt, select **Continue**.
    
-6. In the query box at the bottom of the page, enter the text `What is artificial intelligence?`**(1)**. Use the **Send (2)** button to submit the message and view the response.
+6. In the query box at the bottom of the page, enter the text `What is artificial intelligence?` **(1)**. Use the **Send (2)** button to submit the message and view the response.
 
       ![](../media/openai-12.png)
    
