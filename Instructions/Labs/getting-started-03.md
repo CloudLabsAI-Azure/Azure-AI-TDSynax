@@ -112,6 +112,8 @@ Feel free to start, stop, or restart your virtual machine as needed from the **R
 
 This hands-on-lab will help you to gain insights on how Azure OpenAI’s content filtering mechanisms contribute to responsible AI deployment, and how you can leverage these filters to ensure that your AI models adhere to appropriate content standards.
 
+>**Important:** Please keep the PowerShell window open. Closing it may prevent you from completing the lab correctly.
+
 ## Support Contact
 
 The CloudLabs support team is available 24/7, 365 days a year, via email and live chat to ensure seamless assistance at any time. We offer dedicated support channels tailored specifically for both learners and instructors, ensuring that all your needs are promptly and efficiently addressed.
