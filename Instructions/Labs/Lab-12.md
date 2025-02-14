@@ -27,11 +27,11 @@ In this task, you will configure the Miyagi application by updating specific set
 
    ![](../media/image-rg-01.png)
    
-1. In **Visual Studio Code,** from the menu bar, select **File(1)> Open folder (2)**.
+1. In **Visual Studio Code,** from the menu bar, select **File (1)> Open folder (2)**.
 
    ![](../media/image-rg-02.png)
 
-1. Within **File Explorer**, navigate to **C:\LabFiles\miyagi** select **miyagi** (1) click on **Select folder(2)**
+1. Within **File Explorer**, navigate to **C:\LabFiles\miyagi** select **miyagi** (1) click on **Select folder (2)**
 
    ![](../media/image-rg(003).png)
 
@@ -41,7 +41,7 @@ In this task, you will configure the Miyagi application by updating specific set
    
 1. Expand **miyagi>ui** directory and verify that **.env.** file is present. 
 
-1. Expand the **miyagi/services/recommendation-service/dotnet** directory and verify that the **appsettings.json** file is present.
+1. Expand the **miyagi/services (1)/recommendation-service (2)/dotnet (3)** directory and verify that the **appsettings.json (4)** file is present.
 
    ![](../media/open-appsettings.png)
   
@@ -94,7 +94,7 @@ In this task, you will configure the Miyagi application by updating specific set
 
 The Recommendation service implements the RAG pattern using the Semantic Kernel SDK. The details of the implementation are captured in the Jupyter Notebook in the folder miyagi/sandbox/usecases/rag/dotnet. You can open the notebook in VSCode and run the cells to understand step-by-step details of how the Recommendation Service is implemented. Pay special attention to how the RAG pattern is implemented using Semantic Kernel. Select the kernel as .NET Interactive in the top right corner of the notebook.
 
-1. In the Visual Studio Code, navigate to **miyagi/sandbox/usecases/rag/dotnet** folder and select **Getting-started.ipynb**
+1. In the Visual Studio Code, navigate to **miyagi (1)/sandbox (2)/usecases (3)/rag (4)/dotnet (5)** folder and select **Getting-started.ipynb (6)**
 
    ![](../media/miyagi-image19.png)
 
@@ -117,7 +117,7 @@ The Recommendation service implements the RAG pattern using the Semantic Kernel 
 ### Task 3: Run the Recommendation Service Locally
 In this task, you will run the recommendation service locally by using Visual Studio Code to build and run the service in the terminal. Then, verify its functionality by accessing the Swagger page in the browser.
 
-1. Open a new terminal: by navigating **miyagi/services/recommendation-service/dotnet** and right-clicking on **dotnet.** In the cascading menu, select **Open in Intergate Terminal**.
+1. Open a new terminal: by navigating through **miyagi (1)/services (2)/recommendation-service (3)** and right-clicking on **dotnet (4).** In the cascading menu, select **Open in Intergate Terminal (5)**.
 
     ![](../media/task4-1.png)
 
@@ -145,7 +145,7 @@ In this task, you will run the recommendation service locally by using Visual St
 ### Task 4: Run the Miyagi Frontend Locally
 In this task, you will run the Miyagi frontend locally by installing dependencies using npm and yarn and then starting the development server. You will verify its functionality by accessing the local development server in the browser.
 
-1. Open a new terminal: By navigating  **miyagi/ui** and right-clicking on **ui/typescript**. In the cascading menu, select **Open in intergate Terminal**.
+1. Open a new terminal: By navigating **miyagi/ui (1)** and right-clicking on **ui/typescript (2)**. In the cascading menu, select **Open in intergate Terminal (3)**.
 
    ![](../media/image-rg-25.png)
 
@@ -180,7 +180,7 @@ In this task, you will run the Miyagi frontend locally by installing dependencie
 
 In this task, you will persist embeddings in Azure AI Search by executing a POST request in Swagger UI, verifying the execution, and then confirming the creation of the index in the Azure portal.
 
-1. Navigate back to the **swagger UI** page, scroll to **Memory** session, click on **POST /dataset (1)** for expansion, and click on **Try it out (2)**.
+1. Navigate back to the **swagger UI** page, scroll to **Memory** session, click on **POST/datasets (1)** for expansion, and click on **Try it out (2)**.
 
    ![](../media/miyagi-image22.png)
 
@@ -204,7 +204,7 @@ In this task, you will persist embeddings in Azure AI Search by executing a POST
 
     ![](../media/miyagi-image24.png)
 
-1. Navigate back to the **Azure portal** tab. In the Search resources, services, and docs (G+/) box at the top of the portal, enter **AI Search** and then select **AI Search** under services.
+1. Navigate back to the **Azure portal** tab. In the Search resources, services, and docs (G+/) box at the top of the portal, enter **AI Search (1)** and then select **AI Search (2)** under services.
 
     ![](../media/miyagi-image25.png)
 
