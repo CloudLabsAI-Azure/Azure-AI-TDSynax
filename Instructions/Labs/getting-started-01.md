@@ -104,7 +104,7 @@ Feel free to start, stop, or restart your virtual machine as needed from the **R
 
    ![Launch Azure Portal](../media/sc900-image(3).png)
 
->**Important:** Please keep the PowerShell window open. Closing it may prevent you from completing the lab correctly.
+>**Important:** Do not close the running PowerShell window. Minimize it and continue with your lab. Closing the PowerShell window will prevent you from performing the lab correctly.
 
 This hands-on-lab will help you to gain insights on how Azure OpenAI’s content filtering mechanisms contribute to responsible AI deployment, and how you can leverage these filters to ensure that your AI models adhere to appropriate content standards.
 
