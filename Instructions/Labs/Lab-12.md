@@ -2,20 +2,20 @@
 
 ### Estimated Duration: 60 Minutes
 
-In this lab, the focus is on configuring the Miyagi App for operational readiness. Subsequently, attention shifts to understanding the nuanced implementation of the Recommendation service. The practical phase involves executing the Recommendation service and deploying the Miyagi frontend locally for testing and development. A crucial step includes optimizing data retrieval efficiency by persisting embeddings in Azure AI Search. The project culminates with a broader exploration of the Miyagi App and Recommendation service, emphasizing a personalized user experience. This task-based approach ensures a systematic progression through the project intricacies, facilitating a comprehensive understanding and effective implementation.
+In this lab, the focus is on configuring the Miyagi App for operational readiness. Subsequently, attention shifts to understanding the nuanced implementation of the Recommendation service. The practical phase involves executing the Recommendation service and deploying the Miyagi frontend locally for testing and development. A crucial step includes optimizing data retrieval efficiency by persisting embeddings in Azure AI Search. The project culminates with a broader exploration of the Miyagi App and Recommendation service, emphasizing a personalized user experience. This task-based approach ensures a systematic progression through the project's intricacies, facilitating a comprehensive understanding and effective implementation.
 
 ## Lab Objectives
 
 You will be able to complete the following tasks:
 
-- Task 1: Setup configuration for Miyagi app
+- Task 1: Se tup configuration for the Miyagi app
 - Task 2: Understanding the implementation of the Recommendation service
-- Task 3: Run recommendation service locally
-- Task 4: Run miyagi frontend locally
+- Task 3: Run the recommendation service locally
+- Task 4: Run the miyagi frontend locally
 - Task 5: Persist embeddings in Azure AI Search
 - Task 6: Explore the Miyagi App and Recommendation service by Personalizing
   
-### Task 1: Setup Configuration for Miyagi App
+### Task 1: Setup Configuration for the Miyagi App
 
 In this task, you will configure the Miyagi application by updating specific settings in Visual Studio Code. This involves replacing placeholder values in configuration files with the actual values for various Azure resources to ensure proper connectivity and functionality.
 
@@ -23,15 +23,15 @@ In this task, you will configure the Miyagi application by updating specific set
 
    ![](../media/vs-code.png)
 
-   >**Note**: If prompted with, **Join us in making promt-flow extension better!** window, please click on **No,thanks**.
+   >**Note**: If prompted by the, **"Join us in making promt-flow extension better!"** window, please click **"No, thanks"**.
 
    ![](../media/image-rg-01.png)
    
-1. In **Visual Studio Code,** from the menu bar, select **File(1)>open folder(2)**.
+1. In **Visual Studio Code,** from the menu bar, select **File(1)> Open folder (2)**.
 
    ![](../media/image-rg-02.png)
 
-1. Within **File Explorer**, navigate to **C:\LabFiles\miyagi** select **miyagi**(1) click on **Select folder(2)**
+1. Within **File Explorer**, navigate to **C:\LabFiles\miyagi** select **miyagi** (1) click on **Select folder(2)**
 
    ![](../media/image-rg(003).png)
 
@@ -41,7 +41,7 @@ In this task, you will configure the Miyagi application by updating specific set
    
 1. Expand **miyagi>ui** directory and verify that **.env.** file is present. 
 
-1. Expand the **miyagi/services/recommendation-service/dotnet** directory and verify that **appsettings.json** file is present.
+1. Expand the **miyagi/services/recommendation-service/dotnet** directory and verify that the **appsettings.json** file is present.
 
    ![](../media/open-appsettings.png)
   
@@ -53,8 +53,8 @@ In this task, you will configure the Miyagi application by updating specific set
    | embeddingDeploymentOrModelId | **CompletionModel**          |
    | endpoint                     | **Paste the OpenAI endpoint**          |
    | apiKey                       | **Paste the OpenAI key**               |
-   | azureCognitiveSearchEndpoint | **Paste the azure search URL**        |
-   | azureCognitiveSearchApiKey   | **Paste the azure search key**            |
+   | azureCognitiveSearchEndpoint | **Paste the Azure search URL**        |
+   | azureCognitiveSearchApiKey   | **Paste the Azure search key**            |
    | cosmosDbUri                  | **<inject key="CosmosDBuri" enableCopy="true"/>**             |
    | blobServiceUri               | **<inject key="StorageAccounturi" enableCopy="true"/>**       |
    | bingApiKey                   | **<inject key="Bing_API_KEY" enableCopy="true"/>**           |
@@ -92,7 +92,7 @@ In this task, you will configure the Miyagi application by updating specific set
 
 ### Task 2: Understanding the Implementation of the Recommendation Service
 
-Recommendation service implements RAG pattern using Semantic Kernel SDK. The details of the implementation are captured in the Jupyter Notebook in the folder miyagi/sandbox/usecases/rag/dotnet. You can open the notebook in VSCode and run the cells to understand step-by-step details of how the Recommendation Service is implemented. Pay special attention to how the RAG pattern is implemented using Semantic Kernel. Select kernel as .NET Interactive in the top right corner of the notebook.
+The Recommendation service implements the RAG pattern using the Semantic Kernel SDK. The details of the implementation are captured in the Jupyter Notebook in the folder miyagi/sandbox/usecases/rag/dotnet. You can open the notebook in VSCode and run the cells to understand step-by-step details of how the Recommendation Service is implemented. Pay special attention to how the RAG pattern is implemented using Semantic Kernel. Select the kernel as .NET Interactive in the top right corner of the notebook.
 
 1. In the Visual Studio Code, navigate to **miyagi/sandbox/usecases/rag/dotnet** folder and select **Getting-started.ipynb**
 
@@ -101,7 +101,7 @@ Recommendation service implements RAG pattern using Semantic Kernel SDK. The det
 1. **Execute the notebook cell by cell** (using either Ctrl + Enter to stay on the same cell or Shift + Enter to advance to the next cell) and observe the results of each cell execution.
   
 
-   > **Note**: Make sure **.Net Interactive** is in a ready state. If not, please wait for 2 to 3 minutes. If it is still not loading, kindly close and reopen Visual Studio. Also, please do not click on the **Run All** option to execute all the cells simultaneously, which may lead to exceeding the token limit, resulting in Error: 503 – Service unreachable. 
+   > **Note**: Make sure **.Net Interactive** is ready. If not, please wait for 2 to 3 minutes. If it is still not loading, kindly close and reopen Visual Studio. Also, please do not click on the **Run All** option to execute all the cells simultaneously, which may lead to exceeding the token limit, resulting in Error: 503 – Service unreachable. 
 
       ![](../media/miyagi-image20.png)
    
@@ -114,10 +114,10 @@ Recommendation service implements RAG pattern using Semantic Kernel SDK. The det
 
 <validation step="3574d7d4-40d1-439b-bba0-7d1cbb1b45df" />
 
-### Task 3: Run Recommendation Service Locally
+### Task 3: Run the Recommendation Service Locally
 In this task, you will run the recommendation service locally by using Visual Studio Code to build and run the service in the terminal. Then, verify its functionality by accessing the Swagger page in the browser.
 
-1. Open a new terminal: by navigating **miyagi/services/recommendation-service/dotnet** and right-clicking on **dotnet.** In the cascading, menu, select **Open in Intergate Terminal**.
+1. Open a new terminal: by navigating **miyagi/services/recommendation-service/dotnet** and right-clicking on **dotnet.** In the cascading menu, select **Open in Intergate Terminal**.
 
     ![](../media/task4-1.png)
 
@@ -142,8 +142,8 @@ In this task, you will run the recommendation service locally by using Visual St
    ![](../media/miyagi-image21.png)
 
 
-### Task 4: Run Miyagi Frontend Locally
-In this task, you will run the Miyagi frontend locally by installing dependencies using npm and yarn, and then starting the development server. You will verify its functionality by accessing the local development server in the browser.
+### Task 4: Run the Miyagi Frontend Locally
+In this task, you will run the Miyagi frontend locally by installing dependencies using npm and yarn and then starting the development server. You will verify its functionality by accessing the local development server in the browser.
 
 1. Open a new terminal: By navigating  **miyagi/ui** and right-clicking on **ui/typescript**. In the cascading menu, select **Open in intergate Terminal**.
 
@@ -204,13 +204,13 @@ In this task, you will persist embeddings in Azure AI Search by executing a POST
 
     ![](../media/miyagi-image24.png)
 
-1. Navigate back to the **Azure portal** tab. In the Search resources, services and docs (G+/) box at the top of the portal, enter **AI Search** and then select **AI Search** under services.
+1. Navigate back to the **Azure portal** tab. In the Search resources, services, and docs (G+/) box at the top of the portal, enter **AI Search** and then select **AI Search** under services.
 
     ![](../media/miyagi-image25.png)
 
-1. In **Azure AI services | AI Search** tab, select **aiinaday-cog-<inject key="DeploymentID" enableCopy="false"/>**.
+1. In the **Azure AI services | AI Search** tab, select **aiinaday-cog-<inject key="DeploymentID" enableCopy="false"/>**.
    
-1. In **aiinaday-cog-<inject key="DeploymentID" enableCopy="false"/>** Search service tab, click on **Indexes** **(1)** under Search management, and review the **miyagi-embeddings** **(2)** have been created.   
+1. In the **aiinaday-cog-<inject key="DeploymentID" enableCopy="false"/>** Search service tab, click on **Indexes** **(1)** under Search management and review the **miyagi-embeddings** **(2)** that have been created.   
 
    ![](../media/miyagi-embeddings.png)
 
@@ -226,7 +226,7 @@ In this task, you will persist embeddings in Azure AI Search by executing a POST
 ### Task 6: Explore the Miyagi App and Recommendation Service  by Personalizing
 In this task, you'll personalize the Miyagi App's Recommendation service by selecting a financial advisor and reviewing the recommendations. Then, you'll check the logs in Visual Studio Code and stop the services.
 
-1. Navigate back to the **recommendation service** UI page, and click on the **personalize** button.
+1. Navigate back to the **recommendation service** UI page and click on the **personalize** button.
 
     ![](../media/miyagi-image28.png)
 
@@ -238,19 +238,19 @@ In this task, you'll personalize the Miyagi App's Recommendation service by sele
 
    ![](../media/miyagi-image30.png) 
 
-1. Navigate to the **Visual Studio Code**, and click on **dotnet** from the terminal. You can go through the logs.
+1. Navigate to **Visual Studio Code** and click on **dotnet** from the terminal. You can go through the logs.
 
    ![](../media/terminal-output.png)    
 
 1. Once you view the logs, press **Ctrl + C** to stop the **swagger UI** page.
 
-1.  From the **Terminal** select **Node** terminal, and press **Ctrl + C** to stop the **recommendation service** UI page.
+1.  From the **Terminal,** select **Node** terminal and press **Ctrl + C** to stop the **recommendation service** UI page.
       ![](../media/miyagi-image31.png)
 
 1. Now, click on **Next** from the lower right corner to move to the next page.
 
 ## Summary
 
-In this lab you began configuring the Miyagi App for operational readiness, followed by a detailed exploration of the implementation of the recommendation service. Practical execution involves running the Recommendation service and deploying the Miyagi frontend locally for testing. Enhancing data retrieval efficiency is a pivotal step achieved by persisting embeddings in Azure AI Search. The project concludes with a broad exploration of the Miyagi App and Recommendation service, prioritizing a personalized user experience. This systematic approach ensures a thorough understanding and effective implementation throughout the project.
+In this lab, you began configuring the Miyagi App for operational readiness, followed by a detailed exploration of the implementation of the recommendation service. Practical execution involves running the Recommendation service and deploying the Miyagi frontend locally for testing. Enhancing data retrieval efficiency is a pivotal step achieved by persisting embeddings in Azure AI Search. The project concludes with a broad exploration of the Miyagi App and Recommendation service, prioritizing a personalized user experience. This systematic approach ensures a thorough understanding and effective implementation throughout the project.
 
 ### You have successfully completed this lab.
