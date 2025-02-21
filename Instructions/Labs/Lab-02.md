@@ -69,7 +69,7 @@ After completing this lab, you will be able to complete the following tasks:
 
 1. Select **Add role assignment** from the drop-down.
 
-1. In the **Add role assignment** pane, under **Role** tab, select **Reader** and click on **Next**. This role allows the user or entity to view all resources in the **resource group** but won't make any changes.
+1. In the **Add role assignment** pane, under **Role** tab, select **Azure AI Developer** and click on **Next**. This role allows the user or entity to view all resources in the **resource group** but won't make any changes.
 
 1. Under the **Assign access to** section, select **Managed identity (2)**.
 
@@ -367,17 +367,17 @@ After completing this lab, you will be able to complete the following tasks:
 
    ![](../media/promptfolwnew.png)
 
-1. On **"Create a new flow,"** click on **Create**. This will create a new prompt flow.
+2. On **"Create a new flow,"** click on **Create**. This will create a new prompt flow.
 
    ![](../media/createanewflow.png)
 
    >**Note:** If it takes too long, refresh the page and re-enter the details and click on **prompt flow**; the prompt flow should appear right away.
 
-1. Notice how the prompt flow is created with a single node, which represents the step in the flow where the LLM model is configured.
+3. Notice how the prompt flow is created with a single node, which represents the step in the flow where the LLM model is configured.
 
    ![](../media/prompt-flow-graph(1).png)
 
-1. Update the prompt section, by adding the below system message: 
+4. Update the prompt section, by adding the below system message: 
 
       ```
       # system:
@@ -403,15 +403,15 @@ After completing this lab, you will be able to complete the following tasks:
 
       ![](../media/chatflow2.png)
 
-1. Once the new prompt flow opens, click on **Start compute session** before you start using the chat session.
+5. Once the new prompt flow opens, click on **Start compute session** before you start using the chat session.
 
    ![](../media/llm48.png)
 
-1. Configure the connection settings with the AI service and the GPT-4 deployment for the **chat** node, and then click on the **Chat** button to test your flow in the **chat window**.
+6. Configure the connection settings with the AI service and the GPT-4 deployment for the **chat** node, and then click on the **Chat** button to test your flow in the **chat window**.
 
    ![](../media/prompt-flow-connection-chat(1).png)
 
-1. In the **chat window**, copy and paste the below conversation and click on **send** to view the expected response.
+7. In the **chat window**, copy and paste the below conversation and click on **send** to view the expected response.
 
    ```
    Agent: Hello, welcome to Telco's customer service. My name is Juan, how can I assist you?
