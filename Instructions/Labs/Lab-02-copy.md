@@ -377,6 +377,33 @@ After completing this lab, you will be able to complete the following tasks:
 
    ![](../media/prompt-flow-graph(1).png)
 
+1. Update the prompt section, by adding the below system message: 
+
+   ```
+   # system:
+   You're an AI assistant that helps telco company to extract valuable information from their conversations by creating JSON files for each conversation transcription you receive. You always try to extract and format it as a JSON:
+   1. Customer Name [name]
+   2. Customer Contact Phone [phone]
+   3. Main Topic of the Conversation [topic]
+   4. Customer Sentiment (Neutral, Positive, Negative)[sentiment]
+   5. How the Agent Handled the Conversation [agent_behavior]
+   6. What was the FINAL Outcome of the Conversation [outcome]
+   7. A really brief Summary of the Conversation [summary]
+
+   {% for item in chat_history %}
+   # user:
+   {{item.inputs.question}}
+   # assistant:
+   {{item.outputs.answer}}
+   {% endfor %}
+
+   # user:
+   {{question}}
+   ```
+
+   ![](../media/newpromptflowtexts.png)
+
+
 1. Once the new prompt flow opens, click on **Start compute session** before you start using the chat session.
 
    ![](../media/llm48.png)
