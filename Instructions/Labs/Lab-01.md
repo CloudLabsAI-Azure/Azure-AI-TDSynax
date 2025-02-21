@@ -101,7 +101,7 @@ In this task, you'll deploy a specific AI model instance within your Azure OpenA
 <validation step="a9d5d237-cf45-4f57-9738-7c69af5faad5" />
 
 
-## Task 3: Explore a model in the Completions playground
+## Task 3: Explore a model in the Completions playground (Read Only)
 
 In this task ,You'll Explore a model in the Completions playground involves interacting with the AI model to test and refine its responses using real-time input and output examples.
 
