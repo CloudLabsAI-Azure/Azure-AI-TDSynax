@@ -367,9 +367,9 @@ After completing this lab, you will be able to complete the following tasks:
 
    ![](../media/promptfolwnew.png)
 
-1. On **"Orchestrate and customize this setup with prompt flow,"** click on **Open**. This will create a new prompt flow.
+1. On **"Create a new flow,"** click on **Create**. This will create a new prompt flow.
 
-   ![](../media/prompt-flow-open.png)
+   ![](../media/createanewflow.png)
 
    >**Note:** If it takes too long, refresh the page and re-enter the details and click on **prompt flow**; the prompt flow should appear right away.
 
@@ -379,29 +379,29 @@ After completing this lab, you will be able to complete the following tasks:
 
 1. Update the prompt section, by adding the below system message: 
 
-   ```
-   # system:
-   You're an AI assistant that helps telco company to extract valuable information from their conversations by creating JSON files for each conversation transcription you receive. You always try to extract and format it as a JSON:
-   1. Customer Name [name]
-   2. Customer Contact Phone [phone]
-   3. Main Topic of the Conversation [topic]
-   4. Customer Sentiment (Neutral, Positive, Negative)[sentiment]
-   5. How the Agent Handled the Conversation [agent_behavior]
-   6. What was the FINAL Outcome of the Conversation [outcome]
-   7. A really brief Summary of the Conversation [summary]
+      ```
+      # system:
+      You're an AI assistant that helps telco company to extract valuable information from their conversations by creating JSON files for each conversation transcription you receive. You always try to extract and format it as a JSON:
+      1. Customer Name [name]
+      2. Customer Contact Phone [phone]
+      3. Main Topic of the Conversation [topic]
+      4. Customer Sentiment (Neutral, Positive, Negative)[sentiment]
+      5. How the Agent Handled the Conversation [agent_behavior]
+      6. What was the FINAL Outcome of the Conversation [outcome]
+      7. A really brief Summary of the Conversation [summary]
 
-   {% for item in chat_history %}
-   # user:
-   {{item.inputs.question}}
-   # assistant:
-   {{item.outputs.answer}}
-   {% endfor %}
+      {% for item in chat_history %}
+      # user:
+      {{item.inputs.question}}
+      # assistant:
+      {{item.outputs.answer}}
+      {% endfor %}
 
-   # user:
-   {{question}}
-   ```
+      # user:
+      {{question}}
+      ```
 
-   ![](../media/newpromptflowtexts.png)
+      ![](../media/chatflow2.png)
 
 1. Once the new prompt flow opens, click on **Start compute session** before you start using the chat session.
 
