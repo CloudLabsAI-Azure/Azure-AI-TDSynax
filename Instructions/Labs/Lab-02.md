@@ -363,19 +363,9 @@ After completing this lab, you will be able to complete the following tasks:
 
 ## Task 08: Create a Prompt Flow
 
-1. From the left navigation menu, select **Models + endpoints**.
+1. From the left navigation pane click on **Prompt Flow (1)**. Under **Flows** select **+ Create (2)**. On the **Create a new flow** tab, under **Chat flow**, select **Create**.
 
-1. Navigate to the **gpt-4** deployment under the **Model deployments** settings in your **Azure AI Foundry** portal.
-
-   ![](../media/llm14.png)
-
-1. On the **gpt-4** deployment details, click on **Open in playground**.
-
-   ![](../media/llm6.png)
-
-1. Verify that the same steps performed in **Task 05** are added as a system message, and ensure you have saved the changes. Once the response is fetched and generated, click on **Prompt Flow**.
-
-   ![](../media/chat-playground-prompt-flow(1).png)
+   ![](../media/promptfolwnew.png)
 
 1. On **"Orchestrate and customize this setup with prompt flow,"** click on **Open**. This will create a new prompt flow.
 
