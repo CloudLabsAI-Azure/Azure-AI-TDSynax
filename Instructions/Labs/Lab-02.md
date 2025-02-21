@@ -377,7 +377,7 @@ After completing this lab, you will be able to complete the following tasks:
 
    ![](../media/prompt-flow-graph(1).png)
 
-4. Update the prompt section, by adding the below system message: 
+4. Update the prompt section, by adding the below system message, click on **Save**: 
 
       ```
       # system:
